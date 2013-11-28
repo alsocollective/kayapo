@@ -23,6 +23,7 @@
 <!-- unique Header stuff -->
 	<script type="text/javascript" src="/js/lib/modernizr.js"></script>
 	<script type="text/javascript" src="/js/lib/jquery.js"></script>
+	<script type="text/javascript" src="/js/lib/j-tube.js"></script>
 
 <!-- Style Yo -->
 	<script type="text/javascript" src="/js/main.js"></script>	
@@ -148,6 +149,45 @@
 
 	<section id="why-rainforest-3" class="full-backgroundimage" style="background-image: url(/images/);">
 		<!-- fall back image for youtube video -->
+		<div id="youtube-rainforest">
+			<!-- auto loop of 20 second video -->
+		</div>
+		<script type="text/javascript">
+			// var myPlayer = $("#youtube-rainforest").Jtube({
+			// 		// videoId:"RlCKrl1F-PI",
+			// 		skipvid:false,
+			// 		skipWhash:false,
+			// 		timeLeft:false,
+			// 		loop:1,
+			// 		autoplay:1,
+			// 		applyToContainer:true,
+			// 		vidHeight:"100%",
+			// 		vidWidth:"100%",
+			// 		volume:0,
+			// 		// debugMode:true,
+			// 		fallbackImage:"http://also-static.com/dotdotdash/uploads/bk-vid-img.png",
+			// 		onStart:function(settings){
+			// 			if(settings.debugMode){
+			// 				console.log("start");
+			// 			}
+			// 			$(settings.player.a).css({"display":"inline-block"})
+			// 			// $(settings.player.a).fadeIn('fast');
+			// 			return null;
+			// 		},
+			// 		onPause:function(settings){
+			// 			if(settings.debugMode){
+			// 				console.log("pause");
+			// 			}
+			// 			$(settings.player.a).css({"display":"none"})
+			// 			// $(settings.player.a).fadeOut('fast');
+			// 			return null;
+			// 		}
+			// 	});
+			// function onYouTubeIframeAPIReady() {
+			// 	myPlayer.setupPlayer();
+			// }
+		</script>
+		<h2>Why Rainforests Matter?</h2>
 		<ul>
 			<li><a href="#animals"><img src="/assests/bird-icon.png" alt="birds button" width="70px" height="70px"></a></li>
 			<li><a href="#climate"><img src="/assests/weather-icon.png" alt="weather button" width="70px" height="70px"></a></li>
@@ -155,10 +195,6 @@
 			<li><a href="#food"><img src="/assests/growth-icon.png" alt="growth button" width="70px" height="70px"></a></li>
 			<li><a href="#culture"><img src="/assests/kayapo-icon.png" alt="kayapo button" width="70px" height="70px"></a></li>
 		</ul>
-		<h2>Why Rainforests Matter?</h2>
-		<div id="youtube-rainforest">
-			<!-- auto loop of 20 second video -->
-		</div>
 		<div id="slides">
 			<div id="animals" class="full-backgroundimage" style="background-image: url(/images/);">
 				<blockquote>Once lost, it is gone forever.</blockquote>
