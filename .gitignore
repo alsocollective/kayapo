@@ -9,3 +9,6 @@
 settings.py
 /kayapo/css/stylesheets/*
 .sass-cache/*
+ie.css
+print.css
+screen.css
