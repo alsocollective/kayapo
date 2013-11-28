@@ -1,0 +1,11 @@
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.pyc
+*.psd
+*.json
+.DS_Store
+settings.py
+/kayapo/css/stylesheets/*
+.sass-cache/*
