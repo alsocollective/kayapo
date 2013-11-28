@@ -27,18 +27,34 @@ var GLOBAL = {
 		var sections = $("section").children();
 		GLOBAL.hotSpots = [];
 		for(var a = 0, max = sections.length; a < max; a += 1){
-			GLOBAL.hotSpots.push(sections[a].offset().top);
+			GLOBAL.hotSpots.push($(sections[a]).offset().top);
 		}
+	},
+	animating:false,
+	scrollEvent:function(){
+		var loc = $(window).scrollTop();
+		var newLoc = GLOBAL.findClosestElement(loc)
+		console.log(loc,newLoc);
+	},
+	findClosestElement:function(loc){
+		for(var a = 0, max = GLOBAL.hotSpots.length; a < max; a += 1){
+			if(loc > 0 && loc > GLOBAL.hotSpots[a] && loc < GLOBAL.hotSpots[a+1]){
+				return a;
+				break;
+			}
+		}
+		return 0;
 	}
-
 }
+
+
 GLOBAL.getAddress();
 GLOBAL.setUpIndex();
-GLOBAL.getHotSpots();
 
-
+$(window).scroll(GLOBAL.scrollEvent);
 
 $(window).load(function(){
+	GLOBAL.getHotSpots();
 	// GLOBAL.singleIndex();
 
 });
