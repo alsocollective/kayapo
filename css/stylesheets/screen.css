@@ -113,295 +113,8 @@ body {
   top: 0;
 }
 
-/* line 51, ../sass/screen.scss */
-table {
-  width: 100%;
-}
-/* line 55, ../sass/screen.scss */
-table thead {
-  background-color: #ea636e;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 0.8em;
-}
-/* line 61, ../sass/screen.scss */
-table thead tr {
-  border-bottom: none;
-  height: 1em;
-}
-/* line 66, ../sass/screen.scss */
-table thead td {
-  padding: 0.15em 0 0.15em 0.25em !important;
-}
-/* line 72, ../sass/screen.scss */
-table colgroup #row-one {
-  width: 40%;
-}
-/* line 75, ../sass/screen.scss */
-table colgroup #row-two {
-  width: 30%;
-}
-/* line 78, ../sass/screen.scss */
-table colgroup #row-three {
-  width: 20%;
-}
-/* line 83, ../sass/screen.scss */
-table tr {
-  height: 2em;
-  border-bottom: dotted #666 1px;
-}
-
-/* line 90, ../sass/screen.scss */
-#calendar-of-events td {
-  padding: 0.5em 0 1.2em 0;
-}
-/* line 93, ../sass/screen.scss */
-#calendar-of-events tr {
-  border-bottom: none;
-}
-
-/* line 98, ../sass/screen.scss */
-#where-are-they-now {
-  background-color: #fff;
-}
-
-/* line 103, ../sass/screen.scss */
-#current-fellows h3 {
-  text-align: center;
-  text-decoration: underline;
-  color: #ea636e;
-  font-weight: 700;
-  margin: 0.7em 0 0.5em 0;
-  text-transform: uppercase;
-}
-/* line 111, ../sass/screen.scss */
-#current-fellows p {
-  -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-
-/* line 121, ../sass/screen.scss */
-.absolute {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  vertical-align: top;
-  padding: 0;
-  margin: 0;
-}
-@media (max-width: 650px) {
-  /* line 121, ../sass/screen.scss */
-  .absolute {
-    position: static;
-    width: 100% !important;
-  }
-}
-
-/* line 135, ../sass/screen.scss */
-.fixed {
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* line 143, ../sass/screen.scss */
-.row {
-  height: 200px;
-  position: relative;
-}
-
-/* line 147, ../sass/screen.scss */
-img.absolute {
-  height: auto;
-  width: auto;
-}
-
-/* line 154, ../sass/screen.scss */
-.background {
-  background-position: center;
-  -webkit-background-position: cover;
-  -moz-background-position: cover;
-  -ms-background-position: cover;
-  -o-background-position: cover;
-  background-position: cover;
-  z-index: -1;
-}
-
-/* line 159, ../sass/screen.scss */
-#next-page .background {
-  display: none;
-}
-
-/* line 162, ../sass/screen.scss */
-.animated .background {
-  display: block !important;
-}
-
-/* page views */
-/* line 167, ../sass/screen.scss */
-.page {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  -moz-overflow-scrolling: touch;
-  -ms-overflow-scrolling: touch;
-  -o-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-  -webkit-background-position: cover;
-  -moz-background-position: cover;
-  -ms-background-position: cover;
-  -o-background-position: cover;
-  background-position: cover;
-}
-
-/* line 178, ../sass/screen.scss */
-#content {
-  left: 0%;
-  overflow: scroll;
-}
-
-/* line 183, ../sass/screen.scss */
-.page > h1 {
-  padding-top: 2em;
-  width: 100%;
-  display: block;
-  text-align: center;
-}
-
-/* line 190, ../sass/screen.scss */
-p {
-  margin-bottom: 0.45em;
-  letter-spacing: -0.01em;
-  line-height: 1.15em;
-}
-
-/* line 198, ../sass/screen.scss */
-h2.absolute {
-  margin: 2em 0 1em 5%;
-  border: solid 2px #ea636e;
-  box-sizing: border-box;
-  font-size: 1em;
-  text-align: center;
-  padding: 0.1em 0.2em 0.1em 0.2em;
-  font-weight: 700;
-  width: initial !important;
-  text-transform: uppercase;
-  color: #ea636e;
-}
-
-/* line 211, ../sass/screen.scss */
-blockquote {
-  color: #111111;
-  font-size: 2em;
-  margin-top: 2em;
-}
-
-/* Custom Page Sections */
-/* line 220, ../sass/screen.scss */
-strong {
-  font-weight: 700;
-}
-
-/* line 224, ../sass/screen.scss */
-#interview {
-  background-color: #555;
-  padding: 2em 0 0 0;
-}
-/* line 229, ../sass/screen.scss */
-#interview h4 {
-  text-decoration: none;
-  color: #fff;
-}
-/* line 235, ../sass/screen.scss */
-#interview div:nth-child(2) div:nth-child(1) {
-  columns: 2;
-  -webkit-columns: 2;
-  /* Safari and Chrome */
-  -moz-columns: 2;
-  /* Firefox */
-}
-
-/* line 244, ../sass/screen.scss */
-#special-procedure {
-  background-color: #fff;
-}
-/* line 247, ../sass/screen.scss */
-#special-procedure div:nth-child(2) div:nth-child(1) {
-  z-index: 1;
-}
-
-/* line 253, ../sass/screen.scss */
-#current-fellows {
-  background-color: #fff;
-}
-
-/* line 257, ../sass/screen.scss */
-h4 {
-  font-weight: 700;
-  text-decoration: underline;
-  text-transform: uppercase;
-  margin: 1em 0 0.5em 0;
-  font-size: 0.9em;
-}
-
-/* line 265, ../sass/screen.scss */
-#cover {
-  margin-bottom: 6em;
-}
-/* line 269, ../sass/screen.scss */
-#cover h1 {
-  font-weight: 700;
-  font-size: 4em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-/* line 276, ../sass/screen.scss */
-#cover h3 {
-  margin: 2em auto 1em auto;
-  border: solid 2px #111111;
-  box-sizing: border-box;
-  font-size: 1.5em;
-  text-align: center;
-  padding: 0.1em 0.2em 0.1em 0.2em;
-  font-weight: 700;
-  width: 3em;
-  text-transform: uppercase;
-  color: #111111;
-}
-/* line 289, ../sass/screen.scss */
-#cover strong {
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 2em;
-}
-/* line 295, ../sass/screen.scss */
-#cover p {
-  text-align: center;
-}
-
-/* line 300, ../sass/screen.scss */
-h1 {
-  font-size: 2em;
-  padding: 2em 0 2em 0;
-}
-
-/* line 305, ../sass/screen.scss */
-.full-page {
-  height: 90%;
-}
-
 /* nav */
-/* line 310, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 #nav {
   position: absolute;
   /* we need absolute as a fall back */
@@ -412,7 +125,7 @@ h1 {
   width: 100%;
   background-color: #ea636e;
 }
-/* line 319, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 #nav h1 {
   display: inline-block;
   padding: 0.5em;
@@ -423,7 +136,7 @@ h1 {
   zoom: 1;
   display: inline;
 }
-/* line 329, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 #nav a {
   display: inline-block;
   padding: 1em;
@@ -432,49 +145,49 @@ h1 {
   color: #fff;
   vertical-align: top;
 }
-/* line 338, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 #nav img {
   padding: 0.5em 0.8em 0.5em 0.5em;
   margin: 0;
   margin-right: 3em;
   background-color: #ea636e;
 }
-/* line 344, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #nav a:hover {
   background-color: #ca444e;
 }
-/* line 347, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 #nav #subnav, #nav #subnav-new {
   position: absolute;
 }
-/* line 350, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #nav #subnav a, #nav #subnav-new a {
   display: block;
 }
-/* line 354, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 #nav .heighlight {
   background-color: #ff838e;
 }
-/* line 357, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 #nav .last-button {
   display: none;
 }
-/* line 360, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 #nav .bigger-than-window {
   height: 100%;
   overflow: scroll !important;
 }
-/* line 364, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #nav .bigger-than-window-noscroll {
   overflow: hidden;
 }
 @media (max-width: 650px) {
-  /* line 310, ../sass/screen.scss */
+  /* line 52, ../sass/screen.scss */
   #nav {
     position: fixed;
     width: 100%;
   }
-  /* line 372, ../sass/screen.scss */
+  /* line 113, ../sass/screen.scss */
   #nav a {
     position: static;
     display: block;
@@ -482,7 +195,7 @@ h1 {
     padding: 5%;
     z-index: 1;
   }
-  /* line 379, ../sass/screen.scss */
+  /* line 120, ../sass/screen.scss */
   #nav .last-button {
     position: static;
     display: block;
@@ -490,28 +203,28 @@ h1 {
     width: 90%;
     background-color: #ccc;
   }
-  /* line 386, ../sass/screen.scss */
+  /* line 127, ../sass/screen.scss */
   #nav #subnav {
     width: 100%;
     position: static;
     display: none !important;
   }
-  /* line 391, ../sass/screen.scss */
+  /* line 132, ../sass/screen.scss */
   #nav #subnav-new {
     display: none !important;
     width: 100%;
   }
-  /* line 394, ../sass/screen.scss */
+  /* line 135, ../sass/screen.scss */
   #nav #subnav-new a {
     width: 100%;
   }
-  /* line 398, ../sass/screen.scss */
+  /* line 139, ../sass/screen.scss */
   #nav .selected {
     /*background-color: #999;*/
   }
 }
 
-/* line 404, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .home .background {
   background: no-repeat;
   background-position: center;
@@ -519,40 +232,40 @@ h1 {
 
 /* ` */
 /* other pages */
-/* line 413, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 #loading {
   display: none;
   left: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 418, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 #next-page {
   left: 0%;
 }
 
-/* line 422, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 #prev-page {
   left: -100%;
 }
 
 /* SECTIONS */
 /* HOME */
-/* line 431, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 #index-1 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
   text-align: center;
 }
 
-/* line 439, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 #index-2 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
   text-align: center;
 }
 
-/* line 447, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 #index-3 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -561,70 +274,70 @@ h1 {
 
 /* why-rainforest */
 /* about-the-kayapo */
-/* line 464, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 #about-the-kayapo-1 {
   background-color: #2a78a0;
 }
 
-/* line 468, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 #about-the-kayapo-2 {
   background-color: #2a78a0;
 }
 
-/* line 472, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 #about-the-kayapo-3 {
   background-color: #2a78a0;
 }
 
-/* line 476, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 #about-the-kayapo-4 {
   background-color: #2a78a0;
 }
 
 /* kayapo-proj */
-/* line 483, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 #kayapo-proj-1 {
   background-color: #5d8079;
 }
 
-/* line 487, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 #kayapo-proj-2 {
   background-color: #5d8079;
 }
 
-/* line 491, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 #kayapo-proj-modal-territory {
   background-color: #284646;
 }
 
-/* line 495, ../sass/screen.scss */
+/* line 236, ../sass/screen.scss */
 #kayapo-proj-modal-economy {
   background-color: #284646;
 }
 
-/* line 499, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
 #kayapo-proj-modal-institution {
   background-color: #284646;
 }
 
 /* kayapo-proj */
-/* line 506, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 #donate-1 {
   background-color: #e53827;
 }
-/* line 509, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 #donate-1 blockquote {
   font-family: "Verlag A", "Verlag B";
 }
 
 /* CUSTOM STYLES */
-/* line 518, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .hide {
   display: none;
 }
 
 /* Media Queries */
-/* line 523, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 .nav-animate {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
