@@ -29,6 +29,6 @@ GLOBAL.setUpIndex();
 
 
 $(window).load(function(){
-	GLOBAL.singleIndex();
+	// GLOBAL.singleIndex();
 
 });
