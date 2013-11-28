@@ -95,7 +95,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Variables */
 /* Global Classes */
-/* line 34, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 body, html {
   width: 100%;
   height: 100%;
@@ -106,21 +106,21 @@ body, html {
   color: #111111;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 body {
   position: absolute;
   left: 0;
   top: 0;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 section {
   min-height: 100%;
   width: 100%;
 }
 
 /* nav */
-/* line 57, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 nav {
   position: absolute;
   /* we need absolute as a fall back */
@@ -132,14 +132,16 @@ nav {
   background-color: #e53827;
   text-transform: uppercase;
 }
-/* line 67, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 nav a {
   color: #fff;
   display: inline-block;
-  width: 10%;
   text-decoration: none;
   font-family: "Verlag A", "Verlag B";
   font-weight: 700;
+}
+/* line 76, ../sass/screen.scss */
+nav li {
   display: inline-block;
   padding: 1em;
   text-decoration: none;
@@ -148,7 +150,7 @@ nav a {
   vertical-align: top;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 .home .background {
   background: no-repeat;
   background-position: center;
@@ -156,40 +158,40 @@ nav a {
 
 /* ` */
 /* other pages */
-/* line 97, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 #loading {
   display: none;
   left: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 102, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 #next-page {
   left: 0%;
 }
 
-/* line 106, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #prev-page {
   left: -100%;
 }
 
 /* SECTIONS */
 /* HOME */
-/* line 115, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 #index-1 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
   text-align: center;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 #index-2 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
   text-align: center;
 }
 
-/* line 131, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 #index-3 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -198,54 +200,75 @@ nav a {
 
 /* why-rainforest */
 /* about-the-kayapo */
-/* line 148, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 #about-the-kayapo-1 {
   background-color: #2a78a0;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 #about-the-kayapo-2 {
   background-color: #2a78a0;
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 #about-the-kayapo-3 {
   background-color: #2a78a0;
 }
 
-/* line 160, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #about-the-kayapo-4 {
   background-color: #2a78a0;
 }
 
 /* kayapo-proj */
-/* line 167, ../sass/screen.scss */
+/* line 165, ../sass/screen.scss */
 #kayapo-proj-1 {
   background-color: #5d8079;
+  color: #a2cd39;
+}
+/* line 169, ../sass/screen.scss */
+#kayapo-proj-1 blockquote {
+  font-size: 3em;
+  text-align: center;
+  font-weight: 700;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  padding: 0 0 1em 0;
+  font-family: "Verlag A", "Verlag B";
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 #kayapo-proj-2 {
   background-color: #5d8079;
+  color: #a2cd39;
+}
+/* line 184, ../sass/screen.scss */
+#kayapo-proj-2 h2 {
+  font-family: "Acropolis A", "Acropolis B";
+  font-style: italic;
+  font-size: 4em;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  text-align: center;
 }
 
-/* line 175, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 #kayapo-proj-modal-territory {
   background-color: #284646;
 }
 
-/* line 179, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 #kayapo-proj-modal-economy {
   background-color: #284646;
 }
 
-/* line 183, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 #kayapo-proj-modal-institution {
   background-color: #284646;
 }
 
 /* kayapo-proj */
-/* line 190, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 #donate-1 {
   font-family: "Verlag A", "Verlag B";
   background-color: #e53827;
@@ -253,7 +276,7 @@ nav a {
   padding: 2em 0 3em 0;
   text-align: center;
 }
-/* line 197, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 #donate-1 blockquote {
   font-size: 3em;
   color: #fff;
@@ -262,7 +285,7 @@ nav a {
   margin: 0 auto 0 auto;
   padding: 0 0 1em 0;
 }
-/* line 205, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 #donate-1 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -270,32 +293,51 @@ nav a {
   font-size: 2em;
   margin: 0.5em 0 0.2em 0;
 }
-/* line 212, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 #donate-1 p {
   font-size: 0.9em;
   padding: 0 0.5em 0 0.5em;
 }
-/* line 216, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 #donate-1 div {
   width: 15%;
   display: inline-block;
   vertical-align: top;
   text-align: left;
 }
-/* line 222, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 #donate-1 img {
   width: 100%;
   height: auto;
 }
 
 /* CUSTOM STYLES */
-/* line 231, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 .hide {
   display: none;
 }
 
+/* line 254, ../sass/screen.scss */
+.donation {
+  color: #000;
+  background-color: #fedf00;
+  text-align: center;
+  font-family: "Verlag A", "Verlag B";
+  font-weight: 700;
+  width: 400px;
+}
+/* line 264, ../sass/screen.scss */
+.donation a {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  border: #000 solid 3px;
+  font-size: 2em;
+  display: block;
+}
+
 /* Media Queries */
-/* line 236, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 .nav-animate {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;

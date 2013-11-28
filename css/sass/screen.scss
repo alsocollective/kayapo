@@ -14,7 +14,8 @@ $text_color_grey: #111;
 $normalBackground: #fff;
 
 $k-yellow: #fedf00;
-$k-green-bright: #4b873d;
+//$k-green-bright: #4b873d;
+$k-green-bright:#a2cd39;
 $k-green-dull: #5d8079;
 $k-green-dark: #284646;
 $k-red: #e53827;
@@ -67,21 +68,18 @@ nav{
 	a{
 		color: #fff;
 		display: inline-block;
-		width:10%;
 		text-decoration: none;
 		font-family: $verlag;
 		font-weight: 700;
-		
+	}
+	
+	li{
 		display: inline-block;
 		padding: 1em;
 		text-decoration: none;
 		font-weight: 400;
 		color: #fff;
 		vertical-align: top;
-	}
-	
-	li{
-		
 	}
 }
 
@@ -166,10 +164,31 @@ nav{
 
 #kayapo-proj-1{
 	background-color: $k-green-dull;
+	color: $k-green-bright;
+	
+	blockquote{
+		font-size: 3em;
+		text-align: center;
+		font-weight: 700;
+		width: 80%;
+		margin: 0 auto 0 auto;
+		padding: 0 0 1em 0;
+		font-family: $verlag;
+	}
 }
 
 #kayapo-proj-2{
 	background-color: $k-green-dull;
+	color: $k-green-bright;
+	
+	h2{
+		font-family: $acropolis;
+		font-style: italic;
+		font-size: 4em;
+		width: 100%;
+		margin: 0 auto 0 auto;
+		text-align: center;
+	}
 }
 
 #kayapo-proj-modal-territory{
@@ -230,6 +249,26 @@ nav{
 
 .hide {
 	display: none;
+}
+
+.donation{
+	color: #000;
+	background-color: $k-yellow;
+	text-align: center;
+	
+	font-family: $verlag;
+	font-weight: 700;
+	
+	width: 400px;
+
+	a{
+		text-decoration: none;
+		color:#000;
+		text-transform: uppercase;
+		border: #000 solid 3px;
+		font-size: 2em;
+		display: block;
+	}
 }
 
 /* Media Queries */
