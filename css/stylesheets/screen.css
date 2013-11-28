@@ -323,21 +323,55 @@ body {
 /* kayapo-proj */
 /* line 247, ../sass/screen.scss */
 #donate-1 {
-  background-color: #e53827;
-}
-/* line 250, ../sass/screen.scss */
-#donate-1 blockquote {
   font-family: "Verlag A", "Verlag B";
+  background-color: #e53827;
+  color: #fff;
+  padding: 2em 0 3em 0;
+  text-align: center;
+}
+/* line 254, ../sass/screen.scss */
+#donate-1 blockquote {
+  font-size: 3em;
+  color: #fff;
+  font-weight: 700;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  padding: 0 0 1em 0;
+}
+/* line 262, ../sass/screen.scss */
+#donate-1 h2 {
+  font-family: "Acropolis A", "Acropolis B";
+  font-style: italic;
+  text-align: center;
+  font-size: 2em;
+  margin: 0.5em 0 0.2em 0;
+}
+/* line 269, ../sass/screen.scss */
+#donate-1 p {
+  font-size: 0.9em;
+  padding: 0 0.5em 0 0.5em;
+}
+/* line 273, ../sass/screen.scss */
+#donate-1 div {
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+/* line 279, ../sass/screen.scss */
+#donate-1 img {
+  width: 100%;
+  height: auto;
 }
 
 /* CUSTOM STYLES */
-/* line 259, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 .hide {
   display: none;
 }
 
 /* Media Queries */
-/* line 264, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .nav-animate {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;

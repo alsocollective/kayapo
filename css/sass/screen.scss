@@ -245,11 +245,40 @@ body{
 /* kayapo-proj */
 
 #donate-1{
+	font-family: $verlag;
 	background-color: $k-red;
+	color: #fff;
+	padding: 2em 0 3em 0;
+	text-align: center;
 	
 	blockquote{
-		font-family: $verlag;
-		
+		font-size: 3em;
+		color: #fff;
+		font-weight: 700;
+		width: 80%;
+		margin: 0 auto 0 auto;
+		padding: 0 0 1em 0;
+	}
+	h2{
+		font-family: $acropolis;
+		font-style: italic;
+		text-align: center;
+		font-size: 2em;
+		margin: 0.5em 0 0.2em 0;
+	}
+	p{
+		font-size: 0.9em;
+		padding: 0 0.5em 0 0.5em;
+	}
+	div{
+		width:15%;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+	}
+	img{
+		width:100%;
+		height: auto;
 	}
 }
 
