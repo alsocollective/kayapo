@@ -23,22 +23,55 @@ var GLOBAL = {
 		el2.parentNode.removeChild(el2);
 	},
 	hotSpots:null,
+	hotSpotEl:null,
 	getHotSpots:function(){
-		var sections = $("section").children();
+		GLOBAL.hotSpotEl = $("section");
 		GLOBAL.hotSpots = [];
-		for(var a = 0, max = sections.length; a < max; a += 1){
-			GLOBAL.hotSpots.push(sections[a].offset().top);
+		for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
+			GLOBAL.hotSpots.push($(GLOBAL.hotSpotEl[a]).offset().top);
 		}
+	},
+	animating:false,
+	scrollEvent:function(){
+		if(GLOBAL.animating){
+			console.log("already animating");
+			return null;
+		}
+		var loc = $(window).scrollTop();
+		console.log(GLOBAL.findClosestElement(loc));
+		console.log(GLOBAL.hotSpotEl);
+		// $(GLOBAL.hotSpotEl[GLOBAL.findClosestElement(loc)]).scrollView();
+	},
+	findClosestElement:function(loc){
+		for(var a = 0, max = GLOBAL.hotSpots.length; a < max; a += 1){
+			if(loc > 0 && loc > GLOBAL.hotSpots[a] && loc < GLOBAL.hotSpots[a+1]){
+				return a;
+				break;
+			}
+		}
+		return 0;
 	}
-
 }
+
+
 GLOBAL.getAddress();
 GLOBAL.setUpIndex();
-GLOBAL.getHotSpots();
 
-
+$(window).scroll(GLOBAL.scrollEvent);
 
 $(window).load(function(){
+	GLOBAL.getHotSpots();
 	// GLOBAL.singleIndex();
 
 });
+
+$.fn.scrollView = function () {
+	return this.each(function () {
+		GLOBAL.animating = true;
+		$('html, body').animate({
+			scrollTop: $(this).offset().top
+		}, 1000,function(){
+			GLOBAL.animating = false;
+		});
+	});
+}
