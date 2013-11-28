@@ -13,6 +13,19 @@ $hover_button: #ca444e;
 $text_color_grey: #111;
 $normalBackground: #fff;
 
+$k-yellow: #fedf00;
+$k-green-bright: #4b873d;
+$k-green-dull: #5d8079;
+$k-green-dark: #284646;
+$k-red: #e53827;
+$k-blue-dark: #2a78a0;
+$k-blue-bright: #6ec4ee;
+
+
+/* Global Classes */
+$acropolis: 'Acropolis A', 'Acropolis B';
+$verlag: 'Verlag A', 'Verlag B';
+
 // example of how to use this break point thing...
 // @include breakpoint(huge) { background-color: #f00; }
 // @include breakpoint(tablet) { background-color: #0f0; }
@@ -397,19 +410,114 @@ img.absolute{
 
 
 /* other pages */
-	#loading{
-		display: none;
-		left:0;
-		background-color: rgba(255,255,255,0.5);
-	}
-	#next-page{
-		left:0%;
-		// background-color: #fff;
-	}
-	#prev-page{
-		left: -100%;
-	}
+#loading{
+	display: none;
+	left:0;
+	background-color: rgba(255,255,255,0.5);
+}
+#next-page{
+	left:0%;
+	// background-color: #fff;
+}
+#prev-page{
+	left: -100%;
+}
+	
 
+/* SECTIONS */
+
+/* HOME */
+#index-1{
+	blockquote{
+		font-family: $acropolis;
+		font-style: italic;
+		text-align: center;
+	}
+}
+
+#index-2{
+	blockquote{
+		font-family: $acropolis;
+		font-style: italic;
+		text-align: center;
+	}
+}
+
+#index-3{
+	blockquote{
+		font-family: $acropolis;
+		font-style: italic;
+		text-align: center;
+	}
+}
+
+
+/* why-rainforest */
+
+#why-rainforest-1{
+	
+}
+
+
+/* about-the-kayapo */
+
+#about-the-kayapo-1{
+	background-color: $k-blue-dark;
+}
+
+#about-the-kayapo-2{
+	background-color: $k-blue-dark;
+}
+
+#about-the-kayapo-3{
+	background-color: $k-blue-dark;
+}
+
+#about-the-kayapo-4{
+	background-color: $k-blue-dark;
+}
+
+
+/* kayapo-proj */
+
+#kayapo-proj-1{
+	background-color: $k-green-dull;
+}
+
+#kayapo-proj-2{
+	background-color: $k-green-dull;
+}
+
+#kayapo-proj-modal-territory{
+	background-color: $k-green-dark;
+}
+
+#kayapo-proj-modal-economy{
+	background-color: $k-green-dark;
+}
+
+#kayapo-proj-modal-institution{
+	background-color: $k-green-dark;
+}
+
+
+/* kayapo-proj */
+
+#donate-1{
+	background-color: $k-red;
+	
+	blockquote{
+		font-family: $verlag;
+		
+	}
+}
+
+
+/* CUSTOM STYLES */
+
+.hide {
+	display: none;
+}
 
 /* Media Queries */
 .nav-animate{
