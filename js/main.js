@@ -21,7 +21,8 @@ var GLOBAL = {
 		}
 		el1.parentNode.removeChild(el1);
 		el2.parentNode.removeChild(el2);
-	}
+	},
+
 }
 GLOBAL.getAddress();
 GLOBAL.setUpIndex();
