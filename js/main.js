@@ -22,10 +22,19 @@ var GLOBAL = {
 		el1.parentNode.removeChild(el1);
 		el2.parentNode.removeChild(el2);
 	},
+	hotSpots:null,
+	getHotSpots:function(){
+		var sections = $("section").children();
+		GLOBAL.hotSpots = [];
+		for(var a = 0, max = sections.length; a < max; a += 1){
+			GLOBAL.hotSpots.push(sections[a].offset().top);
+		}
+	}
 
 }
 GLOBAL.getAddress();
 GLOBAL.setUpIndex();
+GLOBAL.getHotSpots();
 
 
 
