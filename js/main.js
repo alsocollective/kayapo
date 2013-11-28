@@ -10,18 +10,17 @@ var GLOBAL = {
 	singleIndex:function(){
 		var el1,el2;
 		if(GLOBAL.indexNumber == 1){
-			el1 = "#index-2",
-			el2 = "#index-3";
+			el1 = document.getElementById("index-2"),
+			el2 = document.getElementById("index-3");
 		} else if(GLOBAL.indexNumber == 2){
-			el1 = "#index-1",
-			el2 = "#index-3";
+			el1 = document.getElementById("index-1"),
+			el2 = document.getElementById("index-3");
 		} else {
-			el1 = "#index-1",
-			el2 = "#index-2";
+			el1 = document.getElementById("index-1"),
+			el2 = document.getElementById("index-2");
 		}
-
-		$(el1).addClass('hide');
-		$(el1).addClass('hide');
+		el1.parentNode.removeChild(el1);
+		el2.parentNode.removeChild(el2);
 	}
 }
 GLOBAL.getAddress();
