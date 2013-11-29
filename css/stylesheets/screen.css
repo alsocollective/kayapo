@@ -462,15 +462,15 @@ nav ul {
 /* line 385, ../sass/screen.scss */
 #donate-1 {
   font-family: "Verlag A", "Verlag B";
-  background-color: #e53827;
-  color: #fff;
+  background-color: #fedf00;
+  color: #000;
   padding: 2em 0 3em 0;
   text-align: center;
 }
 /* line 392, ../sass/screen.scss */
 #donate-1 blockquote {
   font-size: 3em;
-  color: #fff;
+  color: #000;
   font-weight: 800;
   width: 80%;
   margin: 0 auto 0 auto;
@@ -498,8 +498,8 @@ nav ul {
 }
 /* line 417, ../sass/screen.scss */
 #donate-1 img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100px;
 }
 
 /* Why Rainforests */
