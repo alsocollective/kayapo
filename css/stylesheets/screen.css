@@ -707,8 +707,19 @@ nav ul {
   border-bottom: 2px solid #fff;
 }
 
+/* line 623, ../sass/screen.scss */
+.hidden {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -ms-opacity: 0;
+  -o-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /* For IE8 and earlier */
+}
+
 /* Media Queries */
-/* line 624, ../sass/screen.scss */
+/* line 629, ../sass/screen.scss */
 .nav-animate {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;

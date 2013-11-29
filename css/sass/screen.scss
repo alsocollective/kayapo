@@ -620,6 +620,11 @@ nav{
 	border-bottom: 2px solid #fff;
 }
 
+.hidden{
+	@include vendorize(opacity,0);
+	filter:alpha(opacity=0); /* For IE8 and earlier */	
+}
+
 /* Media Queries */
 .nav-animate{
 	@include vendorize(transition, all 0.5s);
