@@ -23,10 +23,10 @@
 <!-- unique Header stuff -->
 	<script type="text/javascript" src="/js/lib/modernizr.js"></script>
 	<script type="text/javascript" src="/js/lib/jquery.js"></script>
-	<!--<script type="text/javascript" src="/js/lib/j-tube.js"></script>-->
+	<script type="text/javascript" src="http://alsocollective.github.io/also-cdn/js/j-tube/j-tube.js"></script>
 
-<!-- Style Yo 
-	<script type="text/javascript" src="/js/main.js"></script>-->
+<!-- Style Yo -->
+	<script type="text/javascript" src="/js/main.js"></script>
 
 <!-- Style Yo -->
 	<link href="/css/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -141,48 +141,50 @@
 
 	<section id="why-rainforest-3" class="full-backgroundimage" style="background-image: url(/images/);">
 		<!-- fall back image for youtube video -->
-		<div id="youtube-rainforest">
+		<div id="youtube-container">
+			<div id="youtube-rainforest">
+		</div>
 			<!-- auto loop of 20 second video -->
 		</div>
 		<script type="text/javascript">
-			// var myPlayer = $("#youtube-rainforest").Jtube({
-			// 		// videoId:"RlCKrl1F-PI",
-			// 		skipvid:false,
-			// 		skipWhash:false,
-			// 		timeLeft:false,
-			// 		loop:1,
-			// 		autoplay:1,
-			// 		applyToContainer:true,
-			// 		vidHeight:"100%",
-			// 		vidWidth:"100%",
-			// 		volume:0,
-			// 		// debugMode:true,
-			// 		fallbackImage:"http://also-static.com/dotdotdash/uploads/bk-vid-img.png",
-			// 		onStart:function(settings){
-			// 			if(settings.debugMode){
-			// 				console.log("start");
-			// 			}
-			// 			$(settings.player.a).css({"display":"inline-block"})
-			// 			// $(settings.player.a).fadeIn('fast');
-			// 			return null;
-			// 		},
-			// 		onPause:function(settings){
-			// 			if(settings.debugMode){
-			// 				console.log("pause");
-			// 			}
-			// 			$(settings.player.a).css({"display":"none"})
-			// 			// $(settings.player.a).fadeOut('fast');
-			// 			return null;
-			// 		}
-			// 	});
-			// function onYouTubeIframeAPIReady() {
-			// 	myPlayer.setupPlayer();
-			// }
+			var myPlayer = $("#youtube-rainforest").Jtube({
+					videoId:"DInaJRfbWbQ",
+					skipvid:false,
+					skipWhash:false,
+					timeLeft:false,
+					loop:1,
+					autoplay:1,
+					applyToContainer:true,
+					vidHeight:"100%",
+					vidWidth:"100%",
+					volume:0,
+					// debugMode:true,
+					fallbackImage:"/assets/images/bg_why1.jpg",
+					onStart:function(settings){
+						if(settings.debugMode){
+							console.log("start");
+						}
+						$(settings.player.a).css({"display":"inline-block"})
+						// $(settings.player.a).fadeIn('fast');
+						return null;
+					},
+					onPause:function(settings){
+						if(settings.debugMode){
+							console.log("pause");
+						}
+						$(settings.player.a).css({"display":"none"})
+						// $(settings.player.a).fadeOut('fast');
+						return null;
+					}
+				});
+			function onYouTubeIframeAPIReady() {
+				myPlayer.setupPlayer();
+			}
 		</script>
 		<h2>Why Rainforests Matter?</h2>
-		
+
 		<div id="slides" class="full-backgroundimage">
-			<div id="animals" class="full-backgroundimage simple-animated" style="background-image: url(assets/images/bg_why1.jpg);">
+			<div id="animals" class="full-backgroundimage hidden simple-animated" style="background-image: url(assets/images/bg_why1.jpg);">
 				<blockquote>Once lost, it is gone forever.</blockquote>
 			</div>
 			<div id="climate" class="full-backgroundimage hidden simple-animated" style="background-image: url(assets/images/bg_why2.jpg);">
@@ -248,6 +250,41 @@
 			<img id="play-button" src="#play">
 			<p>watch</p>
 		</div>
+		<script type="text/javascript">
+			var myPlayer = $("#youtube-rainforest").Jtube({
+					videoId:"DInaJRfbWbQ",
+					skipvid:false,
+					skipWhash:false,
+					timeLeft:false,
+					loop:1,
+					autoplay:1,
+					applyToContainer:true,
+					vidHeight:"100%",
+					vidWidth:"100%",
+					volume:0,
+					// debugMode:true,
+					fallbackImage:"/assets/images/bg_why1.jpg",
+					onStart:function(settings){
+						if(settings.debugMode){
+							console.log("start");
+						}
+						$(settings.player.a).css({"display":"inline-block"})
+						// $(settings.player.a).fadeIn('fast');
+						return null;
+					},
+					onPause:function(settings){
+						if(settings.debugMode){
+							console.log("pause");
+						}
+						$(settings.player.a).css({"display":"none"})
+						// $(settings.player.a).fadeOut('fast');
+						return null;
+					}
+				});
+			function onYouTubeIframeAPIReady() {
+				myPlayer.setupPlayer();
+			}
+		</script>		
 	</section>
 
 	<section id="the-threat-1" class="full-backgroundimage" style="background-image: url(assets/images/ss-08.png);">

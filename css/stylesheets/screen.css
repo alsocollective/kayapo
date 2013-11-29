@@ -1,44 +1,14 @@
-#the-threat-1{
-  position: relative;
+
+#why-rainforest-3{
+  height: 100%;
   overflow: hidden;
-  height: 100%;
 }
-
-#the-threat-1 .map{
-  height: 100%;
-  width: 100%;
-}
-
-#button-container{
-  width: 100%;
-  text-align: center;
+#youtube-vid{
+  min-width: 100%;
+  min-height: 100%;
   position: absolute;
-  bottom: 5em;
-}
-
-#button-container a{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #fc0;
-}
-
-#button-container .jpg-slide-selected{
-  background-color: #0ff;
-}
-
-#jpg-slide-play{
-  width: 30px;
-  height: 30px;
-  background-color: #f00;
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 5em;
-}
-
-.jpg-slide-hidden{
-  display: none;
+  left: 0;
+  top: 0;
 }
 
 /* Welcome to Compass.
