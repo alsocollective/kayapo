@@ -115,24 +115,41 @@ nav{
 
 /* HOME */
 #index-1{
+	font-family: $verlag;
+	
 	blockquote{
-		font-family: $acropolis;
-		font-style: italic;
+		font-weight: 800;
+		font-size: 2.5em;
+		padding: 0 0 2% 0;
+		width: 60%;
+		margin: 0 auto 0 auto;
+		text-align: center;
+	}
+	h2{
+		text-transform: uppercase;
+		font-size: 2.5em;
+		font-weight: 800;
+		padding: 10% 0 0 0;
 		text-align: center;
 	}
 }
 
 #index-2{
+	font-family: $verlag;
 	blockquote{
 		font-family: $acropolis;
+		font-size: 4em;
 		font-style: italic;
 		text-align: center;
 	}
 }
 
 #index-3{
+	font-family: $verlag;
+
 	blockquote{
 		font-family: $acropolis;
+		font-size: 4em;
 		font-style: italic;
 		text-align: center;
 	}
@@ -169,11 +186,11 @@ nav{
 	color: #fff;
 	
 	blockquote{
-		color: #fff;
+		color: #000;
 		font-family: $verlag;
 		font-weight: 800;
-		font-size:4em;
-		width: 100%;
+		font-size:3em;
+		width: 50%;
 	}
 }
 
@@ -431,6 +448,13 @@ nav{
 		font-style: italic;
 		font-size: 4em;
 	}
+	#sponsors{
+		img{
+			width: 250px;
+			vertical-align: middle;
+			margin-top: 5%;
+		}
+	}
 }
 
 #contact-footer{
@@ -458,6 +482,7 @@ nav{
 #the-threat-2{
 	vertical-align: middle;
 	text-align: center;
+	background-color: #000;
 	
 	blockquote{
 		font-family: $verlag;
@@ -471,15 +496,21 @@ nav{
 }
 
 #the-threat-3{
+	background-color: #000;
 	text-align: center;
 	blockquote{
-		font-family: $acropolis;
-		font-style: italic;
+		font-family: $verlag;
+		font-weight: 800;
 		font-size: 3em;
+		margin: 0 auto 0 auto;
+		width: 50%;
+		color: #fff;
+		padding-top: 20%;
 	}
 }
 
 #the-threat-4{
+	background-color: #000;
 	text-align: center;
 	
 	div{
@@ -608,22 +639,60 @@ nav{
 #home-banner{
 	bottom: 0;
 	position: absolute;
+	width:100%;
+	color: #fff;
 	div{
 		width: 50%;
 		display: inline-block;
-		background-color: $k-yellow;
-		height: 200px;
+		background-color: #000;
+		height: 100px;
 		vertical-align: top;
+		font-weight: 800;
 	}
+	strong{
+		border-bottom: 2px solid #000;
+		background-color: $k-green-bright;
+		display: block;
+		padding: 0.4em 0 0.3em 0;
+		text-transform: uppercase;
+		font-size: 0.75em;
+	}
+	small{
+		background-color: $k-green-bright;
+		font-weight: 400;
+		font-size: 0.8em;
+		display: block;
+		padding: 0.1em 0 1.5em 0;
+		margin: 0 0 0.7em 0;
+	}
+	a{
+		text-decoration: none;
+		color: #000;
+		text-transform: uppercase;
+		font-size: 0.75em;
+	}
+}
+
+#home-banner > div:nth-child(2){
+	background-color: $k-yellow;
+	color:#000;
+	text-align: center;
 }
 
 #slides{
 	position: absolute;
 	height: 100%;
 	top:0;
+	width: 100%;
 	
 	div{
 		height: 100%;
+		position:absolute;
+		width: 100%;
+		top: 0;
+		
+		@include vendorize(opacity,1);
+		filter:alpha(opacity=100); /* For IE8 and earlier */
 	}
 }
 
@@ -636,8 +705,8 @@ nav{
 }
 
 .hidden{
-	@include vendorize(opacity,0);
-	filter:alpha(opacity=0); /* For IE8 and earlier */
+	@include vendorize(opacity,0 !important);
+	filter:alpha(opacity=0) !important; /* For IE8 and earlier */
 }
 
 /* Media Queries */
