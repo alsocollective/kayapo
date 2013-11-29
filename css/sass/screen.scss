@@ -208,6 +208,14 @@ nav{
 #about-the-kayapo-5{
 	
 	background-color: $k-blue-dark;
+	
+	h2 {
+		font-family: $acropolis;
+		color: #fff;
+		font-size: 6em;
+		font-style: italic;
+		text-align: center;
+	}
 }
 
 
@@ -233,6 +241,7 @@ nav{
 	color: $k-green-bright;
 	
 	font-family: $verlag;
+	position: relative;
 	
 	h2{
 		font-family: $acropolis;
@@ -245,7 +254,7 @@ nav{
 	
 	#funds-divs{
 		text-align: center;
-		
+		;
 		background-repeat: no-repeat;
 		background-position: top center;
 		//background-size: 100%;
@@ -271,6 +280,14 @@ nav{
 
 #kayapo-proj-modal-territory{
 	background-color: $k-green-dark;
+	position: absolute;
+	bottom:0;
+	height: 300px;
+	
+	h4{
+		color: #fff;
+		text-weight: 700;
+	}
 }
 
 #kayapo-proj-modal-economy{
