@@ -138,7 +138,7 @@ nav a {
   display: inline-block;
   text-decoration: none;
   font-family: "Verlag A", "Verlag B";
-  font-weight: 700;
+  font-weight: 800;
   padding: 1em 1% 1em 1%;
 }
 /* line 77, ../sass/screen.scss */
@@ -206,10 +206,11 @@ nav ul {
 /* why-rainforest */
 /* line 144, ../sass/screen.scss */
 #why-rainforest-1 {
+  color: #fff;
   text-align: center;
   color: #fff;
 }
-/* line 149, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 #why-rainforest-1 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-weight: 700;
@@ -218,60 +219,64 @@ nav ul {
   width: 80%;
   margin: 0 auto 0 auto;
 }
-/* line 158, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 #why-rainforest-1 small {
   font-family: "Verlag A", "Verlag B";
-  font-weight: 700;
+  font-weight: 800;
   font-size: 2em;
 }
 
-/* line 166, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
+#why-rainforest-2 {
+  color: #fff;
+}
+/* line 171, ../sass/screen.scss */
 #why-rainforest-2 blockquote {
   color: #fff;
   font-family: "Verlag A", "Verlag B";
-  font-weight: 700;
+  font-weight: 800;
   font-size: 4em;
   width: 100%;
 }
 
 /* about-the-kayapo */
-/* line 178, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 #about-the-kayapo-1 {
   background-color: #2a78a0;
 }
 
-/* line 182, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 #about-the-kayapo-2 {
   background-color: #2a78a0;
 }
 
-/* line 186, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 #about-the-kayapo-3 {
   background-color: #2a78a0;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 #about-the-kayapo-4 {
   background-color: #2a78a0;
   color: #fff;
   text-align: center;
 }
-/* line 197, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 #about-the-kayapo-4 h2 {
   font-family: "Verlag A", "Verlag B";
-  font-weight: 700;
+  font-weight: 800;
   font-size: 3em;
 }
-/* line 203, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 #about-the-kayapo-4 img {
   width: 600px;
 }
 
-/* line 208, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 #about-the-kayapo-5 {
   background-color: #2a78a0;
 }
-/* line 212, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 #about-the-kayapo-5 h2 {
   font-family: "Acropolis A", "Acropolis B";
   color: #fff;
@@ -281,30 +286,30 @@ nav ul {
 }
 
 /* kayapo-proj */
-/* line 224, ../sass/screen.scss */
+/* line 229, ../sass/screen.scss */
 #kayapo-proj-1 {
   background-color: #5d8079;
   color: #a2cd39;
 }
-/* line 228, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 #kayapo-proj-1 blockquote {
   font-size: 3em;
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
   width: 80%;
   margin: 0 auto 0 auto;
   padding: 0 0 1em 0;
   font-family: "Verlag A", "Verlag B";
 }
 
-/* line 239, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 #kayapo-proj-2 {
   background-color: #5d8079;
   color: #a2cd39;
   font-family: "Verlag A", "Verlag B";
   position: relative;
 }
-/* line 246, ../sass/screen.scss */
+/* line 251, ../sass/screen.scss */
 #kayapo-proj-2 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -313,7 +318,7 @@ nav ul {
   margin: 0 auto 0 auto;
   text-align: center;
 }
-/* line 255, ../sass/screen.scss */
+/* line 260, ../sass/screen.scss */
 #kayapo-proj-2 #funds-divs {
   text-align: center;
   background-repeat: no-repeat;
@@ -322,15 +327,15 @@ nav ul {
   width: 60%;
   margin: 3em auto 0 auto;
 }
-/* line 265, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 #kayapo-proj-2 #funds-divs div {
   width: 33%;
   display: inline-block;
   vertical-align: top;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-/* line 274, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 #kayapo-proj-2 > p:first-of-type {
   font-size: 1.5em;
   width: 70%;
@@ -338,31 +343,49 @@ nav ul {
   text-align: center;
 }
 
-/* line 281, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 #kayapo-proj-modal-territory {
-  background-color: #284646;
   position: absolute;
   bottom: 0;
   height: 300px;
 }
-/* line 287, ../sass/screen.scss */
-#kayapo-proj-modal-territory h4 {
+
+/* line 292, ../sass/screen.scss */
+.kayapo-proj-modal {
+  background-color: #284646;
+}
+/* line 294, ../sass/screen.scss */
+.kayapo-proj-modal h4 {
   color: #fff;
-  text-weight: 700;
+  font-weight: 800;
+}
+/* line 298, ../sass/screen.scss */
+.kayapo-proj-modal div {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 303, ../sass/screen.scss */
+.kayapo-proj-modal #proj-icon-1 {
+  width: 20px;
+}
+/* line 306, ../sass/screen.scss */
+.kayapo-proj-modal p {
+  font-size: 0.8em;
 }
 
-/* line 293, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 #kayapo-proj-modal-economy {
   background-color: #284646;
 }
 
-/* line 297, ../sass/screen.scss */
+/* line 315, ../sass/screen.scss */
 #kayapo-proj-modal-institution {
   background-color: #284646;
 }
 
 /* kayapo-proj */
-/* line 304, ../sass/screen.scss */
+/* line 322, ../sass/screen.scss */
 #donate-1 {
   font-family: "Verlag A", "Verlag B";
   background-color: #e53827;
@@ -370,16 +393,16 @@ nav ul {
   padding: 2em 0 3em 0;
   text-align: center;
 }
-/* line 311, ../sass/screen.scss */
+/* line 329, ../sass/screen.scss */
 #donate-1 blockquote {
   font-size: 3em;
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   width: 80%;
   margin: 0 auto 0 auto;
   padding: 0 0 1em 0;
 }
-/* line 319, ../sass/screen.scss */
+/* line 337, ../sass/screen.scss */
 #donate-1 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -387,31 +410,62 @@ nav ul {
   font-size: 2em;
   margin: 0.5em 0 0.2em 0;
 }
-/* line 326, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 #donate-1 p {
   font-size: 0.9em;
   padding: 0 0.5em 0 0.5em;
 }
-/* line 330, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 #donate-1 div {
   width: 15%;
   display: inline-block;
   vertical-align: top;
   text-align: left;
 }
-/* line 336, ../sass/screen.scss */
+/* line 354, ../sass/screen.scss */
 #donate-1 img {
   width: 100%;
   height: auto;
 }
 
-/* line 342, ../sass/screen.scss */
+/* Why Rainforests */
+/* line 363, ../sass/screen.scss */
+#why-rainforest-3 {
+  color: #fff;
+}
+/* line 367, ../sass/screen.scss */
+#why-rainforest-3 ul {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+/* line 372, ../sass/screen.scss */
+#why-rainforest-3 li {
+  display: inline-block;
+}
+/* line 376, ../sass/screen.scss */
+#why-rainforest-3 h2 {
+  font-family: "Acropolis A", "Acropolis B";
+  font-weight: 700;
+  font-style: italic;
+  font-size: 4em;
+  text-align: center;
+}
+/* line 384, ../sass/screen.scss */
+#why-rainforest-3 blockquote {
+  font-family: "Verlag A", "Verlag B";
+  font-weight: 800;
+  font-size: 4em;
+  text-align: center;
+}
+
+/* line 392, ../sass/screen.scss */
 #contact {
   text-align: center;
   background-color: #fedf00;
   position: relative;
 }
-/* line 348, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 #contact h2 {
   font-family: "Acropolis A", "Acropolis B";
   color: #fedf00;
@@ -419,7 +473,7 @@ nav ul {
   font-size: 4em;
 }
 
-/* line 356, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 #contact-footer {
   background-color: #5d8079;
   position: absolute;
@@ -428,11 +482,11 @@ nav ul {
   width: 100%;
 }
 
-/* line 365, ../sass/screen.scss */
+/* line 415, ../sass/screen.scss */
 #donate-2 {
   background-color: #fedf00;
 }
-/* line 367, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 #donate-2 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-size: 4em;
@@ -440,63 +494,83 @@ nav ul {
   color: #fedf00;
 }
 
-/* line 378, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 #the-threat-2 {
-  vertical-align: bottom;
+  vertical-align: middle;
+  text-align: center;
 }
-/* line 380, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 #the-threat-2 blockquote {
   font-family: "Verlag A", "Verlag B";
-  font-size: 4em;
-  color: #000;
-  font-weight: 700;
+  font-size: 3em;
+  color: #fff;
+  font-weight: 800;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  text-shadow: 1px 1px 10px #000;
 }
 
-/* line 388, ../sass/screen.scss */
+/* line 443, ../sass/screen.scss */
 #the-threat-3 {
   text-align: center;
 }
-/* line 390, ../sass/screen.scss */
+/* line 445, ../sass/screen.scss */
 #the-threat-3 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
   font-size: 3em;
 }
 
-/* line 398, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
+#the-threat-4 {
+  text-align: center;
+}
+/* line 455, ../sass/screen.scss */
+#the-threat-4 div {
+  width: 50%;
+  display: inline-block;
+}
+/* line 460, ../sass/screen.scss */
+#the-threat-4 blockquote {
+  font-family: "Acropolis A", "Acropolis B";
+  font-style: italic;
+  font-size: 3em;
+}
+
+/* line 468, ../sass/screen.scss */
 #about-the-kayapo-3 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
   font-size: 3em;
 }
-/* line 403, ../sass/screen.scss */
+/* line 473, ../sass/screen.scss */
 #about-the-kayapo-3 h3 {
   font-family: "Verlag A", "Verlag B";
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1em;
   color: #fedf00;
 }
-/* line 409, ../sass/screen.scss */
+/* line 479, ../sass/screen.scss */
 #about-the-kayapo-3 p {
   color: #fff;
 }
 
-/* line 416, ../sass/screen.scss */
+/* line 486, ../sass/screen.scss */
 #text-top-left {
   width: 30%;
   color: #fedf00;
   display: inline-block;
   vertical-align: top;
 }
-/* line 422, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 #text-top-left p {
   font-family: "Verlag A", "Verlag B";
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1em;
   color: #fff;
 }
 
-/* line 430, ../sass/screen.scss */
+/* line 500, ../sass/screen.scss */
 #text-top-right {
   display: inline-block;
   margin: 0;
@@ -505,7 +579,7 @@ nav ul {
 }
 
 /* CUSTOM STYLES */
-/* line 439, ../sass/screen.scss */
+/* line 509, ../sass/screen.scss */
 #one-time {
   width: 50%;
   height: 100%;
@@ -516,17 +590,17 @@ nav ul {
   opacity: 0.6;
 }
 
-/* line 449, ../sass/screen.scss */
+/* line 519, ../sass/screen.scss */
 #one-time:hover {
   opacity: 1;
 }
 
-/* line 453, ../sass/screen.scss */
+/* line 523, ../sass/screen.scss */
 #monthly:hover {
   opacity: 1;
 }
 
-/* line 457, ../sass/screen.scss */
+/* line 527, ../sass/screen.scss */
 #monthly {
   width: 50%;
   height: 100%;
@@ -537,12 +611,12 @@ nav ul {
   opacity: 0.6;
 }
 
-/* line 467, ../sass/screen.scss */
+/* line 537, ../sass/screen.scss */
 .hide {
   display: none;
 }
 
-/* line 471, ../sass/screen.scss */
+/* line 541, ../sass/screen.scss */
 .donation {
   color: #000;
   background-color: #fedf00;
@@ -550,10 +624,10 @@ nav ul {
   padding: 6px;
   margin: 0 auto 0 auto;
   font-family: "Verlag A", "Verlag B";
-  font-weight: 700;
+  font-weight: 800;
   width: 400px;
 }
-/* line 484, ../sass/screen.scss */
+/* line 554, ../sass/screen.scss */
 .donation a {
   text-decoration: none;
   color: #000;
@@ -564,8 +638,43 @@ nav ul {
   padding: 0.2em;
 }
 
+/* line 565, ../sass/screen.scss */
+.text-shadow {
+  text-shadow: 1px 1px 10px #000;
+}
+
+/* line 569, ../sass/screen.scss */
+.underlined {
+  border-bottom: 6px solid #fff;
+}
+
+/* line 573, ../sass/screen.scss */
+.full-backgroundimage {
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 578, ../sass/screen.scss */
+#home-banner {
+  bottom: 0;
+}
+/* line 580, ../sass/screen.scss */
+#home-banner div {
+  width: 50%;
+  display: inline-block;
+  background-color: #fedf00;
+  height: 200px;
+  vertical-align: top;
+  position: absolute;
+}
+
+/* line 590, ../sass/screen.scss */
+.home-class {
+  position: relative;
+}
+
 /* Media Queries */
-/* line 496, ../sass/screen.scss */
+/* line 595, ../sass/screen.scss */
 .nav-animate {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
