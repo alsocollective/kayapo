@@ -33,7 +33,7 @@ var GLOBAL = {
 		// }
 	},
 	removeHeighLight:function(){
-		$('highlight-nav').removeClass('highlight-nav');
+		$('.highlight-nav').removeClass('highlight-nav');
 	},
 	setUpNav:function(){
 		$(".main-nav-button").click(function(event){
@@ -132,15 +132,21 @@ var GLOBAL = {
 		}
 	},
 	setUpWhyNav:function(){
-		$("why-sub-nav").click(function(event){
+		$(".why-sub-nav").click(function(event){
 			event.preventDefault();
-			var string = this.id.split("-nav")[0]+"-1";
-			for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
-				if(GLOBAL.hotSpotEl[a].id === string){
-					GLOBAL.animateTo(a);
-					break
-				}
-			}
+			var string = this.id.split("-nav")[0];
+			var element = $("#why-rainforest-3 #"+string)[0];
+			var otherElements = $("#why-rainforest-3 #slides div");
+			console.log(otherElements);
+			otherElements.addClass('hidden');
+			$(element).removeClass('hidden');
+
+			// for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
+			// 	if(GLOBAL.hotSpotEl[a].id === string){
+			// 		GLOBAL.animateTo(a);
+			// 		break
+			// 	}
+			// }
 			return false;
 		})
 	}
@@ -164,5 +170,6 @@ $(window).load(function(){
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
 	GLOBAL.setUpNav();
+	GLOBAL.setUpWhyNav();
 
 });
