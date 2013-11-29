@@ -32,10 +32,15 @@ var GLOBAL = {
 		// 	$("body").children()[1].style.paddingTop = GLOBAL.navHeight;
 		// }
 	},
+	removeHeighLight:function(){
+		$('highlight-nav').removeClass('highlight-nav');
+	},
 	setUpNav:function(){
 		$(".main-nav-button").click(function(event){
 			event.preventDefault();
 			var string = this.id.split("-nav")[0]
+			GLOBAL.removeHeighLight();
+			$(this.parentNode).addClass('highlight-nav');
 			if(string === "index"){
 				string = string+"-"+GLOBAL.indexNumber;
 			} else {
@@ -49,6 +54,16 @@ var GLOBAL = {
 			}
 			return false;
 		})
+	},
+	highLightNavOnScroll:function(idin){
+		var idin = idin.split("-");
+		var realId = idin[0];
+		for(var a =1, max = idin.length; a < max-1; a +=1){
+			realId+="-"+idin[a];
+		}
+		realId+="-nav";
+		GLOBAL.removeHeighLight();
+		$("#"+realId).addClass('highlight-nav');
 	},
 	hotSpots:null,
 	hotSpotEl:null,
@@ -66,13 +81,13 @@ var GLOBAL = {
 	scrollEvent:function(event){
 		event.preventDefault();
 		if(GLOBAL.animating){
-			console.log("already animating");
 			return false;
 		}
 		var loc = $(window).scrollTop();
 		var newLoc = GLOBAL.findClosestElement(loc);
 
 		if(GLOBAL.current != newLoc && !GLOBAL.animating && newLoc!== null){
+			GLOBAL.highLightNavOnScroll(GLOBAL.hotSpotEl[newLoc].id);
 			GLOBAL.animateTo(newLoc);
 		}
 		GLOBAL.preScroll = loc;
@@ -91,15 +106,13 @@ var GLOBAL = {
 		for(var a = 0, max = GLOBAL.hotSpots.length; a < max; ++a){
 			if(loc > GLOBAL.hotSpots[a]-150-GLOBAL.navHeight && loc < GLOBAL.hotSpots[a]-1-GLOBAL.navHeight){
 				if(GLOBAL.preScroll-loc>0){
-					console.log("up");
-					console.log(a-1);
+					// console.log("up");
 					return a-1;
 				}
 			}
 			if(loc < GLOBAL.hotSpots[a]+150-GLOBAL.navHeight && loc > GLOBAL.hotSpots[a]-GLOBAL.navHeight){
 				if(GLOBAL.preScroll-loc<0){
-					console.log("down")
-					console.log(a+1);
+					// console.log("down")
 					if(a == 0){
 						return 2;
 					}
@@ -117,10 +130,23 @@ var GLOBAL = {
 			event.preventDefault();
 			return false;
 		}
+	},
+	setUpWhyNav:function(){
+		$("why-sub-nav").click(function(event){
+			event.preventDefault();
+			var string = this.id.split("-nav")[0]+"-1";
+			for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
+				if(GLOBAL.hotSpotEl[a].id === string){
+					GLOBAL.animateTo(a);
+					break
+				}
+			}
+			return false;
+		})
 	}
 }
 
-
+console.log("loading script");
 GLOBAL.getAddress();
 GLOBAL.setUpIndex();
 
