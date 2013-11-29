@@ -71,15 +71,20 @@ nav{
 		text-decoration: none;
 		font-family: $verlag;
 		font-weight: 700;
+		padding: 1em 1% 1em 1%;
 	}
 	
 	li{
 		display: inline-block;
-		padding: 1em;
+		//width: 20%;
 		text-decoration: none;
 		font-weight: 400;
 		color: #fff;
 		vertical-align: top;
+	}
+	ul{
+		white-space: nowrap;
+		width: 100%;
 	}
 }
 
@@ -321,6 +326,7 @@ nav{
 	
 	text-align: center;
 	background-color: $k-yellow;
+	position: relative;
 	
 	h2{
 		font-family: $acropolis;
@@ -332,6 +338,11 @@ nav{
 
 #contact-footer{
 	background-color: $k-green-dull;
+	
+	position: absolute;
+	bottom: 0;
+	height: 350px;
+	width: 100%;
 }
 
 #donate-2{
