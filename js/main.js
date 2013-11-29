@@ -49,22 +49,25 @@ var GLOBAL = {
 		event.preventDefault();
 		if(GLOBAL.animating){
 			console.log("already animating");
-			return null;
+			return false;
 		}
 		var loc = $(window).scrollTop();
 		var newLoc = GLOBAL.findClosestElement(loc);
 
 		if(GLOBAL.current != newLoc && !GLOBAL.animating && newLoc!== null){
-			GLOBAL.animating = true;
-			$('html, body').stop().animate({
-				scrollTop: (GLOBAL.hotSpots[newLoc]-GLOBAL.navHeight)
-			}, 1000,function(){
-				GLOBAL.animating = false;
-			});
-			GLOBAL.current = newLoc;
+			GLOBAL.animateTo(newLoc);
 		}
 		GLOBAL.preScroll = loc;
 		return false;
+	},
+	animateTo:function(location){
+		GLOBAL.animating = true;
+		$('html, body').stop().animate({
+			scrollTop: (GLOBAL.hotSpots[location]-GLOBAL.navHeight)
+		}, 1000,function(){
+			GLOBAL.animating = false;
+		});
+		GLOBAL.current = location;
 	},
 	findClosestElement:function(loc){
 		for(var a = 0, max = GLOBAL.hotSpots.length; a < max; ++a){
@@ -91,6 +94,12 @@ var GLOBAL = {
 
 		}
 		return null;
+	},
+	stopForAnimationEvent:function(event){
+		if(GLOBAL.animating){
+			event.preventDefault();
+			return false;
+		}
 	}
 }
 
@@ -98,7 +107,9 @@ var GLOBAL = {
 GLOBAL.getAddress();
 GLOBAL.setUpIndex();
 
-$(window).scroll(GLOBAL.scrollEvent);
+$(window).on( "scroll",GLOBAL.scrollEvent);
+$(window).bind('mousewheel',GLOBAL.stopForAnimationEvent);
+$(window).bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
 
 $(window).on("resize",function(){
 	GLOBAL.getNavHeight();
