@@ -25,6 +25,11 @@ var GLOBAL = {
 	navHeight:0,
 	getNavHeight:function(){
 		GLOBAL.navHeight = $("nav").outerHeight();
+		// if(GLOBAL.hotSpotEl){
+		// 	GLOBAL.hotSpotEl[0].style.paddingTop = GLOBAL.navHeight;
+		// } else {
+		// 	$("body").children()[1].style.paddingTop = GLOBAL.navHeight;
+		// }
 	},
 	hotSpots:null,
 	hotSpotEl:null,
@@ -59,6 +64,7 @@ var GLOBAL = {
 			GLOBAL.current = newLoc;
 		}
 		GLOBAL.preScroll = loc;
+		return false;
 	},
 	findClosestElement:function(loc){
 		for(var a = 0, max = GLOBAL.hotSpots.length; a < max; ++a){
@@ -94,9 +100,14 @@ GLOBAL.setUpIndex();
 
 $(window).scroll(GLOBAL.scrollEvent);
 
-$(window).load(function(){
+$(window).on("resize",function(){
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
+});
+
+$(window).load(function(){
 	// GLOBAL.singleIndex();
+	GLOBAL.getNavHeight();
+	GLOBAL.getHotSpots();
 
 });
