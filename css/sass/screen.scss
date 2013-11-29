@@ -138,6 +138,33 @@ nav{
 
 #why-rainforest-1{
 	
+	text-align: center;
+	color: #fff;
+	
+	blockquote{
+		font-family: $acropolis;
+		font-weight: 700;
+		font-style:italic;
+		font-size:5em;
+		width: 80%;
+		margin: 0 auto 0 auto;
+	}
+	
+	small{
+		font-family: $verlag;
+		font-weight: 700;
+		font-size: 2em;
+	}
+}
+
+#why-rainforest-2{
+	blockquote{
+		color: #fff;
+		font-family: $verlag;
+		font-weight: 700;
+		font-size:4em;
+		width: 100%;
+	}
 }
 
 
@@ -156,6 +183,25 @@ nav{
 }
 
 #about-the-kayapo-4{
+	background-color: $k-blue-dark;
+	
+	color: #fff;
+	
+	text-align: center;
+	
+	h2{
+		font-family: $verlag;
+		font-weight: 700;
+		font-size: 3em;		
+	}
+	
+	img{
+		width:600px;
+	}
+}
+
+#about-the-kayapo-5{
+	
 	background-color: $k-blue-dark;
 }
 
@@ -181,6 +227,8 @@ nav{
 	background-color: $k-green-dull;
 	color: $k-green-bright;
 	
+	font-family: $verlag;
+	
 	h2{
 		font-family: $acropolis;
 		font-style: italic;
@@ -189,6 +237,31 @@ nav{
 		margin: 0 auto 0 auto;
 		text-align: center;
 	}
+	
+	#funds-divs{
+		text-align: center;
+		
+		background-repeat: no-repeat;
+		background-position: top center;
+		//background-size: 100%;
+		padding: 7em 0 0 0;
+		width: 60%;
+		margin: 3em auto 0 auto;
+		
+		div{
+			width: 33%;
+			display: inline-block;
+			vertical-align: top;
+			font-weight: 700;
+		}
+	}
+}
+
+#kayapo-proj-2 > p:first-of-type{
+	font-size: 1.5em;
+	width: 70%;
+	margin: 1em auto 0 auto;
+	text-align: center;
 }
 
 #kayapo-proj-modal-territory{
@@ -244,8 +317,124 @@ nav{
 	}
 }
 
+#contact{
+	
+	text-align: center;
+	background-color: $k-yellow;
+	
+	h2{
+		font-family: $acropolis;
+		color: $k-yellow;
+		font-style: italic;
+		font-size: 4em;
+	}
+}
+
+#contact-footer{
+	background-color: $k-green-dull;
+}
+
+#donate-2{
+	
+	h2{
+		font-family: $acropolis;
+		font-size: 4em;
+		font-style: italic;
+		color: $k-yellow;
+	}
+	
+	background-color: $k-yellow;
+	
+}
+
+#the-threat-2{
+	vertical-align: bottom;
+	blockquote{
+		font-family: $verlag;
+		font-size: 4em;
+		color: #000;
+		font-weight: 700;
+	}
+}
+
+#the-threat-3{
+	text-align: center;
+	blockquote{
+		font-family: $acropolis;
+		font-style: italic;
+		font-size: 3em;
+	}
+}
+
+#about-the-kayapo-3{
+	h2{
+		font-family:$acropolis;
+		font-style: italic;
+		font-size: 3em;
+	}
+	h3{
+		font-family:$verlag;
+		font-weight: 700;
+		font-size: 1em;
+		color: $k-yellow;
+	}
+	p{
+		color: #fff;
+	}
+}
+
+
+
+#text-top-left{
+	width: 30%;
+	color: $k-yellow;
+	display: inline-block;
+	vertical-align: top;
+	
+	p{
+		font-family: $verlag;
+		font-weight: 700;
+		font-size: 1em;
+		color: #fff;
+	}
+}
+
+#text-top-right{
+	display: inline-block;
+	margin: 0;
+	right: 0;
+	position: absolute;
+}
 
 /* CUSTOM STYLES */
+
+#one-time{
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	opacity: 0.6;
+}
+
+#one-time:hover{	
+	opacity: 1;
+}
+
+#monthly:hover{
+	opacity: 1;
+}
+
+#monthly{
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	opacity: 0.6;
+}
 
 .hide {
 	display: none;
@@ -255,6 +444,9 @@ nav{
 	color: #000;
 	background-color: $k-yellow;
 	text-align: center;
+	padding: 6px;
+	
+	margin: 0 auto 0 auto;
 	
 	font-family: $verlag;
 	font-weight: 700;
@@ -265,9 +457,10 @@ nav{
 		text-decoration: none;
 		color:#000;
 		text-transform: uppercase;
-		border: #000 solid 3px;
+		border: #000 solid 4px;
 		font-size: 2em;
 		display: block;
+		padding: 0.2em;
 	}
 }
 
