@@ -43,7 +43,6 @@ var GLOBAL = {
 			}
 			for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
 				if(GLOBAL.hotSpotEl[a].id === string){
-					console.log("GOT IT!");
 					GLOBAL.animateTo(a);
 					break
 				}
@@ -135,7 +134,7 @@ $(window).on("resize",function(){
 });
 
 $(window).load(function(){
-	GLOBAL.singleIndex();
+	// GLOBAL.singleIndex();
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
 	GLOBAL.setUpNav();
