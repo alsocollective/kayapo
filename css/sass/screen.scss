@@ -181,7 +181,17 @@ nav{
 /* about-the-kayapo */
 
 #about-the-kayapo-1{
-	background-color: $k-blue-dark;
+	position: relative;
+	p{
+		color: #000;
+		font-family: $verlag;
+		font-weight: 800;
+		font-size:2em;
+		width: 50%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
 }
 
 #about-the-kayapo-2{
@@ -286,25 +296,40 @@ nav{
 #kayapo-proj-modal-territory{
 	position: absolute;
 	bottom:0;
-	height: 300px;
+	height: 200px;
+}
+
+#kayapo-proj-modal-subicons{
+	width: 30%;
+	position: absolute;
+	right: 0;
+	div{
+		width:30%;
+		display: inline-block;
+		padding: 0 0.2em 0 0.2em;
+	}
 }
 
 .kayapo-proj-modal{
+	padding-top: 1em;
 	background-color: $k-green-dark;
 	h4{
 		color: #fff;
 		font-weight: 800;
 	}
 	div{
-		width:20%;
 		display:inline-block;
 		vertical-align: top;
 	}
 	#proj-icon-1{
-		width:20px;
+		width:60px;
 	}
 	p{
 		font-size: 0.8em;
+	}
+	#description{
+		width:60%;
+		font-size: 1.2em;
 	}
 }
 
@@ -577,18 +602,22 @@ nav{
 
 #home-banner{
 	bottom: 0;
+	position: absolute;
 	div{
 		width: 50%;
 		display: inline-block;
 		background-color: $k-yellow;
 		height: 200px;
 		vertical-align: top;
-		position: absolute;
 	}
 }
 
 .home-class{
 	position: relative;
+}
+
+.highlight-nav{
+	border-bottom: 2px solid #fff;
 }
 
 /* Media Queries */
