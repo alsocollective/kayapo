@@ -388,6 +388,7 @@ nav{
 #why-rainforest-3{
 	
 	color: #fff;
+	position: relative;
 	
 	ul{
 		width:80%;
@@ -411,6 +412,10 @@ nav{
 		font-weight: 800;
 		font-size: 4em;
 		text-align: center;
+	}
+	
+	ul{
+		position: relative;
 	}
 }
 
@@ -597,7 +602,7 @@ nav{
 
 .full-backgroundimage{
 	background-position: center;
-	background-size: cover;
+	@include vendorize(background-size,cover);
 }
 
 #home-banner{
@@ -612,6 +617,16 @@ nav{
 	}
 }
 
+#slides{
+	position: absolute;
+	height: 100%;
+	top:0;
+	
+	div{
+		height: 100%;
+	}
+}
+
 .home-class{
 	position: relative;
 }
@@ -622,7 +637,7 @@ nav{
 
 .hidden{
 	@include vendorize(opacity,0);
-	filter:alpha(opacity=0); /* For IE8 and earlier */	
+	filter:alpha(opacity=0); /* For IE8 and earlier */
 }
 
 /* Media Queries */
