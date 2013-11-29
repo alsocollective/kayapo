@@ -19,6 +19,7 @@ var GLOBAL = {
 			el1 = document.getElementById("index-1"),
 			el2 = document.getElementById("index-2");
 		}
+		console.log(el1,el2);
 		el1.parentNode.removeChild(el1);
 		el2.parentNode.removeChild(el2);
 	},
@@ -31,6 +32,25 @@ var GLOBAL = {
 		// 	$("body").children()[1].style.paddingTop = GLOBAL.navHeight;
 		// }
 	},
+	setUpNav:function(){
+		$(".main-nav-button").click(function(event){
+			event.preventDefault();
+			var string = this.id.split("-nav")[0]
+			if(string === "index"){
+				string = string+"-"+GLOBAL.indexNumber;
+			} else {
+				string = string+"-1";
+			}
+			for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
+				if(GLOBAL.hotSpotEl[a].id === string){
+					console.log("GOT IT!");
+					GLOBAL.animateTo(a);
+					break
+				}
+			}
+			return false;
+		})
+	},
 	hotSpots:null,
 	hotSpotEl:null,
 	current:null,
@@ -41,7 +61,6 @@ var GLOBAL = {
 		for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
 			GLOBAL.hotSpots.push($(GLOBAL.hotSpotEl[a]).offset().top);
 		}
-		console.log(GLOBAL.hotSpots);
 		GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
 	},
 	animating:false,
@@ -79,7 +98,6 @@ var GLOBAL = {
 				}
 			}
 			if(loc < GLOBAL.hotSpots[a]+150-GLOBAL.navHeight && loc > GLOBAL.hotSpots[a]-GLOBAL.navHeight){
-				console.log(GLOBAL.preScroll-loc);
 				if(GLOBAL.preScroll-loc<0){
 					console.log("down")
 					console.log(a+1);
@@ -117,8 +135,9 @@ $(window).on("resize",function(){
 });
 
 $(window).load(function(){
-	// GLOBAL.singleIndex();
+	GLOBAL.singleIndex();
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
+	GLOBAL.setUpNav();
 
 });
