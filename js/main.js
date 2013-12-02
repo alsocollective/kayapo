@@ -1,4 +1,5 @@
 var GLOBAL = {
+	debug:false,
 	address: null,
 	getAddress:function(){
 		GLOBAL.address = window.location.href.toString().split(window.location.host)[1];
@@ -26,6 +27,7 @@ var GLOBAL = {
 	navHeight:0,
 	getNavHeight:function(){
 		GLOBAL.navHeight = $("nav").outerHeight();
+		if(GLOBAL.debug) console.log("NavHeight ",GLOBAL.navHeight);
 		// if(GLOBAL.hotSpotEl){
 		// 	GLOBAL.hotSpotEl[0].style.paddingTop = GLOBAL.navHeight;
 		// } else {
@@ -75,6 +77,7 @@ var GLOBAL = {
 		for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
 			GLOBAL.hotSpots.push($(GLOBAL.hotSpotEl[a]).offset().top);
 		}
+		GLOBAL.hotSpots[0] = 0;
 		GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
 	},
 	animating:false,
@@ -85,7 +88,7 @@ var GLOBAL = {
 		}
 		var loc = $(window).scrollTop();
 		var newLoc = GLOBAL.findClosestElement(loc);
-
+		if(GLOBAL.debug) console.log(newLoc);
 		if(GLOBAL.current != newLoc && !GLOBAL.animating && newLoc!== null){
 			GLOBAL.highLightNavOnScroll(GLOBAL.hotSpotEl[newLoc].id);
 			GLOBAL.animateTo(newLoc);
@@ -94,6 +97,7 @@ var GLOBAL = {
 		return false;
 	},
 	animateTo:function(location){
+		if (GLOBAL.debug) console.log(location);
 		GLOBAL.animating = true;
 		$('html, body').stop().animate({
 			scrollTop: (GLOBAL.hotSpots[location]-GLOBAL.navHeight)
@@ -103,16 +107,18 @@ var GLOBAL = {
 		GLOBAL.current = location;
 	},
 	findClosestElement:function(loc){
+		if(!GLOBAL.hotSpots) return null;
 		for(var a = 0, max = GLOBAL.hotSpots.length; a < max; ++a){
+			if(GLOBAL.debug) console.log("Iterating through elements till bottom "+ a + " " +GLOBAL.hotSpots[a]);
 			if(loc > GLOBAL.hotSpots[a]-150-GLOBAL.navHeight && loc < GLOBAL.hotSpots[a]-1-GLOBAL.navHeight){
 				if(GLOBAL.preScroll-loc>0){
-					// console.log("up");
+					if (GLOBAL.debug) console.log("up");
 					return a-1;
 				}
 			}
 			if(loc < GLOBAL.hotSpots[a]+150-GLOBAL.navHeight && loc > GLOBAL.hotSpots[a]-GLOBAL.navHeight){
 				if(GLOBAL.preScroll-loc<0){
-					// console.log("down")
+					if (GLOBAL.debug) console.log("down");
 					if(a == 0){
 						return 2;
 					}
@@ -148,6 +154,18 @@ var GLOBAL = {
 			// }
 			return false;
 		})
+	},
+	goToNextPage:function(event){
+		event.preventDefault();
+		++GLOBAL.current;
+		GLOBAL.animateTo(GLOBAL.current);
+		return false;
+	},
+	setupNextPageButton:function(){
+		$(".next-page-button").click(GLOBAL.goToNextPage);
+	},
+	setHash:function(){
+
 	}
 }
 
@@ -228,7 +246,6 @@ var JPGSEQUENCE = {
 	}
 }
 
-console.log("loading script");
 GLOBAL.getAddress();
 GLOBAL.setUpIndex();
 
@@ -247,6 +264,7 @@ $(window).load(function(){
 	GLOBAL.getHotSpots();
 	GLOBAL.setUpNav();
 	GLOBAL.setUpWhyNav();
+	GLOBAL.setupNextPageButton();
 
 	JPGSEQUENCE.generateImages(document.getElementById("the-threat-1"),29,"map");
 

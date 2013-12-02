@@ -563,6 +563,15 @@ nav{
 	}
 }
 
+#about-the-kayapo-5{
+	position: relative;
+	div{
+		position: relative;
+	}
+	div:nth-child(1){
+		position: absolute;
+	}
+}
 
 
 #text-top-left{
@@ -792,6 +801,16 @@ nav{
 .hidden{
 	@include vendorize(opacity,0 !important);
 	filter:alpha(opacity=0) !important; /* For IE8 and earlier */
+}
+
+/* YOUTUBE styles */
+#cropping-youtube{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
 }
 
 /* Media Queries */

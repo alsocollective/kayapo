@@ -23,8 +23,10 @@
 <!-- unique Header stuff -->
 	<script type="text/javascript" src="/js/lib/modernizr.js"></script>
 	<script type="text/javascript" src="/js/lib/jquery.js"></script>
+	<!--
 	<script type="text/javascript" src="http://alsocollective.github.io/also-cdn/js/j-tube/j-tube.js"></script>
-
+	-->
+	<script type="text/javascript" src="/js/lib/j-tube.js"></script>
 <!-- Style Yo -->
 	<script type="text/javascript" src="/js/main.js"></script>
 
@@ -58,7 +60,7 @@
 				of rainforest will be lost in the two minutes it takes you to scroll to the bottom of this website and
 			</blockquote>
 			<div class="donation"><a href="">Make a Donation</a></div>
-			<a href=""><img src="/assets/images/bt_arrow.png" alt="down arrow" width="20px" height="20px"></a>
+			<a href="" class="next-page-button"><img src="/assets/images/bt_arrow.png" alt="down arrow" width="20px" height="20px"></a>
 		</div>
 
 		<!-- static National Geographic -->
@@ -81,7 +83,7 @@
 			<blockquote>This is a Kayapo leader. He represents our best hope for protecting the Amazon Rainforest.</blockquote>
 			<p>Support him in his on-the-ground efforts to protect Brazil’s Rainforest.</p>
 			<div class="donation"><a href="">Make a Donation</a></div>
-			<a href=""><img src="/assets/images/bt_arrow.png" alt="down arrow" width="20px" height="20px"></a>
+			<a href="" class="next-page-button"><img src="/assets/images/bt_arrow.png" alt="down arrow" width="20px" height="20px"></a>
 		</div>
 
 		<!-- static National Geographic -->
@@ -106,7 +108,7 @@
 				$20 can provide funds to protect and preserve 1,000 acres of rainforest for one year.</p>
 			<div class="donation"><a href="">Make a Donation</a></div>
 		</div>
-		<a href=""><img src="/assets/images/bt_arrow.png" alt="down arrow" width="20px" height="20px"></a>
+		<a href="" class="next-page-button"><img src="/assets/images/bt_arrow.png" alt="down arrow" width="20px" height="20px"></a>
 
 		<!-- static National Geographic -->
 		<div id="home-banner">
@@ -136,47 +138,13 @@
 	</section>
 
 	<section id="why-rainforest-3" class="full-backgroundimage" style="background-image: url(/images/);">
-		<!-- fall back image for youtube video -->
-		<div id="youtube-container">
-			<div id="youtube-rainforest">
+		<div id="cropping-youtube">
+			<div id="youtube-container">
+				<div id="youtube-rainforest">
+			</div>
 		</div>
 			<!-- auto loop of 20 second video -->
 		</div>
-		<script type="text/javascript">
-			var myPlayer = $("#youtube-rainforest").Jtube({
-					videoId:"DInaJRfbWbQ",
-					skipvid:false,
-					skipWhash:false,
-					timeLeft:false,
-					loop:1,
-					autoplay:1,
-					applyToContainer:true,
-					vidHeight:"100%",
-					vidWidth:"100%",
-					volume:0,
-					// debugMode:true,
-					fallbackImage:"/assets/images/bg_why1.jpg",
-					onStart:function(settings){
-						if(settings.debugMode){
-							console.log("start");
-						}
-						$(settings.player.a).css({"display":"inline-block"})
-						// $(settings.player.a).fadeIn('fast');
-						return null;
-					},
-					onPause:function(settings){
-						if(settings.debugMode){
-							console.log("pause");
-						}
-						$(settings.player.a).css({"display":"none"})
-						// $(settings.player.a).fadeOut('fast');
-						return null;
-					}
-				});
-			function onYouTubeIframeAPIReady() {
-				myPlayer.setupPlayer();
-			}
-		</script>
 		<h2>Why Rainforests Matter?</h2>
 
 		<div id="slides" class="full-backgroundimage">
@@ -239,48 +207,94 @@
 	</section>
 
 	<section id="about-the-kayapo-5">
+		<div id="cropping-youtube">
+			<div id="youtube-container">
+				<div id="youtube-why-kayapo">
+				</div>
+			</div>
+		</div>
 		<div id="stick-in-back">
 			<h2>The Kayapo are the Answer.</h2>
 		</div>
-		<div id="youtube-why-kayapo">
-			<img id="play-button" src="#play">
-			<p>watch</p>
-		</div>
+
+		<img id="play-button" src="#play">
+		<p>watch</p>
+
+
+
 		<script type="text/javascript">
 			var myPlayer = $("#youtube-rainforest").Jtube({
-					videoId:"DInaJRfbWbQ",
-					skipvid:false,
-					skipWhash:false,
-					timeLeft:false,
-					loop:1,
-					autoplay:1,
-					applyToContainer:true,
-					vidHeight:"100%",
-					vidWidth:"100%",
-					volume:0,
-					// debugMode:true,
-					fallbackImage:"/assets/images/bg_why1.jpg",
-					onStart:function(settings){
-						if(settings.debugMode){
-							console.log("start");
-						}
-						$(settings.player.a).css({"display":"inline-block"})
-						// $(settings.player.a).fadeIn('fast');
-						return null;
-					},
-					onPause:function(settings){
-						if(settings.debugMode){
-							console.log("pause");
-						}
-						$(settings.player.a).css({"display":"none"})
-						// $(settings.player.a).fadeOut('fast');
-						return null;
+				videoId:"DInaJRfbWbQ",
+				skipvid:false,
+				skipWhash:false,
+				timeLeft:false,
+				loop:1,
+				autoplay:1,
+				applyToContainer:true,
+				vidHeight:"100%",
+				vidWidth:"100%",
+				volume:0,
+				vidWidth:1080,
+				vidHeight:1920,
+				vidQality:"hd720",
+				// debugMode:true,
+				fallbackImage:"/assets/images/bg_why1.jpg",
+				onStart:function(settings){
+					if(settings.debugMode){
+						console.log("start");
 					}
-				});
+					$(settings.player.a).css({"display":"inline-block"})
+					// $(settings.player.a).fadeIn('fast');
+					return true;
+				},
+				onPause:function(settings){
+					if(settings.debugMode){
+						console.log("pause");
+					}
+					$(settings.player.a).css({"display":"none"})
+					// $(settings.player.a).fadeOut('fast');
+					return true;
+				}
+			});
+			var myPlayer2 = $("#youtube-why-kayapo").Jtube({
+				videoId:"afWWcFL-Bf4",
+				skipvid:false,
+				skipWhash:false,
+				timeLeft:false,
+				loop:0,
+				autoplay:0,
+				applyToContainer:true,
+				vidHeight:"100%",
+				vidWidth:"100%",
+				volume:100,
+				fallbackImage:"/assets/images/bg_why1.jpg",
+				onStart:function(settings){
+					$(settings.player.a).css({"display":"inline-block"})
+					// $(settings.player.a).fadeIn('fast');
+					return null;
+				},
+				onPause:function(settings){
+					// $(settings.player.a).css({"display":"none"})
+					// $(settings.player.a).fadeOut('fast');
+					// settings.player.playVideo();
+					return null;
+				},
+				onDone:function(settings){
+					$("#splash").fadeIn('fast');
+					// settings.player.pause();
+					return false;
+				}
+			});
+
 			function onYouTubeIframeAPIReady() {
 				myPlayer.setupPlayer();
+				myPlayer2.setupPlayer();
 			}
-		</script>		
+		</script>
+
+
+
+
 	</section>
 
 	<section id="the-threat-1" class="full-backgroundimage" style="background-image: url(assets/images/ss-08.png);">

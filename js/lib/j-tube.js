@@ -35,12 +35,12 @@ $.fn.Jtube = function( options ) {
 		pW:0,
 		pH:0,
 		loop:0,
-		autoplay:0,
 		volume:100,
 		applyToContainer:false,
 		vidWidth:"640",
 		vidHeight:"390",
 		vidQuality:"highres",
+		autoplay:1,
 
 		onDone:myDoneFunc,
 		onStart:myStartFunc,
@@ -192,7 +192,7 @@ $.fn.Jtube = function( options ) {
 			videoId: settings.videoId,
 			// 'autoplay': 1,  wmode=transparent
 			playerVars:{
-				"loop":settings.loop,
+				"loop":1,
 				"controls":0,
 				"showinfo":0,
 				"rel":0,
@@ -202,8 +202,7 @@ $.fn.Jtube = function( options ) {
 				"start":0,
 				"enablejsapi":1,
 				"wmode":"transparent",
-				"modestbranding":1,
-				"playlist":settings.videoId
+				"modestbranding":1
 			},
 			events: {
 				'onReady': onPlayerReady,
@@ -236,7 +235,7 @@ $.fn.Jtube = function( options ) {
 		}
 		if(!settings.cancle){
 			settings.iframeEl = $("#youtube-player")[0];
-			settings.player.playVideo();
+			if(settings.autoplay) settings.player.playVideo();
 			settings.player.setLoop(settings.loop);
 			settings.player.setVolume(settings.volume);
 			evt.target.setPlaybackQuality('hd720');
@@ -289,7 +288,7 @@ $.fn.Jtube = function( options ) {
 		// 2 pause
 		// 3 buffering
 		if(evt.data == 0){
-			if(settings.loop === 0){
+			if(settings.loop === 0 && settings.onDone(settings)){
 				$(evt.target.a).fadeOut('slow',function(){
 					this.parentNode.removeChild(this);
 				});
@@ -309,24 +308,24 @@ $.fn.Jtube = function( options ) {
 						});
 					}
 				}
-			}else {
+			}else if(settings.onDone(settings)){
 				if(settings.debugMode){
 					console.log("FORCE restart video");
 				}
 				settings.player.playVideo();
 			}
-			settings.onDone();
 		}else if(evt.data == 1){
-			settings.onStart(settings);
-			setTimeout(function(){
-				$("#splash").fadeIn('slow');
-				if(settings.ldCss){
-					$(settings.ldCssEl).fadeOut('slow', function() {
-						this.parentNode.removeChild(this);
-					});
-				}
-				settings.loaded = true;
-			},200);
+			if(settings.onStart(settings)){
+				setTimeout(function(){
+					$("#splash").fadeIn('slow');
+					if(settings.ldCss){
+						$(settings.ldCssEl).fadeOut('slow', function() {
+							this.parentNode.removeChild(this);
+						});
+					}
+					settings.loaded = true;
+				},200);
+			}
 		} else if(evt.data == 2){
 			settings.onPause(settings);
 		} else if(evt.data == YT.PlayerState.BUFFERING){
@@ -340,16 +339,19 @@ $.fn.Jtube = function( options ) {
 		if(settings.debugMode){
 			console.log("myStartFunc");
 		}
+		return true;
 	}
 	function myDoneFunc(){
 		if(settings.debugMode){
 			console.log("myDoneFunc");
 		}
+		return true;
 	}
 	function myPauseFunc() {
 		if(settings.debugMode){
 			console.log("myPauseFunc");
 		}
+		return true;
 	}
 	function setPlayerSizeCustom(){
 		if(settings.fullscreen){
