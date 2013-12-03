@@ -19,14 +19,14 @@
 }
 
 .simple-animated {
-	-webkit-animation-duration: 1s;
-	-moz-animation-duration: 1s;
-	-o-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode: both;
-	-o-animation-fill-mode: both;
-	animation-fill-mode: both;
+	// -webkit-animation-duration: 1s;
+	// -moz-animation-duration: 1s;
+	// -o-animation-duration: 1s;
+	// animation-duration: 1s;
+	// -webkit-animation-fill-mode: both;
+	// -moz-animation-fill-mode: both;
+	// -o-animation-fill-mode: both;
+	// animation-fill-mode: both;
 }
 
 body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
@@ -48,10 +48,13 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 	}
 }
 
+@mixin easyTransition($speed) {
+	transition: all $speed;
+	-moz-transition: all $speed;
+	-webkit-transition: all $speed;
+	-o-transition: all $speed;
+}
 .transition-all-2{
-	transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-webkit-transition: all 0.2s;
-	-o-transition: all 0.2s;
+	@include easyTransition(1s);
 }
 

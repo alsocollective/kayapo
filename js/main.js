@@ -79,6 +79,7 @@ var GLOBAL = {
 		}
 		GLOBAL.hotSpots[0] = 0;
 		GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
+		GLOBAL.edgeCases(GLOBAL.current);
 	},
 	animating:false,
 	scrollEvent:function(event){
@@ -105,6 +106,25 @@ var GLOBAL = {
 			GLOBAL.animating = false;
 		});
 		GLOBAL.current = location;
+		GLOBAL.edgeCases(location);
+	},
+	edgeCases:function(location){
+		console.log("edgeCase " + location);
+		if(location >= 14){
+			if(location == 14){
+				GLOBAL.setIntervalRemoveBk();
+			} else {
+				GLOBAL.setIntervalAddBk();
+			}
+			GLOBAL.setThreatStatic();
+		} else if(GLOBAL.IntervalRemoveBk || GLOBAL.IntervalAddBk){
+			console.log("this guy");
+			GLOBAL.clearIntervalRemoveBk();
+			GLOBAL.clearIntervalAddBk();
+		} else if(GLOBAL.stuckThreat){
+			console.log("unstuck it");
+			GLOBAL.unSetThreatStatic();
+		}
 	},
 	findClosestElement:function(loc){
 		if(!GLOBAL.hotSpots) return null;
@@ -145,15 +165,32 @@ var GLOBAL = {
 			var otherElements = $("#why-rainforest-3 #slides div");
 			otherElements.addClass('hidden');
 			$(element).removeClass('hidden');
-
-			// for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
-			// 	if(GLOBAL.hotSpotEl[a].id === string){
-			// 		GLOBAL.animateTo(a);
-			// 		break
-			// 	}
-			// }
 			return false;
 		})
+	},
+	setUpProjectsNav:function(){
+		$("#funds-divs").children().click(function(event){
+			event.preventDefault();
+			var showThis = "#kayapo-proj-modal-"+$(this).attr('href').split("#")[1];
+			console.log(showThis);
+
+			GLOBAL.addOffBottomToAll(this);
+			// $(showThis).addClass('animated bounceInUp');
+			// setTimeout(function(){$(showThis).removeClass('animatedbounceInUp');},1000);
+			$(showThis).removeClass('off-bottom');
+
+
+			return false;
+		});
+	},
+	addOffBottomToAll:function(currentEl){
+		var elements = $(".kayapo-proj-modal").addClass('off-bottom');
+		for(var a = 0, max = elements.length; a < max; a += 1){
+			if(!$(elements[a]).hasClass('off-bottom') && elements[a] !== currentEl){
+				$(elements[a]).addClass('off-bottom');
+				//TODO add animation to remove element
+			}
+		}
 	},
 	goToNextPage:function(event){
 		event.preventDefault();
@@ -163,6 +200,88 @@ var GLOBAL = {
 	},
 	setupNextPageButton:function(){
 		$(".next-page-button").click(GLOBAL.goToNextPage);
+	},
+	setUpBackGroundAnimals:function(){
+		var width = $(window).width(),
+		height = $(window).height(),
+		count = Math.floor(width/50)*Math.floor(height/50),
+		parent = document.getElementById("back-ground-items"),
+		base = document.createElement("div"),
+		baseSub = document.createElement("div");
+		base.className = "inline-image";
+		base.appendChild(baseSub)
+		temp = null,
+		animals = [
+			"image-bug",
+			"image-butterfly",
+			"image-frog",
+			"image-insect",
+			"image-leaf1",
+			"image-leaf2",
+			"image-leaf3",
+			"image-leaf4",
+			"image-leaf5",
+			"image-leaf6",
+			"image-leaf7",
+			"image-monkey",
+			"image-snake",
+			"image-tucan"
+			];
+		for(var a = 0; a < count; ++a){
+			baseSub.className = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
+			temp = base.cloneNode(true);
+			parent.appendChild(temp);
+		}
+	},
+	IntervalRemoveBk:null,
+	setIntervalRemoveBk:function(){
+		GLOBAL.clearIntervalAddBk();
+		if(!GLOBAL.IntervalRemoveBk){
+			GLOBAL.IntervalRemoveBk = setInterval(function(){
+				var allEl = $(".inline-image div:not(.none)");
+				if(allEl.length > 0){
+					$(allEl[Math.floor(Math.random()*allEl.length)]).addClass('none');
+				} else {
+					clearInterval(GLOBAL.IntervalRemoveBk);
+				}
+			},250);
+		}
+	},
+	clearIntervalRemoveBk:function(){
+		if(GLOBAL.IntervalRemoveBk){
+			clearInterval(GLOBAL.IntervalRemoveBk);
+			GLOBAL.IntervalRemoveBk = null;
+		}
+	},
+	IntervalAddBk:null,
+	setIntervalAddBk:function(){
+		GLOBAL.clearIntervalRemoveBk();
+		if(!GLOBAL.IntervalAddBk){
+			GLOBAL.IntervalAddBk = setInterval(function(){
+				var allEl = $(".inline-image .none");
+				if(allEl.length>0){
+					$(allEl[Math.floor(Math.random()*allEl.length)]).removeClass('none');
+				} else {
+					clearInterval(GLOBAL.IntervalAddBk);
+				}
+			},250)
+		}
+	},
+	clearIntervalAddBk:function(){
+		if(GLOBAL.IntervalAddBk){
+			clearInterval(GLOBAL.IntervalAddBk);
+			GLOBAL.IntervalAddBk = null;
+		}
+	},
+	stuckThreat:false,
+	setThreatStatic:function(){
+		console.log("setting it to be static");
+		var el = $("#back-ground-items").addClass('stick');
+		GLOBAL.stuckThreat = true;
+	},
+	unSetThreatStatic:function(){
+		var el = $("#back-ground-items").removeClass('stick');
+		GLOBAL.stuckThreat = false;
 	},
 	setHash:function(){
 
@@ -265,21 +384,10 @@ $(window).load(function(){
 	GLOBAL.setUpNav();
 	GLOBAL.setUpWhyNav();
 	GLOBAL.setupNextPageButton();
+	GLOBAL.setUpProjectsNav();
+	GLOBAL.setUpBackGroundAnimals();
+	GLOBAL.setIntervalRemoveBk();
 
 	JPGSEQUENCE.generateImages(document.getElementById("the-threat-1"),29,"map");
 
 });
-
-/*
-#why-rainforest-3{
-  height: 100%;
-  overflow: hidden;
-}
-#youtube-vid{
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-*/
