@@ -1,0 +1,53 @@
+<div id="cropping-youtube">
+	<div id="youtube-container">
+		<div id="youtube-why-kayapo">
+		</div>
+	</div>
+</div>
+<div id="stick-in-back">
+	<h2>The Kayapo are the Answer.</h2>
+</div>
+
+<img id="play-button" src="#play">
+<p>watch</p>
+
+
+
+<script type="text/javascript">
+	var myPlayer2 = $("#youtube-why-kayapo").Jtube({
+		videoId:"afWWcFL-Bf4",
+		skipvid:false,
+		skipWhash:false,
+		timeLeft:false,
+		loop:0,
+		autoplay:0,
+		applyToContainer:true,
+		vidHeight:"100%",
+		vidWidth:"100%",
+		volume:100,
+		fallbackImage:"/assets/images/bg_why1.jpg",
+		onStart:function(settings){
+			$(settings.player.a).css({"display":"inline-block"})
+			// $(settings.player.a).fadeIn('fast');
+			return null;
+		},
+		onPause:function(settings){
+			// $(settings.player.a).css({"display":"none"})
+			// $(settings.player.a).fadeOut('fast');
+			// settings.player.playVideo();
+			return null;
+		},
+		onDone:function(settings){
+			$("#splash").fadeIn('fast');
+			// settings.player.pause();
+			return false;
+		}
+	});
+
+	function onYouTubeIframeAPIReady() {
+		myPlayer2.setupPlayer();
+	}
+</script>
+
+
+

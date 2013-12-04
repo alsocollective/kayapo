@@ -1,0 +1,72 @@
+<div id="cropping-youtube">
+	<div id="youtube-container">
+		<div id="youtube-rainforest">
+	</div>
+</div>
+	<!-- auto loop of 20 second video -->
+</div>
+<h2>Why Rainforests Matter?</h2>
+
+<div id="slides" class="full-backgroundimage">
+	<div id="animals" class="full-backgroundimage hidden simple-animated" style="background-image: url(assets/images/bg_why1.jpg);">
+		<blockquote>Once lost, it is gone forever.</blockquote>
+	</div>
+	<div id="climate" class="full-backgroundimage hidden simple-animated" style="background-image: url(assets/images/bg_why2.jpg);">
+		<blockquote>Help stabilize the world&#180;s climate by storing carbon, mitigating climate change, regulating rainfall and cycling pure water and air.</blockquote>
+	</div>
+	<div id="rain" class="full-backgroundimage text-shadow hidden simple-animated" style="background-image: url(assets/images/bg_why3.jpg);">
+		<blockquote>The forest produces half of its own rainfall and much of the rain south of the Amazon and east of the Andes.</blockquote>
+	</div>
+	<div id="food" class="full-backgroundimage hidden simple-animated" style="background-image: url(assets/images/bg_why4.jpg);">
+		<blockquote>Rainforests provide resources for people including food, medicine and recreation. Did you know that a huge percentage of the world&#180;s diet originated in the rainforest?</blockquote>
+	</div>
+	<div id="culture" class="full-backgroundimage hidden simple-animated" style="background-image: url(assets/images/bg_why5.jpg);">
+		<blockquote>Home to indigenous people and their unique cultures that live in harmony with the natural world.</blockquote>
+	</div>
+</div>
+
+<ul>
+	<li><a class="why-sub-nav" id="animals-nav" href="#animals"><img src="/assets/ic_why_01.png" alt="birds button" width="70px" height="70px"></a></li>
+	<li><a class="why-sub-nav" id="climate-nav" href="#climate"><img src="/assets/ic_why_02.png" alt="weather button" width="70px" height="70px"></a></li>
+	<li><a class="why-sub-nav" id="rain-nav" href="#rain"><img src="/assets/ic_why_03.png" alt="world button" width="70px" height="70px"></a></li>
+	<li><a class="why-sub-nav" id="food-nav" href="#food"><img src="/assets/ic_why_04.png" alt="growth button" width="70px" height="70px"></a></li>
+	<li><a class="why-sub-nav" id="culture-nav" href="#culture"><img src="/assets/ic_why_05.png" alt="kayapo button" width="70px" height="70px"></a></li>
+</ul>
+
+<script type="text/javascript">
+var myPlayer = $("#youtube-rainforest").Jtube({
+	videoId:"DInaJRfbWbQ",
+	skipvid:false,
+	skipWhash:false,
+	timeLeft:false,
+	loop:1,
+	autoplay:1,
+	applyToContainer:true,
+	vidHeight:"100%",
+	vidWidth:"100%",
+	volume:0,
+	vidWidth:1080,
+	vidHeight:1920,
+	vidQality:"hd720",
+	// debugMode:true,
+	fallbackImage:"/assets/images/bg_why1.jpg",
+	onStart:function(settings){
+		if(settings.debugMode){
+			console.log("start");
+		}
+		$(settings.player.a).css({"display":"inline-block"})
+		return true;
+	},
+	onPause:function(settings){
+		if(settings.debugMode){
+			console.log("pause");
+		}
+		$(settings.player.a).css({"display":"none"})
+		return true;
+	}
+});
+
+function onYouTubeIframeAPIReady() {
+	myPlayer.setupPlayer();
+}
+</script>
