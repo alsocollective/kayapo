@@ -6,10 +6,11 @@
 </div>
 <div id="stick-in-back">
 	<h2>The Kayapo are the Answer.</h2>
+	<a href="" id="play-button"><img src="#play" width="200px" height="200px"></a>
+	<p>watch</p>
 </div>
 
-<img id="play-button" src="#play">
-<p>watch</p>
+
 
 
 
@@ -28,18 +29,14 @@
 		fallbackImage:"/assets/images/bg_why1.jpg",
 		onStart:function(settings){
 			$(settings.player.a).css({"display":"inline-block"})
-			// $(settings.player.a).fadeIn('fast');
+			$("#stick-in-back").fadeOut('1000');
 			return null;
 		},
 		onPause:function(settings){
-			// $(settings.player.a).css({"display":"none"})
-			// $(settings.player.a).fadeOut('fast');
-			// settings.player.playVideo();
+			$("#stick-in-back").fadeIn('1000');
 			return null;
 		},
 		onDone:function(settings){
-			$("#splash").fadeIn('fast');
-			// settings.player.pause();
 			return false;
 		}
 	});
@@ -47,6 +44,12 @@
 	function onYouTubeIframeAPIReady() {
 		myPlayer2.setupPlayer();
 	}
+	$("#play-button").click(function(event) {
+		event.preventDefault();
+			myPlayer2.settings().player.playVideo();
+		return false;
+	});
+
 </script>
 
 

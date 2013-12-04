@@ -69,9 +69,9 @@
 </div>
 <div id="stick-in-back">
 <h2>The Kayapo are the Answer.</h2>
-</div>
-<img id="play-button" src="#play">
+<a href="" id="play-button"><img height="200px" src="#play" width="200px"/></a>
 <p>watch</p>
+</div>
 <script type="text/javascript">
 	var myPlayer2 = $("#youtube-why-kayapo").Jtube({
 		videoId:"afWWcFL-Bf4",
@@ -88,12 +88,14 @@
 		onStart:function(settings){
 			$(settings.player.a).css({"display":"inline-block"})
 			// $(settings.player.a).fadeIn('fast');
+			$("#stick-in-back").fadeOut('1000');
 			return null;
 		},
 		onPause:function(settings){
 			// $(settings.player.a).css({"display":"none"})
 			// $(settings.player.a).fadeOut('fast');
 			// settings.player.playVideo();
+			$("#stick-in-back").fadeIn('1000');
 			return null;
 		},
 		onDone:function(settings){
@@ -106,8 +108,14 @@
 	function onYouTubeIframeAPIReady() {
 		myPlayer2.setupPlayer();
 	}
+	$("#play-button").click(function(event) {
+		event.preventDefault();
+			myPlayer2.settings().player.playVideo();
+		return false;
+	});
+
 </script>
-</img>
+
 </section>
 <section class="full-backgroundimage" id="the-threat-1" style="background-image: url(assets/images/ss-08.png);">
 </section>

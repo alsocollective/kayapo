@@ -429,7 +429,7 @@ var JPGSEQUENCE = {
 }
 
 GLOBAL.setUpIndex();
-
+var YT = null;
 
 $(window).on( "scroll",GLOBAL.scrollEvent);
 $(window).bind('mousewheel',GLOBAL.stopForAnimationEvent);
