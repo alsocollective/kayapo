@@ -389,6 +389,7 @@ var JPGSEQUENCE = {
 	createButton:function(element){
 		var but = document.createElement("a");
 		but.href = "#";
+		but.appendChild(document.createElement("div"));
 		$(but).click(function(event){
 			event.preventDefault();
 			$(".jpg-slide-selected").removeClass('jpg-slide-selected');
