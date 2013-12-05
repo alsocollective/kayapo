@@ -13,7 +13,8 @@ $hover_button: #ca444e;
 $text_color_grey: #111;
 $normalBackground: #fff;
 
-$k-yellow: #fedf00;
+//$k-yellow: #fedf00;
+$k-yellow: #fae132;
 //$k-green-bright: #4b873d;
 $k-green-bright:#a2cd39;
 $k-green-dull: #5d8079;
@@ -143,10 +144,12 @@ body section:nth-child(2){
 	position: relative;
 	
 	blockquote{
-		font-family: $acropolis;
 		font-size: 4em;
-		font-style: italic;
-		text-align: center;
+		font-weight: 800;
+		text-align: left;
+		margin: 1.2em 0 0 0;
+		line-height: 1.2em;
+		letter-spacing: -0.001em;
 	}
 	#copy{
 		width: 50%;
@@ -155,7 +158,60 @@ body section:nth-child(2){
 		right: 0;
 		
 	}
+	p{
+		font-weight: 800;
+		margin: 1.5em 0 2em 0;
+		font-size: 1.2em;
+	}
+	
+	@include breakpoint(tablet) {
+		blockquote{
+			font-size: 3em;
+			letter-spacing: 0.02em;		
+		}
+	}
 }
+
+@include breakpoint(phone) {
+	
+	#index-2{
+		position:absolute;
+		blockquote{
+			font-size: 1.6em;
+			font-weight: 800;
+			text-align: center;
+			margin: 0 0 0 0;
+			line-height: 1.1em;
+			letter-spacing: -0.001em;
+		}
+		#copy{
+			width: 100%;
+			color: #fff;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			//height: 90%;
+			padding: 0 0 1.6em 0;
+		}
+		p{
+			font-weight: 800;
+			margin: 0.7em 0 1em 0;
+			font-size: 1em;
+			text-align: center;
+			line-height: 1.3em;
+			letter-spacing: 0.02em;
+		}
+		.donation{
+			width: 50%;
+			margin: 0 auto 0 auto;
+			a{
+				border: #000 solid 3px;
+				font-size: 1.3em;				
+			}
+		}
+	}
+}
+
 
 #index-3{
 	font-family: $verlag;
@@ -783,8 +839,14 @@ body section:nth-child(2){
 }
 
 .full-backgroundimage{
-	background-position: center;
+	//background-position: center;
 	@include vendorize(background-size,cover);
+}
+
+@include breakpoint(phone) {
+.full-backgroundimage{
+	background-position: left;
+}
 }
 
 #home-banner{
@@ -912,4 +974,10 @@ body section:nth-child(2){
 	z-index: 999;
 	background-color: #000;
 	color: #fff;
+}
+
+/* Custom and Temporary for Splash */
+
+#no-hundred{
+	height: 100% !important;
 }
