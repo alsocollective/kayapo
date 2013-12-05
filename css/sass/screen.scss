@@ -316,15 +316,22 @@ body section:nth-child(2){
 }
 
 #about-the-kayapo-5{
-	
+
 	background-color: $k-blue-dark;
-	
+	color: #fff;
+	text-align: center;
+
+	#stick-in-back{
+		@extend .full-backgroundimage;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.75);
+	}
+
 	h2 {
 		font-family: $acropolis;
-		color: #fff;
 		font-size: 6em;
 		font-style: italic;
-		text-align: center;
 	}
 }
 
@@ -740,11 +747,23 @@ body section:nth-child(2){
   width: 100%;
 }
 
+#buttons-area{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 5em;
+	vertical-align: middle;
+
+}
 #button-container{
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 5em;
+	display: inline-block;
+	color: #fff;
+}
+#button-container:before{
+	content: "1984";
+}
+#button-container:after{
+	content: "2012";
 }
 #button-container a{
 	position: relative;
@@ -770,13 +789,9 @@ body section:nth-child(2){
 }
 
 #jpg-slide-play{
-  width: 30px;
-  height: 30px;
-  background-color: #f00;
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 5em;
+	display: inline-block;
+	padding: 0.5em;
+
 }
 
 .jpg-slide-hidden{

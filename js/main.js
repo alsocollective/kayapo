@@ -5,8 +5,10 @@ var GLOBAL = {
 	getAddress:function(){
 		GLOBAL.address = window.location.href.toString().split(window.location.host)[1].split(".")[0].split("/")[1];
 		if($("#"+GLOBAL.address).length > 0){
-			$(window).scrollTop($("#"+GLOBAL.address).offset().top);
-			GLOBAL.caseFunctionLoads(GLOBAL.address);
+			GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
+			GLOBAL.loadPage(GLOBAL.current);
+			// $(window).scrollTop($("#"+GLOBAL.address).offset().top);
+			// GLOBAL.caseFunctionLoads(GLOBAL.address);
 		}
 	},
 	indexNumber: null,
@@ -350,6 +352,8 @@ var JPGSEQUENCE = {
 		JPGSEQUENCE.baseName = baseName;
 		var el = null,
 		button = null,
+		buttonsArea = document.createElement("div");
+		buttonsArea.id = "buttons-area";
 		buttonContainer = document.createElement("div");
 		buttonContainer.id = "button-container";
 
@@ -364,6 +368,7 @@ var JPGSEQUENCE = {
 		var playButton = document.createElement("a");
 		playButton.href = "#";
 		playButton.id = "jpg-slide-play";
+		playButton.innerHTML = "Play: "
 		$(playButton).click(function(event){
 			event.preventDefault();
 			if(!JPGSEQUENCE.playIntervalObject){
@@ -375,8 +380,9 @@ var JPGSEQUENCE = {
 			return false;
 		})
 
-		parent.appendChild(playButton);
-		parent.appendChild(buttonContainer);
+		buttonsArea.appendChild(playButton);
+		buttonsArea.appendChild(buttonContainer);
+		parent.appendChild(buttonsArea);
 
 		$($("#button-container").children()[0]).click()
 	},
@@ -399,10 +405,12 @@ var JPGSEQUENCE = {
 			return false
 		})
 		$(but).on("mouseover",function(event){
+			event.preventDefault();
 			$(".jpg-slide-selected").removeClass('jpg-slide-selected');
 			$(this).addClass('jpg-slide-selected');
 			JPGSEQUENCE.hideAllSlides();
-			$(element).removeClass('jpg-slide-hidden')
+			$(element).removeClass('jpg-slide-hidden');
+			return false;
 		})
 		return but;
 	},
@@ -449,9 +457,9 @@ $(window).on("resize",function(){
 
 $(window).load(function(){
 	GLOBAL.singleIndex();
-	GLOBAL.getAddress();
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
+	GLOBAL.getAddress();
 	GLOBAL.setUpNav();
 	GLOBAL.setupNextPageButton();
 	GLOBAL.fadeLoading();
