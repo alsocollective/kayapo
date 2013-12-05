@@ -746,21 +746,27 @@ body section:nth-child(2){
   position: absolute;
   bottom: 5em;
 }
-
 #button-container a{
+	position: relative;
+	display: inline-block;
+	height: 30px;
+}
+#button-container a div{
   @include vendorize(border-radius, 50%);
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px 5px 5px;
-  background-color: #fc0;
+	display: inline-block;
+	position: relative;
+	width: 10px;
+	height: 10px;
+	margin: 10px 5px 10px 5px;
+	background-color: #fff;
 }
 
-#button-container .jpg-slide-selected{
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  background-color: #0ff;
+#button-container .jpg-slide-selected div{
+	@include vendorize(border-radius, 0%);
+	width: 15px;
+	height: 30px;
+	margin: 0 2.5px 0 2.5px;
+	background-color: #fff;
 }
 
 #jpg-slide-play{
