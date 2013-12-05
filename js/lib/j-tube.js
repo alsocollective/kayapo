@@ -177,12 +177,16 @@ $.fn.Jtube = function( options ) {
 		// $(settings.timeLeftPos).css({height:settings.skipvidHeight,width:"10%"});
 	}
 
-	var tag = document.createElement('script');
-	tag.src = "https://www.youtube.com/iframe_api";
-	settings.iframeEl.parentNode.insertBefore(tag, settings.iframeEl);
-	$(settings.iframeEl).addClass("shift-left");
-
-	this.setupPlayer = function(){
+	if(!YT){
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		settings.iframeEl.parentNode.insertBefore(tag, settings.iframeEl);
+		$(settings.iframeEl).addClass("shift-left");
+	} else {
+		console.log("already loaded the YT api");
+		setupPlayer();
+	}
+	function setupPlayer(){
 		if(settings.debugMode){
 			console.log("set up player starting");
 		}
@@ -228,6 +232,9 @@ $.fn.Jtube = function( options ) {
 		if(settings.debugMode){
 			console.log("setup player ending");
 		}
+	}
+	this.setupPlayer = function(){
+		setupPlayer();
 	};
 	function onPlayerReady(evt){
 		if(settings.debugMode){
@@ -376,6 +383,9 @@ $.fn.Jtube = function( options ) {
 				$(settings.player.a).css({width:Math.floor(settings.pW),height:Math.floor(settings.pH),left:Math.floor((settings.winW-settings.pW)/2),top:(settings.winH-settings.pH)/2,position:"absolute"});
 			}
 		}
+	}
+	this.settings = function(){
+		return settings;
 	}
 
 	return this;
