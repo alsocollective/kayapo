@@ -4,12 +4,7 @@ var GLOBAL = {
 	mousePressed:false,
 	getAddress:function(){
 		GLOBAL.address = window.location.href.toString().split(window.location.host)[1].split(".")[0].split("/")[1];
-		if($("#"+GLOBAL.address).length > 0){
-			GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
-			GLOBAL.loadPage(GLOBAL.current);
-			// $(window).scrollTop($("#"+GLOBAL.address).offset().top);
-			// GLOBAL.caseFunctionLoads(GLOBAL.address);
-		}
+		GLOBAL.caseFunctionLoads(GLOBAL.address);
 	},
 	indexNumber: null,
 	setUpIndex:function(){
@@ -78,10 +73,15 @@ var GLOBAL = {
 	current:null,
 	preScroll:0,
 	getHotSpots:function(){
+		GLOBAL.getAddress();
 		GLOBAL.hotSpotEl = $(document.body).children();
 		GLOBAL.hotSpots = [];
 		for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
 			GLOBAL.hotSpots.push($(GLOBAL.hotSpotEl[a]).offset().top);
+			if(GLOBAL.address == GLOBAL.hotSpotEl[a].id){
+				console.log(GLOBAL.hotSpotEl[a]);
+				GLOBAL.loadPage(a);
+			}
 		}
 		GLOBAL.hotSpots[0] = 0;
 		GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
@@ -167,11 +167,29 @@ var GLOBAL = {
 	setUpWhyNav:function(){
 		$(".why-sub-nav").click(function(event){
 			event.preventDefault();
-			var string = this.id.split("-nav")[0];
-			var element = $("#why-rainforest-3 #"+string)[0];
-			var otherElements = $("#why-rainforest-3 #slides div");
-			otherElements.addClass('hidden');
+			var image = $(this).children('img')[0],
+			string = this.id.split("-nav")[0],
+			element = $("#why-rainforest-3 #"+string)[0],
+			otherElements = $("#why-rainforest-3 #slides div");
+			navEl = $(".why-sub-nav"),
+			prev = null;
+			for(var a=0,max = otherElements.length; a < max; a += 1){
+				$(otherElements[a]).addClass('hidden');
+				if($(navEl[a]).hasClass('selected-why-nav')){
+					var childImage = $(navEl[a]).children('img')[0]
+					string = childImage.src.split("/");
+					string = string[string.length-1].split("ho")[0];
+					prev = string;
+					childImage.src = "/assets/"+string+".png";
+					$(navEl[a]).removeClass('selected-why-nav');
+				}
+			}
+			string = image.src.split(".")[0].split("/");
+			if(prev == string[string.length-1]) return false;
 			$(element).removeClass('hidden');
+			$(this).addClass('selected-why-nav');
+			image.src = "/assets/"+string[string.length-1]+"ho.png"
+			console.log("got to the end of the link...");
 			return false;
 		})
 	},
@@ -182,10 +200,7 @@ var GLOBAL = {
 			console.log(showThis);
 
 			GLOBAL.addOffBottomToAll(this);
-			// $(showThis).addClass('animated bounceInUp');
-			// setTimeout(function(){$(showThis).removeClass('animatedbounceInUp');},1000);
 			$(showThis).removeClass('off-bottom');
-
 
 			return false;
 		});
@@ -209,35 +224,37 @@ var GLOBAL = {
 		$(".next-page-button").click(GLOBAL.goToNextPage);
 	},
 	setUpBackGroundAnimals:function(){
-		var width = $(window).width(),
-		height = $(window).height(),
-		count = Math.floor(width/50)*Math.floor(height/50),
-		parent = document.getElementById("back-ground-items"),
-		base = document.createElement("div"),
-		baseSub = document.createElement("div");
-		base.className = "inline-image";
-		base.appendChild(baseSub)
-		temp = null,
-		animals = [
-			"image-bug",
-			"image-butterfly",
-			"image-frog",
-			"image-insect",
-			"image-leaf1",
-			"image-leaf2",
-			"image-leaf3",
-			"image-leaf4",
-			"image-leaf5",
-			"image-leaf6",
-			"image-leaf7",
-			"image-monkey",
-			"image-snake",
-			"image-tucan"
-			];
-		for(var a = 0; a < count; ++a){
-			baseSub.className = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
-			temp = base.cloneNode(true);
-			parent.appendChild(temp);
+		var parent = document.getElementById("back-ground-items");
+		if(parent){
+			var width = $(window).width(),
+			height = $(window).height(),
+			count = Math.floor(width/50)*Math.floor(height/50),
+			base = document.createElement("div"),
+			baseSub = document.createElement("div");
+			base.className = "inline-image";
+			base.appendChild(baseSub)
+			temp = null,
+			animals = [
+				"image-bug",
+				"image-butterfly",
+				"image-frog",
+				"image-insect",
+				"image-leaf1",
+				"image-leaf2",
+				"image-leaf3",
+				"image-leaf4",
+				"image-leaf5",
+				"image-leaf6",
+				"image-leaf7",
+				"image-monkey",
+				"image-snake",
+				"image-tucan"
+				];
+			for(var a = 0; a < count; ++a){
+				baseSub.className = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
+				temp = base.cloneNode(true);
+				parent.appendChild(temp);
+			}
 		}
 	},
 	IntervalRemoveBk:null,
@@ -282,7 +299,6 @@ var GLOBAL = {
 	},
 	stuckThreat:false,
 	setThreatStatic:function(){
-		console.log("setting it to be static");
 		var el = $("#back-ground-items").addClass('stick');
 		GLOBAL.stuckThreat = true;
 	},
@@ -291,11 +307,12 @@ var GLOBAL = {
 		GLOBAL.stuckThreat = false;
 	},
 	loading:false,
-	loadPage:function(newLoc){
-		if(GLOBAL.loading) return false;
+	loadPage:function(newLoc,animate){
+		if(GLOBAL.loading) if(animate !== false) return false;
 		if(newLoc === null || GLOBAL.hotSpotEl === null) return false;
 		var parentEl = GLOBAL.hotSpotEl[newLoc]
 		if($(parentEl).children().length <= 0){
+
 			GLOBAL.loading = true;
 			$(parentEl).load("ajax/"+parentEl.id+".html",function(response, status, xhr){
 				if(status == "error"){
@@ -305,8 +322,8 @@ var GLOBAL = {
 						console.log(xhr.status + " " + xhr.statusText);
 					}
 				}
-				GLOBAL.caseFunctionLoads(parentEl.id);
-				GLOBAL.animateTo(newLoc,newLoc);
+				GLOBAL.caseFunctionLoads(parentEl.id,newLoc);
+				if(animate !==false) {GLOBAL.animateTo(newLoc);} else {GLOBAL.edgeCases(newLoc);}
 				GLOBAL.loading = false;
 			});
 		}else {
@@ -314,7 +331,9 @@ var GLOBAL = {
 		}
 	},
 	caseFunctionLoads:function(id,newLoc){
+		console.log("got to edge cases");
 		if(id == "why-rainforest-3"){
+			console.log("setting up why nav");
 			GLOBAL.setUpWhyNav();
 		} else if(id == "the-threat-1"){
 			JPGSEQUENCE.generateImages(document.getElementById("the-threat-1"),29,"map");
@@ -322,13 +341,17 @@ var GLOBAL = {
 			GLOBAL.setUpBackGroundAnimals();
 			GLOBAL.setIntervalRemoveBk();
 		} else if(id == "the-threat-35"){
-			GLOBAL.loadPage()
+			GLOBAL.loadPage(newLoc-1,false);
+			GLOBAL.setIntervalAddBk();
 		} else if(id == "kayapo-proj-2"){
 			GLOBAL.setUpProjectsNav();
 		}
 		return null;
 	},
 	setHash:function(currentHashEl){
+		if(currentHashEl == "the-threat-35"){
+			currentHashEl = "the-threat-3";
+		}
 		if (history && history.pushState) {
 			var newAddress = "/";
 			var gaAddress = "/";
@@ -443,24 +466,18 @@ var YT = null;
 $(window).on( "scroll",GLOBAL.scrollEvent);
 $(window).bind('mousewheel',GLOBAL.stopForAnimationEvent);
 $(window).bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
-// $(window).on("mousedown",function(){
-// 	GLOBAL.mousePressed == true;
-// })
-// $(window).on("mouseup",function(){
-// 	GLOBAL.mousePressed == false;
-// })
 
 $(window).on("resize",function(){
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
+	GLOBAL.setUpBackGroundAnimals();
 });
 
 $(window).load(function(){
 	GLOBAL.singleIndex();
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
-	GLOBAL.getAddress();
 	GLOBAL.setUpNav();
 	GLOBAL.setupNextPageButton();
-	GLOBAL.fadeLoading();
+	setTimeout(GLOBAL.fadeLoading,1000);
 });

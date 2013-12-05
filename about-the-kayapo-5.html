@@ -87,20 +87,14 @@
 		fallbackImage:"/assets/images/bg_why1.jpg",
 		onStart:function(settings){
 			$(settings.player.a).css({"display":"inline-block"})
-			// $(settings.player.a).fadeIn('fast');
 			$("#stick-in-back").fadeOut('1000');
 			return null;
 		},
 		onPause:function(settings){
-			// $(settings.player.a).css({"display":"none"})
-			// $(settings.player.a).fadeOut('fast');
-			// settings.player.playVideo();
 			$("#stick-in-back").fadeIn('1000');
 			return null;
 		},
 		onDone:function(settings){
-			$("#splash").fadeIn('fast');
-			// settings.player.pause();
 			return false;
 		}
 	});
