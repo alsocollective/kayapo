@@ -4,10 +4,7 @@ var GLOBAL = {
 	mousePressed:false,
 	getAddress:function(){
 		GLOBAL.address = window.location.href.toString().split(window.location.host)[1].split(".")[0].split("/")[1];
-		if($("#"+GLOBAL.address).length > 0){
-			$(window).scrollTop($("#"+GLOBAL.address).offset().top);
-			GLOBAL.caseFunctionLoads(GLOBAL.address);
-		}
+		GLOBAL.caseFunctionLoads(GLOBAL.address);
 	},
 	indexNumber: null,
 	setUpIndex:function(){
@@ -61,6 +58,24 @@ var GLOBAL = {
 			return false;
 		})
 	},
+	navColourDetection:function(navOfLoc){
+		var teller = navOfLoc.split("-")[0];
+		if(teller == "index"){
+			$("#nav")[0].className = "index transition-all-2";
+		}else if(teller == "why"){
+			$("#nav")[0].className = "why transition-all-2";
+		}else if(teller == "about"){
+			$("#nav")[0].className = "about transition-all-2";
+		} else if(teller == "the"){
+			$("#nav")[0].className = "the-threat transition-all-2";
+		} else if(teller == "kayapo"){
+			$("#nav")[0].className = "project transition-all-2";
+		}else if(teller == "donate"){
+			$("#nav")[0].className = "donate transition-all-2";
+		}else if(teller == "contact"){
+			$("#nav")[0].className = "contact transition-all-2";
+		}
+	},
 	highLightNavOnScroll:function(idin){
 		var idin = idin.split("-");
 		var realId = idin[0];
@@ -76,10 +91,25 @@ var GLOBAL = {
 	current:null,
 	preScroll:0,
 	getHotSpots:function(){
+		GLOBAL.getAddress();
 		GLOBAL.hotSpotEl = $(document.body).children();
 		GLOBAL.hotSpots = [];
-		for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
+		var id = null;
+		for(var a = 0, max = GLOBAL.hotSpotEl.length-1; a < max; a += 1){
 			GLOBAL.hotSpots.push($(GLOBAL.hotSpotEl[a]).offset().top);
+			id = GLOBAL.hotSpotEl[a].id;
+			if(GLOBAL.address == id){
+				GLOBAL.loadPage(a);
+			}
+			if(id == "why-rainforest-3"){
+				GLOBAL.stuckWhyLoc = a;
+			}
+			if(id == "the-threat-3"){
+				GLOBAL.stuckThreatLoc = a;
+			}
+			if(id == "about-the-kayapo-5"){
+				GLOBAL.stuckAboutLoc = a;
+			}
 		}
 		GLOBAL.hotSpots[0] = 0;
 		GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
@@ -111,30 +141,45 @@ var GLOBAL = {
 		});
 		GLOBAL.current = location;
 		GLOBAL.edgeCases(location);
+		GLOBAL.navColourDetection(GLOBAL.hotSpotEl[location].id)
 		GLOBAL.setHash(GLOBAL.hotSpotEl[location].id);
 	},
 	edgeCases:function(location){
 		if(GLOBAL.debug)console.log("edgeCase " + location);
-		if(location >= 12){
-			if(location == 12){
+
+		//unstuck everything except if needed
+		if(GLOBAL.stuckThreat || GLOBAL.stuckWhy || GLOBAL.stuckAbout){
+			GLOBAL.unSetThreatStatic();
+			GLOBAL.unSetWhyStatic();
+			GLOBAL.unSetAboutStatic();
+		}
+
+		//stick only what is needed
+		if(location >= GLOBAL.stuckThreatLoc && location <=  GLOBAL.stuckThreatLoc+2){
+			GLOBAL.setThreatStatic();
+		}
+		if(location >= GLOBAL.stuckWhyLoc && location <= GLOBAL.stuckWhyLoc+2){
+			GLOBAL.setWhyStatic();
+		}
+		if(location >= GLOBAL.stuckAboutLoc && location <= GLOBAL.stuckAboutLoc+2){
+			GLOBAL.setAboutStatic();
+		}
+
+		if(location >= GLOBAL.stuckThreatLoc){
+			if(location == GLOBAL.stuckThreatLoc){
 				GLOBAL.setIntervalRemoveBk();
 			} else {
 				GLOBAL.setIntervalAddBk();
 			}
-			GLOBAL.setThreatStatic();
 		} else if(GLOBAL.IntervalRemoveBk || GLOBAL.IntervalAddBk){
-			console.log("this guy");
 			GLOBAL.clearIntervalRemoveBk();
 			GLOBAL.clearIntervalAddBk();
-		} else if(GLOBAL.stuckThreat){
-			console.log("unstuck it");
-			GLOBAL.unSetThreatStatic();
 		}
 	},
 	findClosestElement:function(loc){
 		if(!GLOBAL.hotSpots) return null;
 		for(var a = 0, max = GLOBAL.hotSpots.length; a < max; ++a){
-			if(GLOBAL.debug) console.log("Iterating through elements till bottom "+ a + " " +GLOBAL.hotSpots[a]);
+			if(GLOBAL.debug) console.log("Iterating through elements till bottom "+ a + " " +GLOBAL.hotSpots[a]+ " " + GLOBAL.hotSpotEl[a].id);
 			if(loc > GLOBAL.hotSpots[a]-150-GLOBAL.navHeight && loc < GLOBAL.hotSpots[a]-1-GLOBAL.navHeight){
 				if(GLOBAL.preScroll-loc>0){
 					if (GLOBAL.debug) console.log("up");
@@ -165,25 +210,49 @@ var GLOBAL = {
 	setUpWhyNav:function(){
 		$(".why-sub-nav").click(function(event){
 			event.preventDefault();
-			var string = this.id.split("-nav")[0];
-			var element = $("#why-rainforest-3 #"+string)[0];
-			var otherElements = $("#why-rainforest-3 #slides div");
-			otherElements.addClass('hidden');
+			var image = $(this).children('img')[0],
+			string = this.id.split("-nav")[0],
+			element = $("#why-rainforest-35 #"+string)[0],
+			otherElements = $("#why-rainforest-35 #slides div");
+			navEl = $(".why-sub-nav"),
+			prev = null;
+			for(var a=0,max = otherElements.length; a < max; a += 1){
+				$(otherElements[a]).addClass('hidden');
+				if($(navEl[a]).hasClass('selected-why-nav')){
+					var childImage = $(navEl[a]).children('img')[0]
+					string = childImage.src.split("/");
+					string = string[string.length-1].split("ho")[0];
+					prev = string;
+					childImage.src = "/assets/"+string+".png";
+					$(navEl[a]).removeClass('selected-why-nav');
+				}
+			}
+			string = image.src.split(".")[0].split("/");
+			if(prev == string[string.length-1]) return false;
 			$(element).removeClass('hidden');
+			$(this).addClass('selected-why-nav');
+			image.src = "/assets/"+string[string.length-1]+"ho.png"
+			console.log("got to the end of the link...");
 			return false;
 		})
 	},
 	setUpProjectsNav:function(){
 		$("#funds-divs").children().click(function(event){
 			event.preventDefault();
+			//remove old images
+			var img = $(".height-lighted-pro-nav");
+			for(var a = 0, max = img.length; a < max; ++a){
+				img[a].src = img[a].src.split("-")[0]+".png";
+				img[a].className = "";
+			}
+
+			img = $(this).children('img')[0];
+			img.src = img.src.split(".")[0]+"-ho.png";
+			img.className = "height-lighted-pro-nav";
+
 			var showThis = "#kayapo-proj-modal-"+$(this).attr('href').split("#")[1];
-			console.log(showThis);
-
 			GLOBAL.addOffBottomToAll(this);
-			// $(showThis).addClass('animated bounceInUp');
-			// setTimeout(function(){$(showThis).removeClass('animatedbounceInUp');},1000);
 			$(showThis).removeClass('off-bottom');
-
 
 			return false;
 		});
@@ -207,35 +276,81 @@ var GLOBAL = {
 		$(".next-page-button").click(GLOBAL.goToNextPage);
 	},
 	setUpBackGroundAnimals:function(){
-		var width = $(window).width(),
-		height = $(window).height(),
-		count = Math.floor(width/50)*Math.floor(height/50),
-		parent = document.getElementById("back-ground-items"),
-		base = document.createElement("div"),
-		baseSub = document.createElement("div");
-		base.className = "inline-image";
-		base.appendChild(baseSub)
-		temp = null,
-		animals = [
-			"image-bug",
-			"image-butterfly",
-			"image-frog",
-			"image-insect",
-			"image-leaf1",
-			"image-leaf2",
-			"image-leaf3",
-			"image-leaf4",
-			"image-leaf5",
-			"image-leaf6",
-			"image-leaf7",
-			"image-monkey",
-			"image-snake",
-			"image-tucan"
+		var parent = document.getElementById("back-ground-items");
+		if(parent){
+			parent.innerHTML = "";
+			var width = $(window).width(),
+			height = $(window).height(),
+			count = Math.floor(width/50)*Math.floor(height/50),
+			base = document.createElement("div"),
+			baseSub = document.createElement("div");
+			base.className = "inline-image";
+			base.appendChild(baseSub)
+			temp = null,
+			animals = [
+				"image-bug",
+				"image-butterfly",
+				"image-frog",
+				"image-insect",
+				"image-leaf1",
+				"image-leaf2",
+				"image-leaf3",
+				"image-leaf4",
+				"image-leaf5",
+				"image-leaf6",
+				"image-leaf7",
+				"image-monkey",
+				"image-snake",
+				"image-tucan"
+				];
+			for(var a = 0; a < count; ++a){
+				baseSub.className = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
+				temp = base.cloneNode(true);
+				parent.appendChild(temp);
+			}
+		}
+	},
+	setPils:function(){
+		var parents = $("#the-threat-4 .background-parent")
+		if(parents.length >= 1){
+			parents[0].innerHTML = "";
+			parents[1].innerHTML = "";
+			var width = $(parents[0]).width(),
+			height = $(parents[0]).height(),
+			count = Math.floor(width/50)*Math.floor(height/50),
+			base = document.createElement("div"),
+			baseSub = document.createElement("div");
+			base.className = "inline-image";
+			base.appendChild(baseSub)
+			temp = null,
+			animals = [
+				"image-pleaf1",
+				"image-pleaf2",
+				"image-pleaf3",
+				"image-pleaf4",
+				],
+			pills = [
+				"image-pill1",
+				"image-pill2",
+				"image-pill3",
+				"image-pill4"
 			];
-		for(var a = 0; a < count; ++a){
-			baseSub.className = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
-			temp = base.cloneNode(true);
-			parent.appendChild(temp);
+
+			for(var a = 0; a < count; ++a){
+				// to make it consistant use a%4
+				temp = "full-backgroundimage "+pills[Math.floor(Math.random()*pills.length)];
+				if(a/count < 0.25) temp = temp+"-y";
+				baseSub.className = temp;
+				temp = base.cloneNode(true);
+				parents[0].appendChild(temp);
+			}
+			for(var a = 0; a < count; ++a){
+				temp = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
+				if(a/count < 0.01) temp = temp+"-y";
+				baseSub.className = temp;
+				temp = base.cloneNode(true);
+				parents[1].appendChild(temp);
+			}
 		}
 	},
 	IntervalRemoveBk:null,
@@ -249,7 +364,7 @@ var GLOBAL = {
 				} else {
 					clearInterval(GLOBAL.IntervalRemoveBk);
 				}
-			},250);
+			},50);
 		}
 	},
 	clearIntervalRemoveBk:function(){
@@ -264,12 +379,15 @@ var GLOBAL = {
 		if(!GLOBAL.IntervalAddBk){
 			GLOBAL.IntervalAddBk = setInterval(function(){
 				var allEl = $(".inline-image .none");
+				var el = null;
 				if(allEl.length>0){
-					$(allEl[Math.floor(Math.random()*allEl.length)]).removeClass('none');
+					el = allEl[Math.floor(Math.random()*allEl.length)];
+					$(el).removeClass('none');
+					$(el.parentNode).addClass('yellow');
 				} else {
 					clearInterval(GLOBAL.IntervalAddBk);
 				}
-			},250)
+			},50)
 		}
 	},
 	clearIntervalAddBk:function(){
@@ -278,9 +396,29 @@ var GLOBAL = {
 			GLOBAL.IntervalAddBk = null;
 		}
 	},
+	stuckWhy:false,
+	stuckWhyLoc:null,
+	stuckAbout:false,
+	stuckAboutLoc:null,
 	stuckThreat:false,
+	stuckThreatLoc:null,
+	setWhyStatic:function(){
+		var el = $("#why-rainforest-3 #cropping-youtube").addClass('stick');
+		GLOBAL.stuckWhy = true;
+	},
+	unSetWhyStatic:function(){
+		var el = $("#why-rainforest-3 #cropping-youtube").removeClass('stick');
+		GLOBAL.stuckWhy = false;
+	},
+	setAboutStatic:function(){
+		var el = $("#about-the-kayapo-5 .full-page").addClass('stick');
+		GLOBAL.stuckAbout = true;
+	},
+	unSetAboutStatic:function(){
+		var el = $("#about-the-kayapo-5 .full-page").removeClass('stick');
+		GLOBAL.stuckAbout = false;
+	},
 	setThreatStatic:function(){
-		console.log("setting it to be static");
 		var el = $("#back-ground-items").addClass('stick');
 		GLOBAL.stuckThreat = true;
 	},
@@ -289,11 +427,12 @@ var GLOBAL = {
 		GLOBAL.stuckThreat = false;
 	},
 	loading:false,
-	loadPage:function(newLoc){
-		if(GLOBAL.loading) return false;
+	loadPage:function(newLoc,animate){
+		if(GLOBAL.loading) if(animate !== false) return false;
 		if(newLoc === null || GLOBAL.hotSpotEl === null) return false;
 		var parentEl = GLOBAL.hotSpotEl[newLoc]
 		if($(parentEl).children().length <= 0){
+
 			GLOBAL.loading = true;
 			$(parentEl).load("ajax/"+parentEl.id+".html",function(response, status, xhr){
 				if(status == "error"){
@@ -303,8 +442,8 @@ var GLOBAL = {
 						console.log(xhr.status + " " + xhr.statusText);
 					}
 				}
-				GLOBAL.caseFunctionLoads(parentEl.id);
-				GLOBAL.animateTo(newLoc,newLoc);
+				GLOBAL.caseFunctionLoads(parentEl.id,newLoc);
+				if(animate !==false) {GLOBAL.animateTo(newLoc);} else {GLOBAL.edgeCases(newLoc);}
 				GLOBAL.loading = false;
 			});
 		}else {
@@ -312,21 +451,34 @@ var GLOBAL = {
 		}
 	},
 	caseFunctionLoads:function(id,newLoc){
-		if(id == "why-rainforest-3"){
+		console.log("acase function got called", id);
+		if(id == "why-rainforest-35"){
+			GLOBAL.loadPage(newLoc-1,false);
 			GLOBAL.setUpWhyNav();
+		} else if(id == "about-the-kayapo-3"){
+			console.log("animaiton sequence will be called");
+			GLOBAL.mapAnimationSquence();
 		} else if(id == "the-threat-1"){
 			JPGSEQUENCE.generateImages(document.getElementById("the-threat-1"),29,"map");
 		} else if(id == "the-threat-3"){
 			GLOBAL.setUpBackGroundAnimals();
 			GLOBAL.setIntervalRemoveBk();
 		} else if(id == "the-threat-35"){
-			GLOBAL.loadPage()
+			GLOBAL.loadPage(newLoc-1,false);
+			GLOBAL.setIntervalAddBk();
 		} else if(id == "kayapo-proj-2"){
 			GLOBAL.setUpProjectsNav();
+		} else if(id == "the-threat-4"){
+			GLOBAL.setPils();
 		}
 		return null;
 	},
 	setHash:function(currentHashEl){
+		if(currentHashEl == "the-threat-35"){
+			currentHashEl = "the-threat-3";
+		} else if(currentHashEl == "why-rainforest-35"){
+			currentHashEl = "why-rainforest-3";
+		}
 		if (history && history.pushState) {
 			var newAddress = "/";
 			var gaAddress = "/";
@@ -339,6 +491,22 @@ var GLOBAL = {
 	},
 	fadeLoading:function(){
 		$("#loading-screen").fadeOut('1000');
+	},
+	mapAnimationCounter:0,
+	mapAnimationSquence:function(){
+		console.log("animaiton sequence got called...");
+		setTimeout(function(){
+			for(var a  = 0; a < 7; ++a){
+				setTimeout(function(){
+					console.log($("#map-"+GLOBAL.mapAnimationCounter)[0]);
+					$("#map-"+GLOBAL.mapAnimationCounter)[0].classList.remove("hidden");
+					++GLOBAL.mapAnimationCounter;
+					if(GLOBAL.mapAnimationCounter == 6){
+						GLOBAL.mapAnimationCounter = 0;
+					}
+				},a*1000);
+			}
+		},1000);
 	}
 }
 
@@ -350,10 +518,16 @@ var JPGSEQUENCE = {
 		JPGSEQUENCE.baseName = baseName;
 		var el = null,
 		button = null,
+		buttonsArea = document.createElement("div"),
+		firstEl = document.createElement("span"),
+		endEl = document.createElement("span");
+		firstEl.innerHTML = "1984";
+		endEl.innerHTML = "2012";
+		buttonsArea.id = "buttons-area";
 		buttonContainer = document.createElement("div");
 		buttonContainer.id = "button-container";
 
-		for(var a = 0; a < number; ++a){
+		for(var a = 0; a < number; a += 2){
 			el = JPGSEQUENCE.createImage(a);
 			JPGSEQUENCE.listOfImages.push(el);
 			parent.appendChild(el);
@@ -364,6 +538,7 @@ var JPGSEQUENCE = {
 		var playButton = document.createElement("a");
 		playButton.href = "#";
 		playButton.id = "jpg-slide-play";
+		playButton.innerHTML = "Play: "
 		$(playButton).click(function(event){
 			event.preventDefault();
 			if(!JPGSEQUENCE.playIntervalObject){
@@ -375,8 +550,11 @@ var JPGSEQUENCE = {
 			return false;
 		})
 
-		parent.appendChild(playButton);
-		parent.appendChild(buttonContainer);
+		buttonsArea.appendChild(playButton);
+		buttonsArea.appendChild(firstEl);
+		buttonsArea.appendChild(buttonContainer);
+		buttonsArea.appendChild(endEl);
+		parent.appendChild(buttonsArea);
 
 		$($("#button-container").children()[0]).click()
 	},
@@ -399,10 +577,12 @@ var JPGSEQUENCE = {
 			return false
 		})
 		$(but).on("mouseover",function(event){
+			event.preventDefault();
 			$(".jpg-slide-selected").removeClass('jpg-slide-selected');
 			$(this).addClass('jpg-slide-selected');
 			JPGSEQUENCE.hideAllSlides();
-			$(element).removeClass('jpg-slide-hidden')
+			$(element).removeClass('jpg-slide-hidden');
+			return false;
 		})
 		return but;
 	},
@@ -419,7 +599,6 @@ var JPGSEQUENCE = {
 				findCurrent = $("#button-container").children()[0];
 			}
 			var next = $(findCurrent).next()[0];
-			console.log(next);
 			if(!next){
 				next = $("#button-container").children()[0];
 			}
@@ -435,24 +614,18 @@ var YT = null;
 $(window).on( "scroll",GLOBAL.scrollEvent);
 $(window).bind('mousewheel',GLOBAL.stopForAnimationEvent);
 $(window).bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
-// $(window).on("mousedown",function(){
-// 	GLOBAL.mousePressed == true;
-// })
-// $(window).on("mouseup",function(){
-// 	GLOBAL.mousePressed == false;
-// })
 
 $(window).on("resize",function(){
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
+	// GLOBAL.setUpBackGroundAnimals();
 });
 
 $(window).load(function(){
 	GLOBAL.singleIndex();
-	GLOBAL.getAddress();
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
 	GLOBAL.setUpNav();
 	GLOBAL.setupNextPageButton();
-	GLOBAL.fadeLoading();
+	setTimeout(GLOBAL.fadeLoading,1000);
 });
