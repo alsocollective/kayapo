@@ -43,7 +43,7 @@ var GLOBAL = {
 			event.preventDefault();
 			var string = this.id.split("-nav")[0]
 			GLOBAL.removeHeighLight();
-			$(this.parentNode).addClass('highlight-nav');
+			$(this).addClass('highlight-nav');
 			if(string === "index"){
 				string = string+"-"+GLOBAL.indexNumber;
 			} else {
@@ -561,7 +561,7 @@ var JPGSEQUENCE = {
 	createImage:function(count){
 		var img = document.createElement("div");
 		img.className = JPGSEQUENCE.baseName + " jpg-slide-hidden full-backgroundimage";
-		img.style.backgroundImage = "url(/assets/images/map/"+JPGSEQUENCE.baseName+count+".jpg)";
+		img.style.backgroundImage = "url(/assets/map/"+JPGSEQUENCE.baseName+count+".jpg)";
 		return img;
 	},
 	createButton:function(element){
@@ -622,7 +622,7 @@ $(window).on("resize",function(){
 });
 
 $(window).load(function(){
-	GLOBAL.singleIndex();
+	//GLOBAL.singleIndex();
 	GLOBAL.getNavHeight();
 	GLOBAL.getHotSpots();
 	GLOBAL.setUpNav();

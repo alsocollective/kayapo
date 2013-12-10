@@ -23,6 +23,9 @@ $k-red: #e53827;
 $k-blue-dark: #2a78a0;
 $k-blue-bright: #6ec4ee;
 
+/* Nav Height */
+$nav-height: 2.25em;
+
 
 /* Global Classes */
 $acropolis: 'Acropolis A', 'Acropolis B';
@@ -39,7 +42,7 @@ body,html{
 	padding: 0;
 	margin: 0;
 	//overflow: hidden;
-	font-family: "franklin-gothic-urw",sans-serif;
+	font-family: $verlag;
 	-webkit-font-smoothing: antialiased;
 	color: $text_color_grey;
 }
@@ -51,50 +54,176 @@ body{
 }
 
 section{
-	height: calc( 100% - 3em);
+	height: calc( 100% - 2.25em);
 	width: 100%;
 	overflow: hidden;
 }
 
-/* nav */
-nav, #nav{
-	position: absolute;/* we need absolute as a fall back */
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 88;
-	width: 100%;
-	// background-color: $k-red;
-	text-transform: uppercase;
-	height: 3em;
 
-	a{
-		color: inherit;
-		display: inline-block;
-		text-decoration: none;
-		font-family: $verlag;
-		font-weight: 800;
-		padding: 1em 1% 1em 1%;	
-	}
+/* NAV */
 
-	li{
-		color: inherit;
-		display: inline-block;
-		//width: 20%;
-		text-decoration: none;
-		font-weight: 400;
-		vertical-align: top;
-	}
-	ul{
-		color: inherit;
-		white-space: nowrap;
+	nav, #nav{
+		position: absolute;/* we need absolute as a fall back */
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 88;
 		width: 100%;
+		text-transform: uppercase;
+		//height: 2.5em;
+		font-family: $verlag;
+		height: 2.25em;
+
+		a{
+			color: inherit;
+			display: inline-block;
+			text-decoration: none;
+			font-weight: 800;
+			font-size: 1.1em;
+			margin-top: 0.5em;
+		}
+
+		li{
+			color: inherit;
+			display: inline-block;
+			//width: 20%;
+			text-decoration: none;
+			//font-weight: 400;
+			vertical-align: top;
+			height: 100%;
+			padding:0 2% 0 2%;
+		}
+		ul{
+			color: inherit;
+			white-space: nowrap;
+			width: 100%;
+		}
+		#donat-but{
+			background-color: $k-yellow !important;
+			color: #000 !important;
+		}
+
+		#social-nav{
+			position: absolute;
+			right: 20px;
+		}
 	}
-	#donat-but{
-		background-color: $k-yellow !important;
-		color: #000 !important;
+
+	.highlight-nav{
+		border-bottom: 2px solid #fff;
 	}
-}
+
+/* NAV END */
+	
+	
+/* INDEX 1 Section */
+	
+	#index-1{
+
+		blockquote{
+			font-weight: 800;
+			font-size: 3.5em;
+			padding: 0 0 2% 0;
+			width: 60%;
+			margin: 0 auto 0 auto;
+			color:#fff;
+		}
+		h2{
+			text-transform: uppercase;
+			font-size: 3.5em;
+			font-weight: 800;
+			padding: 8% 0 0 0;
+			color:#fff;
+		}
+	}
+	
+	#main-info{
+		text-align: center;
+		
+		a img{
+			margin-top: 3em;
+		}
+	}
+	
+
+/* WHY RAINFOREST */
+
+	#why-rainforest-1{
+
+		color: #fff;
+		text-align: center;
+		
+
+		blockquote{
+			font-weight: 800;
+			font-size:6em;
+			width: 80%;
+			margin: 0 auto 2% auto;
+			padding-top: 8%;
+		}
+
+		small{
+			font-weight: 800;
+			font-size: 1.5em;
+		}
+	}
+
+	#why-rainforest-2{
+		color: #000;
+		position: relative;
+		
+		#section-content{
+			width: 60%;
+			padding: 8% 0 0 0;
+			position:absolute;
+			right: 10%;
+		}
+	
+		blockquote{
+			font-weight: 800;
+			font-size: 3.6em;
+			margin-bottom: 0.5em;
+		}
+		
+		small{
+			font-weight: 800;
+			font-size: 1.2em;
+		}
+		.donation{
+			margin-top:15%;
+		}
+	}
+
+	#why-rainforest-3{
+		color: #fff;
+		position: relative;
+		.full-page{
+			@extend .full-page;
+			position: relative;
+		}
+		h2{
+			font-family: $acropolis;
+			font-weight: 700;
+			font-style: italic;
+			font-size: 4em;
+			text-align: center;
+		}
+	}
+	#why-rainforest-35{
+		position: relative;
+		ul{
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			padding-top: 3em;
+		}
+		li{
+			display: inline-block;
+			text-align: center;
+		}
+	}
+	
+	
 
 .index{
 	background-color: $k-green-bright;
@@ -148,26 +277,7 @@ nav, #nav{
 
 /* HOME */
 body section:nth-child(2){
-	margin: 3em 0 0 0;
-}
-#index-1{
-	font-family: $verlag;
-
-	blockquote{
-		font-weight: 800;
-		font-size: 2.5em;
-		padding: 0 0 2% 0;
-		width: 60%;
-		margin: 0 auto 0 auto;
-		text-align: center;
-	}
-	h2{
-		text-transform: uppercase;
-		font-size: 2.5em;
-		font-weight: 800;
-		padding: 10% 0 0 0;
-		text-align: center;
-	}
+	margin-top: $nav-height;
 }
 
 #index-2{
@@ -262,87 +372,25 @@ body section:nth-child(2){
 }
 
 
-/* why-rainforest */
 
-#why-rainforest-1{
-
-	color: #fff;
-	text-align: center;
-
-	blockquote{
-		font-family: $acropolis;
-		font-weight: 700;
-		font-style:italic;
-		font-size:5em;
-		width: 80%;
-		margin: 0 auto 0 auto;
-		padding-top: 10%;
-	}
-
-	small{
-		font-family: $verlag;
-		font-weight: 800;
-		font-size: 2em;
-	}
-}
-
-#why-rainforest-2{
-	color: #fff;
-
-	blockquote{
-		color: #000;
-		font-family: $verlag;
-		font-weight: 800;
-		font-size: 2em;
-		width: 60%;
-		margin: 0 auto 1.5em auto;
-		padding: 8% 0 0 0;
-	}
-}
-
-#why-rainforest-3{
-	color: #fff;
-	position: relative;
-	.full-page{
-		@extend .full-page;
-		position: relative;
-	}
-	h2{
-		font-family: $acropolis;
-		font-weight: 700;
-		font-style: italic;
-		font-size: 4em;
-		text-align: center;
-	}
-}
-#why-rainforest-35{
-	position: relative;
-	ul{
-		position: absolute;
-		width: 100%;
-		text-align: center;
-		padding-top: 3em;
-	}
-	li{
-		display: inline-block;
-		text-align: center;
-	}
-}
 
 
 /* about-the-kayapo */
 
 #about-the-kayapo-1{
 	position: relative;
+	font-weight: 800;
+	color:#fff;
+	
+	#section-content{
+		width: 40%;
+		position:absolute;
+		left: 5%;
+		padding:6% 0 0 0;
+	}
+	
 	p{
-		color: #fff;
-		font-family: $verlag;
-		font-weight: 800;
 		font-size:2em;
-		width: 50%;
-		position: absolute;
-		right: 0;
-		top: 2em;
 	}
 }
 
@@ -417,7 +465,8 @@ body section:nth-child(2){
 		position: absolute;
 		left: 0;
 		top: 0;
-		width: 100%;
+		width: 95%;
+		margin: 0 auto 0 auto;
 		height: 100%;
 	}
 }
@@ -739,46 +788,46 @@ body section:nth-child(2){
 }
 .yellow{
 		.image-bug{
-			background-image: url("/assets/images/animals_and_leaves/ic_bug-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_bug-y.png") !important;
 		}
 		.image-butterfly{
-			background-image: url("/assets/images/animals_and_leaves/ic_butterfly-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_butterfly-y.png") !important;
 		}
 		.image-frog{
-			background-image: url("/assets/images/animals_and_leaves/ic_frog-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_frog-y.png") !important;
 		}
 		.image-insect{
-			background-image: url("/assets/images/animals_and_leaves/ic_insect-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_insect-y.png") !important;
 		}
 		.image-leaf1{
-			background-image: url("/assets/images/animals_and_leaves/ic_leaf1-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_leaf1-y.png") !important;
 		}
 		.image-leaf2{
-			background-image: url("/assets/images/animals_and_leaves/ic_leaf2-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_leaf2-y.png") !important;
 		}
 		.image-leaf3{
-			background-image: url("/assets/images/animals_and_leaves/ic_leaf3-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_leaf3-y.png") !important;
 		}
 		.image-leaf4{
-			background-image: url("/assets/images/animals_and_leaves/ic_leaf4-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_leaf4-y.png") !important;
 		}
 		.image-leaf5{
-			background-image: url("/assets/images/animals_and_leaves/ic_leaf5-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_leaf5-y.png") !important;
 		}
 		.image-leaf6{
-			background-image: url("/assets/images/animals_and_leaves/ic_leaf6-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_leaf6-y.png") !important;
 		}
 		.image-leaf7{
-			background-image: url("/assets/images/animals_and_leaves/ic_leaf7-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_leaf7-y.png") !important;
 		}
 		.image-monkey{
-			background-image: url("/assets/images/animals_and_leaves/ic_monkey-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_monkey-y.png") !important;
 		}
 		.image-snake{
-			background-image: url("/assets/images/animals_and_leaves/ic_snake-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_snake-y.png") !important;
 		}
 		.image-tucan{
-			background-image: url("/assets/images/animals_and_leaves/ic_tucan-y.png") !important;
+			background-image: url("/assets/threat-icons/ic_tucan-y.png") !important;
 		}		
 	}
 .inline-image{
@@ -791,98 +840,98 @@ body section:nth-child(2){
 		height: 50px;
 	}
 	.image-bug{
-		background-image: url("/assets/images/animals_and_leaves/ic_bug.png");
+		background-image: url("/assets/threat-icons/ic_bug.png");
 	}
 	.image-butterfly{
-		background-image: url("/assets/images/animals_and_leaves/ic_butterfly.png");
+		background-image: url("/assets/threat-icons/ic_butterfly.png");
 	}
 	.image-frog{
-		background-image: url("/assets/images/animals_and_leaves/ic_frog.png");
+		background-image: url("/assets/threat-icons/ic_frog.png");
 	}
 	.image-insect{
-		background-image: url("/assets/images/animals_and_leaves/ic_insect.png");
+		background-image: url("/assets/threat-icons/ic_insect.png");
 	}
 	.image-leaf1{
-		background-image: url("/assets/images/animals_and_leaves/ic_leaf1.png");
+		background-image: url("/assets/threat-icons/ic_leaf1.png");
 	}
 	.image-leaf2{
-		background-image: url("/assets/images/animals_and_leaves/ic_leaf2.png");
+		background-image: url("/assets/threat-icons/ic_leaf2.png");
 	}
 	.image-leaf3{
-		background-image: url("/assets/images/animals_and_leaves/ic_leaf3.png");
+		background-image: url("/assets/threat-icons/ic_leaf3.png");
 	}
 	.image-leaf4{
-		background-image: url("/assets/images/animals_and_leaves/ic_leaf4.png");
+		background-image: url("/assets/threat-icons/ic_leaf4.png");
 	}
 	.image-leaf5{
-		background-image: url("/assets/images/animals_and_leaves/ic_leaf5.png");
+		background-image: url("/assets/threat-icons/ic_leaf5.png");
 	}
 	.image-leaf6{
-		background-image: url("/assets/images/animals_and_leaves/ic_leaf6.png");
+		background-image: url("/assets/threat-icons/ic_leaf6.png");
 	}
 	.image-leaf7{
-		background-image: url("/assets/images/animals_and_leaves/ic_leaf7.png");
+		background-image: url("/assets/threat-icons/ic_leaf7.png");
 	}
 	.image-monkey{
-		background-image: url("/assets/images/animals_and_leaves/ic_monkey.png");
+		background-image: url("/assets/threat-icons/ic_monkey.png");
 	}
 	.image-snake{
-		background-image: url("/assets/images/animals_and_leaves/ic_snake.png");
+		background-image: url("/assets/threat-icons/ic_snake.png");
 	}
 	.image-tucan{
-		background-image: url("/assets/images/animals_and_leaves/ic_tucan.png");
+		background-image: url("/assets/threat-icons/ic_tucan.png");
 	}
 
 
 	// pills page
 	.image-pill1{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill1.png");
+		background-image: url("/assets/threat-icons/ic_pill1.png");
 	}
 	.image-pill2{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill2.png");
+		background-image: url("/assets/threat-icons/ic_pill2.png");
 	}
 	.image-pill3{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill3.png");
+		background-image: url("/assets/threat-icons/ic_pill3.png");
 	}
 	.image-pill4{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill4.png");
+		background-image: url("/assets/threat-icons/ic_pill4.png");
 	}
 	.image-pill1-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill1-y.png");
+		background-image: url("/assets/threat-icons/ic_pill1-y.png");
 	}
 	.image-pill2-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill2-y.png");
+		background-image: url("/assets/threat-icons/ic_pill2-y.png");
 	}
 	.image-pill3-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill3-y.png");
+		background-image: url("/assets/threat-icons/ic_pill3-y.png");
 	}
 	.image-pill4-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pill4-y.png");
+		background-image: url("/assets/threat-icons/ic_pill4-y.png");
 	}
 
 	.image-pleaf1{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf1.png");
+		background-image: url("/assets/threat-icons/ic_pleaf1.png");
 	}
 	.image-pleaf2{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf2.png");
+		background-image: url("/assets/threat-icons/ic_pleaf2.png");
 	}
 	.image-pleaf3{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf3.png");
+		background-image: url("/assets/threat-icons/ic_pleaf3.png");
 	}
 	.image-pleaf4{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf4.png");
+		background-image: url("/assets/threat-icons/ic_pleaf4.png");
 	}
 	.image-pleaf1-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf1-y.png");
+		background-image: url("/assets/threat-icons/ic_pleaf1-y.png");
 	}
 	.image-pleaf2-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf2-y.png");
+		background-image: url("/assets/threat-icons/ic_pleaf2-y.png");
 	}
 	.image-pleaf3-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf3-y.png");
+		background-image: url("/assets/threat-icons/ic_pleaf3-y.png");
 	}
 	.image-pleaf4-y{
-		background-image: url("/assets/images/animals_and_leaves/ic_pleaf4-y.png");
+		background-image: url("/assets/threat-icons/ic_pleaf4-y.png");
 	}
 
 	.none{
@@ -1084,6 +1133,9 @@ body section:nth-child(2){
 		display: inline-block;	
 		padding: 0.6em 0 0 10%;
 	}
+	a{
+		color: $k-yellow;
+	}
 }
 
 #slides{
@@ -1114,12 +1166,6 @@ body section:nth-child(2){
 .home-class{
 	position: relative;
 }
-
-.highlight-nav{
-	border-bottom: 2px solid #fff;
-}
-
-
 
 /* YOUTUBE styles */
 #cropping-youtube{
