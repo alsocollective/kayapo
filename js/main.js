@@ -223,7 +223,7 @@ var GLOBAL = {
 					string = childImage.src.split("/");
 					string = string[string.length-1].split("ho")[0];
 					prev = string;
-					childImage.src = "/assets/"+string+".png";
+					childImage.src = "/assets/icons/"+string+".png";
 					$(navEl[a]).removeClass('selected-why-nav');
 				}
 			}
@@ -231,7 +231,7 @@ var GLOBAL = {
 			if(prev == string[string.length-1]) return false;
 			$(element).removeClass('hidden');
 			$(this).addClass('selected-why-nav');
-			image.src = "/assets/"+string[string.length-1]+"ho.png"
+			image.src = "/assets/icons/"+string[string.length-1]+"ho.png"
 			console.log("got to the end of the link...");
 			return false;
 		})
