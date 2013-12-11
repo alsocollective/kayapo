@@ -37,13 +37,14 @@
 </span>
 </ul>
 </nav>
+<div id="content">
 <section class="full-backgroundimage home-class" id="index-1" style="background-image: url(assets/photos/bg_page.jpg)">
 </section>
 <!--<section id="index-2" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page1.jpg);">
-</section>
+	</section>
 
-<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page2.jpg);">
-</section>-->
+	<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page2.jpg);">
+	</section>-->
 <section class="full-backgroundimage" id="why-rainforest-1" style="background-image: url(assets/photos/bg_page3.jpg);">
 </section>
 <section class="full-backgroundimage" id="why-rainforest-2" style="background-image: url(assets/photos/bg_page4.jpg);">
@@ -73,7 +74,7 @@ var myPlayer = $("#youtube-rainforest").Jtube({
 	vidHeight:1920,
 	vidQality:"hd720",
 	// debugMode:true,
-	fallbackImage:"/assets/images/bg_why1.jpg",
+	fallbackImage:"/assets/photos/bg_page2B.jpg",
 	onStart:function(settings){
 		if(settings.debugMode){
 			console.log("start");
@@ -131,6 +132,9 @@ function onYouTubeIframeAPIReady() {
 </section>
 <section id="contact-1">
 </section>
+</div>
+<div id="constant-background-image">
+</div>
 <div id="loading-screen">
 <h2>LOADING</h2>
 </div>

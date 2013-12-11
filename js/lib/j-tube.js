@@ -83,6 +83,10 @@ $.fn.Jtube = function( options ) {
 	}, options );
 
 	if($("html.touch")[0]){
+		var ourEl = settings.iframeEl.parentNode;
+		ourEl.className = "full-backgroundimage";
+		ourEl.style.backgroundImage = "url("+settings.fallbackImage+")";
+		ourEl.style.height = "100%";
 		return this;
 	}
 

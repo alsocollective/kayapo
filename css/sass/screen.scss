@@ -52,6 +52,10 @@ body{
 	left: 0;
 	top: 0;
 }
+#content{
+	width: 100%;
+	height: 100%;
+}
 
 section{
 	height: calc( 100% - 2.25em);
@@ -276,7 +280,7 @@ section{
 /* SECTIONS */
 
 /* HOME */
-body section:nth-child(2){
+#content section:first-child{
 	margin-top: $nav-height;
 }
 
@@ -1206,6 +1210,16 @@ body section:nth-child(2){
 	z-index: 999;
 	background-color: #000;
 	color: #fff;
+}
+
+#constant-background-image{
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	z-index: -5;
 }
 
 /* Custom and Temporary for Splash */

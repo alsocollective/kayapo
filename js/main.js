@@ -99,10 +99,10 @@ var GLOBAL = {
 	width:0,
 	getHotSpots:function(){
 		GLOBAL.getAddress();
-		GLOBAL.hotSpotEl = $(document.body).children();
+		GLOBAL.hotSpotEl = $("#content").children();
 		GLOBAL.hotSpots = [];
 		var id = null;
-		for(var a = 0, max = GLOBAL.hotSpotEl.length-1; a < max; a += 1){
+		for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
 			GLOBAL.hotSpots.push($(GLOBAL.hotSpotEl[a]).offset().top);
 			id = GLOBAL.hotSpotEl[a].id;
 			if(GLOBAL.address == id){
@@ -141,7 +141,7 @@ var GLOBAL = {
 	animateTo:function(location){
 		if (GLOBAL.debug) console.log(location);
 		GLOBAL.animating = true;
-		$('html, body').stop().animate({
+		$('html, body, #content').stop().animate({
 			scrollTop: (GLOBAL.hotSpots[location]-GLOBAL.navHeight)
 		}, 1000,function(){
 			GLOBAL.animating = false;
@@ -197,7 +197,7 @@ var GLOBAL = {
 				if(GLOBAL.preScroll-loc<0){
 					if (GLOBAL.debug) console.log("down");
 					if(a == 0){
-						return 2;
+						return 1;
 					}
 					if(a+1 < max){
 						return a+1;
@@ -209,7 +209,7 @@ var GLOBAL = {
 		return null;
 	},
 	stopForAnimationEvent:function(event){
-		if(GLOBAL.animating){
+		if(GLOBAL.animating || GLOBAL.loading){
 			event.preventDefault();
 			return false;
 		}
@@ -234,12 +234,13 @@ var GLOBAL = {
 					$(navEl[a]).removeClass('selected-why-nav');
 				}
 			}
-			string = image.src.split(".")[0].split("/");
+			string = image.src.split(".");
+			string = string[string.length-2];
+			string = string.split("/");
 			if(prev == string[string.length-1]) return false;
 			$(element).removeClass('hidden');
 			$(this).addClass('selected-why-nav');
 			image.src = "/assets/icons/"+string[string.length-1]+"ho.png"
-			console.log("got to the end of the link...");
 			return false;
 		})
 	},
@@ -283,7 +284,7 @@ var GLOBAL = {
 		$(".next-page-button").click(GLOBAL.goToNextPage);
 	},
 	setUpBackGroundAnimals:function(){
-		var parent = document.getElementById("back-ground-items");
+		var parent = document.getElementById("constant-background-image");
 		if(parent){
 			parent.innerHTML = "";
 			var width = $(window).width(),
@@ -365,7 +366,7 @@ var GLOBAL = {
 		GLOBAL.clearIntervalAddBk();
 		if(!GLOBAL.IntervalRemoveBk){
 			GLOBAL.IntervalRemoveBk = setInterval(function(){
-				var allEl = $("#the-threat-3 .inline-image div:not(.none)");
+				var allEl = $("#constant-background-image .inline-image div:not(.none)");
 				if(allEl.length > 0){
 					$(allEl[Math.floor(Math.random()*allEl.length)]).addClass('none');
 				} else {
@@ -436,7 +437,7 @@ var GLOBAL = {
 	loading:false,
 	loadPage:function(newLoc,animate){
 		if(GLOBAL.loading) if(animate !== false) return false;
-		if(newLoc === null || newLoc === 0 || GLOBAL.hotSpotEl === null) return false;
+		if(newLoc === null || GLOBAL.hotSpotEl === null) return false;
 		var parentEl = GLOBAL.hotSpotEl[newLoc]
 		if($(parentEl).children().length <= 0){
 
@@ -450,8 +451,10 @@ var GLOBAL = {
 					}
 				}
 				GLOBAL.caseFunctionLoads(parentEl.id,newLoc);
-				if(animate !==false) {GLOBAL.animateTo(newLoc);} else {GLOBAL.edgeCases(newLoc);}
-				GLOBAL.loading = false;
+				setTimeout(function(){
+					if(animate !==false) {GLOBAL.animateTo(newLoc);} else {GLOBAL.edgeCases(newLoc);}
+					GLOBAL.loading = false;
+				},300)
 			});
 		}else {
 			GLOBAL.animateTo(newLoc);
@@ -556,7 +559,6 @@ var TOUCH = {
 	touchEnd:function(event){
 		// if(GLOBAL.animating) console.log("it's already animating"); return false;
 		var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0]
-		console.log(TOUCH.scroll, touch.pageY);
 		if(TOUCH.scroll-touch.pageY > 50 || TOUCH.scroll-touch.pageY < -50){
 			if(TOUCH.scroll > touch.pageY){
 				GLOBAL.current += 1;

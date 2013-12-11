@@ -43,9 +43,13 @@
 		myPlayer2.setupPlayer();
 	}
 	$("#about-the-kayapo-6 #play-button").click(function(event) {
-		event.preventDefault();
+		if($("html.touch")[0]){
+			window.open("http://www.youtube.com/watch?v=afWWcFL-Bf4");
+		} else {
+			event.preventDefault();
 			myPlayer2.settings().player.playVideo();
-		return false;
+			return false;
+		}
 	});
 
 </script>

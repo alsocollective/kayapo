@@ -37,13 +37,14 @@
 </span>
 </ul>
 </nav>
+<div id="content">
 <section class="full-backgroundimage home-class" id="index-1" style="background-image: url(assets/photos/bg_page.jpg)">
 </section>
 <!--<section id="index-2" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page1.jpg);">
-</section>
+	</section>
 
-<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page2.jpg);">
-</section>-->
+	<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page2.jpg);">
+	</section>-->
 <section class="full-backgroundimage" id="why-rainforest-1" style="background-image: url(assets/photos/bg_page3.jpg);">
 </section>
 <section class="full-backgroundimage" id="why-rainforest-2" style="background-image: url(assets/photos/bg_page4.jpg);">
@@ -105,9 +106,13 @@
 		myPlayer2.setupPlayer();
 	}
 	$("#about-the-kayapo-6 #play-button").click(function(event) {
-		event.preventDefault();
+		if($("html.touch")[0]){
+			window.open("http://www.youtube.com/watch?v=afWWcFL-Bf4");
+		} else {
+			event.preventDefault();
 			myPlayer2.settings().player.playVideo();
-		return false;
+			return false;
+		}
 	});
 
 </script>
@@ -133,6 +138,9 @@
 </section>
 <section id="contact-1">
 </section>
+</div>
+<div id="constant-background-image">
+</div>
 <div id="loading-screen">
 <h2>LOADING</h2>
 </div>
