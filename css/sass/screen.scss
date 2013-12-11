@@ -465,6 +465,7 @@ body section:nth-child(2){
 		position: absolute;
 		left: 0;
 		top: 0;
+		right: 0;
 		width: 95%;
 		margin: 0 auto 0 auto;
 		height: 100%;
@@ -747,15 +748,19 @@ body section:nth-child(2){
 	vertical-align: middle;
 	text-align: center;
 	background-color: #000;
+	position: relative;
 	
 	blockquote{
-		font-family: $verlag;
 		font-size: 3em;
 		color: #fff;
 		font-weight: 800;
-		width: 80%;
+		width: 85%;
 		margin: 0 auto 0 auto;
 		text-shadow:1px 1px 10px #000;
+		position: absolute;
+		bottom: 10%;
+		right: 0;
+		left: 0;
 	}
 }
 
@@ -765,9 +770,8 @@ body section:nth-child(2){
 	blockquote{
 		z-index: 2;
 		position: relative;
-		font-family: $verlag;
+
 		font-weight: 800;
-		font-size: 3em;
 		margin: 0 auto 0 auto;
 		width: 50%;
 		color: #fff;
@@ -775,6 +779,15 @@ body section:nth-child(2){
 	}
 }
 
+#quote-1{
+	font-size:3em;
+}
+
+#quote-2{
+	font-family: $acropolis;
+	font-style:italic;
+	font-size:6em;
+}
 
 //the background images for threat 3 and 4
 #back-ground-items{
@@ -962,8 +975,7 @@ body section:nth-child(2){
 
 	blockquote{
 		position: absolute;
-		font-family: $acropolis;
-		font-style: italic;
+		font-weight: 800;
 		font-size: 3em;
 	}
 }
@@ -1143,6 +1155,9 @@ body section:nth-child(2){
 	height: 100%;
 	top:0;
 	width: 100%;
+	
+	color: #fff;
+	font-weight: 800;
 	
 	div{
 		height: 100%;
