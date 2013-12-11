@@ -82,6 +82,10 @@ $.fn.Jtube = function( options ) {
 
 	}, options );
 
+	if($("html.touch")[0]){
+		return this;
+	}
+
 	if(settings.skipWhash){
 		var hash = window.location.hash;
 		if(hash.length>0){

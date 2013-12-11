@@ -21,3 +21,4 @@ for f in listdir( path+"/ajax" ):
 		soup.find_all(id=Id)[0].insert(0,htmlSoup)
 		out = open(Id+".html","w+")
 		out.write(soup.encode("utf-8"))
+		out.close()

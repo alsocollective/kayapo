@@ -5,7 +5,7 @@
 
 @import "base";
 @import "compass/reset";
-
+ 
 /* Variables */
 $sk_red: #ea636e;
 $sk_red_fade: #ff838e;
@@ -1228,7 +1228,7 @@ body section:nth-child(2){
 	background-position: center;
 	background-repeat: no-repeat;
 	@include vendorize(background-size,cover);
-	background-size:100%;
+	// background-size:100%;
 }
 @include breakpoint(phone) {
 	.full-backgroundimage{
