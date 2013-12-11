@@ -8,7 +8,7 @@ var GLOBAL = {
 	},
 	indexNumber: null,
 	setUpIndex:function(){
-		GLOBAL.indexNumber = Math.ceil(Math.random()*3);
+		GLOBAL.indexNumber = 1;//Math.ceil(Math.random()*3);
 	},
 	singleIndex:function(){
 		var el1,el2;
@@ -358,7 +358,7 @@ var GLOBAL = {
 		GLOBAL.clearIntervalAddBk();
 		if(!GLOBAL.IntervalRemoveBk){
 			GLOBAL.IntervalRemoveBk = setInterval(function(){
-				var allEl = $(".inline-image div:not(.none)");
+				var allEl = $("#the-threat-3 .inline-image div:not(.none)");
 				if(allEl.length > 0){
 					$(allEl[Math.floor(Math.random()*allEl.length)]).addClass('none');
 				} else {
@@ -429,7 +429,7 @@ var GLOBAL = {
 	loading:false,
 	loadPage:function(newLoc,animate){
 		if(GLOBAL.loading) if(animate !== false) return false;
-		if(newLoc === null || GLOBAL.hotSpotEl === null) return false;
+		if(newLoc === null || newLoc === 0 || GLOBAL.hotSpotEl === null) return false;
 		var parentEl = GLOBAL.hotSpotEl[newLoc]
 		if($(parentEl).children().length <= 0){
 
