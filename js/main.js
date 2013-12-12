@@ -299,23 +299,23 @@ var GLOBAL = {
 			base.appendChild(baseSub)
 			temp = null,
 			animals = [
-				"image-bug",
-				"image-butterfly",
-				"image-frog",
-				"image-insect",
-				"image-leaf1",
-				"image-leaf2",
-				"image-leaf3",
-				"image-leaf4",
-				"image-leaf5",
-				"image-leaf6",
-				"image-leaf7",
-				"image-monkey",
-				"image-snake",
-				"image-tucan"
+				"threat-icons-ic_bug",
+				"threat-icons-ic_butterfly",
+				"threat-icons-ic_frog",
+				"threat-icons-ic_insect",
+				"threat-icons-ic_leaf1",
+				"threat-icons-ic_leaf2",
+				"threat-icons-ic_leaf3",
+				"threat-icons-ic_leaf4",
+				"threat-icons-ic_leaf5",
+				"threat-icons-ic_leaf6",
+				"threat-icons-ic_leaf7",
+				"threat-icons-ic_monkey",
+				"threat-icons-ic_snake",
+				"threat-icons-ic_tucan"
 				];
 			for(var a = 0; a < count; ++a){
-				baseSub.className = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
+				baseSub.className = animals[Math.floor(Math.random()*animals.length)];
 				temp = base.cloneNode(true);
 				parent.appendChild(temp);
 			}
@@ -335,28 +335,28 @@ var GLOBAL = {
 			base.appendChild(baseSub)
 			temp = null,
 			animals = [
-				"image-pleaf1",
-				"image-pleaf2",
-				"image-pleaf3",
-				"image-pleaf4",
+				"threat-icons-ic_pleaf1",
+				"threat-icons-ic_pleaf2",
+				"threat-icons-ic_pleaf3",
+				"threat-icons-ic_pleaf4",
 				],
 			pills = [
-				"image-pill1",
-				"image-pill2",
-				"image-pill3",
-				"image-pill4"
+				"threat-icons-ic_pill1",
+				"threat-icons-ic_pill2",
+				"threat-icons-ic_pill3",
+				"threat-icons-ic_pill4"
 			];
 
 			for(var a = 0; a < count; ++a){
 				// to make it consistant use a%4
-				temp = "full-backgroundimage "+pills[Math.floor(Math.random()*pills.length)];
+				temp = pills[Math.floor(Math.random()*pills.length)];
 				if(a/count < 0.25) temp = temp+"-y";
 				baseSub.className = temp;
 				temp = base.cloneNode(true);
 				parents[0].appendChild(temp);
 			}
 			for(var a = 0; a < count; ++a){
-				temp = "full-backgroundimage "+animals[Math.floor(Math.random()*animals.length)];
+				temp = animals[Math.floor(Math.random()*animals.length)];
 				if(a/count < 0.01) temp = temp+"-y";
 				baseSub.className = temp;
 				temp = base.cloneNode(true);
@@ -394,6 +394,7 @@ var GLOBAL = {
 				if(allEl.length>0){
 					el = allEl[Math.floor(Math.random()*allEl.length)];
 					$(el).removeClass('none');
+					el.className = el.className+"-y";
 					$(el.parentNode).addClass('yellow');
 				} else {
 					clearInterval(GLOBAL.IntervalAddBk);
