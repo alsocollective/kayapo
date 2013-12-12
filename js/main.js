@@ -258,7 +258,11 @@ var GLOBAL = {
 			}
 
 			img = $(this).children('img')[0];
-			img.src = img.src.split(".")[0]+"-ho.png";
+			var name = img.src.split(".");
+			name = name[name.length-2];
+			name = name.split("/");
+			name = "assets/icons/"+name[name.length-1]+"-ho.png";
+			img.src = name;
 			img.className = "height-lighted-pro-nav";
 
 			var showThis = "#kayapo-proj-modal-"+$(this).attr('href').split("#")[1];
@@ -733,5 +737,4 @@ $(window).load(function(){
 	GLOBAL.animateToPageId(GLOBAL.address);
 	setTimeout(GLOBAL.fadeLoading,1000);
 });
-// console.log("is it mobile ", $.device)
 
