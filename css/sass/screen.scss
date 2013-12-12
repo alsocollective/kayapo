@@ -595,9 +595,10 @@ section{
 	text-align: center;
 }
 
-#kayapo-proj-modal-territory{
+#kayapo-proj-modal-territory,#kayapo-proj-modal-economy,#kayapo-proj-modal-institution{
 	position: absolute;
 	height: 200px;
+	background-color: $k-green-dark;
 }
 
 #kayapo-proj-modal-subicons{
@@ -636,13 +637,7 @@ section{
 	}
 }
 
-#kayapo-proj-modal-economy{
-	background-color: $k-green-dark;
-}
 
-#kayapo-proj-modal-institution{
-	background-color: $k-green-dark;
-}
 
 
 /* kayapo-proj */
