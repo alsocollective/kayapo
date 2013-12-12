@@ -8,7 +8,9 @@ var GLOBAL = {
 	address: null,
 	mousePressed:false,
 	getAddress:function(){
-		GLOBAL.address = window.location.href.toString().split(window.location.host)[1].split(".")[0].split("/")[1];
+		var temp = window.location.href.toString().split(window.location.host)[1].split(".")[0].split("/")[1];
+		if(!temp) temp = "index-1";
+		GLOBAL.address = temp;
 		GLOBAL.caseFunctionLoads(GLOBAL.address);
 	},
 	indexNumber: null,
@@ -120,7 +122,7 @@ var GLOBAL = {
 		}
 		GLOBAL.hotSpots[0] = 0;
 		GLOBAL.edgeCases(GLOBAL.current);
-		GLOBAL.current = GLOBAL.findClosestElement($(window).scrollTop());
+		GLOBAL.current = GLOBAL.findClosestElement($("#content").scrollTop());
 	},
 	animating:false,
 	scrollEvent:function(event){
@@ -128,7 +130,7 @@ var GLOBAL = {
 		if(GLOBAL.animating || GLOBAL.loading){
 			return false;
 		}
-		var loc = $(window).scrollTop();
+		var loc = $("#content").scrollTop();
 		var newLoc = GLOBAL.findClosestElement(loc);
 		if(GLOBAL.debug) console.log(newLoc);
 		if(GLOBAL.current != newLoc && !GLOBAL.animating && newLoc!== null){
@@ -145,6 +147,7 @@ var GLOBAL = {
 			scrollTop: (GLOBAL.hotSpots[location]-GLOBAL.navHeight)
 		}, 1000,function(){
 			GLOBAL.animating = false;
+			//GLOBAL.softLoad();
 		});
 		GLOBAL.current = location;
 		GLOBAL.edgeCases(location);
@@ -434,13 +437,26 @@ var GLOBAL = {
 		var el = $("#back-ground-items").removeClass('stick');
 		GLOBAL.stuckThreat = false;
 	},
+	preLoad:function(loc){
+		if(loc < 0 || loc > GLOBAL.hotSpotEl.length) return null;
+		var parentEl = GLOBAL.hotSpotEl[loc]
+		if($(parentEl).children().length <= 0){
+			$(parentEl).load("ajax/"+parentEl.id+".html");
+		}
+	},
+	softLoad:function(){
+		setTimeout(function(){
+			console.log("loading +1 and -1 of ", GLOBAL.current)
+			GLOBAL.preLoad(GLOBAL.current+1);
+			GLOBAL.preLoad(GLOBAL.current-1);
+		},800);
+	},
 	loading:false,
 	loadPage:function(newLoc,animate){
 		if(GLOBAL.loading) if(animate !== false) return false;
 		if(newLoc === null || GLOBAL.hotSpotEl === null) return false;
 		var parentEl = GLOBAL.hotSpotEl[newLoc]
 		if($(parentEl).children().length <= 0){
-
 			GLOBAL.loading = true;
 			$(parentEl).load("ajax/"+parentEl.id+".html",function(response, status, xhr){
 				if(status == "error"){
@@ -562,14 +578,14 @@ var TOUCH = {
 		if(TOUCH.scroll-touch.pageY > 50 || TOUCH.scroll-touch.pageY < -50){
 			if(TOUCH.scroll > touch.pageY){
 				GLOBAL.current += 1;
-				if(GLOBAL.current > GLOBAL.hotSpots.length){
-					GLOBAL.current = GLOBAL.hotSpots.length;
+				if(GLOBAL.current > GLOBAL.hotSpots.length-1){
+					GLOBAL.current = GLOBAL.hotSpots.length-1;
 				}
 				console.log("next page ", GLOBAL.current)
 			} else {
 				GLOBAL.current -= 1;
-				if(GLOBAL.current < 1){
-					GLOBAL.current = 1;
+				if(GLOBAL.current < 0){
+					GLOBAL.current = 0;
 				}
 				console.log("prev page ", GLOBAL.current)
 			}
@@ -679,31 +695,34 @@ var JPGSEQUENCE = {
 GLOBAL.setUpIndex();
 var YT = null;
 
-if($("html.touch")[0]){
-	console.log("this is touch enabled");
-	$(window).on("scroll",TOUCH.preventScroll);
-	$(window).on("touchmove",TOUCH.preventScroll)
-	$(window).on("touchstart",TOUCH.touchStart);
-	$(window).on("touchend",TOUCH.touchEnd);
-} else {
-	$(window).on( "scroll",GLOBAL.scrollEvent);
-}
 
-$(window).bind('mousewheel',GLOBAL.stopForAnimationEvent);
-$(window).bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
-
-$(window).on("resize",function(){
-	var height = $(window).outerHeight(),
-	width = $(window).outerWidth();
-
-	GLOBAL.getNavHeight();
-	GLOBAL.getHotSpots();
-	GLOBAL.height = height;
-	GLOBAL.width = width;
-	// GLOBAL.setUpBackGroundAnimals();
-});
 
 $(window).load(function(){
+	console.log($("#content"));
+	if($("html.touch")[0]){
+		console.log("this is touch enabled");
+		$("#content").on("scroll",TOUCH.preventScroll);
+		$("#content").on("touchmove",TOUCH.preventScroll)
+		$("#content").on("touchstart",TOUCH.touchStart);
+		$("#content").on("touchend",TOUCH.touchEnd);
+	} else {
+		$("#content").on( "scroll",GLOBAL.scrollEvent);
+	}
+
+	$("#content").bind('mousewheel',GLOBAL.stopForAnimationEvent);
+	$("#content").bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
+
+	$("#content").on("resize",function(){
+		var height = $(window).outerHeight(),
+		width = $(window).outerWidth();
+
+		GLOBAL.getNavHeight();
+		GLOBAL.getHotSpots();
+		GLOBAL.height = height;
+		GLOBAL.width = width;
+		// GLOBAL.setUpBackGroundAnimals();
+	});
+
 	console.log("load");
 	//GLOBAL.singleIndex();
 	GLOBAL.getNavHeight();
