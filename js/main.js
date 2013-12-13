@@ -258,11 +258,18 @@ var GLOBAL = {
 	setUpProjectsNav:function(){
 		$("#funds-divs").children().click(function(event){
 			event.preventDefault();
-			//remove old images
-			var img = $(".height-lighted-pro-nav");
+
+			var img = $(".height-lighted-pro-nav"),
+			doubleClick = false;
 			for(var a = 0, max = img.length; a < max; ++a){
 				img[a].src = img[a].src.split("-")[0]+".png";
+				if(img[a].parentNode.href == this.href) doubleClick = true;
 				img[a].className = "";
+			}
+
+			if(doubleClick){
+				GLOBAL.addOffBottomToAll(this);
+				return false;
 			}
 
 			img = $(this).children('img')[0];
@@ -285,7 +292,6 @@ var GLOBAL = {
 		for(var a = 0, max = elements.length; a < max; a += 1){
 			if(!$(elements[a]).hasClass('off-bottom') && elements[a] !== currentEl){
 				$(elements[a]).addClass('off-bottom');
-				//TODO add animation to remove element
 			}
 		}
 	},
