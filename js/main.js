@@ -110,6 +110,7 @@ var GLOBAL = {
 		GLOBAL.getAddress();
 		GLOBAL.hotSpotEl = $("#content").children();
 		GLOBAL.hotSpots = [];
+		$("#content").scrollTop(0);
 		var id = null;
 		for(var a = 0, max = GLOBAL.hotSpotEl.length; a < max; a += 1){
 			GLOBAL.hotSpots.push($(GLOBAL.hotSpotEl[a]).offset().top);
