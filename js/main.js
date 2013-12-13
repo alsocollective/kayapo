@@ -163,19 +163,23 @@ var GLOBAL = {
 			return false;
 		}
 		var loc = $("#content").scrollTop();
-		$("#content").scrollTop(GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight)
-		var newLoc = 0;
-		var tollerence = 30;
-		if(loc > GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight+tollerence){
-			newLoc = GLOBAL.current + 1;
-		} else if(loc < GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight-tollerence){
-			newLoc = GLOBAL.current - 1;
-		} else {
-			return false;
-		}
+
+		var newLoc = GLOBAL.findClosestElement(loc);
+		if(GLOBAL.debug) console.log(newLoc);
+		if(GLOBAL.current != newLoc && !GLOBAL.animating && newLoc!== null){
+		// $("#content").scrollTop(GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight)
+		// var newLoc = 0;
+		// var tollerence = 30;
+		// if(loc > GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight+tollerence){
+		// 	newLoc = GLOBAL.current + 1;
+		// } else if(loc < GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight-tollerence){
+		// 	newLoc = GLOBAL.current - 1;
+		// } else {
+		// 	return false;
+		// }
 		// var newLoc = GLOBAL.findClosestElement(loc);
 		// if(GLOBAL.debug) console.log(newLoc);
-		if(GLOBAL.current != newLoc && newLoc!== null){
+		// if(GLOBAL.current != newLoc && newLoc!== null){
 			GLOBAL.highLightNavOnScroll(GLOBAL.hotSpotEl[newLoc].id);
 			GLOBAL.loadPage(newLoc);
 		}
@@ -188,7 +192,7 @@ var GLOBAL = {
 		$('html, body, #content').stop().animate({
 			scrollTop: (GLOBAL.hotSpots[location]-GLOBAL.navHeight)
 		}, 1000,function(){
-			GLOBAL.animating = false;
+			setTimeout(function(){GLOBAL.animating = false;},800);
 			GLOBAL.fadeAjaxLoading();
 			TOUCH.active = false;
 			//GLOBAL.softLoad();
