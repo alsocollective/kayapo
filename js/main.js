@@ -14,7 +14,6 @@ if(jQuery.browser.mobile){
 var GLOBAL = {
 	debug:false,
 	address: null,
-	mousePressed:false,
 	getAddress:function(){
 		var temp = window.location.href.toString().split(window.location.host)[1].split(".")[0].split("/")[1];
 		if(!temp) temp = "index-1";
@@ -138,9 +137,22 @@ var GLOBAL = {
 			return false;
 		}
 		var loc = $("#content").scrollTop();
-		var newLoc = GLOBAL.findClosestElement(loc);
-		if(GLOBAL.debug) console.log(newLoc);
-		if(GLOBAL.current != newLoc && !GLOBAL.animating && newLoc!== null){
+		$("#content").scrollTop(GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight)
+		var newLoc = 0;
+		console.log("---------------")
+		console.log(loc, GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight);
+		var tollerence = 30;
+		if(loc > GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight+tollerence){
+			newLoc = GLOBAL.current + 1;
+		} else if(loc < GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight-tollerence){
+			newLoc = GLOBAL.current - 1;
+		} else {
+			console.log("is equal");
+			return false;
+		}
+		// var newLoc = GLOBAL.findClosestElement(loc);
+		// if(GLOBAL.debug) console.log(newLoc);
+		if(GLOBAL.current != newLoc && newLoc!== null){
 			GLOBAL.highLightNavOnScroll(GLOBAL.hotSpotEl[newLoc].id);
 			GLOBAL.loadPage(newLoc);
 		}
@@ -611,16 +623,8 @@ var TOUCH = {
 	scroll:0,
 	active:false,
 	preventScroll:function(event){
-		// if(event.target.id != "content" && event.currentTarget.id != "content"){
-		// 	if(screen.height == window.height){
-		// 		event.preventDefault();
-		// 		return false;
-		// 	} else {
-		// 	}
-		// } else {
-			event.preventDefault();
-			return false;
-		// }
+		event.preventDefault();
+		return false;
 	},
 	touchStart:function(event){
 		var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0]
@@ -769,6 +773,8 @@ $(window).load(function(){
 
 	$("#content").bind('mousewheel',GLOBAL.stopForAnimationEvent);
 	$("#content").bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
+	$(window).bind('mousewheel',GLOBAL.stopForAnimationEvent);
+	$(window).bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
 
 	$(window).on("resize",function(){
 		GLOBAL.showAjaxLoading();
