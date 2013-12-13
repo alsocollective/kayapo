@@ -611,16 +611,8 @@ var TOUCH = {
 	scroll:0,
 	active:false,
 	preventScroll:function(event){
-		// if(event.target.id != "content" && event.currentTarget.id != "content"){
-		// 	if(screen.height == window.height){
-		// 		event.preventDefault();
-		// 		return false;
-		// 	} else {
-		// 	}
-		// } else {
-			event.preventDefault();
-			return false;
-		// }
+		event.preventDefault();
+		return false;
 	},
 	touchStart:function(event){
 		var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0]
@@ -769,6 +761,8 @@ $(window).load(function(){
 
 	$("#content").bind('mousewheel',GLOBAL.stopForAnimationEvent);
 	$("#content").bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
+	$(window).bind('mousewheel',GLOBAL.stopForAnimationEvent);
+	$(window).bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
 
 	$(window).on("resize",function(){
 		GLOBAL.showAjaxLoading();
