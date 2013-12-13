@@ -154,6 +154,7 @@ var GLOBAL = {
 			scrollTop: (GLOBAL.hotSpots[location]-GLOBAL.navHeight)
 		}, 1000,function(){
 			GLOBAL.animating = false;
+			GLOBAL.fadeAjaxLoading();
 			TOUCH.active = false;
 			//GLOBAL.softLoad();
 		});
@@ -443,6 +444,7 @@ var GLOBAL = {
 		var parentEl = GLOBAL.hotSpotEl[newLoc]
 		if($(parentEl).children().length <= 0){
 			GLOBAL.loading = true;
+			GLOBAL.showAjaxLoading();
 			$(parentEl).load("ajax/"+parentEl.id+".html",function(response, status, xhr){
 				if(status == "error"){
 					if(xhr.statusText == "File not found"){
@@ -453,6 +455,7 @@ var GLOBAL = {
 				}
 				GLOBAL.caseFunctionLoads(parentEl.id,newLoc);
 				setTimeout(function(){
+					GLOBAL.fadeAjaxLoading();
 					if(animate !==false) {GLOBAL.animateTo(newLoc);} else {GLOBAL.edgeCases(newLoc);}
 					GLOBAL.loading = false;
 				},300)
@@ -499,6 +502,12 @@ var GLOBAL = {
 			}
 			history.pushState(currentHashEl,"",newAddress);
 		}
+	},
+	fadeAjaxLoading:function(){
+		$("#ajax-loading-screen").fadeOut('1000');
+	},
+	showAjaxLoading:function(){
+		$("#ajax-loading-screen").fadeIn('1000');
 	},
 	fadeLoading:function(){
 		$("#loading-screen").fadeOut('1000');
@@ -762,6 +771,7 @@ $(window).load(function(){
 	$("#content").bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
 
 	$(window).on("resize",function(){
+		GLOBAL.showAjaxLoading();
 		GLOBAL.temp = GLOBAL.current;
 		var height = $(window).outerHeight(),
 		width = $(window).outerWidth();
@@ -781,6 +791,7 @@ $(window).load(function(){
 	GLOBAL.setupNextPageButton();
 	GLOBAL.animateToPageId(GLOBAL.address);
 	GLOBAL.getLocation();
+	GLOBAL.fadeAjaxLoading();
 	setTimeout(GLOBAL.fadeLoading,1000);
 });
 
