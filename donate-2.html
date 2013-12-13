@@ -85,7 +85,7 @@
 <div id="donate-contain">
 <div class="one-time" id="donate-info">
 <h2>Monthly</h2>
-<div class="donation"><a href="">Donate Now</a></div>
+<div class="donation"><a href="http://www.donorperfect.ca/" id="donate-donor-mon">Donate Now</a></div>
 <div id="social-icons">
 <img src="assets/icons/ic_twittercircle.png">
 <img src="assets/icons/ic_facecircle.png">
@@ -96,7 +96,7 @@
 <div id="donate-contain">
 <div class="monthly" id="donate-info">
 <h2>One Time</h2>
-<div class="donation"><a href="">Donate Now</a></div>
+<div class="donation"><a href="http://www.donorperfect.ca/" id="donate-donor-one">Donate Now</a></div>
 <div id="social-icons">
 <img src="assets/icons/ic_twittercircle.png">
 <img src="assets/icons/ic_facecircle.png">
@@ -104,6 +104,11 @@
 </div>
 </div>
 </div>
+<script type="text/javascript">
+	if(GLOBAL.unitedStates){
+		GLOBAL.reDirectTounitedStates();
+	}
+</script>
 </section>
 <section id="contact-1">
 </section>
@@ -113,5 +118,6 @@
 <div id="loading-screen">
 <h2>LOADING</h2>
 </div>
+<div id="ajax-loading-screen"></div>
 </body>
 </html>
