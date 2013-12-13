@@ -16,6 +16,9 @@
 	@else if $point == phone {
 		@media (max-width: 650px)  { @content; }
 	}
+	@else if $point == tabletx {
+		@media screen and (min-device-width: 602px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40/23) { @content; }
+	}
 }
 
 .simple-animated {
