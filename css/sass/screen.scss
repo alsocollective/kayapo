@@ -367,6 +367,9 @@ section{
 }
 .about{
 	background-color: $k-blue-bright;
+	.highlight-nav{
+		border-bottom: #f0f;
+	}
 }
 .the-threat{
 	background-color: $k-red;
@@ -1091,6 +1094,18 @@ section{
 		right: 0;
 		left: 0;
 	}
+	h5{
+		font-size: 1.5em;
+		color: $k-yellow;
+		font-weight: 800;
+		width: 85%;
+		margin: 0 auto 0 auto;
+		text-shadow:1px 1px 10px #000;
+		position: absolute;
+		top: 15%;
+		right: 0;
+		left: 0;
+	}
 }
 
 #the-threat-35,#the-threat-3{
@@ -1550,8 +1565,6 @@ section{
 	}
 }
 
-/* LOADING MODALS */
-
 #ajax-loading-screen{
 	position: fixed;
 	top: 0;
@@ -1560,7 +1573,23 @@ section{
 	height: 100%;
 	z-index: 50;
 	background-color: rgba(0,0,0,0.5);
+	
+	div{
+		position: relative;
+		width: 100%;
+		text-align: center;
+		height: 100%;
+	}
+	
+	img{
+		position:absolute;
+		bottom:50%;
+	}
 }
+
+
+
+/* LOADING MODALS */
 
 #constant-background-image{
 	position: fixed;
