@@ -516,10 +516,10 @@ var GLOBAL = {
 		}
 	},
 	fadeAjaxLoading:function(){
-		$("#ajax-loading-screen").fadeOut('1000');
+		//$("#ajax-loading-screen").fadeOut('1000');
 	},
 	showAjaxLoading:function(){
-		$("#ajax-loading-screen").fadeIn('1000');
+		//$("#ajax-loading-screen").fadeIn('1000');
 	},
 	fadeLoading:function(){
 		$("#loading-screen").fadeOut('1000');

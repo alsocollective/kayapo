@@ -360,35 +360,57 @@ section{
 .index{
 	background-color: $k-green-bright;
 	color: #000;
+	.highlight-nav{
+		border-bottom: #000 solid 2px !important;
+	}
 }
 .why{
 	background-color: #000;
 	color: #fff;
+	.highlight-nav{
+		border-bottom: #fff solid 2px !important;
+	}
 }
 .about{
 	background-color: $k-blue-bright;
 	.highlight-nav{
-		border-bottom: #f0f;
+		border-bottom: #000 solid 2px !important;
 	}
 }
 .the-threat{
 	background-color: $k-red;
 	color: #fff;
+	.highlight-nav{
+		border-bottom: #fff solid 2px !important;
+	}
 }
 .project{
 	background-color: $k-green-bright;
+	.highlight-nav{
+		border-bottom: #000 solid 2px !important;
+	}
 }
 .donate{
 	background-color: #fff;
 	color: #000 !important;
+	.highlight-nav{
+		border-bottom: #000 solid 2px !important;
+	}
 }
 .contact{
 	background-color: $k-green-dull;
+	color:#fff;
+	.highlight-nav{
+		border-bottom: #fff solid 2px !important;
+	}
 }
 
 .home .background {
 	background: no-repeat;
 	background-position: center;
+	.highlight-nav{
+		border-bottom: #f0f solid 2px !important;
+	}
 }
 
 /* ` */
@@ -1652,4 +1674,10 @@ section{
 }
 .underlined{
 	border-bottom: 6px solid #fff;
+}
+
+#sponsors-1{
+	img{
+		width:150px;
+	}
 }
