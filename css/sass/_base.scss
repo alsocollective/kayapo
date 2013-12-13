@@ -11,13 +11,16 @@
 		@media (max-width: 1600px) { @content; }
 	}
 	@else if $point == tablet {
-		@media (max-width: 1250px) { @content; }
+		@media (min-width: 768px) and (max-width: 1250px) { @content; }
 	}
 	@else if $point == phone {
-		@media (max-width: 650px)  { @content; }
+		@media (max-width: 650px) { @content; }
 	}
 	@else if $point == tabletx {
 		@media screen and (min-device-width: 602px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40/23) { @content; }
+	}
+	@else if $point == lapsm {
+		@media screen and (max-height:683px) { @content; }
 	}
 }
 

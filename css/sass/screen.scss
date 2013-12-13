@@ -218,6 +218,15 @@ section{
 			}
 		}
 	}
+	@include breakpoint(lapsm) {
+		#index-1{
+			blockquote{
+				font-size:2.5em;
+				width: 90%;
+				margin-bottom:0.5em;
+			}
+		}
+	}
 
 /* INDEX 1 SECTION END */
 	
@@ -300,6 +309,13 @@ section{
 		}
 	}
 	
+	@include breakpoint(lapsm) {
+		#why-rainforest-3{
+			h2{
+				font-size: 7em;
+			}
+		}
+	}
 	
 
 .index{
@@ -530,6 +546,28 @@ section{
 			width:45%;
 			max-width:350px;
 			padding: 0.6em 0 0.5em 0;
+		}
+	}
+}
+@include breakpoint(lapsm) {
+	#about-the-kayapo-2{
+		h2{
+			font-size:3.2em;
+		}
+		p{
+			font-size:2em;
+		}
+	}
+}
+@include breakpoint(lapsm) {
+	#about-the-kayapo-4{
+		h2{
+			font-size:2.2em !important;
+		}
+		img{
+			width:45% !important;
+			max-width:400px !important;
+			padding: 3em 0 2em 0 !important;
 		}
 	}
 }
@@ -1014,6 +1052,23 @@ section{
 		}
 	}
 }
+@include breakpoint(lapsm) {
+	#the-threat-35,#the-threat-3{
+		blockquote{
+			padding-top:10%;
+			width:70%;
+		}
+	}
+}
+
+.threat-4{
+	blockquote{
+		position:absolute;
+		bottom:0;
+	}
+	
+}
+
 
 #quote-1{
 	font-size:3em;
@@ -1407,6 +1462,9 @@ section{
 	@include vendorize(transition, all 0.5s);
 }
 
+
+/* LOADING MODALS */
+
 #loading-screen{
 	position: fixed;
 	top: 0;
@@ -1414,9 +1472,22 @@ section{
 	width: 100%;
 	height: 100%;
 	z-index: 999;
-	background-color: #000;
-	color: #fff;
+	
+	background-color: $k-green-bright;
+	color: #333;
+	font-size: 3em;
+	font-weight: 800;
+	display: table;
+	
+	h2{
+		position: absolute;
+		bottom: 50%;
+		width: 100%;
+		text-align: center;
+	}
 }
+
+/* LOADING MODALS */
 
 #constant-background-image{
 	position: fixed;
@@ -1452,8 +1523,7 @@ section{
 .center-element{
 	display: block;
 	height: 50%;
-	// width: 50%;
-	overflow: auto;
+	//overflow: auto;
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
