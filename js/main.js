@@ -770,5 +770,6 @@ $(window).load(function(){
 	GLOBAL.setupNextPageButton();
 	GLOBAL.animateToPageId(GLOBAL.address);
 	setTimeout(GLOBAL.fadeLoading,1000);
+	window.scrollTo(0, 1);
 });
 
