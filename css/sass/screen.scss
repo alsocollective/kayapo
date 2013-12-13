@@ -8,7 +8,7 @@
 @import "compass/utilities/sprites";
 @import "threat-icons/*.png";
 @include all-threat-icons-sprites;
- 
+
 /* Variables */
 $sk_red: #ea636e;
 $sk_red_fade: #ff838e;
@@ -297,10 +297,49 @@ section{
 		li{
 			display: inline-block;
 			text-align: center;
+			a{
+				display: inline-block;
+				width: 70px;
+				height: 70px;
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+			#animals-nav{
+				background-image: url("/assets/icons/ic_why_01.png");
+			}
+			#climate-nav{
+				background-image: url("/assets/icons/ic_why_02.png");
+			}
+			#rain-nav{
+				background-image: url("/assets/icons/ic_why_03.png");
+			}
+			#food-nav{
+				background-image: url("/assets/icons/ic_why_04.png");
+			}
+			#culture-nav{
+				background-image: url("/assets/icons/ic_why_05.png");
+			}
+
+			#animals-nav:hover, #animals-nav.selected-why-nav{
+				background-image: url("/assets/icons/ic_why_01ho.png");
+			}
+			#climate-nav:hover, #climate-nav.selected-why-nav{
+				background-image: url("/assets/icons/ic_why_02ho.png");
+			}
+			#rain-nav:hover, #rain-nav.selected-why-nav{
+				background-image: url("/assets/icons/ic_why_03ho.png");
+			}
+			#food-nav:hover, #food-nav.selected-why-nav{
+				background-image: url("/assets/icons/ic_why_04ho.png");
+			}
+			#culture-nav:hover, #culture-nav.selected-why-nav{
+				background-image: url("/assets/icons/ic_why_05ho.png");
+			}
+
+
 		}
 	}
-	
-	
+
 
 .index{
 	background-color: $k-green-bright;
@@ -700,6 +739,32 @@ section{
 			text-decoration: none;
 			color: inherit;
 			margin: 0 5% 0 5%;
+		}
+		.icon{
+			width: 190;
+			height: 188;
+			display: inline-block;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		#territory .icon{
+			background-image: url("/assets/icons/bt_jeep.png");
+		}
+		#economy .icon{
+			background-image: url("/assets/icons/bt_scale.png");
+		}
+		#institution .icon{
+			background-image: url("/assets/icons/bt_govt.png");
+		}
+
+		#territory:hover .icon, #territory.height-lighted-pro-nav .icon{
+			background-image: url("/assets/icons/bt_jeep-ho.png");
+		}
+		#economy:hover .icon, #economy.height-lighted-pro-nav .icon{
+			background-image: url("/assets/icons/bt_scale-ho.png");
+		}
+		#institution:hover .icon, #institution.height-lighted-pro-nav .icon{
+			background-image: url("/assets/icons/bt_govt-ho.png");
 		}
 	}
 }

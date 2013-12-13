@@ -228,30 +228,10 @@ var GLOBAL = {
 	setUpWhyNav:function(){
 		$(".why-sub-nav").click(function(event){
 			event.preventDefault();
-			var image = $(this).children('img')[0],
-			string = this.id.split("-nav")[0],
-			element = $("#why-rainforest-35 #"+string)[0],
-			otherElements = $("#why-rainforest-35 #slides div");
-			navEl = $(".why-sub-nav"),
-			prev = null;
-			for(var a=0,max = otherElements.length; a < max; a += 1){
-				$(otherElements[a]).addClass('hidden');
-				if($(navEl[a]).hasClass('selected-why-nav')){
-					var childImage = $(navEl[a]).children('img')[0]
-					string = childImage.src.split("/");
-					string = string[string.length-1].split("ho")[0];
-					prev = string;
-					childImage.src = "/assets/icons/"+string+".png";
-					$(navEl[a]).removeClass('selected-why-nav');
-				}
-			}
-			string = image.src.split(".");
-			string = string[string.length-2];
-			string = string.split("/");
-			if(prev == string[string.length-1]) return false;
-			$(element).removeClass('hidden');
+			$(".selected-why-nav").removeClass('selected-why-nav');
 			$(this).addClass('selected-why-nav');
-			image.src = "/assets/icons/"+string[string.length-1]+"ho.png"
+			$("#why-rainforest-35 #slides div").addClass('hidden');
+			$("#slides #"+this.id.split("-"[0])).removeClass('hidden');
 			return false;
 		})
 	},
@@ -259,30 +239,16 @@ var GLOBAL = {
 		$("#funds-divs").children().click(function(event){
 			event.preventDefault();
 
-			var img = $(".height-lighted-pro-nav"),
-			doubleClick = false;
-			for(var a = 0, max = img.length; a < max; ++a){
-				img[a].src = img[a].src.split("-")[0]+".png";
-				if(img[a].parentNode.href == this.href) doubleClick = true;
-				img[a].className = "";
-			}
-
-			if(doubleClick){
-				GLOBAL.addOffBottomToAll(this);
+			if($('.height-lighted-pro-nav')[0] == this){
+				$('.height-lighted-pro-nav').removeClass('height-lighted-pro-nav');
+				$(".kayapo-proj-modal").addClass('off-bottom');
 				return false;
 			}
+			$('.height-lighted-pro-nav').removeClass('height-lighted-pro-nav');
+			$(".kayapo-proj-modal").addClass('off-bottom');
 
-			img = $(this).children('img')[0];
-			var name = img.src.split(".");
-			name = name[name.length-2];
-			name = name.split("/");
-			name = "assets/icons/"+name[name.length-1]+"-ho.png";
-			img.src = name;
-			img.className = "height-lighted-pro-nav";
-
-			var showThis = "#kayapo-proj-modal-"+$(this).attr('href').split("#")[1];
-			GLOBAL.addOffBottomToAll(this);
-			$(showThis).removeClass('off-bottom');
+			$(this).addClass('height-lighted-pro-nav');
+			$("#kayapo-proj-modal-"+this.id).removeClass('off-bottom');
 
 			return false;
 		});
@@ -584,7 +550,44 @@ var GLOBAL = {
 		console.log(GLOBAL.donate,GLOBAL.hotSpots[GLOBAL.donate]);
 		GLOBAL.loadPage(GLOBAL.donate);
 		return false;
+	},
+	unitedStates:false,
+	getLocation:function(){
+		var ip = GLOBAL.myIP().split(" ")[1];
+		$.getJSON("http://api.ipinfodb.com/v3/ip-country/?key=d041a5c794a07541210c9595ec4434afbf90a14b46f568b38666562071740435&ip="+ip+"&format=json&callback=?", function( data ) {
+			console.log(data.countryCode);
+			if(data.countryCode == "US"){
+				GLOBAL.unitedStates = true;
+				GLOBAL.reDirectTounitedStates();
+			}
+		});
+	},
+	reDirectTounitedStates:function(){
+		var mon = $("#donate-donor-mon")[0],
+		one = $("#donate-donor-one")[0];
+		if(mon || one){
+			console.log("set the url's");
+			mon.href = "url to canada donnor perfect monthly";
+			one.href = "url to canada donnor perfect onetime";
+		}
+	},
+	myIP:function() {
+		if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+		else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+		xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+		xmlhttp.send();
+
+		hostipInfo = xmlhttp.responseText.split("\n");
+
+		for (i=0; hostipInfo.length >= i; i++) {
+			ipAddress = hostipInfo[i].split(":");
+		if ( ipAddress[0] == "IP" ) return ipAddress[1];
+		}
+
+		return false;
 	}
+
 }
 
 
@@ -777,6 +780,7 @@ $(window).load(function(){
 	GLOBAL.setUpNav();
 	GLOBAL.setupNextPageButton();
 	GLOBAL.animateToPageId(GLOBAL.address);
+	GLOBAL.getLocation();
 	setTimeout(GLOBAL.fadeLoading,1000);
 });
 
