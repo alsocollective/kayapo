@@ -440,11 +440,7 @@ section{
 	}
 }
 
-
-
-
-
-/* about-the-kayapo */
+/* ABOUT THE KAYAPO SECTION */
 
 #about-the-kayapo-1{
 	position: relative;
@@ -465,6 +461,7 @@ section{
 
 #about-the-kayapo-2{
 	background-color: $k-blue-dark;
+
 	div	{
 		display: inline-block;
 		height: 100%;
@@ -472,8 +469,8 @@ section{
 	}
 	h2{
 		font-family:$acropolis;
+		font-size:4.5em;
 		font-style: italic;
-		font-size: 6em;
 		color: $k-yellow;
 		display: inline-block;
 		padding: 1em 0 0.2em 0;
@@ -481,15 +478,15 @@ section{
 	p{
 		font-family:$verlag;
 		font-weight: 800;
-		font-size: 3em;
 		color: #fff;
+		font-size:3em;
 	}
 	#left{
 		width: 54%;
 		position: relative;
 		img{
 			height: 75%;
-			max-height: 581px;
+			max-height: 500px;
 			max-width: 545px;
 		}
 	}
@@ -502,6 +499,37 @@ section{
 			padding-left: 2em;
 			display: inline-block;
 			margin-bottom: -0.5em;
+		}
+	}
+}
+
+@include breakpoint(phone) {
+	#about-the-kayapo-2{
+		
+	}
+}
+@include breakpoint(tablet) {
+	#about-the-kayapo-2{
+		h2{
+			font-size:3.5em;
+		}
+		p{
+			font-size:2em;
+		}
+	}
+	#about-the-kayapo-4{
+
+		h2{
+			font-weight: 800;
+			width:90%;
+			margin:0 auto 0 auto;
+			font-size:2em;
+		}
+
+		img{
+			width:45%;
+			max-width:350px;
+			padding: 0.6em 0 0.5em 0;
 		}
 	}
 }
@@ -547,13 +575,16 @@ section{
 	text-align: center;
 
 	h2{
-		font-family: $verlag;
 		font-weight: 800;
-		font-size: 3em;
+		width:90%;
+		margin:0 auto 0 auto;
+		font-size:3em;
 	}
 
 	img{
-		width:600px;
+		width:45%;
+		max-width:500px;
+		padding: 0.6em 0 0.5em 0;
 	}
 }
 
@@ -599,32 +630,56 @@ section{
 
 #kayapo-proj-1{
 	background-color: $k-green-dull;
-	color: $k-green-bright;
+	color:#fff;
+	position:relative;
 
 	blockquote{
-		font-size: 3em;
+		font-size: 2em;
 		text-align: center;
 		font-weight: 800;
-		width: 80%;
+		width: 95%;
 		margin: 0 auto 0 auto;
 		padding: 0 0 1em 0;
-		font-family: $verlag;
+	}
+	#kayapo-proj-1-content{
+		position:absolute;
+		bottom:2.5em;
+	}
+	.donation{
+		width:50%;
 	}
 }
 
 #kayapo-proj-2{
 	background-color: $k-green-dull;
-	color: $k-green-bright;
+	color: $k-green-dark;
 
-	font-family: $verlag;
 	position: relative;
 
 	h2{
 		font-family: $acropolis;
 		font-style: italic;
-		font-size: 4em;
+		font-size: 3.5em;
 		width: 100%;
+		margin: 0.5em auto 0.3em auto;
+		text-align: center;
+	}
+	h3{
+		color:#fff;
+		font-weight:800;
 		margin: 0 auto 0 auto;
+		text-align: center;
+		font-size: 1.3em;
+	}
+	h4{
+		font-size:1em;
+		color:$k-green-bright;
+	}
+	p{
+		color:$k-green-bright;
+		font-size: 1.3em;
+		width: 70%;
+		margin: 1em auto 0 auto;
 		text-align: center;
 	}
 
@@ -633,17 +688,18 @@ section{
 		background-repeat: no-repeat;
 		background-position: top center;
 		//background-size: 100%;
-		padding: 7em 0 0 0;
-		width: 60%;
+		padding: 1em 0 0 0;
+		width: 80%;
 		margin: 3em auto 0 auto;
 
 		a{
-			width: 33%;
+			width: 20%;
 			display: inline-block;
 			vertical-align: top;
 			font-weight: 800;
 			text-decoration: none;
 			color: inherit;
+			margin: 0 5% 0 5%;
 		}
 	}
 }
@@ -653,16 +709,9 @@ section{
 	bottom: -100% !important;
 }
 
-#kayapo-proj-2 > p:first-of-type{
-	font-size: 1.5em;
-	width: 70%;
-	margin: 1em auto 0 auto;
-	text-align: center;
-}
-
 #kayapo-proj-modal-territory,#kayapo-proj-modal-economy,#kayapo-proj-modal-institution{
 	position: absolute;
-	height: 200px;
+	height: 140px;
 	background-color: $k-green-dark;
 }
 
@@ -671,7 +720,7 @@ section{
 	position: absolute;
 	right: 0;
 	div{
-		width:30%;
+		width:40%;
 		display: inline-block;
 		padding: 0 0.2em 0 0.2em;
 	}
@@ -682,9 +731,11 @@ section{
 	position: absolute;
 	padding-top: 1em;
 	background-color: $k-green-dark;
+	
 	h4{
-		color: #fff;
+		color: #fff !important;
 		font-weight: 800;
+		text-align:left;
 	}
 	div{
 		display:inline-block;
@@ -694,11 +745,15 @@ section{
 		width:60px;
 	}
 	p{
-		font-size: 0.8em;
+		font-size: 0.8em !important;
+		text-align:left !important;
+		margin:0.5em 0 0 0 !important;
+		width: 100% !important;
 	}
 	#description{
 		width:60%;
 		font-size: 1.2em;
+		text-align:left;
 	}
 }
 
@@ -756,6 +811,7 @@ section{
 		color: $k-yellow;
 		font-style: italic;
 		font-size: 4em;
+		padding:0.4em 0 0.2em 0;
 	}
 	#sponsors{
 		img{
@@ -763,6 +819,9 @@ section{
 			vertical-align: middle;
 			margin-top: 5%;
 		}
+	}
+	p{
+		margin:0 0 1em 0;
 	}
 }
 
@@ -772,17 +831,68 @@ section{
 	bottom: 0;
 	height: 350px;
 	width: 100%;
+	
+	a {
+		color: #fff;
+		font-weight: 800;
+	}
 }
 
-#donate-2{
+
+/* DONATE SECTION */
+
+#donate-info {
+	position: absolute;
+	bottom: 7em;
+	width: 100%;
+	
 	h2{
 		font-family: $acropolis;
 		font-size: 4em;
 		font-style: italic;
 		color: $k-yellow;
+		margin:0 0 0.6em 0;
 	}
-	background-color: $k-yellow;
+	.donation{
+		width:60%;
+		margin-bottom:1em;
+	}
 }
+
+#donate-contain {
+	height: 100%;
+	position: relative;
+	opacity: 0.5;
+}
+
+#one-time{
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	//opacity: 0.6;
+}
+
+#monthly{
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	//opacity: 0.6;
+}
+
+#donate-contain:hover{
+	opacity: 1;
+}
+
+
+/* DONATE SECTION END */
+
+
 
 #the-threat-1{
 	position: relative;
@@ -894,6 +1004,16 @@ section{
 		padding-top: 20%;
 	}
 }
+@include breakpoint(phone) {
+}
+@include breakpoint(tablet) {
+	#the-threat-35,#the-threat-3{
+		blockquote{
+			padding-top:7%;
+			width:70%;
+		}
+	}
+}
 
 #quote-1{
 	font-size:3em;
@@ -903,6 +1023,11 @@ section{
 	font-family: $acropolis;
 	font-style:italic;
 	font-size:6em;
+}
+@include breakpoint(tablet) {
+	#quote-2{
+		font-size:5em;
+	}
 }
 
 //the background images for threat 3 and 4
@@ -1114,35 +1239,6 @@ section{
 	bottom: 5em;
 	vertical-align: middle;
 
-}
-
-
-#one-time{
-	width: 50%;
-	height: 100%;
-	display: inline-block;
-	text-align: center;
-	padding: 0;
-	margin: 0;
-	opacity: 0.6;
-}
-
-#one-time:hover{
-	opacity: 1;
-}
-
-#monthly:hover{
-	opacity: 1;
-}
-
-#monthly{
-	width: 50%;
-	height: 100%;
-	display: inline-block;
-	text-align: center;
-	padding: 0;
-	margin: 0;
-	opacity: 0.6;
 }
 
 
