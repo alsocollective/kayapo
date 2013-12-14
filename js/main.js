@@ -593,8 +593,11 @@ var GLOBAL = {
 		return false;
 	},
 	unitedStates:false,
-	getLocation:function(){
-		var ip = GLOBAL.myIP().split(" ")[1];
+	getLocation:function(ip){
+		if(!ip){
+			GLOBAL.myIP;
+			return false;
+		}
 		$.getJSON("http://api.ipinfodb.com/v3/ip-country/?key=d041a5c794a07541210c9595ec4434afbf90a14b46f568b38666562071740435&ip="+ip+"&format=json&callback=?", function( data ) {
 			if(data.countryCode == "US"){
 				GLOBAL.unitedStates = true;
@@ -611,19 +614,21 @@ var GLOBAL = {
 		}
 	},
 	myIP:function() {
-		if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
-		else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		// if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+		// else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
-		xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
-		xmlhttp.send();
+		// xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+		// xmlhttp.send();
+		// hostipInfo = xmlhttp.responseText.split("\n");
 
-		hostipInfo = xmlhttp.responseText.split("\n");
+		// for (i=0; hostipInfo.length >= i; i++) {
+		// 	ipAddress = hostipInfo[i].split(":");
+		// 	if ( ipAddress[0] == "IP" ) return ipAddress[1];
+		// }
 
-		for (i=0; hostipInfo.length >= i; i++) {
-			ipAddress = hostipInfo[i].split(":");
-			if ( ipAddress[0] == "IP" ) return ipAddress[1];
-		}
-
+		$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
+		  	GLOBAL.getLocation(data.host);
+		});
 		return false;
 	},
 	hideWhyVideo:function(){
@@ -827,7 +832,7 @@ var JPGSEQUENCE = {
 var PHONE = {
 	windowHeight:0,
 	init:function(){
-		GLOBAL.getLocation();
+		GLOBAL.myIP();
 		PHONE.resize();
 		$("#content").on("touchmove",PHONE.scrolling);
 		$(window).on("resize",PHONE.resize);
@@ -917,7 +922,7 @@ $(window).load(function(){
 	GLOBAL.setUpNav();
 	GLOBAL.setupNextPageButton();
 	GLOBAL.animateToPageId(GLOBAL.address);
-	GLOBAL.getLocation();
+	GLOBAL.myIP();
 	GLOBAL.fadeAjaxLoading();
 	setTimeout(GLOBAL.fadeLoading,1000);
 });
