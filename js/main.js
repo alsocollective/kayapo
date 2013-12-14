@@ -535,11 +535,18 @@ var GLOBAL = {
 			_gaq.push(['_trackPageview', newAddress]);
 		}
 	},
+	loadingTimer:null,
 	fadeAjaxLoading:function(){
-		//$("#ajax-loading-screen").fadeOut('1000');
+		if(GLOBAL.loadingTimer){
+			clearTimeout(GLOBAL.loadingTimer);
+			GLOBAL.loadingTimer = null;
+		}
+		$("#ajax-loading-screen").fadeOut('1000');
 	},
 	showAjaxLoading:function(){
-		//$("#ajax-loading-screen").fadeIn('1000');
+		GLOBAL.loadingTimer = setTimeout(function(){
+			$("#ajax-loading-screen").fadeIn('1000');
+		},500);
 	},
 	fadeLoading:function(){
 		$("#loading-screen").fadeOut('1000');
