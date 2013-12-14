@@ -621,7 +621,7 @@ var GLOBAL = {
 
 		for (i=0; hostipInfo.length >= i; i++) {
 			ipAddress = hostipInfo[i].split(":");
-		if ( ipAddress[0] == "IP" ) return ipAddress[1];
+			if ( ipAddress[0] == "IP" ) return ipAddress[1];
 		}
 
 		return false;
