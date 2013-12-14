@@ -1004,12 +1004,23 @@ section{
 		height: 100px;
 	}
 }
+
 @include breakpoint(phone) {
 	#donate-1 div{
 		width:95%;
-		display:block;
+		display:inline;
 		text-align:center;
-		margin: 2em 0 0 0;
+		margin: 4em 0 0 0;
+		p{
+			width:80%;
+			margin:0 auto 0 auto;
+			padding:0;
+		}
+		h2{
+			margin: 0.2em 0 0.2em 0;
+			font-size:3em;
+			color:$k-red;
+		}
 	}
 }
 
@@ -1041,8 +1052,8 @@ section{
 	background-color: $k-green-dull;
 	position: absolute;
 	bottom: 0;
-	height: 350px;
 	width: 100%;
+	padding: 0 0 2em 0;
 	
 	a {
 		color: #fff;
@@ -1591,7 +1602,7 @@ section{
 #home-banner > div:nth-child(1){
 	p{
 		vertical-align: top;
-		display: inline-block;	
+		display: block;	
 		padding: 0.5em 0 0.5em 0;
 		margin-bottom: 0.5em;
 		border-bottom: solid #fff 1px;
