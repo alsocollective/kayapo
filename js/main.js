@@ -190,9 +190,7 @@ var GLOBAL = {
 		GLOBAL.setHash(GLOBAL.hotSpotEl[location].id);
 	},
 	edgeCases:function(location){
-		console.log("-----------")
-		/*if(GLOBAL.debug)*/console.log("edgeCase " + location);
-		console.log(GLOBAL.stuckThreatLoc , GLOBAL.stuckWhyLoc , GLOBAL.stuckAboutLoc);
+		if(GLOBAL.debug)console.log("edgeCase " + location);
 
 		//unstuck everything except if needed
 		if(GLOBAL.stuckThreat || GLOBAL.stuckWhy || GLOBAL.stuckAbout){
@@ -428,12 +426,10 @@ var GLOBAL = {
 	stuckThreat:false,
 	stuckThreatLoc:null,
 	setWhyStatic:function(){
-		console.log("why - sticks");
 		$("#why-rainforest-3 #cropping-youtube").addClass('stick');
 		GLOBAL.stuckWhy = true;
 	},
 	unSetWhyStatic:function(){
-		console.log("why - un - sticks");
 		$("#why-rainforest-3 #cropping-youtube").removeClass('stick');
 		GLOBAL.stuckWhy = false;
 	},
@@ -594,7 +590,6 @@ var GLOBAL = {
 	getLocation:function(){
 		var ip = GLOBAL.myIP().split(" ")[1];
 		$.getJSON("http://api.ipinfodb.com/v3/ip-country/?key=d041a5c794a07541210c9595ec4434afbf90a14b46f568b38666562071740435&ip="+ip+"&format=json&callback=?", function( data ) {
-			console.log(data.countryCode);
 			if(data.countryCode == "US"){
 				GLOBAL.unitedStates = true;
 				GLOBAL.reDirectTounitedStates();
@@ -605,7 +600,6 @@ var GLOBAL = {
 		var mon = $("#donate-donor-mon")[0],
 		one = $("#donate-donor-one")[0];
 		if(mon || one){
-			console.log("set the url's");
 			mon.href = "url to canada donnor perfect monthly";
 			one.href = "url to canada donnor perfect onetime";
 		}

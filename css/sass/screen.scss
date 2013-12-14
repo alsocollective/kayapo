@@ -141,19 +141,25 @@ section{
 		}
 	}
 
-	.phone nav, .phone #nav,{
+	.phone #nav,{
 		a{
 			display: none;
+			padding-left: 0;
+			padding-right: 0;
 		}
-		a#index-nav{
-			display: inline-block;
-		}
+
 		#donat-but a{
 			display: inline-block;
 		}
 		#social-nav a{
 			display: inline-block;
 		}
+	}
+	.phone #nav.index a#index-nav{
+		display: inline-block;
+	}
+	.phone #nav.why a#why-rainforest-nav{
+		display: inline-block;
 	}
 	
 
