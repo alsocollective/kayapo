@@ -53,6 +53,13 @@ body,html{
 body{
 	overflow: hidden;
 }
+
+@include breakpoint(phone) {
+	body{
+		overflow: auto;
+	}
+}
+
 #content{
 	width: 100%;
 	height: 100%;
@@ -168,7 +175,7 @@ section{
 		}
 		#donat-but a{
 			display: inline-block;
-			position: absolute;
+			//position: absolute;
 			left: 0;
 			top: 0;
 		}
@@ -228,19 +235,7 @@ section{
 			}
 		}		
 	}
-	@include breakpoint(phone) {
-		#index-1{
-			blockquote{
-				font-size: 1.8em;
-				width: 95%;
-				margin-bottom:0.5em;
-			}
-			h2{
-				font-size: 2.4em;
-				padding: 4% 0 0 0;
-			}
-		}		
-	}
+	
 	@include breakpoint(tabletx) {
 		#index-1{
 			blockquote{
@@ -268,6 +263,20 @@ section{
 				margin-bottom:0.5em;
 			}
 		}
+	}
+	@include breakpoint(phone) {
+		#index-1{
+			padding-bottom:3em;
+			blockquote{
+				font-size: 1.2em;
+				width: 95%;
+				margin-bottom:0.5em;
+			}
+			h2{
+				font-size: 2.2em;
+				padding: 3em 0 0 0;
+			}
+		}		
 	}
 
 /* INDEX 1 SECTION END */
@@ -409,11 +418,44 @@ section{
 	}
 	@include breakpoint(phone) {
 		#why-rainforest-3{
+			background-color: #0f0;
+			padding-top:2em;
 			h2{
 				font-size: 2.5em;
 				line-height: 1.5em;
 				letter-spacing: 0.06em;
 				color:$k-yellow;
+			}
+			blockquote{
+				font-size: 3em;
+				font-weight:800;
+				width: 90%;
+				text-align:center;
+				margin:0 auto 0 auto;
+				
+			}
+			small{
+				width:70% !important;
+				margin:0 auto 0 auto;
+				font-size:0.4em;
+			}
+		}
+		#why-rainforest-1{
+			blockquote{
+				font-size: 3em;
+				width: 90%;
+			}
+		}
+		#why-rainforest-35{
+			height: 50em;
+			margin-bottom: 25em;
+			background-color: $k-green-dark;
+			color:#fff;
+			li{
+				margin: 1em 0 1em 0;
+			}
+			blockquote{
+				width:90%;
 			}
 		}
 	}
@@ -1117,6 +1159,17 @@ section{
 	}
 }
 
+@include breakpoint(phone) {
+	#sponsors-1,#sponsors-2, #sponsors-3{
+		img{
+			width:80px;
+		}
+	}
+	#contact-1{
+		height: 100%;
+	}
+}
+
 
 #contact-footer{
 	background-color: $k-green-dull;
@@ -1166,6 +1219,11 @@ section{
 	padding: 0;
 	margin: 0;
 	//opacity: 0.6;
+}
+@include breakpoint(phone) {
+	#one-time{
+		width:100%;
+	}
 }
 
 #monthly{
@@ -1331,9 +1389,11 @@ section{
 }
 @include breakpoint(phone) {
 	#the-threat-35,#the-threat-3{
+		background-color: $k-red;
+		padding-bottom: 5em;
 		blockquote{
 			width:90% !important;
-			font-size:1.8em;
+			font-size:1.8em;	
 		}
 	}
 }
