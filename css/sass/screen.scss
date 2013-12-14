@@ -282,6 +282,119 @@ section{
 
 /* INDEX 1 SECTION END */
 	
+	/* INDEX 2 SECTION */
+	
+		#index-2{
+			position:relative;
+		
+			blockquote{
+				font-weight: 800;
+				font-size: 3.5em;
+				padding: 0 0 2% 0;
+				width:100%;
+				margin: 0 auto 0 auto;
+				color:#fff;
+				text-align:left;
+			}
+			h2{
+				text-transform: uppercase;
+				font-size: 3.5em;
+				font-weight: 800;
+				padding: 8% 0 0 0;
+				color:#fff;
+				text-align:left;
+			}
+			.donation {
+				width:60%;
+			}
+		}
+		
+		#sub{
+			font-size:1.3em !important;
+			color:#fff;
+		}
+	
+		#main-info{
+			text-align: center;
+			width:50%;
+			position:absolute;
+			right:2em;
+			top:10%;
+			
+		
+			a img{
+				margin-top: 3em;
+				
+			}
+		}
+		@include breakpoint(tablet) {
+			#index-2{
+				blockquote{
+					font-size: 2.8em;
+					width: 80%;
+					margin-bottom:0.5em;
+				}
+				h2{
+					font-size: 2.6em;
+					padding: 4% 0 0 0;
+				}
+			}
+			#main-info{
+				text-align: center;
+		
+				a img{
+					margin-top: 3%;
+				}
+			}		
+		}
+	
+		@include breakpoint(tabletx) {
+			#index-2{
+				blockquote{
+					font-size: 2em;
+					width: 90%;
+					margin-bottom:0.5em;
+				}
+				h2{
+					font-size: 2em;
+					padding: 2% 0 0 0;
+				}
+			}
+			#main-info{
+				text-align: center;
+				a img{
+					margin-top: 2%;
+				}
+			}
+		}
+		@include breakpoint(lapsm) {
+			#index-2{
+				blockquote{
+					font-size:2.5em;
+					width: 90%;
+					margin-bottom:0.5em;
+				}
+			}
+			
+		}
+		@include breakpoint(phone) {
+			#index-2{
+				height: 80%;;
+				padding-bottom:3em;
+				blockquote{
+					font-size: 1.2em;
+					width: 95%;
+					margin-bottom:0.5em;
+				}
+				h2{
+					font-size: 2.2em;
+					padding: 3em 0 0 0;
+				}
+			}		
+		}
+
+	/* INDEX 2 SECTION END */
+	
 #click-msg {
 	width: 100%;
 	font-size: 1.2em;
@@ -548,70 +661,7 @@ section{
 	margin-top: $nav-height;
 }
 
-#index-2{
-	font-family: $verlag;
-	position: relative;
 
-	blockquote{
-		font-size: 4em;
-		font-weight: 800;
-		text-align: left;
-		margin: 1.2em 0 0 0;
-		line-height: 1.2em;
-		letter-spacing: -0.001em;
-	}
-	#copy{
-		width: 50%;
-		color: #fff;
-		position: absolute;
-		right: 0;
-
-	}
-	p{
-		font-weight: 800;
-		margin: 1.5em 0 2em 0;
-		font-size: 1.2em;
-	}
-
-	@include breakpoint(tablet) {
-		blockquote{
-			font-size: 3em;
-			letter-spacing: 0.02em;
-		}
-	}
-}
-
-@include breakpoint(phone) {
-
-	#index-2{
-		position:absolute;
-		blockquote{
-			font-size: 1.6em;
-			font-weight: 800;
-			text-align: center;
-			margin: 0 0 0 0;
-			line-height: 1.1em;
-			letter-spacing: -0.001em;
-		}
-		#copy{
-			width: 100%;
-			color: #fff;
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			//height: 90%;
-			padding: 0 0 1.6em 0;
-		}
-		p{
-			font-weight: 800;
-			margin: 0.7em 0 1em 0;
-			font-size: 1em;
-			text-align: center;
-			line-height: 1.3em;
-			letter-spacing: 0.02em;
-		}
-	}
-}
 
 
 #index-3{
