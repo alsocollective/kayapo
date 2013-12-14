@@ -253,6 +253,14 @@ section{
 
 /* INDEX 1 SECTION END */
 	
+#click-msg {
+	width: 100%;
+	font-size: 1.2em;
+	text-align: center;
+	margin-top: 1em;
+	color:#fff;
+	font-weight:800;
+}
 	
 
 /* WHY RAINFOREST */
@@ -329,6 +337,7 @@ section{
 		li{
 			display: inline-block;
 			text-align: center;
+			margin:0 0.5em 0 0.5em;
 			a{
 				display: inline-block;
 				width: 70px;
