@@ -8,9 +8,9 @@
  d8888888888 Y88b  d88P 888      Y88b. .d88P       Y88b  d88P Y88..88P 888 888 Y8b.     Y88b.    Y88b.  888  Y8bd8P  Y8b.
 d88P     888  "Y8888P"  88888888  "Y88888P"         "Y8888P"   "Y88P"  888 888  "Y8888   "Y8888P  "Y888 888   Y88P    "Y8888
 */
+//Designed by ASLO Collective, 13/12/2013 in collaboration with DOT Dot Dash - to save the Kayapo
 
-
-
+// use http://patorjk.com/software/taag/#p=display&h=0&v=0&f=Colossal&t=ALSOcollective for text
 
 
 
@@ -163,19 +163,10 @@ var GLOBAL = {
 			return false;
 		}
 		var loc = $("#content").scrollTop();
-		$("#content").scrollTop(GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight)
-		var newLoc = 0;
-		var tollerence = 30;
-		if(loc > GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight+tollerence){
-			newLoc = GLOBAL.current + 1;
-		} else if(loc < GLOBAL.hotSpots[GLOBAL.current]-GLOBAL.navHeight-tollerence){
-			newLoc = GLOBAL.current - 1;
-		} else {
-			return false;
-		}
-		// var newLoc = GLOBAL.findClosestElement(loc);
-		// if(GLOBAL.debug) console.log(newLoc);
-		if(GLOBAL.current != newLoc && newLoc!== null){
+
+		var newLoc = GLOBAL.findClosestElement(loc);
+		if(GLOBAL.debug) console.log(newLoc);
+		if(GLOBAL.current != newLoc && !GLOBAL.animating && newLoc!== null){
 			GLOBAL.highLightNavOnScroll(GLOBAL.hotSpotEl[newLoc].id);
 			GLOBAL.loadPage(newLoc);
 		}
@@ -188,7 +179,7 @@ var GLOBAL = {
 		$('html, body, #content').stop().animate({
 			scrollTop: (GLOBAL.hotSpots[location]-GLOBAL.navHeight)
 		}, 1000,function(){
-			GLOBAL.animating = false;
+			setTimeout(function(){GLOBAL.animating = false;},800);
 			GLOBAL.fadeAjaxLoading();
 			TOUCH.active = false;
 			//GLOBAL.softLoad();
@@ -684,6 +675,7 @@ var TOUCH = {
 				}
 				console.log("prev page ", GLOBAL.current)
 			}
+			GLOBAL.highLightNavOnScroll(GLOBAL.hotSpotEl[GLOBAL.current].id);
 			GLOBAL.loadPage(GLOBAL.current)
 		}
 	}
@@ -707,6 +699,7 @@ var JPGSEQUENCE = {
 	listOfImages:[],
 	listOfButtons:[],
 	playIntervalObject:null,
+	playButton:null,
 	generateImages:function(parent,number,baseName){
 		JPGSEQUENCE.baseName = baseName;
 		var el = null,
@@ -732,6 +725,7 @@ var JPGSEQUENCE = {
 		playButton.href = "#";
 		playButton.id = "jpg-slide-play";
 		playButton.innerHTML = "Play: "
+		JPGSEQUENCE.playButton = playButton;
 		$(playButton).click(function(event){
 			event.preventDefault();
 			if(!JPGSEQUENCE.playIntervalObject){
@@ -739,6 +733,7 @@ var JPGSEQUENCE = {
 			} else {
 				clearTimeout(JPGSEQUENCE.playIntervalObject);
 				JPGSEQUENCE.playIntervalObject = null;
+				JPGSEQUENCE.playButton.innerHTML = "Play";
 			}
 			return false;
 		})
@@ -786,6 +781,9 @@ var JPGSEQUENCE = {
 		$("."+JPGSEQUENCE.baseName).addClass('jpg-slide-hidden');
 	},
 	playInterval:function(){
+		$(".jpg-slide-selected").removeClass('jpg-slide-selected');
+		$($("#button-container").children()[0]).click()
+		JPGSEQUENCE.playButton.innerHTML = "Pause";
 		var playInterVal = setInterval(function(){
 			var findCurrent = $(".jpg-slide-selected")[0];
 			if(!findCurrent){
@@ -793,10 +791,12 @@ var JPGSEQUENCE = {
 			}
 			var next = $(findCurrent).next()[0];
 			if(!next){
-				next = $("#button-container").children()[0];
+				clearTimeout(JPGSEQUENCE.playIntervalObject);
+				JPGSEQUENCE.playButton.innerHTML = "Play";
+				JPGSEQUENCE.playIntervalObject = null;
 			}
 			$(next).click();
-		},100);
+		},200);
 		return playInterVal;
 	}
 }
@@ -865,18 +865,3 @@ $(window).load(function(){
 	setTimeout(GLOBAL.fadeLoading,1000);
 });
 
-// function hideAddressBar()
-// {
-//   if(!window.location.hash)
-//   {
-//       if(document.height < window.outerHeight)
-//       {
-//           document.body.style.height = (window.outerHeight + 50) + 'px';
-//       }
-
-//       setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-//   }
-// }
-
-// window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
-// window.addEventListener("orientationchange", hideAddressBar );
