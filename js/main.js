@@ -546,6 +546,10 @@ var GLOBAL = {
 	},
 	mapAnimationCounter:0,
 	mapAnimationSquence:function(){
+		if(!$("#map-1")[0].classList){
+			$("#ie-map")[0].style.display = "block";
+			return false;
+		}
 		setTimeout(function(){
 			for(var a  = 0; a < 7; ++a){
 				setTimeout(function(){
