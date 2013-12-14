@@ -603,12 +603,12 @@ var GLOBAL = {
 		});
 	},
 	reDirectTounitedStates:function(){
-		var mon = $("#donate-donor-mon")[0],
-		one = $("#donate-donor-one")[0];
-		if(mon || one){
-			mon.href = "url to canada donnor perfect monthly";
-			one.href = "url to canada donnor perfect onetime";
-		}
+		// var mon = $("#donate-donor-mon")[0],
+		// one = $("#donate-donor-one")[0];
+		// if(mon || one){
+		// 	mon.href = "url to canada donnor perfect monthly";
+		// 	one.href = "url to canada donnor perfect onetime";
+		// }
 	},
 	myIP:function() {
 		if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
