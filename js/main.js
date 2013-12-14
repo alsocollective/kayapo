@@ -527,6 +527,7 @@ var GLOBAL = {
 				gaAddress = "/"+currentHashEl;
 			}
 			history.pushState(currentHashEl,"",newAddress);
+			_gaq.push(['_trackPageview', newAddress]);
 		}
 	},
 	fadeAjaxLoading:function(){
@@ -903,4 +904,14 @@ $(window).load(function(){
 	GLOBAL.fadeAjaxLoading();
 	setTimeout(GLOBAL.fadeLoading,1000);
 });
+
+/* ANALYTICS */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-42487410-2']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 
