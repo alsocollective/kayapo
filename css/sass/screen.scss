@@ -363,6 +363,16 @@ section{
 			}
 		}
 	}
+	@include breakpoint(phone) {
+		#why-rainforest-3{
+			h2{
+				font-size: 2.5em;
+				line-height: 1.5em;
+				letter-spacing: 0.06em;
+				color:$k-yellow;
+			}
+		}
+	}
 
 .index{
 	background-color: $k-green-bright;
@@ -592,7 +602,47 @@ section{
 
 @include breakpoint(phone) {
 	#about-the-kayapo-2{
-		
+		text-align:center;
+		padding-top:2em;
+		div	{
+			display: inline-block;
+			height: auto;
+			vertical-align: top;
+		}
+		h2{
+			font-family:$acropolis;
+			font-size:2em !important;
+			display: block;
+			padding: 0;
+			margin:0.5em 0 0.5em 0;
+		}
+		p{
+			font-family:$verlag;
+			font-weight: 800;
+			color: #fff;
+			font-size:1.5em !important;
+			margin:0.5em 0 0.5em 0;
+		}
+		#left{
+			width: 100%;
+			position: relative;
+			height:auto;
+			img{
+				height: 40%;
+				max-height: 500px;
+				max-width: 545px;
+				position: static;
+			}
+		}
+		#right{
+			width: 100%;
+			img{
+				padding-left: 0;
+				display: inline-block;
+				margin-bottom: 0.5em;
+				width:50%;
+			}
+		}
 	}
 }
 @include breakpoint(tablet) {
@@ -639,6 +689,17 @@ section{
 			width:45% !important;
 			max-width:400px !important;
 			padding: 3em 0 2em 0 !important;
+		}
+	}
+}
+@include breakpoint(phone) {
+	#about-the-kayapo-4{
+		h2{
+			font-size:2em !important;
+		}
+		img{
+			width:80% !important;
+			padding: 0.6em 0 0.5em 0;
 		}
 	}
 }
@@ -713,6 +774,14 @@ section{
 		position: relative;
 	}
 }
+@include breakpoint(phone) {
+	#about-the-kayapo-5{
+		h2{
+			font-size:4em;
+		}
+	}	
+}
+
 #about-the-kayapo-6{
 	position: relative;
 	color: #fff;
@@ -935,6 +1004,14 @@ section{
 		height: 100px;
 	}
 }
+@include breakpoint(phone) {
+	#donate-1 div{
+		width:95%;
+		display:block;
+		text-align:center;
+		margin: 2em 0 0 0;
+	}
+}
 
 #contact-1{
 	text-align: center;
@@ -1151,8 +1228,6 @@ section{
 		padding-top: 20%;
 	}
 }
-@include breakpoint(phone) {
-}
 @include breakpoint(tablet) {
 	#the-threat-35,#the-threat-3{
 		blockquote{
@@ -1166,6 +1241,14 @@ section{
 		blockquote{
 			padding-top:10%;
 			width:70%;
+		}
+	}
+}
+@include breakpoint(phone) {
+	#the-threat-35,#the-threat-3{
+		blockquote{
+			width:90% !important;
+			font-size:1.8em;
 		}
 	}
 }
