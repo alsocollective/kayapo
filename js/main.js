@@ -510,6 +510,11 @@ var GLOBAL = {
 			GLOBAL.setUpProjectsNav();
 		} else if(id == "the-threat-4"){
 			GLOBAL.setPils();
+		} else if(id == "donate-2"){
+			if(GLOBAL.unitedStates){
+				GLOBAL.reDirectTounitedStates();
+			}
+			GLOBAL.setDonate();
 		}
 		return null;
 	},
@@ -625,6 +630,18 @@ var GLOBAL = {
 	},
 	showWhyVideo:function(){
 		$("#cropping-youtube").show('0');
+	},
+	socialMediaLinks:function(event){
+		var link = this.src.split("/");
+		if(link[link.length-1] == "ic_twittercircle.png"){
+			window.open("https://twitter.com/KayapoProject",'_blank');
+		} else {
+			window.open("https://www.facebook.com/pages/The-Kayapo-Guardians-of-the-Forest/476755409057319?ref=br_tf",'_blank');
+		}
+	},
+	setDonate:function(){
+		$("#monthly #social-icons").children().click(GLOBAL.socialMediaLinks);
+		$("#one-time #social-icons").children().click(GLOBAL.socialMediaLinks);
 	}
 }
 
