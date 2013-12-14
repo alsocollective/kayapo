@@ -57,7 +57,11 @@ body{
 	width: 100%;
 	height: 100%;
 	overflow: scroll;
+	@include vendorize(scrolling,touch);
 	overflow-x:	hidden;
+}
+.body #content{
+	overflow-x:scroll;
 }
 
 section{
@@ -122,6 +126,21 @@ section{
 			position: absolute;
 			right: 20px;
 			top:0;
+		}
+		#social-nav a{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+
+		#social-nav #twitter{
+			background-image: url("/assets/icons/ic_twitterk.png");
+		}
+		#social-nav #facebook{
+			background-size: 17px;
+			background-image: url("/assets/icons/ic_facek.png");
 		}
 	}
 
@@ -411,6 +430,13 @@ section{
 	color: #fff;
 	.highlight-nav{
 		border-bottom: #fff solid 2px !important;
+	}
+
+	#social-nav #twitter{
+		background-image: url("/assets/icons/ic_twitteryellow.png") !important;
+	}
+	#social-nav #facebook{
+		background-image: url("/assets/icons/ic_faceyellow.png") !important;
 	}
 }
 .about{
