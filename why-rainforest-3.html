@@ -59,37 +59,39 @@
 <h2 class="center-element">Why<br>Rainforests<br>Matter?</br></br></h2>
 </div>
 <script type="text/javascript">
-var myPlayer = $("#youtube-rainforest").Jtube({
-	videoId:"DInaJRfbWbQ",
-	skipvid:false,
-	skipWhash:false,
-	timeLeft:false,
-	loop:1,
-	autoplay:1,
-	applyToContainer:true,
-	vidHeight:"100%",
-	vidWidth:"100%",
-	volume:0,
-	vidWidth:1080,
-	vidHeight:1920,
-	vidQality:"hd720",
-	// debugMode:true,
-	fallbackImage:"/assets/photos/bg_page2B.jpg",
-	onStart:function(settings){
-		if(settings.debugMode){
-			console.log("start");
+if(Jtube){
+	var myPlayer = $("#youtube-rainforest").Jtube({
+		videoId:"DInaJRfbWbQ",
+		skipvid:false,
+		skipWhash:false,
+		timeLeft:false,
+		loop:1,
+		autoplay:1,
+		applyToContainer:true,
+		vidHeight:"100%",
+		vidWidth:"100%",
+		volume:0,
+		vidWidth:1080,
+		vidHeight:1920,
+		vidQality:"hd720",
+		// debugMode:true,
+		fallbackImage:"/assets/photos/bg_page2B.jpg",
+		onStart:function(settings){
+			if(settings.debugMode){
+				console.log("start");
+			}
+			$(settings.player.a).css({"display":"inline-block"})
+			return true;
+		},
+		onPause:function(settings){
+			if(settings.debugMode){
+				console.log("pause");
+			}
+			$(settings.player.a).css({"display":"none"})
+			return true;
 		}
-		$(settings.player.a).css({"display":"inline-block"})
-		return true;
-	},
-	onPause:function(settings){
-		if(settings.debugMode){
-			console.log("pause");
-		}
-		$(settings.player.a).css({"display":"none"})
-		return true;
-	}
-});
+	});
+}
 
 function onYouTubeIframeAPIReady() {
 	myPlayer.setupPlayer();

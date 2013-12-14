@@ -76,8 +76,9 @@
 </div>
 </div>
 <script type="text/javascript">
+if($.Jtube){
 	var myPlayer2 = $("#youtube-why-kayapo").Jtube({
-		videoId:"afWWcFL-Bf4",
+		videoId:"TEBW6LU8fp0",
 		skipvid:false,
 		skipWhash:false,
 		timeLeft:false,
@@ -101,13 +102,14 @@
 			return false;
 		}
 	});
+}
 
 	function onYouTubeIframeAPIReady() {
 		myPlayer2.setupPlayer();
 	}
 	$("#about-the-kayapo-6 #play-button").click(function(event) {
 		if($("html.touch")[0]){
-			window.open("http://www.youtube.com/watch?v=afWWcFL-Bf4");
+			window.open("http://www.youtube.com/watch?v=TEBW6LU8fp0");
 		} else {
 			event.preventDefault();
 			myPlayer2.settings().player.playVideo();
