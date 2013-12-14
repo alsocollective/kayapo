@@ -147,21 +147,16 @@ section{
 			padding-left: 0;
 			padding-right: 0;
 		}
-
 		#donat-but a{
 			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 0;
 		}
 		#social-nav a{
 			display: inline-block;
 		}
 	}
-	.phone #nav.index a#index-nav{
-		display: inline-block;
-	}
-	.phone #nav.why a#why-rainforest-nav{
-		display: inline-block;
-	}
-	
 
 /* NAV END */
 	
