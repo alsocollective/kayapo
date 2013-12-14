@@ -819,6 +819,7 @@ var PHONE = {
 		PHONE.resize();
 		$("#content").on("touchmove",PHONE.scrolling);
 		$(window).on("resize",PHONE.resize);
+		$(document.body).addClass('phone');
 	},
 	resize:function(){
 		GLOBAL.getHotSpots();
