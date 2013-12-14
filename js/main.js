@@ -532,7 +532,7 @@ var GLOBAL = {
 				gaAddress = "/"+currentHashEl;
 			}
 			history.pushState(currentHashEl,"",newAddress);
-			//_gaq.push(['_trackPageview', newAddress]);
+			_gaq.push(['_trackPageview', newAddress]);
 		}
 	},
 	fadeAjaxLoading:function(){
