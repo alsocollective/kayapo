@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from os import listdir
 import os
+import shutil
 from os.path import isfile, join
 path = os.path.dirname(os.path.realpath(__file__))
 
@@ -22,3 +23,7 @@ for f in listdir( path+"/ajax" ):
 		out = open(Id+".html","w+")
 		out.write(soup.encode("utf-8"))
 		out.close()
+        
+        if f == "index-1.html":
+            #print Id
+            shutil.copyfile("index-1.html", "index.html")
