@@ -43,10 +43,6 @@ if(jQuery.browser.mobile){
 		MOBILE = true;
 	}
 }
-
-if(MOBILE){
-	$("html").addClass('phone');
-}
 /*
  .d8888b.  888       .d88888b.  888888b.          d8888 888
 d88P  Y88b 888      d88P" "Y88b 888  "88b        d88888 888
@@ -101,6 +97,8 @@ var GLOBAL = {
 			$(this).addClass('highlight-nav');
 			if(string === "index"){
 				string = string+"-"+GLOBAL.indexNumber;
+			} else if(string === "donate") {
+				string = string+"-2";
 			} else {
 				string = string+"-1";
 			}
@@ -168,7 +166,7 @@ var GLOBAL = {
 			if(id == "about-the-kayapo-5"){
 				GLOBAL.stuckAboutLoc = a;
 			}
-			if(id == "donate-1"){
+			if(id == "donate-2"){
 				GLOBAL.donate = a;
 			}
 		}
@@ -935,9 +933,6 @@ $(window).load(function(){
 	$(window).bind('DOMMouseScroll',GLOBAL.stopForAnimationEvent);
 
 	$(window).on("resize",function(){
-		if($("html.touch")[0]){
-			location.reload();
-		}
 		GLOBAL.showAjaxLoading();
 		GLOBAL.temp = GLOBAL.current;
 		var height = $(window).outerHeight(),
