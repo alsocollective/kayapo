@@ -16,9 +16,6 @@
 <!-- unique Header stuff -->
 <script src="/js/lib/modernizr.js" type="text/javascript"></script>
 <script src="/js/lib/jquery.js" type="text/javascript"></script>
-<!--
-	<script type="text/javascript" src="http://alsocollective.github.io/also-cdn/js/j-tube/j-tube.js"></script>
-	-->
 <script src="/js/lib/j-tube.js" type="text/javascript"></script>
 <!-- Style Yo -->
 <script src="/js/main.js" type="text/javascript"></script>
@@ -38,9 +35,10 @@
 </ul>
 </nav>
 <div id="content">
-<section class="full-backgroundimage home-class" id="index-1" style="background-image: url(assets/photos/bg_page.jpg)"><div id="main-info">
+<section class="full-backgroundimage home-class" id="index-1" style="background-image: url(assets/photos/bg_page.jpg)">
+<div id="main-info">
 <h2>110 Acres of Rainforest</h2>
-<blockquote>— more than 80 football fields —<br>will be lost in the two minutes it takes you to scroll to the bottom of this website and</br></blockquote>
+<blockquote>— more than 80 football fields —<br/>will be lost in the two minutes it takes you to scroll to the bottom of this website and</blockquote>
 <div class="donation"><a href="#" onclick="GLOBAL.loadDonate();">Make a Donation</a></div>
 <div><a class="next-page-button" href=""><img alt="down arrow" height="20px" src="/assets/icons/bt_arrow.png" width="20px"/></a></div>
 </div>
@@ -60,16 +58,71 @@
 </div>
 </div>
 </section>
+<section id="why-rainforest-1">
+<div id="cropping-youtube">
+<div id="youtube-container">
+<div id="youtube-why-kayapo">
+</div>
+</div>
+</div>
+<div class="full-backgroundimage" id="stick-in-back" style="background-image: url(assets/photos/bg_page3.jpg)">
+<div class="center-element">
+<blockquote>“Where indian lands begin is where deforestation ends”</blockquote>
+<small>—Stephan Schwartzman Environmental Defense Fund</small>
+<a href="" id="play-button"><img height="200px" src="/assets/icons/bt_play-y.png" width="200px"/></a>
+<p>watch</p>
+</div>
+</div>
+<script type="text/javascript">
+			var myPlayer2 = null;
+			if(jQuery().Jtube){
+					myPlayer2 = $("#youtube-why-kayapo").Jtube({
+					videoId:"TEBW6LU8fp0",
+					skipvid:false,
+					skipWhash:false,
+					timeLeft:false,
+					loop:0,
+					autoplay:0,
+					applyToContainer:true,
+					vidHeight:"100%",
+					vidWidth:"100%",
+					volume:100,
+					fallbackImage:"/assets/photos/bg_why1.jpg",
+					onStart:function(settings){
+						$(settings.player.a).css({"display":"inline-block"})
+						$("#why-rainforest-1 #stick-in-back").fadeOut('1000');
+						return null;
+					},
+					onPause:function(settings){
+						$("#why-rainforest-1 #stick-in-back").fadeIn('1000');
+						return null;
+					},
+					onDone:function(settings){
+						return false;
+					}
+				});
+			}
+
+			function onYouTubeIframeAPIReady() {
+				myPlayer2.setupPlayer();
+			}
+			$("#why-rainforest-1 #play-button").click(function(event) {
+				if($("html.touch")[0]){
+					window.open("http://www.youtube.com/watch?v=TEBW6LU8fp0");
+				} else {
+					event.preventDefault();
+					myPlayer2.settings().player.playVideo();
+					return false;
+				}
+			});
+		</script>
+</section>
 <!--
 	<section id="index-2" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page1.jpg);">
 	</section>
 
 	<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page2.jpg);">
 	</section>-->
-<section class="full-backgroundimage" id="why-rainforest-1" style="background-image: url(assets/photos/bg_page3.jpg);">
-<blockquote>“Where indian lands begin is where deforestation ends”</blockquote>
-<small>—Steve Schwartzman, Environmental Defense Fund</small>
-</section>
 <section class="full-backgroundimage" id="why-rainforest-2" style="background-image: url(assets/photos/bg_page4.jpg);">
 </section>
 <section class="full-backgroundimage" id="why-rainforest-3">
@@ -86,7 +139,7 @@
 </section>
 <section id="about-the-kayapo-5">
 </section>
-<section id="about-the-kayapo-6">
+<section class="full-backgroundimage" id="about-the-kayapo-6" style="background-image: url(assets/photos/bg_page16.jpg)">
 </section>
 <section class="full-backgroundimage" id="the-threat-1" style="background-image: url(assets/map/mapload.jpg);">
 </section>

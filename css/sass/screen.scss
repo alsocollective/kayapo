@@ -424,28 +424,6 @@ section{
 }
 	
 
-/* WHY RAINFOREST */
-
-	#why-rainforest-1{
-
-		color: #fff;
-		text-align: center;
-		
-
-		blockquote{
-			font-weight: 800;
-			font-size:6em;
-			width: 80%;
-			margin: 0 auto 2% auto;
-			padding-top: 8%;
-		}
-
-		small{
-			font-weight: 800;
-			font-size: 1.5em;
-		}
-	}
-
 
 	#why-rainforest-2{
 		color: #000;
@@ -979,11 +957,23 @@ section{
 	}	
 }
 
-#about-the-kayapo-6{
+#why-rainforest-1{
 	position: relative;
 	color: #fff;
 	text-align: center;
 
+		blockquote{
+			font-weight: 800;
+			font-size:6em;
+			width: 80%;
+			margin: 0 auto 2% auto;
+			padding-top: 8%;
+		}
+
+		small{
+			font-weight: 800;
+			font-size: 1.5em;
+		}
 
 	#stick-in-back{
 		@extend .full-backgroundimage;

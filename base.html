@@ -16,7 +16,6 @@
 	<!-- <meta name="keywords" content="KEYWORD-1, KEYWORD-2"> -->
 
 	<link rel="icon" type="image/png" href="/assets/favicon.png">
-	
 	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/717268/671322/css/fonts.css" />
 
 <!-- web type stuff -->
@@ -24,9 +23,6 @@
 <!-- unique Header stuff -->
 	<script type="text/javascript" src="/js/lib/modernizr.js"></script>
 	<script type="text/javascript" src="/js/lib/jquery.js"></script>
-	<!--
-	<script type="text/javascript" src="http://alsocollective.github.io/also-cdn/js/j-tube/j-tube.js"></script>
-	-->
 	<script type="text/javascript" src="/js/lib/j-tube.js"></script>
 <!-- Style Yo -->
 	<script type="text/javascript" src="/js/main.js"></script>
@@ -53,6 +49,67 @@
 <div id="content">
 	<section id="index-1" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page.jpg)">
 	</section>
+
+
+	<section id="why-rainforest-1">
+		<div id="cropping-youtube">
+			<div id="youtube-container">
+				<div id="youtube-why-kayapo">
+				</div>
+			</div>
+		</div>
+		<div class="full-backgroundimage" id="stick-in-back" style="background-image: url(assets/photos/bg_page3.jpg)">
+			<div class="center-element">
+				<blockquote>&#8220;Where indian lands begin is where deforestation ends&#8221;</blockquote>
+				<small>&#8212;Stephan Schwartzman Environmental Defense Fund</small>
+				<a href="" id="play-button"><img height="200px" src="/assets/icons/bt_play-y.png" width="200px"/></a>
+				<p>watch</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var myPlayer2 = null;
+			if(jQuery().Jtube){
+					myPlayer2 = $("#youtube-why-kayapo").Jtube({
+					videoId:"TEBW6LU8fp0",
+					skipvid:false,
+					skipWhash:false,
+					timeLeft:false,
+					loop:0,
+					autoplay:0,
+					applyToContainer:true,
+					vidHeight:"100%",
+					vidWidth:"100%",
+					volume:100,
+					fallbackImage:"/assets/photos/bg_why1.jpg",
+					onStart:function(settings){
+						$(settings.player.a).css({"display":"inline-block"})
+						$("#why-rainforest-1 #stick-in-back").fadeOut('1000');
+						return null;
+					},
+					onPause:function(settings){
+						$("#why-rainforest-1 #stick-in-back").fadeIn('1000');
+						return null;
+					},
+					onDone:function(settings){
+						return false;
+					}
+				});
+			}
+
+			function onYouTubeIframeAPIReady() {
+				myPlayer2.setupPlayer();
+			}
+			$("#why-rainforest-1 #play-button").click(function(event) {
+				if($("html.touch")[0]){
+					window.open("http://www.youtube.com/watch?v=TEBW6LU8fp0");
+				} else {
+					event.preventDefault();
+					myPlayer2.settings().player.playVideo();
+					return false;
+				}
+			});
+		</script>
+	</section>
 	<!--
 	<section id="index-2" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page1.jpg);">
 	</section>
@@ -60,10 +117,7 @@
 	<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page2.jpg);">
 	</section>-->
 
-	<section id="why-rainforest-1" class="full-backgroundimage" style="background-image: url(assets/photos/bg_page3.jpg);">
-		<blockquote>&#8220;Where indian lands begin is where deforestation ends&#8221;</blockquote>
-		<small>&#8212;Stephan Schwartzman Environmental Defense Fund</small>
-	</section>
+
 	<section id="why-rainforest-2" class="full-backgroundimage" style="background-image: url(assets/photos/bg_page4.jpg);">
 	</section>
 	<section id="why-rainforest-3" class="full-backgroundimage">
@@ -83,7 +137,7 @@
 
 	<section id="about-the-kayapo-5">
 	</section>
-	<section id="about-the-kayapo-6" >
+	<section id="about-the-kayapo-6" class="full-backgroundimage" style="background-image: url(assets/photos/bg_page16.jpg)">
 	</section>
 
 	<section id="the-threat-1" class="full-backgroundimage" style="background-image: url(assets/map/mapload.jpg);">
