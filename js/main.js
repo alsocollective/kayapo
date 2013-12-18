@@ -512,7 +512,7 @@ var GLOBAL = {
 			GLOBAL.setUpWhyNav();
 		} else if(id == "about-the-kayapo-3"){
 			GLOBAL.mapAnimationSquence();
-		} else if(id == "about-the-kayapo-6"){
+		} else if(id == "why-rainforest-1"){
 			GLOBAL.about6Hover();
 		} else if(id == "the-threat-1"){
 			JPGSEQUENCE.generateImages(document.getElementById("the-threat-1"),29,"map");

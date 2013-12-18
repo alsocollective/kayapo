@@ -962,19 +962,28 @@ section{
 	color: #fff;
 	text-align: center;
 
-		blockquote{
-			font-weight: 800;
-			font-size:6em;
-			width: 80%;
-			margin: 0 auto 2% auto;
-			padding-top: 8%;
-		}
+	blockquote{
+		font-weight: 800;
+		font-size:5.5em;
+		width: 80%;
+		margin: 0 auto 2% auto;
+		padding-top: 3%;
+	}
 
-		small{
-			font-weight: 800;
-			font-size: 1.5em;
-		}
-
+	small{
+		font-weight: 800;
+		font-size: 1.5em;
+	}
+	a{
+		padding-top: 2em;
+		display: block;
+		text-align: center;
+	}
+	img{
+		height: 75px;
+		width: auto;
+		text-align: center;
+	}
 	#stick-in-back{
 		@extend .full-backgroundimage;
 		position: relative;
