@@ -73,41 +73,50 @@
 </div>
 <script type="text/javascript">
 			var myPlayer2 = null;
-			if(jQuery().Jtube){
-					myPlayer2 = $("#youtube-why-kayapo").Jtube({
-					videoId:"TEBW6LU8fp0",
-					skipvid:false,
-					skipWhash:false,
-					timeLeft:false,
-					loop:0,
-					autoplay:0,
-					applyToContainer:true,
-					vidHeight:"100%",
-					vidWidth:"100%",
-					volume:100,
-					fallbackImage:"http://also-static.com/kayapo/assets/photos/bg_why1.jpg",
-					onStart:function(settings){
-						$(settings.player.a).css({"display":"inline-block"})
-						$("#why-rainforest-1 #stick-in-back").fadeOut('1000');
-						return null;
-					},
-					onPause:function(settings){
-						$("#why-rainforest-1 #stick-in-back").fadeIn('1000');
-						return null;
-					},
-					onDone:function(settings){
-						return false;
-					}
-				});
-			}
+
 
 			function onYouTubeIframeAPIReady() {
-				myPlayer2.setupPlayer();
+				if(myPlayer2){
+					console.log("start up");
+					myPlayer2.setupPlayer();
+					console.log("try playing");
+					myPlayer2.settings().player.playVideo();
+				}
 			}
 			$("#why-rainforest-1 #play-button").click(function(event) {
 				if($("html.touch")[0]){
 					window.open("http://www.youtube.com/watch?v=TEBW6LU8fp0");
 				} else {
+					if(jQuery().Jtube && !myPlayer2){
+							myPlayer2 = $("#youtube-why-kayapo").Jtube({
+							videoId:"TEBW6LU8fp0",
+							skipvid:false,
+							skipWhash:false,
+							timeLeft:false,
+							loop:0,
+							autoplay:0,
+							applyToContainer:true,
+							vidHeight:"100%",
+							vidWidth:"100%",
+							volume:100,
+							fallbackImage:"http://also-static.com/kayapo/assets/photos/bg_why1.jpg",
+							onStart:function(settings){
+								$(settings.player.a).css({"display":"inline-block"})
+								$("#why-rainforest-1 #stick-in-back").fadeOut('1000');
+								console.log("on start");
+								return null;
+							},
+							onPause:function(settings){
+								$("#why-rainforest-1 #stick-in-back").fadeIn('1000');
+								console.log("on pause");
+								return null;
+							},
+							onDone:function(settings){
+								console.log("on done");
+								return false;
+							}
+						});
+					}
 					event.preventDefault();
 					myPlayer2.settings().player.playVideo();
 					return false;
