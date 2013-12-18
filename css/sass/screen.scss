@@ -55,7 +55,7 @@ body{
 }
 
 @include breakpoint(phone) {
-	body{
+	.phone body{
 		overflow: auto;
 	}
 }
@@ -78,7 +78,7 @@ section{
 	overflow: hidden;
 }
 @include breakpoint(phone) {
-	section{
+	.phone section{
 		height: auto;
 		width: 100%;
 		//overflow: hidden;
@@ -277,7 +277,7 @@ section{
 		}
 	}
 	@include breakpoint(phone) {
-		#index-1{
+		.phone #index-1{
 			height: 80%;;
 			padding-bottom:12em;
 			blockquote{
@@ -397,7 +397,7 @@ section{
 			
 		}
 		@include breakpoint(phone) {
-			#index-2{
+			.phone #index-2{
 				height: 80%;;
 				padding-bottom:3em;
 				blockquote{
@@ -423,7 +423,47 @@ section{
 	font-weight:800;
 }
 	
+#why-rainforest-1{
+	position: relative;
+	color: #fff;
+	text-align: center;
 
+	blockquote{
+		font-weight: 800;
+		font-size:5.5em;
+		width: 80%;
+		margin: 0 auto 2% auto;
+		padding-top: 3%;
+	}
+
+	small{
+		font-weight: 800;
+		font-size: 1.5em;
+	}
+	a{
+		padding-top: 2em;
+		display: block;
+		text-align: center;
+	}
+	img{
+		height: 75px;
+		width: auto;
+		text-align: center;
+	}
+	#stick-in-back{
+		@extend .full-backgroundimage;
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	p{
+		font-family: $verlag;
+		font-weight: 800;
+		font-size: 3em;
+	}
+
+}
 
 	#why-rainforest-2{
 		color: #000;
@@ -522,7 +562,26 @@ section{
 
 		}
 	}
-	
+	@include breakpoint(tabletx) {
+		#why-rainforest-1{
+			blockquote{
+				font-size: 3.5em;
+			}
+		}
+		#why-rainforest-2{
+			#section-content{
+				padding: 2% 0 0 0;
+			}
+			blockquote {
+				font-size: 3em;
+			}
+		}
+		#why-rainforest-3{
+			.center-element{
+				height: 87%
+			}
+		}
+	}
 	@include breakpoint(lapsm) {
 		#why-rainforest-3{
 			h2{
@@ -532,7 +591,6 @@ section{
 	}
 	@include breakpoint(phone) {
 		#why-rainforest-3{
-			
 			padding-top:2em;
 			h2{
 				font-size: 2.5em;
@@ -546,7 +604,6 @@ section{
 				width: 90%;
 				text-align:center;
 				margin:0 auto 0 auto;
-				
 			}
 			small{
 				width:70% !important;
@@ -879,7 +936,6 @@ section{
 	}
 }
 
-
 #about-the-kayapo-3{
 	background-color: $k-blue-dark;
 	color: #fff;
@@ -933,6 +989,23 @@ section{
 	}
 }
 
+@include breakpoint(tabletx) {
+	#about-the-kayapo-1 #section-content{
+		padding: 3% 0 0 0;
+		font-size: 0.8em;
+	}
+	#about-the-kayapo-2 h2{
+		font-size: 2.5em;
+		padding: 0.5em 0 0.2em 0;
+	}
+	#about-the-kayapo-3 #text-top-left{
+		top: 3%;
+	}
+	#about-the-kayapo-4 img {
+		width: 21% !important;
+	}
+}
+
 #about-the-kayapo-5{
 	position: relative;
 	color: #fff;
@@ -950,54 +1023,14 @@ section{
 	}
 }
 @include breakpoint(phone) {
-	#about-the-kayapo-5{
+	.phone #about-the-kayapo-5{
 		h2{
 			font-size:4em;
 		}
 	}	
 }
 
-#why-rainforest-1{
-	position: relative;
-	color: #fff;
-	text-align: center;
 
-	blockquote{
-		font-weight: 800;
-		font-size:5.5em;
-		width: 80%;
-		margin: 0 auto 2% auto;
-		padding-top: 3%;
-	}
-
-	small{
-		font-weight: 800;
-		font-size: 1.5em;
-	}
-	a{
-		padding-top: 2em;
-		display: block;
-		text-align: center;
-	}
-	img{
-		height: 75px;
-		width: auto;
-		text-align: center;
-	}
-	#stick-in-back{
-		@extend .full-backgroundimage;
-		position: relative;
-		width: 100%;
-		height: 100%;
-	}
-
-	p{
-		font-family: $verlag;
-		font-weight: 800;
-		font-size: 3em;
-	}
-
-}
 
 
 /* kayapo-proj */
@@ -1120,6 +1153,11 @@ section{
 		position: absolute;
 		height: 400px;
 		background-color: $k-green-dark;
+	}
+}
+@include breakpoint(tabletx) {
+	#kayapo-proj-2 h2{
+		margin: 0.1em auto 0.2em auto;
 	}
 }
 
@@ -1294,7 +1332,7 @@ section{
 }
 
 @include breakpoint(phone) {
-	#donate-1 div{
+	.phone #donate-1 div{
 		width:95%;
 		display:inline;
 		text-align:center;
@@ -1322,6 +1360,11 @@ section{
 		h2{
 			font-size:1.5em;
 		}
+	}
+}
+@include breakpoint(tabletx) {
+	#donate-1 p{
+		display: none;
 	}
 }
 
@@ -1368,12 +1411,12 @@ section{
 }
 
 @include breakpoint(phone) {
-	#sponsors-1,#sponsors-2, #sponsors-3{
+	.phone #sponsors-1,#sponsors-2, #sponsors-3{
 		img{
 			width:80px;
 		}
 	}
-	#contact-1{
+	.phone #contact-1{
 		height: 100%;
 		padding-bottom: 6em;
 		h2{
@@ -1433,7 +1476,7 @@ section{
 	//opacity: 0.6;
 }
 @include breakpoint(phone) {
-	#one-time{
+	.phone #one-time{
 		width:100%;
 	}
 }
@@ -1600,7 +1643,7 @@ section{
 	}
 }
 @include breakpoint(phone) {
-	#the-threat-35,#the-threat-3{
+	.phone #the-threat-35,#the-threat-3{
 		background-color: $k-red;
 		padding-bottom: 5em;
 		blockquote{
@@ -1875,7 +1918,7 @@ section{
 		}
 	}
 	@include breakpoint(phone) {
-		.donation{
+		.phone .donation{
 			width: 60%;
 			padding:4px;
 			a{
@@ -2107,7 +2150,7 @@ section{
 	// background-size:100%;
 }
 @include breakpoint(phone) {
-	.full-backgroundimage{
+	.phone .full-backgroundimage{
 		background-position: left;
 	}
 }
