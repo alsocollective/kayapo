@@ -164,7 +164,7 @@ var GLOBAL = {
 			if(id == "about-the-kayapo-5"){
 				GLOBAL.stuckAboutLoc = a;
 			}
-			if(id == "donate-2"){
+			if(id == "donate-1"){
 				GLOBAL.donate = a;
 			}
 		}
@@ -615,7 +615,7 @@ var GLOBAL = {
 	loadDonate:function(event){
 		// console.log(event);
 		// event.preventDefault();
-		console.log(GLOBAL.donate,GLOBAL.hotSpots[GLOBAL.donate]);
+		//console.log(GLOBAL.donate,GLOBAL.hotSpots[GLOBAL.donate]);
 		GLOBAL.loadPage(GLOBAL.donate);
 		return false;
 	},
@@ -673,8 +673,8 @@ var GLOBAL = {
 		}
 	},
 	setDonate:function(){
-		$("#monthly #social-icons").children().click(GLOBAL.socialMediaLinks);
-		$("#one-time #social-icons").children().click(GLOBAL.socialMediaLinks);
+		//$("#monthly #social-icons").children().click(GLOBAL.socialMediaLinks);
+		//$("#one-time #social-icons").children().click(GLOBAL.socialMediaLinks);
 	}
 }
 
