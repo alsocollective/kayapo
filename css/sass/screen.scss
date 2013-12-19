@@ -1617,19 +1617,30 @@ section{
 	position: relative;
 	blockquote{
 		z-index: 2;
-		position: relative;
-
-		font-weight: 800;
+		position: absolute;
+		left: 0;
+		right: 0;
 		margin: 0 auto 0 auto;
+		bottom: 25%;
+		height: 60%;
+		font-weight: 800;
 		width: 50%;
 		color: #fff;
-		padding-top: 20%;
+
+		// z-index: 2;
+		// position: relative;
+
+		// font-weight: 800;
+		// margin: 0 auto 0 auto;
+		// width: 50%;
+		// color: #fff;
+		// padding-top: 20%;
 	}
 }
 @include breakpoint(tablet) {
 	#the-threat-35,#the-threat-3{
 		blockquote{
-			padding-top:7%;
+			// padding-top:7%;
 			width:70%;
 		}
 	}
@@ -1637,18 +1648,18 @@ section{
 @include breakpoint(lapsm) {
 	#the-threat-35,#the-threat-3{
 		blockquote{
-			padding-top:10%;
+			// padding-top:10%;
 			width:70%;
 		}
 	}
 }
 @include breakpoint(phone) {
 	.phone #the-threat-35,#the-threat-3{
-		background-color: $k-red;
-		padding-bottom: 5em;
+		// background-color: $k-red;
+		// padding-bottom: 5em;
 		blockquote{
 			width:90% !important;
-			font-size:1.8em;	
+			font-size:1.8em;
 		}
 	}
 }
@@ -2069,12 +2080,17 @@ section{
 	font-weight: 800;
 	display: table;
 	
-	h2{
+	div{
 		position: absolute;
-		bottom: 50%;
+		bottom: 35%;
 		width: 100%;
 		text-align: center;
+
+		img{
+			padding: 1em;
+		}
 	}
+
 }
 
 #ajax-loading-screen{
@@ -2085,21 +2101,61 @@ section{
 	height: 100%;
 	z-index: 50;
 	background-color: rgba(0,0,0,0.5);
-	
+	text-align: center;
+
 	div{
-		position: relative;
+		position: absolute;
+		bottom: 50%;
 		width: 100%;
 		text-align: center;
-		height: 100%;
 	}
-	
-	img{
-		position:absolute;
-		bottom:50%;
+}
+
+#loading-screen img, #ajax-loading-screen img{
+	-webkit-animation-name:             fullRotate;
+	-webkit-animation-duration:         3s;
+	-webkit-animation-iteration-count:  infinite;
+	-webkit-animation-timing-function: linear;
+
+	-ms-animation-name:             fullRotate;
+	-ms-animation-duration:         3s;
+	-ms-animation-iteration-count:  infinite;
+	-ms-animation-timing-function: linear;
+
+	-moz-animation-name:             fullRotate;
+	-moz-animation-duration:         3s;
+	-moz-animation-iteration-count:  infinite;
+	-moz-animation-timing-function: linear;
+
+	animation-name:             fullRotate;
+	animation-duration:         3s;
+	animation-iteration-count:  infinite;
+	animation-timing-function: linear;
+}
+
+@-webkit-keyframes fullRotate {
+	from {
+		-ms-transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+		-moz-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	to {
+		-ms-transform:rotate(360deg);
+		-webkit-transform:rotate(360deg);
+		-moz-transform:rotate(360deg);
+		transform:rotate(360deg)
 	}
 }
 
 
+// img.star
+// {
+//     -webkit-animation-name:             rotate; 
+//     -webkit-animation-duration:         0.5s; 
+//     -webkit-animation-iteration-count:  infinite;
+//     -webkit-animation-timing-function: linear;
+// }
 
 /* LOADING MODALS */
 
