@@ -314,7 +314,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Variables */
 /* Nav Height */
 /* Global Classes */
-/* line 38, ../sass/phone.scss */
+/* line 42, ../sass/phone.scss */
 body, html {
   width: 100%;
   height: 100%;
@@ -322,15 +322,21 @@ body, html {
   margin: 0;
   font-family: "Verlag A", "Verlag B";
   -webkit-font-smoothing: antialiased;
+  color: #111111;
+}
+
+/* line 53, ../sass/phone.scss */
+body {
+  background-color: #2a78a0;
 }
 
 @media (max-width: 650px) {
-  /* line 54, ../sass/phone.scss */
-  .phone body {
+  /* line 59, ../sass/phone.scss */
+  body {
     overflow: auto;
   }
 }
-/* line 59, ../sass/phone.scss */
+/* line 64, ../sass/phone.scss */
 #content {
   width: 100%;
   height: 100%;
@@ -343,28 +349,26 @@ body, html {
   overflow-x: hidden;
 }
 
-/* line 66, ../sass/phone.scss */
+/* line 71, ../sass/phone.scss */
 .body #content {
   overflow-x: scroll;
 }
 
-/* line 70, ../sass/phone.scss */
+/* line 75, ../sass/phone.scss */
 section {
-  height: calc(100% - 2.25em);
-  height: -webkit-calc(100% - 2.25em);
   width: 100%;
   overflow: hidden;
 }
 
 @media (max-width: 650px) {
-  /* line 77, ../sass/phone.scss */
-  .phone section {
+  /* line 82, ../sass/phone.scss */
+  section {
     height: auto;
     width: 100%;
   }
 }
 /* NAV */
-/* line 87, ../sass/phone.scss */
+/* line 92, ../sass/phone.scss */
 nav, #nav {
   position: absolute;
   /* we need absolute as a fall back */
@@ -377,7 +381,7 @@ nav, #nav {
   font-family: "Verlag A", "Verlag B";
   height: 2.25em;
 }
-/* line 99, ../sass/phone.scss */
+/* line 104, ../sass/phone.scss */
 nav a, #nav a {
   color: inherit;
   display: inline-block;
@@ -386,7 +390,7 @@ nav a, #nav a {
   font-size: 1.1em;
   margin-top: 0.5em;
 }
-/* line 108, ../sass/phone.scss */
+/* line 113, ../sass/phone.scss */
 nav li, #nav li {
   color: inherit;
   display: inline-block;
@@ -395,24 +399,24 @@ nav li, #nav li {
   height: 100%;
   padding: 0 1.5% 0 1.5%;
 }
-/* line 118, ../sass/phone.scss */
+/* line 123, ../sass/phone.scss */
 nav ul, #nav ul {
   color: inherit;
   white-space: nowrap;
   width: 100%;
 }
-/* line 123, ../sass/phone.scss */
+/* line 128, ../sass/phone.scss */
 nav #donat-but, #nav #donat-but {
   background-color: #fae132 !important;
   color: #000 !important;
 }
-/* line 128, ../sass/phone.scss */
+/* line 133, ../sass/phone.scss */
 nav #social-nav, #nav #social-nav {
   position: absolute;
   right: 20px;
   top: 0;
 }
-/* line 133, ../sass/phone.scss */
+/* line 138, ../sass/phone.scss */
 nav #social-nav a, #nav #social-nav a {
   display: inline-block;
   width: 20px;
@@ -420,77 +424,53 @@ nav #social-nav a, #nav #social-nav a {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-/* line 141, ../sass/phone.scss */
+/* line 146, ../sass/phone.scss */
 nav #social-nav #twitter, #nav #social-nav #twitter {
   background-image: url("/assets/icons/ic_twitterk.png");
 }
-/* line 144, ../sass/phone.scss */
+/* line 149, ../sass/phone.scss */
 nav #social-nav #facebook, #nav #social-nav #facebook {
   background-size: 17px;
   background-image: url("/assets/icons/ic_facek.png");
 }
 
-/* line 150, ../sass/phone.scss */
+/* line 155, ../sass/phone.scss */
 .highlight-nav {
   border-bottom: 2px solid #fff;
 }
 
 @media (min-width: 768px) and (max-width: 1250px) {
-  /* line 155, ../sass/phone.scss */
+  /* line 160, ../sass/phone.scss */
   nav li, #nav li {
     padding: 0 0.9% 0 0.9%;
     letter-spacing: -0.02em;
   }
-  /* line 159, ../sass/phone.scss */
+  /* line 164, ../sass/phone.scss */
   nav a, #nav a {
     margin-top: 0.7em;
     font-size: 0.95em;
   }
 }
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 167, ../sass/phone.scss */
-  nav li, #nav li {
-    padding: 0 0.6% 0 0.6%;
-    letter-spacing: -0.03em;
-  }
-  /* line 171, ../sass/phone.scss */
-  nav a, #nav a {
-    margin-top: 0.9em;
-    font-size: 0.8em;
-  }
-}
-@media (max-width: 900px) {
-  /* line 179, ../sass/phone.scss */
-  nav li, #nav li {
-    padding: 0 0.6% 0 0.6%;
-    letter-spacing: -0.03em;
-  }
-  /* line 183, ../sass/phone.scss */
-  nav a, #nav a {
-    margin-top: 0.9em;
-    font-size: 0.8em;
-  }
-}
-/* line 191, ../sass/phone.scss */
+/* line 172, ../sass/phone.scss */
 .phone #nav a {
   display: none;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 196, ../sass/phone.scss */
+/* line 177, ../sass/phone.scss */
 .phone #nav #donat-but a {
   display: inline-block;
   left: 0;
   top: 0;
 }
-/* line 202, ../sass/phone.scss */
+/* line 183, ../sass/phone.scss */
 .phone #nav #social-nav a {
   display: inline-block;
 }
 
 /* NAV END */
 /* INDEX 1 SECTION */
-/* line 214, ../sass/phone.scss */
+/* line 195, ../sass/phone.scss */
 #index-1 blockquote {
   font-weight: 800;
   font-size: 3.5em;
@@ -499,7 +479,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 0 auto 0 auto;
   color: #fff;
 }
-/* line 222, ../sass/phone.scss */
+/* line 203, ../sass/phone.scss */
 #index-1 h2 {
   text-transform: uppercase;
   font-size: 3.5em;
@@ -508,61 +488,61 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   color: #fff;
 }
 
-/* line 231, ../sass/phone.scss */
+/* line 212, ../sass/phone.scss */
 #main-info {
   text-align: center;
 }
-/* line 234, ../sass/phone.scss */
+/* line 215, ../sass/phone.scss */
 #main-info a img {
   margin-top: 3em;
 }
 
 @media (min-width: 768px) and (max-width: 1250px) {
-  /* line 240, ../sass/phone.scss */
+  /* line 221, ../sass/phone.scss */
   #index-1 blockquote {
     font-size: 2.8em;
     width: 80%;
     margin-bottom: 0.5em;
   }
-  /* line 245, ../sass/phone.scss */
+  /* line 226, ../sass/phone.scss */
   #index-1 h2 {
     font-size: 2.6em;
     padding: 4% 0 0 0;
   }
 
-  /* line 250, ../sass/phone.scss */
+  /* line 231, ../sass/phone.scss */
   #main-info {
     text-align: center;
   }
-  /* line 253, ../sass/phone.scss */
+  /* line 234, ../sass/phone.scss */
   #main-info a img {
     margin-top: 3%;
   }
 }
 @media screen and (min-device-width: 602px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 23) {
-  /* line 261, ../sass/phone.scss */
+  /* line 242, ../sass/phone.scss */
   #index-1 blockquote {
     font-size: 2em;
     width: 90%;
     margin-bottom: 0.5em;
   }
-  /* line 266, ../sass/phone.scss */
+  /* line 247, ../sass/phone.scss */
   #index-1 h2 {
     font-size: 2em;
     padding: 2% 0 0 0;
   }
 
-  /* line 271, ../sass/phone.scss */
+  /* line 252, ../sass/phone.scss */
   #main-info {
     text-align: center;
   }
-  /* line 273, ../sass/phone.scss */
+  /* line 254, ../sass/phone.scss */
   #main-info a img {
     margin-top: 2%;
   }
 }
 @media screen and (max-height: 683px) {
-  /* line 280, ../sass/phone.scss */
+  /* line 261, ../sass/phone.scss */
   #index-1 blockquote {
     font-size: 2.5em;
     width: 90%;
@@ -570,43 +550,30 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   }
 }
 @media (max-width: 650px) {
-  /* line 288, ../sass/phone.scss */
-  .phone #index-1 {
+  /* line 269, ../sass/phone.scss */
+  #index-1 {
     height: 80%;
-    padding-bottom: 12em;
+    padding-bottom: 3em;
   }
-  /* line 291, ../sass/phone.scss */
-  .phone #index-1 blockquote {
+  /* line 272, ../sass/phone.scss */
+  #index-1 blockquote {
     font-size: 1.2em;
     width: 95%;
     margin-bottom: 0.5em;
   }
-  /* line 296, ../sass/phone.scss */
-  .phone #index-1 h2 {
+  /* line 277, ../sass/phone.scss */
+  #index-1 h2 {
     font-size: 2.2em;
     padding: 3em 0 0 0;
   }
 }
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 304, ../sass/phone.scss */
-  #index-1 blockquote {
-    width: 95%;
-  }
-}
-@media (max-width: 900px) {
-  /* line 311, ../sass/phone.scss */
-  #index-1 blockquote {
-    width: 95%;
-    font-size: 1.5em;
-  }
-}
 /* INDEX 1 SECTION END */
 /* INDEX 2 SECTION */
-/* line 322, ../sass/phone.scss */
+/* line 288, ../sass/phone.scss */
 #index-2 {
   position: relative;
 }
-/* line 325, ../sass/phone.scss */
+/* line 291, ../sass/phone.scss */
 #index-2 blockquote {
   font-weight: 800;
   font-size: 3.5em;
@@ -616,7 +583,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   color: #fff;
   text-align: left;
 }
-/* line 334, ../sass/phone.scss */
+/* line 300, ../sass/phone.scss */
 #index-2 h2 {
   text-transform: uppercase;
   font-size: 3.5em;
@@ -625,12 +592,12 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   color: #fff;
   text-align: left;
 }
-/* line 342, ../sass/phone.scss */
+/* line 308, ../sass/phone.scss */
 #index-2 .donation {
   width: 60%;
 }
 
-/* line 347, ../sass/phone.scss */
+/* line 313, ../sass/phone.scss */
 #sub {
   font-size: 1.3em !important;
   color: #fff;
@@ -650,51 +617,51 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 	}
 }*/
 @media (min-width: 768px) and (max-width: 1250px) {
-  /* line 367, ../sass/phone.scss */
+  /* line 333, ../sass/phone.scss */
   #index-2 blockquote {
     font-size: 2.8em;
     width: 80%;
     margin-bottom: 0.5em;
   }
-  /* line 372, ../sass/phone.scss */
+  /* line 338, ../sass/phone.scss */
   #index-2 h2 {
     font-size: 2.6em;
     padding: 4% 0 0 0;
   }
 
-  /* line 377, ../sass/phone.scss */
+  /* line 343, ../sass/phone.scss */
   #main-info {
     text-align: center;
   }
-  /* line 380, ../sass/phone.scss */
+  /* line 346, ../sass/phone.scss */
   #main-info a img {
     margin-top: 3%;
   }
 }
 @media screen and (min-device-width: 602px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 23) {
-  /* line 388, ../sass/phone.scss */
+  /* line 354, ../sass/phone.scss */
   #index-2 blockquote {
     font-size: 2em;
     width: 90%;
     margin-bottom: 0.5em;
   }
-  /* line 393, ../sass/phone.scss */
+  /* line 359, ../sass/phone.scss */
   #index-2 h2 {
     font-size: 2em;
     padding: 2% 0 0 0;
   }
 
-  /* line 398, ../sass/phone.scss */
+  /* line 364, ../sass/phone.scss */
   #main-info {
     text-align: center;
   }
-  /* line 400, ../sass/phone.scss */
+  /* line 366, ../sass/phone.scss */
   #main-info a img {
     margin-top: 2%;
   }
 }
 @media screen and (max-height: 683px) {
-  /* line 407, ../sass/phone.scss */
+  /* line 373, ../sass/phone.scss */
   #index-2 blockquote {
     font-size: 2.5em;
     width: 90%;
@@ -702,25 +669,25 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   }
 }
 @media (max-width: 650px) {
-  /* line 416, ../sass/phone.scss */
-  .phone #index-2 {
+  /* line 382, ../sass/phone.scss */
+  #index-2 {
     height: 80%;
     padding-bottom: 3em;
   }
-  /* line 419, ../sass/phone.scss */
-  .phone #index-2 blockquote {
+  /* line 385, ../sass/phone.scss */
+  #index-2 blockquote {
     font-size: 1.2em;
     width: 95%;
     margin-bottom: 0.5em;
   }
-  /* line 424, ../sass/phone.scss */
-  .phone #index-2 h2 {
+  /* line 390, ../sass/phone.scss */
+  #index-2 h2 {
     font-size: 2.2em;
     padding: 3em 0 0 0;
   }
 }
 /* INDEX 2 SECTION END */
-/* line 433, ../sass/phone.scss */
+/* line 399, ../sass/phone.scss */
 #click-msg {
   width: 100%;
   font-size: 1.2em;
@@ -730,90 +697,64 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   font-weight: 800;
 }
 
-/* line 442, ../sass/phone.scss */
+/* WHY RAINFOREST */
+/* line 411, ../sass/phone.scss */
 #why-rainforest-1 {
-  position: relative;
   color: #fff;
   text-align: center;
 }
-/* line 447, ../sass/phone.scss */
+/* line 417, ../sass/phone.scss */
 #why-rainforest-1 blockquote {
   font-weight: 800;
-  font-size: 5.5em;
+  font-size: 6em;
   width: 80%;
   margin: 0 auto 2% auto;
-  padding-top: 3%;
+  padding-top: 8%;
 }
-/* line 455, ../sass/phone.scss */
+/* line 425, ../sass/phone.scss */
 #why-rainforest-1 small {
   font-weight: 800;
   font-size: 1.5em;
 }
-/* line 459, ../sass/phone.scss */
-#why-rainforest-1 a {
-  padding-top: 2em;
-  display: block;
-  text-align: center;
-}
-/* line 464, ../sass/phone.scss */
-#why-rainforest-1 img {
-  height: 75px;
-  width: auto;
-  text-align: center;
-}
-/* line 469, ../sass/phone.scss */
-#why-rainforest-1 #stick-in-back {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-/* line 476, ../sass/phone.scss */
-#why-rainforest-1 p {
-  font-family: "Verlag A", "Verlag B";
-  font-weight: 800;
-  font-size: 3em;
-}
 
-/* line 484, ../sass/phone.scss */
+/* line 431, ../sass/phone.scss */
 #why-rainforest-2 {
   color: #000;
   position: relative;
-  background-position: left;
 }
-/* line 489, ../sass/phone.scss */
+/* line 435, ../sass/phone.scss */
 #why-rainforest-2 #section-content {
   width: 60%;
   padding: 8% 0 0 0;
   position: absolute;
   right: 10%;
 }
-/* line 496, ../sass/phone.scss */
+/* line 442, ../sass/phone.scss */
 #why-rainforest-2 blockquote {
   font-weight: 800;
   font-size: 3.6em;
   margin-bottom: 0.5em;
 }
-/* line 502, ../sass/phone.scss */
+/* line 448, ../sass/phone.scss */
 #why-rainforest-2 small {
   font-weight: 800;
   font-size: 1.2em;
 }
-/* line 506, ../sass/phone.scss */
+/* line 452, ../sass/phone.scss */
 #why-rainforest-2 .donation {
-  margin-top: 2em;
-  width: 80%;
+  margin-top: 15%;
 }
 
-/* line 512, ../sass/phone.scss */
+/* line 457, ../sass/phone.scss */
 #why-rainforest-3 {
   color: #fff;
   position: relative;
 }
-/* line 515, ../sass/phone.scss */
+/* line 460, ../sass/phone.scss */
 #why-rainforest-3 .full-page {
   position: relative;
 }
-/* line 519, ../sass/phone.scss */
+/* line 464, ../sass/phone.scss */
 #why-rainforest-3 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-weight: 700;
@@ -821,25 +762,36 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   font-size: 4em;
   text-align: center;
 }
+/* line 471, ../sass/phone.scss */
+#why-rainforest-3 blockquote {
+  font-size: 3em;
+  font-weight: 800;
+  margin: 3em 0 4em 0;
+  text-align: center;
+}
+/* line 477, ../sass/phone.scss */
+#why-rainforest-3 small {
+  font-size: 0.6em;
+}
 
-/* line 527, ../sass/phone.scss */
+/* line 481, ../sass/phone.scss */
 #why-rainforest-35 {
   position: relative;
 }
-/* line 529, ../sass/phone.scss */
+/* line 483, ../sass/phone.scss */
 #why-rainforest-35 ul {
   position: absolute;
   width: 100%;
   text-align: center;
   padding-top: 3em;
 }
-/* line 535, ../sass/phone.scss */
+/* line 489, ../sass/phone.scss */
 #why-rainforest-35 li {
   display: inline-block;
   text-align: center;
   margin: 0 0.5em 0 0.5em;
 }
-/* line 539, ../sass/phone.scss */
+/* line 493, ../sass/phone.scss */
 #why-rainforest-35 li a {
   display: inline-block;
   width: 70px;
@@ -847,86 +799,66 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/* line 546, ../sass/phone.scss */
+/* line 500, ../sass/phone.scss */
 #why-rainforest-35 li #animals-nav {
   background-image: url("/assets/icons/ic_why_01.png");
 }
-/* line 549, ../sass/phone.scss */
+/* line 503, ../sass/phone.scss */
 #why-rainforest-35 li #climate-nav {
   background-image: url("/assets/icons/ic_why_02.png");
 }
-/* line 552, ../sass/phone.scss */
+/* line 506, ../sass/phone.scss */
 #why-rainforest-35 li #rain-nav {
   background-image: url("/assets/icons/ic_why_03.png");
 }
-/* line 555, ../sass/phone.scss */
+/* line 509, ../sass/phone.scss */
 #why-rainforest-35 li #food-nav {
   background-image: url("/assets/icons/ic_why_04.png");
 }
-/* line 558, ../sass/phone.scss */
+/* line 512, ../sass/phone.scss */
 #why-rainforest-35 li #culture-nav {
   background-image: url("/assets/icons/ic_why_05.png");
 }
-/* line 562, ../sass/phone.scss */
+/* line 516, ../sass/phone.scss */
 #why-rainforest-35 li #animals-nav:hover, #why-rainforest-35 li #animals-nav.selected-why-nav {
   background-image: url("/assets/icons/ic_why_01ho.png");
 }
-/* line 565, ../sass/phone.scss */
+/* line 519, ../sass/phone.scss */
 #why-rainforest-35 li #climate-nav:hover, #why-rainforest-35 li #climate-nav.selected-why-nav {
   background-image: url("/assets/icons/ic_why_02ho.png");
 }
-/* line 568, ../sass/phone.scss */
+/* line 522, ../sass/phone.scss */
 #why-rainforest-35 li #rain-nav:hover, #why-rainforest-35 li #rain-nav.selected-why-nav {
   background-image: url("/assets/icons/ic_why_03ho.png");
 }
-/* line 571, ../sass/phone.scss */
+/* line 525, ../sass/phone.scss */
 #why-rainforest-35 li #food-nav:hover, #why-rainforest-35 li #food-nav.selected-why-nav {
   background-image: url("/assets/icons/ic_why_04ho.png");
 }
-/* line 574, ../sass/phone.scss */
+/* line 528, ../sass/phone.scss */
 #why-rainforest-35 li #culture-nav:hover, #why-rainforest-35 li #culture-nav.selected-why-nav {
   background-image: url("/assets/icons/ic_why_05ho.png");
 }
 
-@media screen and (min-device-width: 602px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 23) {
-  /* line 583, ../sass/phone.scss */
-  #why-rainforest-1 blockquote {
-    font-size: 3.5em;
-  }
-
-  /* line 588, ../sass/phone.scss */
-  #why-rainforest-2 #section-content {
-    padding: 2% 0 0 0;
-  }
-  /* line 591, ../sass/phone.scss */
-  #why-rainforest-2 blockquote {
-    font-size: 3em;
-  }
-
-  /* line 596, ../sass/phone.scss */
-  #why-rainforest-3 .center-element {
-    height: 87%;
-  }
-}
 @media screen and (max-height: 683px) {
-  /* line 603, ../sass/phone.scss */
+  /* line 538, ../sass/phone.scss */
   #why-rainforest-3 h2 {
     font-size: 7em;
   }
 }
 @media (max-width: 650px) {
-  /* line 609, ../sass/phone.scss */
+  /* line 544, ../sass/phone.scss */
   #why-rainforest-3 {
     padding-top: 2em;
   }
-  /* line 611, ../sass/phone.scss */
+  /* line 547, ../sass/phone.scss */
   #why-rainforest-3 h2 {
     font-size: 2.5em;
     line-height: 1.5em;
     letter-spacing: 0.06em;
     color: #fae132;
   }
-  /* line 617, ../sass/phone.scss */
+  /* line 553, ../sass/phone.scss */
   #why-rainforest-3 blockquote {
     font-size: 3em;
     font-weight: 800;
@@ -934,189 +866,159 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
     text-align: center;
     margin: 0 auto 0 auto;
   }
-  /* line 624, ../sass/phone.scss */
+  /* line 561, ../sass/phone.scss */
   #why-rainforest-3 small {
     width: 70% !important;
     margin: 0 auto 0 auto;
     font-size: 0.4em;
   }
 
-  /* line 631, ../sass/phone.scss */
+  /* line 568, ../sass/phone.scss */
   #why-rainforest-1 blockquote {
     font-size: 3em;
     width: 90%;
   }
 
-  /* line 636, ../sass/phone.scss */
+  /* line 573, ../sass/phone.scss */
   #why-rainforest-35 {
     height: 50em;
     margin-bottom: 25em;
     background-color: #284646;
     color: #fff;
-    padding-bottom: 8em;
   }
-  /* line 642, ../sass/phone.scss */
+  /* line 578, ../sass/phone.scss */
   #why-rainforest-35 li {
     margin: 1em 0 1em 0;
   }
-  /* line 645, ../sass/phone.scss */
+  /* line 581, ../sass/phone.scss */
   #why-rainforest-35 blockquote {
     width: 90%;
-    margin: 0 auto 0 auto;
-    font-size: 1.2em;
   }
 }
-@media (max-width: 900px) {
-  /* line 654, ../sass/phone.scss */
-  #why-rainforest-1 blockquote {
-    width: 95%;
-    font-size: 3em;
-  }
-
-  /* line 660, ../sass/phone.scss */
-  #why-rainforest-2 #section-content {
-    width: 70%;
-  }
-  /* line 663, ../sass/phone.scss */
-  #why-rainforest-2 blockquote {
-    font-size: 2em;
-  }
-}
-@media (max-width: 900px) {
-  /* line 670, ../sass/phone.scss */
-  #why-rainforest-3 h2 {
-    font-size: 4em;
-  }
-
-  /* line 675, ../sass/phone.scss */
-  #why-rainforest-35 blockquote {
-    font-size: 2em !important;
-  }
-}
-/* line 681, ../sass/phone.scss */
+/* line 587, ../sass/phone.scss */
 .index {
   background-color: #a2cd39;
   color: #000;
 }
-/* line 684, ../sass/phone.scss */
+/* line 590, ../sass/phone.scss */
 .index .highlight-nav {
   border-bottom: #000 solid 2px !important;
 }
 
-/* line 688, ../sass/phone.scss */
+/* line 594, ../sass/phone.scss */
 .why {
   background-color: #000;
   color: #fff;
 }
-/* line 691, ../sass/phone.scss */
+/* line 597, ../sass/phone.scss */
 .why .highlight-nav {
   border-bottom: #fff solid 2px !important;
 }
-/* line 695, ../sass/phone.scss */
+/* line 601, ../sass/phone.scss */
 .why #social-nav #twitter {
   background-image: url("/assets/icons/ic_twitteryellow.png") !important;
 }
-/* line 698, ../sass/phone.scss */
+/* line 604, ../sass/phone.scss */
 .why #social-nav #facebook {
   background-image: url("/assets/icons/ic_faceyellow.png") !important;
 }
 
-/* line 702, ../sass/phone.scss */
+/* line 608, ../sass/phone.scss */
 .about {
   background-color: #6ec4ee;
 }
-/* line 704, ../sass/phone.scss */
+/* line 610, ../sass/phone.scss */
 .about .highlight-nav {
   border-bottom: #000 solid 2px !important;
 }
 
-/* line 708, ../sass/phone.scss */
+/* line 614, ../sass/phone.scss */
 .the-threat {
   background-color: #e53827;
   color: #fff;
 }
-/* line 711, ../sass/phone.scss */
+/* line 617, ../sass/phone.scss */
 .the-threat .highlight-nav {
   border-bottom: #fff solid 2px !important;
 }
 
-/* line 715, ../sass/phone.scss */
+/* line 621, ../sass/phone.scss */
 .project {
   background-color: #a2cd39;
 }
-/* line 717, ../sass/phone.scss */
+/* line 623, ../sass/phone.scss */
 .project .highlight-nav {
   border-bottom: #000 solid 2px !important;
 }
 
-/* line 721, ../sass/phone.scss */
+/* line 627, ../sass/phone.scss */
 .donate {
   background-color: #fff;
   color: #000 !important;
 }
-/* line 724, ../sass/phone.scss */
+/* line 630, ../sass/phone.scss */
 .donate .highlight-nav {
   border-bottom: #000 solid 2px !important;
 }
 
-/* line 728, ../sass/phone.scss */
+/* line 634, ../sass/phone.scss */
 .contact {
   background-color: #5d8079;
   color: #fff;
 }
-/* line 731, ../sass/phone.scss */
+/* line 637, ../sass/phone.scss */
 .contact .highlight-nav {
   border-bottom: #fff solid 2px !important;
 }
 
-/* line 736, ../sass/phone.scss */
+/* line 642, ../sass/phone.scss */
 .home .background {
   background: no-repeat;
   background-position: center;
 }
-/* line 739, ../sass/phone.scss */
+/* line 645, ../sass/phone.scss */
 .home .background .highlight-nav {
   border-bottom: #f0f solid 2px !important;
 }
 
 /* ` */
 /* other pages */
-/* line 748, ../sass/phone.scss */
+/* line 654, ../sass/phone.scss */
 #loading {
   display: none;
   left: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 753, ../sass/phone.scss */
+/* line 659, ../sass/phone.scss */
 #next-page {
   left: 0%;
 }
 
-/* line 757, ../sass/phone.scss */
+/* line 663, ../sass/phone.scss */
 #prev-page {
   left: -100%;
 }
 
 /* SECTIONS */
 /* HOME */
-/* line 764, ../sass/phone.scss */
+/* line 670, ../sass/phone.scss */
 #content section:first-child {
   margin-top: 2.25em;
 }
 
-/* line 771, ../sass/phone.scss */
+/* line 677, ../sass/phone.scss */
 #index-3 {
   font-family: "Verlag A", "Verlag B";
 }
-/* line 774, ../sass/phone.scss */
+/* line 680, ../sass/phone.scss */
 #index-3 blockquote {
   font-family: "Acropolis A", "Acropolis B";
   font-size: 4em;
   font-style: italic;
   text-align: left;
 }
-/* line 780, ../sass/phone.scss */
+/* line 686, ../sass/phone.scss */
 #index-3 #copy {
   width: 50%;
   color: #fff;
@@ -1125,35 +1027,35 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 /* ABOUT THE KAYAPO SECTION */
-/* line 790, ../sass/phone.scss */
+/* line 696, ../sass/phone.scss */
 #about-the-kayapo-1 {
   position: relative;
   font-weight: 800;
   color: #fff;
 }
-/* line 795, ../sass/phone.scss */
+/* line 701, ../sass/phone.scss */
 #about-the-kayapo-1 #section-content {
   width: 40%;
   position: absolute;
   left: 5%;
   padding: 6% 0 0 0;
 }
-/* line 802, ../sass/phone.scss */
+/* line 708, ../sass/phone.scss */
 #about-the-kayapo-1 p {
   font-size: 2em;
 }
 
-/* line 807, ../sass/phone.scss */
+/* line 713, ../sass/phone.scss */
 #about-the-kayapo-2 {
   background-color: #2a78a0;
 }
-/* line 810, ../sass/phone.scss */
+/* line 716, ../sass/phone.scss */
 #about-the-kayapo-2 div {
   display: inline-block;
   height: 100%;
   vertical-align: top;
 }
-/* line 815, ../sass/phone.scss */
+/* line 721, ../sass/phone.scss */
 #about-the-kayapo-2 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-size: 4.5em;
@@ -1162,78 +1064,48 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   display: inline-block;
   padding: 1em 0 0.2em 0;
 }
-/* line 823, ../sass/phone.scss */
+/* line 729, ../sass/phone.scss */
 #about-the-kayapo-2 p {
   font-family: "Verlag A", "Verlag B";
   font-weight: 800;
   color: #fff;
   font-size: 3em;
 }
-/* line 829, ../sass/phone.scss */
+/* line 735, ../sass/phone.scss */
 #about-the-kayapo-2 #left {
   width: 54%;
   position: relative;
 }
-/* line 832, ../sass/phone.scss */
+/* line 738, ../sass/phone.scss */
 #about-the-kayapo-2 #left img {
   height: 75%;
   max-height: 500px;
   max-width: 545px;
 }
-/* line 838, ../sass/phone.scss */
+/* line 744, ../sass/phone.scss */
 #about-the-kayapo-2 #right {
   width: 45%;
 }
-/* line 843, ../sass/phone.scss */
+/* line 749, ../sass/phone.scss */
 #about-the-kayapo-2 #right img {
   padding-left: 2em;
   display: inline-block;
   margin-bottom: -0.5em;
 }
 
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 852, ../sass/phone.scss */
-  #about-the-kayapo-2 #left {
-    position: relative;
-    height: auto;
-    width: 100%;
-  }
-  /* line 856, ../sass/phone.scss */
-  #about-the-kayapo-2 #left img {
-    height: 40%;
-    max-height: 320px;
-    position: static;
-  }
-  /* line 861, ../sass/phone.scss */
-  #about-the-kayapo-2 #left .center-element {
-    margin: 2em auto 0 auto;
-  }
-  /* line 865, ../sass/phone.scss */
-  #about-the-kayapo-2 #right {
-    width: 100%;
-    text-align: center;
-  }
-  /* line 868, ../sass/phone.scss */
-  #about-the-kayapo-2 #right img {
-    padding-left: 1em;
-    display: inline-block;
-    margin-bottom: -0.5em;
-    width: 200px;
-  }
-}
 @media (max-width: 650px) {
-  /* line 878, ../sass/phone.scss */
+  /* line 758, ../sass/phone.scss */
   #about-the-kayapo-2 {
     text-align: center;
     padding-top: 2em;
   }
-  /* line 881, ../sass/phone.scss */
+  /* line 761, ../sass/phone.scss */
   #about-the-kayapo-2 div {
     display: inline-block;
     height: auto;
     vertical-align: top;
   }
-  /* line 886, ../sass/phone.scss */
+  /* line 766, ../sass/phone.scss */
   #about-the-kayapo-2 h2 {
     font-family: "Acropolis A", "Acropolis B";
     font-size: 2em !important;
@@ -1241,7 +1113,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
     padding: 0;
     margin: 0.5em 0 0.5em 0;
   }
-  /* line 893, ../sass/phone.scss */
+  /* line 773, ../sass/phone.scss */
   #about-the-kayapo-2 p {
     font-family: "Verlag A", "Verlag B";
     font-weight: 800;
@@ -1249,24 +1121,24 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
     font-size: 1.5em !important;
     margin: 0.5em 0 0.5em 0;
   }
-  /* line 900, ../sass/phone.scss */
+  /* line 780, ../sass/phone.scss */
   #about-the-kayapo-2 #left {
     width: 100%;
     position: relative;
     height: auto;
   }
-  /* line 904, ../sass/phone.scss */
+  /* line 784, ../sass/phone.scss */
   #about-the-kayapo-2 #left img {
     height: 40%;
     max-height: 500px;
     max-width: 545px;
     position: static;
   }
-  /* line 911, ../sass/phone.scss */
+  /* line 791, ../sass/phone.scss */
   #about-the-kayapo-2 #right {
     width: 100%;
   }
-  /* line 913, ../sass/phone.scss */
+  /* line 793, ../sass/phone.scss */
   #about-the-kayapo-2 #right img {
     padding-left: 0;
     display: inline-block;
@@ -1275,23 +1147,23 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   }
 }
 @media (min-width: 768px) and (max-width: 1250px) {
-  /* line 924, ../sass/phone.scss */
+  /* line 804, ../sass/phone.scss */
   #about-the-kayapo-2 h2 {
     font-size: 3.5em;
   }
-  /* line 927, ../sass/phone.scss */
+  /* line 807, ../sass/phone.scss */
   #about-the-kayapo-2 p {
     font-size: 2em;
   }
 
-  /* line 933, ../sass/phone.scss */
+  /* line 813, ../sass/phone.scss */
   #about-the-kayapo-4 h2 {
     font-weight: 800;
     width: 90%;
     margin: 0 auto 0 auto;
     font-size: 2em;
   }
-  /* line 940, ../sass/phone.scss */
+  /* line 820, ../sass/phone.scss */
   #about-the-kayapo-4 img {
     width: 45%;
     max-width: 350px;
@@ -1299,93 +1171,65 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   }
 }
 @media screen and (max-height: 683px) {
-  /* line 949, ../sass/phone.scss */
+  /* line 829, ../sass/phone.scss */
   #about-the-kayapo-2 h2 {
     font-size: 3.2em;
   }
-  /* line 952, ../sass/phone.scss */
+  /* line 832, ../sass/phone.scss */
   #about-the-kayapo-2 p {
     font-size: 2em;
   }
 }
-@media (max-width: 900px) {
-  /* line 959, ../sass/phone.scss */
-  #about-the-kayapo-2 p {
-    font-size: 1.8em;
-  }
-  /* line 962, ../sass/phone.scss */
-  #about-the-kayapo-2 h2 {
-    font-size: 1.5em;
-  }
-  /* line 966, ../sass/phone.scss */
-  #about-the-kayapo-2 #right img {
-    width: 50%;
-  }
-}
 @media screen and (max-height: 683px) {
-  /* line 974, ../sass/phone.scss */
+  /* line 839, ../sass/phone.scss */
   #about-the-kayapo-4 h2 {
     font-size: 2.2em !important;
   }
-  /* line 977, ../sass/phone.scss */
+  /* line 842, ../sass/phone.scss */
   #about-the-kayapo-4 img {
     width: 45% !important;
     max-width: 400px !important;
     padding: 3em 0 2em 0 !important;
   }
 }
-@media (max-width: 900px) {
-  /* line 986, ../sass/phone.scss */
-  #about-the-kayapo-1 #section-content {
-    width: 50%;
-  }
-  /* line 989, ../sass/phone.scss */
-  #about-the-kayapo-1 p {
-    font-size: 1.5em;
-  }
-}
 @media (max-width: 650px) {
-  /* line 995, ../sass/phone.scss */
-  #about-the-kayapo-4 {
-    padding-bottom: 2em;
-  }
-  /* line 998, ../sass/phone.scss */
+  /* line 851, ../sass/phone.scss */
   #about-the-kayapo-4 h2 {
     font-size: 2em !important;
   }
-  /* line 1001, ../sass/phone.scss */
+  /* line 854, ../sass/phone.scss */
   #about-the-kayapo-4 img {
     width: 80% !important;
     padding: 0.6em 0 0.5em 0;
   }
 }
-/* line 1008, ../sass/phone.scss */
+/* line 862, ../sass/phone.scss */
 #about-the-kayapo-3 {
   background-color: #2a78a0;
   color: #fff;
   position: relative;
 }
-/* line 1013, ../sass/phone.scss */
+/* line 867, ../sass/phone.scss */
 #about-the-kayapo-3 #text-top-left {
   position: relative;
   left: 5%;
   width: 24%;
   top: 12%;
 }
-/* line 1019, ../sass/phone.scss */
+/* line 873, ../sass/phone.scss */
 #about-the-kayapo-3 p {
   font-family: "Verlag A", "Verlag B";
   font-weight: 400;
   font-size: 1em;
 }
-/* line 1024, ../sass/phone.scss */
+/* line 878, ../sass/phone.scss */
 #about-the-kayapo-3 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
   font-size: 3em;
   color: #fae132;
 }
-/* line 1031, ../sass/phone.scss */
+/* line 885, ../sass/phone.scss */
 #about-the-kayapo-3 svg {
   position: absolute;
   left: 0;
@@ -1396,117 +1240,77 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   height: 100%;
 }
 
-/* line 1042, ../sass/phone.scss */
+/* line 896, ../sass/phone.scss */
 #about-the-kayapo-4 {
   background-color: #2a78a0;
   color: #fff;
   text-align: center;
 }
-/* line 1047, ../sass/phone.scss */
+/* line 901, ../sass/phone.scss */
 #about-the-kayapo-4 h2 {
   font-weight: 800;
   width: 90%;
   margin: 0 auto 0 auto;
   font-size: 3em;
 }
-/* line 1054, ../sass/phone.scss */
+/* line 908, ../sass/phone.scss */
 #about-the-kayapo-4 img {
   width: 45%;
   max-width: 500px;
   padding: 0.6em 0 0.5em 0;
 }
 
-@media screen and (min-device-width: 602px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 23) {
-  /* line 1062, ../sass/phone.scss */
-  #about-the-kayapo-1 #section-content {
-    padding: 3% 0 0 0;
-    font-size: 0.8em;
-  }
-
-  /* line 1066, ../sass/phone.scss */
-  #about-the-kayapo-2 h2 {
-    font-size: 2.5em;
-    padding: 0.5em 0 0.2em 0;
-  }
-
-  /* line 1070, ../sass/phone.scss */
-  #about-the-kayapo-3 #text-top-left {
-    top: 3%;
-  }
-
-  /* line 1073, ../sass/phone.scss */
-  #about-the-kayapo-4 img {
-    width: 21% !important;
-  }
-}
-@media (max-width: 900px) {
-  /* line 1079, ../sass/phone.scss */
-  #about-the-kayapo-3 h2 {
-    font-size: 1.5em;
-  }
-  /* line 1082, ../sass/phone.scss */
-  #about-the-kayapo-3 p {
-    font-size: 0.8em;
-  }
-}
-@media (max-width: 900px) {
-  /* line 1089, ../sass/phone.scss */
-  #about-the-kayapo-4 img {
-    width: 30% !important;
-  }
-  /* line 1092, ../sass/phone.scss */
-  #about-the-kayapo-4 h2 {
-    font-size: 1.2em !important;
-  }
-}
-/* line 1098, ../sass/phone.scss */
+/* line 915, ../sass/phone.scss */
 #about-the-kayapo-5 {
   position: relative;
   color: #fff;
   text-align: center;
 }
-/* line 1103, ../sass/phone.scss */
+/* line 920, ../sass/phone.scss */
 #about-the-kayapo-5 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-size: 6em;
   font-style: italic;
 }
-/* line 1108, ../sass/phone.scss */
+/* line 925, ../sass/phone.scss */
 #about-the-kayapo-5 .full-page {
   background-color: #2a78a0;
   position: relative;
 }
 
 @media (max-width: 650px) {
-  /* line 1116, ../sass/phone.scss */
-  .phone #about-the-kayapo-5 h2 {
+  /* line 933, ../sass/phone.scss */
+  #about-the-kayapo-5 h2 {
     font-size: 4em;
   }
 }
-@media (max-width: 900px) {
-  /* line 1123, ../sass/phone.scss */
-  #about-the-kayapo-5 h2 {
-    font-size: 5em !important;
-  }
+/* line 939, ../sass/phone.scss */
+#about-the-kayapo-6 {
+  position: relative;
+  color: #fff;
+  text-align: center;
 }
-@media (max-width: 900px) {
-  /* line 1130, ../sass/phone.scss */
-  #the-threat-1 h2 {
-    font-size: 3em !important;
-  }
-  /* line 1133, ../sass/phone.scss */
-  #the-threat-1 p {
-    font-size: 1.2em;
-  }
+/* line 945, ../sass/phone.scss */
+#about-the-kayapo-6 #stick-in-back {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
+/* line 952, ../sass/phone.scss */
+#about-the-kayapo-6 p {
+  font-family: "Verlag A", "Verlag B";
+  font-weight: 800;
+  font-size: 3em;
+}
+
 /* kayapo-proj */
-/* line 1143, ../sass/phone.scss */
+/* line 963, ../sass/phone.scss */
 #kayapo-proj-1 {
   background-color: #5d8079;
   color: #fff;
   position: relative;
 }
-/* line 1148, ../sass/phone.scss */
+/* line 968, ../sass/phone.scss */
 #kayapo-proj-1 blockquote {
   font-size: 2em;
   text-align: center;
@@ -1515,23 +1319,23 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 0 auto 0 auto;
   padding: 0 0 1em 0;
 }
-/* line 1156, ../sass/phone.scss */
+/* line 976, ../sass/phone.scss */
 #kayapo-proj-1 #kayapo-proj-1-content {
   position: absolute;
   bottom: 2.5em;
 }
-/* line 1160, ../sass/phone.scss */
+/* line 980, ../sass/phone.scss */
 #kayapo-proj-1 .donation {
   width: 50%;
 }
 
-/* line 1165, ../sass/phone.scss */
+/* line 985, ../sass/phone.scss */
 #kayapo-proj-2 {
   background-color: #5d8079;
   color: #284646;
   position: relative;
 }
-/* line 1171, ../sass/phone.scss */
+/* line 991, ../sass/phone.scss */
 #kayapo-proj-2 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -1540,7 +1344,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 0.5em auto 0.3em auto;
   text-align: center;
 }
-/* line 1179, ../sass/phone.scss */
+/* line 999, ../sass/phone.scss */
 #kayapo-proj-2 h3 {
   color: #fff;
   font-weight: 800;
@@ -1548,12 +1352,12 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   text-align: center;
   font-size: 1.3em;
 }
-/* line 1186, ../sass/phone.scss */
+/* line 1006, ../sass/phone.scss */
 #kayapo-proj-2 h4 {
   font-size: 1em;
   color: #a2cd39;
 }
-/* line 1190, ../sass/phone.scss */
+/* line 1010, ../sass/phone.scss */
 #kayapo-proj-2 p {
   color: #a2cd39;
   font-size: 1.3em;
@@ -1561,19 +1365,18 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 1em auto 0 auto;
   text-align: center;
 }
-/* line 1198, ../sass/phone.scss */
+/* line 1018, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs {
   text-align: center;
   background-repeat: no-repeat;
   background-position: top center;
   padding: 1em 0 0 0;
-  width: 100%;
-  max-width: 800px;
-  margin: 1em auto 0 auto;
+  width: 80%;
+  margin: 3em auto 0 auto;
 }
-/* line 1208, ../sass/phone.scss */
+/* line 1027, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs a {
-  width: 160px;
+  width: 20%;
   display: inline-block;
   vertical-align: top;
   font-weight: 800;
@@ -1581,234 +1384,103 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   color: inherit;
   margin: 0 5% 0 5%;
 }
-/* line 1217, ../sass/phone.scss */
+/* line 1036, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs .icon {
-  width: 160px;
-  height: 165px;
+  width: 190px;
+  height: 188px;
   display: inline-block;
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/* line 1224, ../sass/phone.scss */
+/* line 1043, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs #territory .icon {
   background-image: url("/assets/icons/bt_jeep.png");
 }
-/* line 1227, ../sass/phone.scss */
+/* line 1046, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs #economy .icon {
   background-image: url("/assets/icons/bt_scale.png");
 }
-/* line 1230, ../sass/phone.scss */
+/* line 1049, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs #institution .icon {
   background-image: url("/assets/icons/bt_govt.png");
 }
-/* line 1234, ../sass/phone.scss */
+/* line 1053, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs #territory:hover .icon, #kayapo-proj-2 #funds-divs #territory.height-lighted-pro-nav .icon {
   background-image: url("/assets/icons/bt_jeep-ho.png");
 }
-/* line 1237, ../sass/phone.scss */
+/* line 1056, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs #economy:hover .icon, #kayapo-proj-2 #funds-divs #economy.height-lighted-pro-nav .icon {
   background-image: url("/assets/icons/bt_scale-ho.png");
 }
-/* line 1240, ../sass/phone.scss */
+/* line 1059, ../sass/phone.scss */
 #kayapo-proj-2 #funds-divs #institution:hover .icon, #kayapo-proj-2 #funds-divs #institution.height-lighted-pro-nav .icon {
   background-image: url("/assets/icons/bt_govt-ho.png");
 }
 
-/* line 1246, ../sass/phone.scss */
+/* line 1065, ../sass/phone.scss */
 .off-bottom {
   position: absolute;
   bottom: -100% !important;
 }
 
-/* line 1251, ../sass/phone.scss */
+/* line 1070, ../sass/phone.scss */
 #kayapo-proj-modal-territory, #kayapo-proj-modal-economy, #kayapo-proj-modal-institution {
   position: absolute;
   height: 140px;
   background-color: #284646;
 }
 
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 1257, ../sass/phone.scss */
-  #kayapo-proj-modal-territory, #kayapo-proj-modal-economy, #kayapo-proj-modal-institution {
-    position: absolute;
-    height: 400px;
-    background-color: #284646;
-  }
-}
-@media screen and (min-device-width: 602px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 23) {
-  /* line 1264, ../sass/phone.scss */
-  #kayapo-proj-2 h2 {
-    margin: 0.1em auto 0.2em auto;
-  }
-}
-/* line 1272, ../sass/phone.scss */
-#kayapo-proj-modal-territory #kayapo-proj-modal-subicons {
-  width: 50%;
-  position: absolute;
-  right: 0;
-}
-/* line 1276, ../sass/phone.scss */
-#kayapo-proj-modal-territory #kayapo-proj-modal-subicons div {
-  width: 30%;
-  display: inline-block;
-  padding: 0 0.2em 0 0.2em;
-}
-/* line 1282, ../sass/phone.scss */
-#kayapo-proj-modal-territory #description {
-  width: 40%;
-  font-size: 1.2em;
-  text-align: left;
-}
-
-/* line 1288, ../sass/phone.scss */
+/* line 1076, ../sass/phone.scss */
 #kayapo-proj-modal-subicons {
   width: 30%;
   position: absolute;
   right: 0;
 }
-/* line 1292, ../sass/phone.scss */
+/* line 1080, ../sass/phone.scss */
 #kayapo-proj-modal-subicons div {
   width: 40%;
   display: inline-block;
   padding: 0 0.2em 0 0.2em;
 }
 
-/* line 1299, ../sass/phone.scss */
+/* line 1087, ../sass/phone.scss */
 .kayapo-proj-modal {
   bottom: 0;
   position: absolute;
   padding-top: 1em;
   background-color: #284646;
 }
-/* line 1305, ../sass/phone.scss */
+/* line 1093, ../sass/phone.scss */
 .kayapo-proj-modal h4 {
   color: #fff !important;
   font-weight: 800;
   text-align: left;
 }
-/* line 1310, ../sass/phone.scss */
+/* line 1098, ../sass/phone.scss */
 .kayapo-proj-modal div {
   display: inline-block;
   vertical-align: top;
 }
-/* line 1314, ../sass/phone.scss */
+/* line 1102, ../sass/phone.scss */
 .kayapo-proj-modal #proj-icon-1 {
   width: 60px;
 }
-/* line 1317, ../sass/phone.scss */
+/* line 1105, ../sass/phone.scss */
 .kayapo-proj-modal p {
   font-size: 0.8em !important;
   text-align: left !important;
   margin: 0.5em 0 0 0 !important;
   width: 100% !important;
 }
-/* line 1323, ../sass/phone.scss */
+/* line 1111, ../sass/phone.scss */
 .kayapo-proj-modal #description {
   width: 60%;
   font-size: 1.2em;
   text-align: left;
 }
 
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 1330, ../sass/phone.scss */
-  .kayapo-proj-modal {
-    bottom: 0;
-    position: absolute;
-    padding-top: 1em;
-    background-color: #284646;
-  }
-  /* line 1336, ../sass/phone.scss */
-  .kayapo-proj-modal h4 {
-    color: #fff !important;
-    font-weight: 800;
-    text-align: center;
-  }
-  /* line 1341, ../sass/phone.scss */
-  .kayapo-proj-modal div {
-    display: block;
-    width: 100%;
-    margin: 0 auto 0 auto;
-  }
-  /* line 1346, ../sass/phone.scss */
-  .kayapo-proj-modal #proj-icon-1 {
-    width: 60px;
-  }
-  /* line 1349, ../sass/phone.scss */
-  .kayapo-proj-modal p {
-    font-size: 0.8em !important;
-    text-align: left !important;
-    margin: 0.5em 0 0 0 !important;
-    width: 100% !important;
-  }
-  /* line 1355, ../sass/phone.scss */
-  .kayapo-proj-modal #description {
-    width: 80%;
-    font-size: 1.2em;
-    text-align: left;
-  }
-}
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 1363, ../sass/phone.scss */
-  #kayapo-proj-modal-subicons {
-    width: 80%;
-    position: static;
-    margin: 0 auto 0 auto;
-    right: 0;
-  }
-  /* line 1368, ../sass/phone.scss */
-  #kayapo-proj-modal-subicons div {
-    width: 100%;
-    display: block;
-    padding: 0 0.2em 0 0.2em;
-    text-align: center;
-  }
-}
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 1378, ../sass/phone.scss */
-  #kayapo-proj-modal-territory #kayapo-proj-modal-subicons {
-    width: 80%;
-    position: static;
-    right: 0;
-  }
-  /* line 1382, ../sass/phone.scss */
-  #kayapo-proj-modal-territory #kayapo-proj-modal-subicons div {
-    width: 100%;
-    display: block;
-    padding: 0 0.2em 0 0.2em;
-  }
-  /* line 1388, ../sass/phone.scss */
-  #kayapo-proj-modal-territory #description {
-    width: 80% !important;
-    font-size: 1.2em;
-    text-align: left;
-    margin: 0 auto 0 auto;
-  }
-}
-@media (max-width: 900px) {
-  /* line 1398, ../sass/phone.scss */
-  #kayapo-proj-2 h2 {
-    font-size: 2em;
-  }
-  /* line 1401, ../sass/phone.scss */
-  #kayapo-proj-2 h4 {
-    font-size: 0.8em;
-  }
-  /* line 1404, ../sass/phone.scss */
-  #kayapo-proj-2 h3 {
-    font-size: 1em;
-  }
-  /* line 1407, ../sass/phone.scss */
-  #kayapo-proj-2 p {
-    font-size: 1em;
-  }
-  /* line 1411, ../sass/phone.scss */
-  #kayapo-proj-2 #funds-divs .icon {
-    width: 100px;
-    height: 105px;
-  }
-}
 /* kayapo-proj */
-/* line 1422, ../sass/phone.scss */
+/* line 1123, ../sass/phone.scss */
 #donate-1 {
   font-family: "Verlag A", "Verlag B";
   background-color: #fae132;
@@ -1817,7 +1489,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   text-align: center;
   position: relative;
 }
-/* line 1430, ../sass/phone.scss */
+/* line 1131, ../sass/phone.scss */
 #donate-1 blockquote {
   font-size: 3em;
   color: #000;
@@ -1826,7 +1498,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 0 auto 0 auto;
   padding: 0 0 1em 0;
 }
-/* line 1438, ../sass/phone.scss */
+/* line 1139, ../sass/phone.scss */
 #donate-1 h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -1834,90 +1506,54 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   font-size: 2em;
   margin: 0.5em 0 0.2em 0;
 }
-/* line 1445, ../sass/phone.scss */
+/* line 1146, ../sass/phone.scss */
 #donate-1 p {
   font-size: 0.9em;
   padding: 0 0.5em 0 0.5em;
-  text-align: left;
 }
-/* line 1450, ../sass/phone.scss */
+/* line 1150, ../sass/phone.scss */
 #donate-1 div {
   width: 15%;
   display: inline-block;
   vertical-align: top;
-  text-align: center;
+  text-align: left;
 }
-/* line 1456, ../sass/phone.scss */
+/* line 1156, ../sass/phone.scss */
 #donate-1 img {
   width: auto;
   height: 100px;
 }
 
 @media (max-width: 650px) {
-  /* line 1463, ../sass/phone.scss */
-  .phone #donate-1 div {
+  /* line 1163, ../sass/phone.scss */
+  #donate-1 div {
     width: 95%;
     display: inline;
     text-align: center;
     margin: 4em 0 0 0;
   }
-  /* line 1468, ../sass/phone.scss */
-  .phone #donate-1 div p {
+  /* line 1168, ../sass/phone.scss */
+  #donate-1 div p {
     width: 80%;
-    margin: 0 auto 3em auto;
+    margin: 0 auto 0 auto;
     padding: 0;
-    text-align: center;
-    font-size: 1.2em;
   }
-  /* line 1475, ../sass/phone.scss */
-  .phone #donate-1 div h2 {
+  /* line 1173, ../sass/phone.scss */
+  #donate-1 div h2 {
     margin: 0.2em 0 0.2em 0;
     font-size: 3em;
     color: #e53827;
   }
 }
-@media (min-width: 768px) and (max-width: 1250px) and (orientation: portrait) {
-  /* line 1485, ../sass/phone.scss */
-  #donate-1 div img {
-    height: 70px;
-  }
-  /* line 1488, ../sass/phone.scss */
-  #donate-1 div h2 {
-    font-size: 1.5em;
-  }
-}
-@media screen and (min-device-width: 602px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 23) {
-  /* line 1494, ../sass/phone.scss */
-  #donate-1 p {
-    display: none;
-  }
-}
-@media (max-width: 900px) {
-  /* line 1500, ../sass/phone.scss */
-  #donate-1 blockquote {
-    font-size: 1.5em;
-  }
-  /* line 1503, ../sass/phone.scss */
-  #donate-1 h2 {
-    font-size: 1em;
-  }
-  /* line 1506, ../sass/phone.scss */
-  #donate-1 img {
-    width: auto;
-    height: 80px;
-  }
-  /* line 1510, ../sass/phone.scss */
-  #donate-1 p {
-    font-size: 0.8em;
-  }
-}
-/* line 1517, ../sass/phone.scss */
+/* line 1181, ../sass/phone.scss */
 #contact-1 {
   text-align: center;
   background-color: #fae132;
   position: relative;
+  height: 100%;
+  padding-top: 4em;
 }
-/* line 1522, ../sass/phone.scss */
+/* line 1188, ../sass/phone.scss */
 #contact-1 h2 {
   font-family: "Acropolis A", "Acropolis B";
   color: #fae132;
@@ -1925,62 +1561,51 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   font-size: 4em;
   padding: 0.4em 0 0.2em 0;
 }
-/* line 1530, ../sass/phone.scss */
+/* line 1196, ../sass/phone.scss */
 #contact-1 #sponsors img {
   width: 250px;
   vertical-align: middle;
   margin-top: 5%;
 }
-/* line 1536, ../sass/phone.scss */
+/* line 1202, ../sass/phone.scss */
 #contact-1 p {
   margin: 0 0 1em 0;
 }
 
-/* line 1541, ../sass/phone.scss */
+/* line 1207, ../sass/phone.scss */
 #sponsors-1 {
   margin: 1em 0 1em 0;
 }
-/* line 1543, ../sass/phone.scss */
+/* line 1209, ../sass/phone.scss */
 #sponsors-1 img {
   width: 150px;
 }
 
-/* line 1548, ../sass/phone.scss */
+/* line 1214, ../sass/phone.scss */
 #sponsors-2, #sponsors-3 {
   display: inline-block;
   width: 40%;
   margin: 0;
   padding: 0;
 }
-/* line 1553, ../sass/phone.scss */
+/* line 1219, ../sass/phone.scss */
 #sponsors-2 img, #sponsors-3 img {
   width: 100px;
   padding: 0 0.5em 0 0.5em;
 }
 
 @media (max-width: 650px) {
-  /* line 1561, ../sass/phone.scss */
-  .phone #sponsors-1 img, #sponsors-2 img, #sponsors-3 img {
-    width: 80px;
-  }
-
-  /* line 1565, ../sass/phone.scss */
-  .phone #contact-1 {
-    height: 100%;
-    padding-bottom: 6em;
-  }
-  /* line 1568, ../sass/phone.scss */
-  .phone #contact-1 h2 {
-    font-size: 2em !important;
-  }
-}
-@media (max-width: 900px) {
-  /* line 1576, ../sass/phone.scss */
+  /* line 1227, ../sass/phone.scss */
   #sponsors-1 img, #sponsors-2 img, #sponsors-3 img {
     width: 80px;
   }
+
+  /* line 1231, ../sass/phone.scss */
+  #contact-1 {
+    height: 100%;
+  }
 }
-/* line 1582, ../sass/phone.scss */
+/* line 1237, ../sass/phone.scss */
 #contact-footer {
   background-color: #5d8079;
   position: absolute;
@@ -1988,26 +1613,20 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   width: 100%;
   padding: 0 0 2em 0;
 }
-/* line 1589, ../sass/phone.scss */
+/* line 1244, ../sass/phone.scss */
 #contact-footer a {
   color: #fff;
   font-weight: 800;
 }
 
-@media (max-width: 900px) {
-  /* line 1596, ../sass/phone.scss */
-  #contact-footer h2 {
-    font-size: 2em !important;
-  }
-}
 /* DONATE SECTION */
-/* line 1605, ../sass/phone.scss */
+/* line 1253, ../sass/phone.scss */
 #donate-info {
   position: absolute;
   bottom: 7em;
   width: 100%;
 }
-/* line 1610, ../sass/phone.scss */
+/* line 1258, ../sass/phone.scss */
 #donate-info h2 {
   font-family: "Acropolis A", "Acropolis B";
   font-size: 4em;
@@ -2015,22 +1634,22 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   color: #fae132;
   margin: 0 0 0.6em 0;
 }
-/* line 1617, ../sass/phone.scss */
+/* line 1265, ../sass/phone.scss */
 #donate-info .donation {
   width: 60%;
   margin-bottom: 1em;
 }
 
-/* line 1623, ../sass/phone.scss */
+/* line 1271, ../sass/phone.scss */
 #donate-contain {
   height: 100%;
   position: relative;
   opacity: 0.5;
 }
 
-/* line 1629, ../sass/phone.scss */
+/* line 1277, ../sass/phone.scss */
 #one-time {
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: inline-block;
   text-align: center;
@@ -2039,12 +1658,12 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 @media (max-width: 650px) {
-  /* line 1639, ../sass/phone.scss */
-  .phone #one-time {
+  /* line 1287, ../sass/phone.scss */
+  #one-time {
     width: 100%;
   }
 }
-/* line 1644, ../sass/phone.scss */
+/* line 1292, ../sass/phone.scss */
 #monthly {
   width: 50%;
   height: 100%;
@@ -2054,18 +1673,18 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 0;
 }
 
-/* line 1654, ../sass/phone.scss */
+/* line 1302, ../sass/phone.scss */
 #social-icons img:hover {
   cursor: pointer;
 }
 
-/* line 1658, ../sass/phone.scss */
+/* line 1306, ../sass/phone.scss */
 #donate-contain:hover {
   opacity: 1;
 }
 
 /* DONATE SECTION END */
-/* line 1667, ../sass/phone.scss */
+/* line 1315, ../sass/phone.scss */
 #the-threat-1 {
   position: relative;
   overflow: hidden;
@@ -2074,42 +1693,38 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   color: #fff;
   font-family: "Verlag A", "Verlag B";
 }
-/* line 1675, ../sass/phone.scss */
+/* line 1323, ../sass/phone.scss */
 #the-threat-1 #top-right {
   position: absolute;
   top: 3em;
   right: 3em;
   display: inline-block;
 }
-/* line 1681, ../sass/phone.scss */
+/* line 1329, ../sass/phone.scss */
 #the-threat-1 h2 {
   font-family: "Acropolis A", "Acropolis B";
-  font-size: 8em;
+  font-size: 4em;
   font-style: italic;
 }
-/* line 1686, ../sass/phone.scss */
+/* line 1334, ../sass/phone.scss */
 #the-threat-1 span, #the-threat-1 a {
   font-size: 3em;
   font-weight: 600;
   padding: 0 0.5em 0 0.5em;
   display: inline-block;
 }
-/* line 1692, ../sass/phone.scss */
-#the-threat-1 p {
-  font-size: 1.5em;
-}
-/* line 1696, ../sass/phone.scss */
+/* line 1341, ../sass/phone.scss */
 #the-threat-1 #button-container {
   display: inline-block;
 }
-/* line 1698, ../sass/phone.scss */
+/* line 1343, ../sass/phone.scss */
 #the-threat-1 #button-container a {
   position: relative;
   display: inline-block;
   height: 40px;
   padding: 0;
 }
-/* line 1703, ../sass/phone.scss */
+/* line 1348, ../sass/phone.scss */
 #the-threat-1 #button-container a div {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -2123,7 +1738,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 18px 7.5px 17px 7.5px;
   background-color: #fff;
 }
-/* line 1714, ../sass/phone.scss */
+/* line 1359, ../sass/phone.scss */
 #the-threat-1 #button-container .jpg-slide-selected div {
   -webkit-border-radius: 0%;
   -moz-border-radius: 0%;
@@ -2138,36 +1753,36 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin: 0 2.5px 0 2.5px;
   background-color: transparent;
 }
-/* line 1726, ../sass/phone.scss */
+/* line 1371, ../sass/phone.scss */
 #the-threat-1 #jpg-slide-play {
   padding: 0;
   display: inline-block;
   color: inherit;
   text-decoration: none;
 }
-/* line 1732, ../sass/phone.scss */
+/* line 1377, ../sass/phone.scss */
 #the-threat-1 #jpg-slide-play:hover {
   color: #e53827;
 }
-/* line 1736, ../sass/phone.scss */
+/* line 1381, ../sass/phone.scss */
 #the-threat-1 .jpg-slide-hidden {
   display: none;
 }
 
-/* line 1741, ../sass/phone.scss */
+/* line 1386, ../sass/phone.scss */
 #the-threat-1 .map {
   height: 100%;
   width: 100%;
 }
 
-/* line 1746, ../sass/phone.scss */
+/* line 1391, ../sass/phone.scss */
 #the-threat-2 {
   vertical-align: middle;
   text-align: center;
   background-color: #000;
   position: relative;
 }
-/* line 1752, ../sass/phone.scss */
+/* line 1397, ../sass/phone.scss */
 #the-threat-2 blockquote {
   font-size: 3em;
   color: #fff;
@@ -2180,7 +1795,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   right: 0;
   left: 0;
 }
-/* line 1764, ../sass/phone.scss */
+/* line 1409, ../sass/phone.scss */
 #the-threat-2 h5 {
   font-size: 1.5em;
   color: #fae132;
@@ -2194,63 +1809,62 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   left: 0;
 }
 
-/* line 1778, ../sass/phone.scss */
+/* line 1423, ../sass/phone.scss */
 #the-threat-35, #the-threat-3 {
   text-align: center;
   position: relative;
+  background-color: #e53827;
 }
-/* line 1781, ../sass/phone.scss */
+/* line 1426, ../sass/phone.scss */
 #the-threat-35 blockquote, #the-threat-3 blockquote {
   z-index: 2;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto 0 auto;
-  bottom: 25%;
-  height: 60%;
+  position: relative;
   font-weight: 800;
+  margin: 0 auto 0 auto;
   width: 50%;
   color: #fff;
-  padding-top: 10%;
+  padding-top: 5em;
+  padding-bottom: 4em;
 }
 
 @media (min-width: 768px) and (max-width: 1250px) {
-  /* line 1808, ../sass/phone.scss */
+  /* line 1441, ../sass/phone.scss */
   #the-threat-35 blockquote, #the-threat-3 blockquote {
+    padding-top: 7%;
     width: 70%;
   }
 }
 @media screen and (max-height: 683px) {
-  /* line 1816, ../sass/phone.scss */
+  /* line 1449, ../sass/phone.scss */
   #the-threat-35 blockquote, #the-threat-3 blockquote {
+    padding-top: 10%;
     width: 70%;
   }
 }
 @media (max-width: 650px) {
-  /* line 1826, ../sass/phone.scss */
-  .phone #the-threat-35 blockquote, #the-threat-3 blockquote {
+  /* line 1456, ../sass/phone.scss */
+  #the-threat-35, #the-threat-3 {
+    background-color: #e53827;
+    padding-bottom: 5em;
+  }
+  /* line 1459, ../sass/phone.scss */
+  #the-threat-35 blockquote, #the-threat-3 blockquote {
     width: 90% !important;
     font-size: 1.8em;
   }
 }
-@media (max-width: 900px) {
-  /* line 1834, ../sass/phone.scss */
-  #the-threat-35 blockquote {
-    font-size: 4em;
-  }
-}
-/* line 1841, ../sass/phone.scss */
+/* line 1467, ../sass/phone.scss */
 .threat-4 {
   position: absolute;
   bottom: 30%;
 }
 
-/* line 1847, ../sass/phone.scss */
+/* line 1473, ../sass/phone.scss */
 #quote-1 {
   font-size: 3em;
 }
 
-/* line 1851, ../sass/phone.scss */
+/* line 1477, ../sass/phone.scss */
 #quote-2 {
   font-family: "Acropolis A", "Acropolis B";
   font-style: italic;
@@ -2258,12 +1872,12 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 @media (min-width: 768px) and (max-width: 1250px) {
-  /* line 1857, ../sass/phone.scss */
+  /* line 1483, ../sass/phone.scss */
   #quote-2 {
     font-size: 5em;
   }
 }
-/* line 1863, ../sass/phone.scss */
+/* line 1489, ../sass/phone.scss */
 #back-ground-items {
   background-color: #000;
   width: 100%;
@@ -2274,208 +1888,208 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   text-align: center;
 }
 
-/* line 1873, ../sass/phone.scss */
+/* line 1499, ../sass/phone.scss */
 .yellow .image-bug {
   background-image: url("/assets/threat-icons/ic_bug-y.png") !important;
 }
-/* line 1876, ../sass/phone.scss */
+/* line 1502, ../sass/phone.scss */
 .yellow .image-butterfly {
   background-image: url("/assets/threat-icons/ic_butterfly-y.png") !important;
 }
-/* line 1879, ../sass/phone.scss */
+/* line 1505, ../sass/phone.scss */
 .yellow .image-frog {
   background-image: url("/assets/threat-icons/ic_frog-y.png") !important;
 }
-/* line 1882, ../sass/phone.scss */
+/* line 1508, ../sass/phone.scss */
 .yellow .image-insect {
   background-image: url("/assets/threat-icons/ic_insect-y.png") !important;
 }
-/* line 1885, ../sass/phone.scss */
+/* line 1511, ../sass/phone.scss */
 .yellow .image-leaf1 {
   background-image: url("/assets/threat-icons/ic_leaf1-y.png") !important;
 }
-/* line 1888, ../sass/phone.scss */
+/* line 1514, ../sass/phone.scss */
 .yellow .image-leaf2 {
   background-image: url("/assets/threat-icons/ic_leaf2-y.png") !important;
 }
-/* line 1891, ../sass/phone.scss */
+/* line 1517, ../sass/phone.scss */
 .yellow .image-leaf3 {
   background-image: url("/assets/threat-icons/ic_leaf3-y.png") !important;
 }
-/* line 1894, ../sass/phone.scss */
+/* line 1520, ../sass/phone.scss */
 .yellow .image-leaf4 {
   background-image: url("/assets/threat-icons/ic_leaf4-y.png") !important;
 }
-/* line 1897, ../sass/phone.scss */
+/* line 1523, ../sass/phone.scss */
 .yellow .image-leaf5 {
   background-image: url("/assets/threat-icons/ic_leaf5-y.png") !important;
 }
-/* line 1900, ../sass/phone.scss */
+/* line 1526, ../sass/phone.scss */
 .yellow .image-leaf6 {
   background-image: url("/assets/threat-icons/ic_leaf6-y.png") !important;
 }
-/* line 1903, ../sass/phone.scss */
+/* line 1529, ../sass/phone.scss */
 .yellow .image-leaf7 {
   background-image: url("/assets/threat-icons/ic_leaf7-y.png") !important;
 }
-/* line 1906, ../sass/phone.scss */
+/* line 1532, ../sass/phone.scss */
 .yellow .image-monkey {
   background-image: url("/assets/threat-icons/ic_monkey-y.png") !important;
 }
-/* line 1909, ../sass/phone.scss */
+/* line 1535, ../sass/phone.scss */
 .yellow .image-snake {
   background-image: url("/assets/threat-icons/ic_snake-y.png") !important;
 }
-/* line 1912, ../sass/phone.scss */
+/* line 1538, ../sass/phone.scss */
 .yellow .image-tucan {
   background-image: url("/assets/threat-icons/ic_tucan-y.png") !important;
 }
 
-/* line 1916, ../sass/phone.scss */
+/* line 1542, ../sass/phone.scss */
 .inline-image {
   display: inline-block;
   height: 50px;
   width: 50px;
   overflow: visible;
 }
-/* line 1921, ../sass/phone.scss */
+/* line 1547, ../sass/phone.scss */
 .inline-image div {
   width: 50px;
   height: 50px;
 }
-/* line 1925, ../sass/phone.scss */
+/* line 1551, ../sass/phone.scss */
 .inline-image .image-bug {
   background-image: url("/assets/threat-icons/ic_bug.png");
 }
-/* line 1928, ../sass/phone.scss */
+/* line 1554, ../sass/phone.scss */
 .inline-image .image-butterfly {
   background-image: url("/assets/threat-icons/ic_butterfly.png");
 }
-/* line 1931, ../sass/phone.scss */
+/* line 1557, ../sass/phone.scss */
 .inline-image .image-frog {
   background-image: url("/assets/threat-icons/ic_frog.png");
 }
-/* line 1934, ../sass/phone.scss */
+/* line 1560, ../sass/phone.scss */
 .inline-image .image-insect {
   background-image: url("/assets/threat-icons/ic_insect.png");
 }
-/* line 1937, ../sass/phone.scss */
+/* line 1563, ../sass/phone.scss */
 .inline-image .image-leaf1 {
   background-image: url("/assets/threat-icons/ic_leaf1.png");
 }
-/* line 1940, ../sass/phone.scss */
+/* line 1566, ../sass/phone.scss */
 .inline-image .image-leaf2 {
   background-image: url("/assets/threat-icons/ic_leaf2.png");
 }
-/* line 1943, ../sass/phone.scss */
+/* line 1569, ../sass/phone.scss */
 .inline-image .image-leaf3 {
   background-image: url("/assets/threat-icons/ic_leaf3.png");
 }
-/* line 1946, ../sass/phone.scss */
+/* line 1572, ../sass/phone.scss */
 .inline-image .image-leaf4 {
   background-image: url("/assets/threat-icons/ic_leaf4.png");
 }
-/* line 1949, ../sass/phone.scss */
+/* line 1575, ../sass/phone.scss */
 .inline-image .image-leaf5 {
   background-image: url("/assets/threat-icons/ic_leaf5.png");
 }
-/* line 1952, ../sass/phone.scss */
+/* line 1578, ../sass/phone.scss */
 .inline-image .image-leaf6 {
   background-image: url("/assets/threat-icons/ic_leaf6.png");
 }
-/* line 1955, ../sass/phone.scss */
+/* line 1581, ../sass/phone.scss */
 .inline-image .image-leaf7 {
   background-image: url("/assets/threat-icons/ic_leaf7.png");
 }
-/* line 1958, ../sass/phone.scss */
+/* line 1584, ../sass/phone.scss */
 .inline-image .image-monkey {
   background-image: url("/assets/threat-icons/ic_monkey.png");
 }
-/* line 1961, ../sass/phone.scss */
+/* line 1587, ../sass/phone.scss */
 .inline-image .image-snake {
   background-image: url("/assets/threat-icons/ic_snake.png");
 }
-/* line 1964, ../sass/phone.scss */
+/* line 1590, ../sass/phone.scss */
 .inline-image .image-tucan {
   background-image: url("/assets/threat-icons/ic_tucan.png");
 }
-/* line 1970, ../sass/phone.scss */
+/* line 1596, ../sass/phone.scss */
 .inline-image .image-pill1 {
   background-image: url("/assets/threat-icons/ic_pill1.png");
 }
-/* line 1973, ../sass/phone.scss */
+/* line 1599, ../sass/phone.scss */
 .inline-image .image-pill2 {
   background-image: url("/assets/threat-icons/ic_pill2.png");
 }
-/* line 1976, ../sass/phone.scss */
+/* line 1602, ../sass/phone.scss */
 .inline-image .image-pill3 {
   background-image: url("/assets/threat-icons/ic_pill3.png");
 }
-/* line 1979, ../sass/phone.scss */
+/* line 1605, ../sass/phone.scss */
 .inline-image .image-pill4 {
   background-image: url("/assets/threat-icons/ic_pill4.png");
 }
-/* line 1982, ../sass/phone.scss */
+/* line 1608, ../sass/phone.scss */
 .inline-image .image-pill1-y {
   background-image: url("/assets/threat-icons/ic_pill1-y.png");
 }
-/* line 1985, ../sass/phone.scss */
+/* line 1611, ../sass/phone.scss */
 .inline-image .image-pill2-y {
   background-image: url("/assets/threat-icons/ic_pill2-y.png");
 }
-/* line 1988, ../sass/phone.scss */
+/* line 1614, ../sass/phone.scss */
 .inline-image .image-pill3-y {
   background-image: url("/assets/threat-icons/ic_pill3-y.png");
 }
-/* line 1991, ../sass/phone.scss */
+/* line 1617, ../sass/phone.scss */
 .inline-image .image-pill4-y {
   background-image: url("/assets/threat-icons/ic_pill4-y.png");
 }
-/* line 1995, ../sass/phone.scss */
+/* line 1621, ../sass/phone.scss */
 .inline-image .image-pleaf1 {
   background-image: url("/assets/threat-icons/ic_pleaf1.png");
 }
-/* line 1998, ../sass/phone.scss */
+/* line 1624, ../sass/phone.scss */
 .inline-image .image-pleaf2 {
   background-image: url("/assets/threat-icons/ic_pleaf2.png");
 }
-/* line 2001, ../sass/phone.scss */
+/* line 1627, ../sass/phone.scss */
 .inline-image .image-pleaf3 {
   background-image: url("/assets/threat-icons/ic_pleaf3.png");
 }
-/* line 2004, ../sass/phone.scss */
+/* line 1630, ../sass/phone.scss */
 .inline-image .image-pleaf4 {
   background-image: url("/assets/threat-icons/ic_pleaf4.png");
 }
-/* line 2007, ../sass/phone.scss */
+/* line 1633, ../sass/phone.scss */
 .inline-image .image-pleaf1-y {
   background-image: url("/assets/threat-icons/ic_pleaf1-y.png");
 }
-/* line 2010, ../sass/phone.scss */
+/* line 1636, ../sass/phone.scss */
 .inline-image .image-pleaf2-y {
   background-image: url("/assets/threat-icons/ic_pleaf2-y.png");
 }
-/* line 2013, ../sass/phone.scss */
+/* line 1639, ../sass/phone.scss */
 .inline-image .image-pleaf3-y {
   background-image: url("/assets/threat-icons/ic_pleaf3-y.png");
 }
-/* line 2016, ../sass/phone.scss */
+/* line 1642, ../sass/phone.scss */
 .inline-image .image-pleaf4-y {
   background-image: url("/assets/threat-icons/ic_pleaf4-y.png");
 }
-/* line 2020, ../sass/phone.scss */
+/* line 1646, ../sass/phone.scss */
 .inline-image .none {
   background-image: none !important;
 }
 
-/* line 2026, ../sass/phone.scss */
+/* line 1652, ../sass/phone.scss */
 #the-threat-4 {
   background-color: #000;
   text-align: center;
   position: relative;
   color: #fff;
 }
-/* line 2031, ../sass/phone.scss */
+/* line 1657, ../sass/phone.scss */
 #the-threat-4 > div {
   width: 47%;
   height: 97%;
@@ -2483,7 +2097,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   display: inline-block;
   position: relative;
 }
-/* line 2038, ../sass/phone.scss */
+/* line 1664, ../sass/phone.scss */
 #the-threat-4 .background-parent {
   position: absolute;
   left: 0;
@@ -2491,14 +2105,14 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   width: 100%;
   height: 100%;
 }
-/* line 2046, ../sass/phone.scss */
+/* line 1672, ../sass/phone.scss */
 #the-threat-4 blockquote {
   position: absolute;
   font-weight: 800;
   font-size: 3em;
 }
 
-/* line 2055, ../sass/phone.scss */
+/* line 1681, ../sass/phone.scss */
 #text-top-right {
   display: inline-block;
   margin: 0;
@@ -2507,7 +2121,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 /* CUSTOM STYLES */
-/* line 2064, ../sass/phone.scss */
+/* line 1690, ../sass/phone.scss */
 #buttons-area {
   width: 100%;
   text-align: center;
@@ -2517,7 +2131,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 /* DONATION CLASS */
-/* line 2076, ../sass/phone.scss */
+/* line 1702, ../sass/phone.scss */
 .donation {
   color: #000;
   background-color: #fae132;
@@ -2528,7 +2142,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   font-weight: 800;
   width: 400px;
 }
-/* line 2086, ../sass/phone.scss */
+/* line 1712, ../sass/phone.scss */
 .donation a {
   text-decoration: none;
   color: #000;
@@ -2540,37 +2154,37 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 @media (min-width: 768px) and (max-width: 1250px) {
-  /* line 2097, ../sass/phone.scss */
+  /* line 1723, ../sass/phone.scss */
   .donation {
     width: 30%;
   }
-  /* line 2099, ../sass/phone.scss */
+  /* line 1725, ../sass/phone.scss */
   .donation a {
     font-size: 1.5em;
   }
 }
 @media (max-width: 650px) {
-  /* line 2105, ../sass/phone.scss */
-  .phone .donation {
+  /* line 1731, ../sass/phone.scss */
+  .donation {
     width: 60%;
     padding: 4px;
   }
-  /* line 2108, ../sass/phone.scss */
-  .phone .donation a {
+  /* line 1734, ../sass/phone.scss */
+  .donation a {
     border: #000 solid 2px;
     font-size: 1em;
   }
 }
 /* DONATION END */
 /* BANNER */
-/* line 2120, ../sass/phone.scss */
+/* line 1746, ../sass/phone.scss */
 #home-banner {
   bottom: 0;
   position: absolute;
   width: 100%;
   color: #fff;
 }
-/* line 2125, ../sass/phone.scss */
+/* line 1751, ../sass/phone.scss */
 #home-banner div {
   width: 50%;
   display: inline-block;
@@ -2579,7 +2193,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   vertical-align: top;
   font-weight: 800;
 }
-/* line 2134, ../sass/phone.scss */
+/* line 1760, ../sass/phone.scss */
 #home-banner strong {
   border-bottom: 2px solid #000;
   background-color: #a2cd39;
@@ -2588,7 +2202,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   text-transform: uppercase;
   font-size: 0.75em;
 }
-/* line 2142, ../sass/phone.scss */
+/* line 1768, ../sass/phone.scss */
 #home-banner small {
   background-color: #a2cd39;
   font-weight: 400;
@@ -2597,35 +2211,35 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   padding: 0.1em 0 1.5em 0;
   margin: 0 0 0.7em 0;
 }
-/* line 2150, ../sass/phone.scss */
+/* line 1776, ../sass/phone.scss */
 #home-banner a {
   text-decoration: none;
   color: #000;
   text-transform: uppercase;
   font-size: 0.75em;
 }
-/* line 2156, ../sass/phone.scss */
+/* line 1782, ../sass/phone.scss */
 #home-banner img {
   width: 30%;
   display: inline-block;
   margin-right: 5%;
 }
 
-/* line 2163, ../sass/phone.scss */
+/* line 1789, ../sass/phone.scss */
 #natgeo-stmt {
   width: 60% !important;
   text-align: center;
   margin-right: 5%;
 }
 
-/* line 2169, ../sass/phone.scss */
+/* line 1795, ../sass/phone.scss */
 #home-banner > div:nth-child(2) {
   background-color: #fae132;
   color: #000;
   text-align: center;
 }
 
-/* line 2176, ../sass/phone.scss */
+/* line 1802, ../sass/phone.scss */
 #home-banner > div:nth-child(1) p {
   vertical-align: top;
   display: block;
@@ -2633,13 +2247,13 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   margin-bottom: 0.5em;
   border-bottom: solid #fff 1px;
 }
-/* line 2183, ../sass/phone.scss */
+/* line 1809, ../sass/phone.scss */
 #home-banner > div:nth-child(1) a {
   color: #fae132;
 }
 
 /* BANNER  END*/
-/* line 2192, ../sass/phone.scss */
+/* line 1818, ../sass/phone.scss */
 #slides {
   position: absolute;
   height: 100%;
@@ -2648,7 +2262,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   color: #fff;
   font-weight: 800;
 }
-/* line 2201, ../sass/phone.scss */
+/* line 1827, ../sass/phone.scss */
 #slides div {
   height: 100%;
   position: absolute;
@@ -2662,7 +2276,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   filter: alpha(opacity=100);
   /* For IE8 and earlier */
 }
-/* line 2209, ../sass/phone.scss */
+/* line 1835, ../sass/phone.scss */
 #slides div blockquote {
   position: absolute;
   bottom: 0;
@@ -2673,13 +2287,13 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   padding-bottom: 5%;
 }
 
-/* line 2220, ../sass/phone.scss */
+/* line 1846, ../sass/phone.scss */
 .home-class {
   position: relative;
 }
 
 /* YOUTUBE styles */
-/* line 2225, ../sass/phone.scss */
+/* line 1851, ../sass/phone.scss */
 #cropping-youtube {
   position: absolute;
   left: 0;
@@ -2690,7 +2304,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 /* Media Queries */
-/* line 2235, ../sass/phone.scss */
+/* line 1861, ../sass/phone.scss */
 .nav-animate {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -2700,7 +2314,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 /* LOADING MODALS */
-/* line 2242, ../sass/phone.scss */
+/* line 1868, ../sass/phone.scss */
 #loading-screen {
   position: fixed;
   top: 0;
@@ -2714,19 +2328,15 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   font-weight: 800;
   display: table;
 }
-/* line 2256, ../sass/phone.scss */
-#loading-screen div {
+/* line 1882, ../sass/phone.scss */
+#loading-screen h2 {
   position: absolute;
-  bottom: 35%;
+  bottom: 50%;
   width: 100%;
   text-align: center;
 }
-/* line 2262, ../sass/phone.scss */
-#loading-screen div img {
-  padding: 1em;
-}
 
-/* line 2269, ../sass/phone.scss */
+/* line 1890, ../sass/phone.scss */
 #ajax-loading-screen {
   position: fixed;
   top: 0;
@@ -2735,56 +2345,22 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   height: 100%;
   z-index: 50;
   background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
 }
-/* line 2279, ../sass/phone.scss */
+/* line 1899, ../sass/phone.scss */
 #ajax-loading-screen div {
-  position: absolute;
-  bottom: 50%;
+  position: relative;
   width: 100%;
   text-align: center;
+  height: 100%;
 }
-
-/* line 2287, ../sass/phone.scss */
-#loading-screen img, #ajax-loading-screen img {
-  -webkit-animation-name: fullRotate;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -ms-animation-name: fullRotate;
-  -ms-animation-duration: 3s;
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
-  -moz-animation-name: fullRotate;
-  -moz-animation-duration: 3s;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  animation-name: fullRotate;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@-webkit-keyframes fullRotate {
-  /* line 2310, ../sass/phone.scss */
-  from {
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  /* line 2316, ../sass/phone.scss */
-  to {
-    -ms-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+/* line 1906, ../sass/phone.scss */
+#ajax-loading-screen img {
+  position: absolute;
+  bottom: 50%;
 }
 
 /* LOADING MODALS */
-/* line 2335, ../sass/phone.scss */
+/* line 1916, ../sass/phone.scss */
 #constant-background-image {
   position: fixed;
   left: 0;
@@ -2796,12 +2372,12 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 /* Custom and Temporary for Splash */
-/* line 2347, ../sass/phone.scss */
+/* line 1928, ../sass/phone.scss */
 #no-hundred {
   height: 100% !important;
 }
 
-/* line 2353, ../sass/phone.scss */
+/* line 1934, ../sass/phone.scss */
 .hidden {
   -webkit-opacity: 0 !important;
   -moz-opacity: 0 !important;
@@ -2812,12 +2388,12 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   /* For IE8 and earlier */
 }
 
-/* line 2357, ../sass/phone.scss */
+/* line 1938, ../sass/phone.scss */
 .hide {
   display: none;
 }
 
-/* line 2360, ../sass/phone.scss */
+/* line 1941, ../sass/phone.scss */
 .stick {
   position: fixed !important;
   top: 0 !important;
@@ -2825,7 +2401,7 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   z-index: -1 !important;
 }
 
-/* line 2366, ../sass/phone.scss */
+/* line 1947, ../sass/phone.scss */
 .center-element {
   display: block;
   height: 50%;
@@ -2837,8 +2413,8 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
   right: 0;
 }
 
-/* line 2375, ../sass/phone.scss */
-.full-backgroundimage, #why-rainforest-1 #stick-in-back {
+/* line 1956, ../sass/phone.scss */
+.full-backgroundimage, #about-the-kayapo-6 #stick-in-back {
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -2849,23 +2425,23 @@ nav #social-nav #facebook, #nav #social-nav #facebook {
 }
 
 @media (max-width: 650px) {
-  /* line 2382, ../sass/phone.scss */
-  .phone .full-backgroundimage, .phone #why-rainforest-1 #stick-in-back, #why-rainforest-1 .phone #stick-in-back {
+  /* line 1963, ../sass/phone.scss */
+  .full-backgroundimage, #about-the-kayapo-6 #stick-in-back {
     background-position: left;
   }
 }
-/* line 2386, ../sass/phone.scss */
+/* line 1967, ../sass/phone.scss */
 .full-page, #why-rainforest-3 .full-page, #about-the-kayapo-5 .full-page {
   width: 100%;
   height: 100%;
 }
 
-/* line 2391, ../sass/phone.scss */
+/* line 1972, ../sass/phone.scss */
 .text-shadow {
-  text-shadow: 1px 1px 10px #333;
+  text-shadow: 1px 1px 10px #000;
 }
 
-/* line 2394, ../sass/phone.scss */
+/* line 1975, ../sass/phone.scss */
 .underlined {
   border-bottom: 6px solid #fff;
 }
