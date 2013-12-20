@@ -52,7 +52,7 @@ if(navigator.sayswho[0] == "Safari" && navigator.sayswho[navigator.sayswho.lengt
 } else if(navigator.sayswho[0] == "Firefox" && parseInt(navigator.sayswho[navigator.sayswho.length-1]) < 16 ){
 	MOBILE = true;
 	jQuery.browser.mobile = true;
-} else if(navigator.sayswho[0] == "IE" && parseInt(navigator.sayswho[navigator.sayswho.length-1]) < 9){
+} else if(navigator.sayswho[0] == "MS/IE" && parseInt(navigator.sayswho[navigator.sayswho.length-1]) < 9){
 	MOBILE = true;
 	jQuery.browser.mobile = true;
 }
