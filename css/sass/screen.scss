@@ -10,11 +10,6 @@
 @include all-threat-icons-sprites;
 
 /* Variables */
-$sk_red: #ea636e;
-$sk_red_fade: #ff838e;
-$hover_button: #ca444e;
-$text_color_grey: #111;
-$normalBackground: #fff;
 
 //$k-yellow: #fedf00;
 $k-yellow: #fae132;
@@ -47,7 +42,7 @@ body,html{
 	//overflow: hidden;
 	font-family: $verlag;
 	-webkit-font-smoothing: antialiased;
-	color: $text_color_grey;
+	//color: $text_color_grey;
 }
 
 body{
@@ -178,6 +173,18 @@ section{
 			}
 		}
 	}
+	@include breakpoint(lapxs) {
+		nav, #nav{
+			li{
+				padding: 0 0.6% 0 0.6%;
+				letter-spacing: -0.03em;
+			}
+			a{
+				margin-top: 0.9em;
+				font-size: 0.8em;
+			}
+		}
+	}
 
 	.phone #nav,{
 		a{
@@ -296,7 +303,15 @@ section{
 			blockquote{
 				width: 95%;
 			}
-		}	
+		}
+	}
+	@include breakpoint(lapxs) {
+		#index-1{
+			blockquote{
+				width: 95%;
+				font-size:1.5em;
+			}
+		}
 	}
 
 /* INDEX 1 SECTION END */
@@ -633,7 +648,35 @@ section{
 			}
 		}
 	}
-
+	@include breakpoint(lapxs) {
+		#why-rainforest-1{
+			blockquote{
+				width:95%;
+				font-size:3em;
+			}
+		}
+		#why-rainforest-2{
+			#section-content{
+				width:70%;
+			}
+			blockquote{
+				font-size:2em;
+			}
+		}
+	}
+	@include breakpoint(lapxs) {
+		#why-rainforest-3 {
+			h2{
+				font-size:4em;
+			}	
+		}
+		#why-rainforest-35 {
+			blockquote{
+				font-size:2em !important;
+			}
+		}
+	}
+	
 .index{
 	background-color: $k-green-bright;
 	color: #000;
@@ -910,6 +953,21 @@ section{
 		}
 	}
 }
+@include breakpoint(lapxs) {
+	#about-the-kayapo-2{
+		p{
+			font-size:1.8em;
+		}
+		h2{
+			font-size:1.5em;
+		}
+		#right{
+			img{
+				width:50%;
+			}
+		}
+	}
+}
 @include breakpoint(lapsm) {
 	#about-the-kayapo-4{
 		h2{
@@ -919,6 +977,16 @@ section{
 			width:45% !important;
 			max-width:400px !important;
 			padding: 3em 0 2em 0 !important;
+		}
+	}
+}
+@include breakpoint(lapxs) {
+	#about-the-kayapo-1{
+		#section-content{
+			width:50%;	
+		}
+		p{
+			font-size:1.5em;
 		}
 	}
 }
@@ -1005,6 +1073,26 @@ section{
 		width: 21% !important;
 	}
 }
+@include breakpoint(lapxs) {
+	#about-the-kayapo-3{
+		h2{
+			font-size:1.5em;
+		}
+		p{
+			font-size:0.8em
+		}
+	}
+}
+@include breakpoint(lapxs) {
+	#about-the-kayapo-4 {
+		img{
+			width:30% !important;
+		}
+		h2{
+			font-size:1.2em !important;
+		}
+	}
+}
 
 #about-the-kayapo-5{
 	position: relative;
@@ -1029,7 +1117,23 @@ section{
 		}
 	}	
 }
-
+@include breakpoint(lapxs) {
+	#about-the-kayapo-5 {
+		h2{
+			font-size:5em !important;
+		}
+	}
+}
+@include breakpoint(lapxs) {
+	#the-threat-1 {
+		h2{
+			font-size:3em !important;
+		}
+		p{
+			font-size:1.2em;
+		}
+	}
+}
 
 
 
@@ -1161,6 +1265,8 @@ section{
 	}
 }
 
+
+
 #kayapo-proj-modal-territory{
 	#kayapo-proj-modal-subicons{
 		width: 50%;
@@ -1286,7 +1392,28 @@ section{
 		}
 	}
 }
-
+@include breakpoint(lapxs) {
+	#kayapo-proj-2{
+		h2{
+			font-size:2em;	
+		}
+		h4{
+			font-size:0.8em;
+		}
+		h3{
+			font-size:1em;
+		}
+		p{
+			font-size:1em;
+		}
+		#funds-divs{
+			.icon{
+				width:100px;
+				height:105px;
+			}
+		}
+	}
+}
 
 
 /* kayapo-proj */
@@ -1367,6 +1494,24 @@ section{
 		display: none;
 	}
 }
+@include breakpoint(lapxs) {
+	#donate-1{
+		blockquote{
+			font-size:1.5em;
+		}
+		h2{
+			font-size:1em;
+		}
+		img{
+			width: auto;
+			height: 80px;
+		}
+		p{
+			font-size:0.8em;
+		}
+	}
+}
+
 
 #contact-1{
 	text-align: center;
@@ -1425,6 +1570,13 @@ section{
 	}
 }
 
+@include breakpoint(lapxs) {
+	#sponsors-1,#sponsors-2, #sponsors-3{
+		img{
+			width:80px;
+		}
+	}
+}
 
 #contact-footer{
 	background-color: $k-green-dull;
@@ -1436,6 +1588,13 @@ section{
 	a {
 		color: #fff;
 		font-weight: 800;
+	}
+}
+@include breakpoint(lapxs) {
+	#contact-footer{
+		h2{
+			font-size:2em !important;
+		}
 	}
 }
 
@@ -1620,19 +1779,33 @@ section{
 	position: relative;
 	blockquote{
 		z-index: 2;
-		position: relative;
-
-		font-weight: 800;
+		position: absolute;
+		left: 0;
+		right: 0;
 		margin: 0 auto 0 auto;
+		bottom: 25%;
+		height: 60%;
+		font-weight: 800;
 		width: 50%;
 		color: #fff;
+
 		padding-top: 10%;
+
+
+		// z-index: 2;
+		// position: relative;
+
+		// font-weight: 800;
+		// margin: 0 auto 0 auto;
+		// width: 50%;
+		// color: #fff;
+		// padding-top: 20%;
 	}
 }
 @include breakpoint(tablet) {
 	#the-threat-35,#the-threat-3{
 		blockquote{
-			padding-top:7%;
+			// padding-top:7%;
 			width:70%;
 		}
 	}
@@ -1640,18 +1813,25 @@ section{
 @include breakpoint(lapsm) {
 	#the-threat-35,#the-threat-3{
 		blockquote{
-			padding-top:10%;
+			// padding-top:10%;
 			width:70%;
 		}
 	}
 }
 @include breakpoint(phone) {
 	.phone #the-threat-35,#the-threat-3{
-		background-color: $k-red;
-		padding-bottom: 5em;
+		// background-color: $k-red;
+		// padding-bottom: 5em;
 		blockquote{
 			width:90% !important;
-			font-size:1.8em;	
+			font-size:1.8em;
+		}
+	}
+}
+@include breakpoint(lapxs) {
+	#the-threat-35{
+		blockquote{
+			font-size:4em;
 		}
 	}
 }
@@ -2072,12 +2252,17 @@ section{
 	font-weight: 800;
 	display: table;
 	
-	h2{
+	div{
 		position: absolute;
-		bottom: 50%;
+		bottom: 35%;
 		width: 100%;
 		text-align: center;
+
+		img{
+			padding: 1em;
+		}
 	}
+
 }
 
 #ajax-loading-screen{
@@ -2088,21 +2273,61 @@ section{
 	height: 100%;
 	z-index: 50;
 	background-color: rgba(0,0,0,0.5);
-	
+	text-align: center;
+
 	div{
-		position: relative;
+		position: absolute;
+		bottom: 50%;
 		width: 100%;
 		text-align: center;
-		height: 100%;
 	}
-	
-	img{
-		position:absolute;
-		bottom:50%;
+}
+
+#loading-screen img, #ajax-loading-screen img{
+	-webkit-animation-name:             fullRotate;
+	-webkit-animation-duration:         3s;
+	-webkit-animation-iteration-count:  infinite;
+	-webkit-animation-timing-function: linear;
+
+	-ms-animation-name:             fullRotate;
+	-ms-animation-duration:         3s;
+	-ms-animation-iteration-count:  infinite;
+	-ms-animation-timing-function: linear;
+
+	-moz-animation-name:             fullRotate;
+	-moz-animation-duration:         3s;
+	-moz-animation-iteration-count:  infinite;
+	-moz-animation-timing-function: linear;
+
+	animation-name:             fullRotate;
+	animation-duration:         3s;
+	animation-iteration-count:  infinite;
+	animation-timing-function: linear;
+}
+
+@-webkit-keyframes fullRotate {
+	from {
+		-ms-transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+		-moz-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	to {
+		-ms-transform:rotate(360deg);
+		-webkit-transform:rotate(360deg);
+		-moz-transform:rotate(360deg);
+		transform:rotate(360deg)
 	}
 }
 
 
+// img.star
+// {
+//     -webkit-animation-name:             rotate; 
+//     -webkit-animation-duration:         0.5s; 
+//     -webkit-animation-iteration-count:  infinite;
+//     -webkit-animation-timing-function: linear;
+// }
 
 /* LOADING MODALS */
 

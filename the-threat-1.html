@@ -9,8 +9,8 @@
 <meta content="CF43E0E693FD6DE4A4C4E9BCC83E0CA9" name="msvalidate.01"/>
 <!-- Google Webtools Validation -->
 <meta content="9TuQEKpWFrGTOvqlbTX-Jm-PFMZlf2CmIJS8TKFrc1Q" name="google-site-verification"/>
-<meta content="DESCRIPTION" name="description">
-<meta content="KEYWORD-1, KEYWORD-2" name="keywords">
+<meta content="Where indian lands begin is where deforestation ends. The Kayapo are the Answer." name="description">
+<meta content="kayapo, sainforest, icfc, illegal logging, save the rainforest, brazil" name="keywords">
 <link href="http://also-static.com/kayapo/assets/icons/favicon.png" rel="icon" type="image/png">
 <link href="http://also-static.com/kayapo/assets/icons/favicon.ico" rel="icon" type="image/ico">
 <link href="//cloud.typography.com/717268/671322/css/fonts.css" rel="stylesheet" type="text/css"/>
@@ -53,14 +53,18 @@
 </div>
 <script type="text/javascript">
 			var myPlayer2 = null;
-
+			var tryToPlay = null;
 
 			function onYouTubeIframeAPIReady() {
 				if(myPlayer2){
-					console.log("start up");
 					myPlayer2.setupPlayer();
-					console.log("try playing");
-					myPlayer2.settings().player.playVideo();
+					tryToPlay =  setInterval(function(){
+						if(myPlayer2.settings().player.playVideo){
+							myPlayer2.settings().player.playVideo();
+							$("#ajax-loading-screen").fadeOut('1000');
+							clearInterval(tryToPlay);
+						}
+					},100);
 				}
 			}
 			$("#why-rainforest-1 #play-button").click(function(event) {
@@ -68,6 +72,7 @@
 					window.open("http://www.youtube.com/watch?v=TEBW6LU8fp0");
 				} else {
 					if(jQuery().Jtube && !myPlayer2){
+							$("#ajax-loading-screen").fadeIn('1000');
 							myPlayer2 = $("#youtube-why-kayapo").Jtube({
 							videoId:"TEBW6LU8fp0",
 							skipvid:false,
@@ -83,22 +88,20 @@
 							onStart:function(settings){
 								$(settings.player.a).css({"display":"inline-block"})
 								$("#why-rainforest-1 #stick-in-back").fadeOut('1000');
-								console.log("on start");
 								return null;
 							},
 							onPause:function(settings){
 								$("#why-rainforest-1 #stick-in-back").fadeIn('1000');
-								console.log("on pause");
 								return null;
 							},
 							onDone:function(settings){
-								console.log("on done");
 								return false;
 							}
 						});
+					} else {
+						myPlayer2.settings().player.playVideo();
 					}
 					event.preventDefault();
-					myPlayer2.settings().player.playVideo();
 					return false;
 				}
 			});
@@ -171,10 +174,15 @@
 <div id="constant-background-image">
 </div>
 <div id="loading-screen">
+<div>
 <h2>LOADING</h2>
+<img height="85px" src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png" width="114px">
+</img></div>
 </div>
 <div id="ajax-loading-screen">
-<div id="modal-img">loading<!-- <img src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png"> --></div>
+<div>
+<img height="85px" src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png" width="114px">
+</img></div>
 </div>
 </body>
 </html>

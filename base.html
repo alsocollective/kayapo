@@ -12,9 +12,9 @@
 	<!-- Google Webtools Validation -->
 	<meta name="google-site-verification" content="9TuQEKpWFrGTOvqlbTX-Jm-PFMZlf2CmIJS8TKFrc1Q" />
 
-	<meta name="description" content="DESCRIPTION">
+	<meta name="description" content="Where indian lands begin is where deforestation ends. The Kayapo are the Answer.">
 
-	<meta name="keywords" content="KEYWORD-1, KEYWORD-2">
+	<meta name="keywords" content="kayapo, sainforest, icfc, illegal logging, save the rainforest, brazil">
 
 	<link rel="icon" type="image/png" href="http://also-static.com/kayapo/assets/icons/favicon.png">
 	<link rel="icon" type="image/ico" href="http://also-static.com/kayapo/assets/icons/favicon.ico">
@@ -68,14 +68,18 @@
 		</div>
 		<script type="text/javascript">
 			var myPlayer2 = null;
-
+			var tryToPlay = null;
 
 			function onYouTubeIframeAPIReady() {
 				if(myPlayer2){
-					console.log("start up");
 					myPlayer2.setupPlayer();
-					console.log("try playing");
-					myPlayer2.settings().player.playVideo();
+					tryToPlay =  setInterval(function(){
+						if(myPlayer2.settings().player.playVideo){
+							myPlayer2.settings().player.playVideo();
+							$("#ajax-loading-screen").fadeOut('1000');
+							clearInterval(tryToPlay);
+						}
+					},100);
 				}
 			}
 			$("#why-rainforest-1 #play-button").click(function(event) {
@@ -83,6 +87,7 @@
 					window.open("http://www.youtube.com/watch?v=TEBW6LU8fp0");
 				} else {
 					if(jQuery().Jtube && !myPlayer2){
+							$("#ajax-loading-screen").fadeIn('1000');
 							myPlayer2 = $("#youtube-why-kayapo").Jtube({
 							videoId:"TEBW6LU8fp0",
 							skipvid:false,
@@ -98,22 +103,20 @@
 							onStart:function(settings){
 								$(settings.player.a).css({"display":"inline-block"})
 								$("#why-rainforest-1 #stick-in-back").fadeOut('1000');
-								console.log("on start");
 								return null;
 							},
 							onPause:function(settings){
 								$("#why-rainforest-1 #stick-in-back").fadeIn('1000');
-								console.log("on pause");
 								return null;
 							},
 							onDone:function(settings){
-								console.log("on done");
 								return false;
 							}
 						});
+					} else {
+						myPlayer2.settings().player.playVideo();
 					}
 					event.preventDefault();
-					myPlayer2.settings().player.playVideo();
 					return false;
 				}
 			});
@@ -179,10 +182,15 @@
 <div id="constant-background-image">
 </div>
 <div id="loading-screen">
-	<h2>LOADING</h2>
+	<div>
+		<h2>LOADING</h2>
+		<img width="114px" height="85px" src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png">
+	</div>
 </div>
 <div id="ajax-loading-screen">
-	<div id="modal-img">loading<!-- <img src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png"> --></div>
+	<div>
+		<img width="114px" height="85px" src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png">
+	</div>
 </div>
 </body>
 </html>

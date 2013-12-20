@@ -25,6 +25,9 @@
 	@else if $point == lapsm {
 		@media screen and (max-height:683px) { @content; }
 	}
+	@else if $point == lapxs {
+		@media (max-width: 900px) { @content; }
+	}
 }
 
 .simple-animated {
