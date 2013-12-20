@@ -18,6 +18,7 @@ d88P     888  "Y8888P"  88888888  "Y88888P"         "Y8888P"   "Y88P"  888 888  
 //detect if it's a mobile browser
 (function(a){(jQuery.browser=jQuery.browser||{}).mobile=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))})(navigator.userAgent||navigator.vendor||window.opera);
 
+<<<<<<< HEAD
 navigator.sayswho= (function(){
     var ua= navigator.userAgent||navigator.vendor||window.opera, tem, 
     M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*([\d\.]+)/i) || [];
@@ -28,11 +29,22 @@ navigator.sayswho= (function(){
     M= M[2]? [M[1], M[2]]:[navigator.appName, navigator.appVersion, '-?'];
     if((tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
     return M;
+=======
+/* ANALYTICS */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-42487410-2']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+>>>>>>> bb984f3d68df673aa64b0da2684966c1893b5b55
 })();
 
 console.log(navigator.sayswho[0],navigator.sayswho[1]);
 var MOBILE = false;
 
+<<<<<<< HEAD
 if(navigator.sayswho[0] == "Safari" && navigator.sayswho[navigator.sayswho.length-1][0] == "5"){
 	MOBILE = true;
 	jQuery.browser.mobile = true;
@@ -42,6 +54,20 @@ if(navigator.sayswho[0] == "Safari" && navigator.sayswho[navigator.sayswho.lengt
 } else if(navigator.sayswho[0] == "IE" && parseInt(navigator.sayswho[navigator.sayswho.length-1]) < 9){
 	MOBILE = true;
 	jQuery.browser.mobile = true;
+=======
+var webProvider = navigator.userAgent||navigator.vendor||window.opera;
+webProvider = webProvider.split(" ");
+for(var a = 0, max = webProvider.length; a < max; a += 1){
+	if(webProvider[a].substring(0,7) == "Version"){
+		webProvider = webProvider[a].split("/");
+		if(webProvider[1].substring(0,1) == "5"){
+			console.log("redirect to other");
+			MOBILE = true;
+			jQuery.browser.mobile = true;
+		}
+		a = max;
+	}
+>>>>>>> bb984f3d68df673aa64b0da2684966c1893b5b55
 }
 
 // $.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
@@ -779,7 +805,7 @@ var JPGSEQUENCE = {
 		var playButton = document.createElement("a");
 		playButton.href = "#";
 		playButton.id = "jpg-slide-play";
-		playButton.innerHTML = "Play: "
+		playButton.innerHTML = "<img src='http://also-static.com/kayapo/assets/icons/btn_ply.png' width='40px' height='40px'/>"
 		JPGSEQUENCE.playButton = playButton;
 		$(playButton).click(function(event){
 			event.preventDefault();
@@ -788,7 +814,7 @@ var JPGSEQUENCE = {
 			} else {
 				clearTimeout(JPGSEQUENCE.playIntervalObject);
 				JPGSEQUENCE.playIntervalObject = null;
-				JPGSEQUENCE.playButton.innerHTML = "Play";
+				JPGSEQUENCE.playButton.innerHTML = "<img src='http://also-static.com/kayapo/assets/icons/btn_ply.png' width='40px' height='40px'/>";
 			}
 			return false;
 		})
@@ -804,7 +830,7 @@ var JPGSEQUENCE = {
 	createImage:function(count){
 		var img = document.createElement("div");
 		img.className = JPGSEQUENCE.baseName + " jpg-slide-hidden full-backgroundimage";
-		img.style.backgroundImage = "url(/assets/map/"+JPGSEQUENCE.baseName+count+".jpg)";
+		img.style.backgroundImage = "url(http://also-static.com/kayapo/assets/map/"+JPGSEQUENCE.baseName+count+".jpg)";
 		return img;
 	},
 	createButton:function(element){
@@ -838,7 +864,7 @@ var JPGSEQUENCE = {
 	playInterval:function(){
 		$(".jpg-slide-selected").removeClass('jpg-slide-selected');
 		$($("#button-container").children()[0]).click()
-		JPGSEQUENCE.playButton.innerHTML = "Pause";
+		JPGSEQUENCE.playButton.innerHTML = "<img src='http://also-static.com/kayapo/assets/icons/btn_paus.png' width='40px' height='40px'/>";
 		var playInterVal = setInterval(function(){
 			var findCurrent = $(".jpg-slide-selected")[0];
 			if(!findCurrent){
@@ -847,7 +873,7 @@ var JPGSEQUENCE = {
 			var next = $(findCurrent).next()[0];
 			if(!next){
 				clearTimeout(JPGSEQUENCE.playIntervalObject);
-				JPGSEQUENCE.playButton.innerHTML = "Play";
+				JPGSEQUENCE.playButton.innerHTML = "<img src='http://also-static.com/kayapo/assets/icons/btn_ply.png' width='40px' height='40px'/>";
 				JPGSEQUENCE.playIntervalObject = null;
 			}
 			$(next).click();
@@ -965,14 +991,4 @@ $(window).load(function(){
 	GLOBAL.fadeAjaxLoading();
 	setTimeout(GLOBAL.fadeLoading,1000);
 });
-
-/* ANALYTICS */
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-42487410-2']);
-
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
 
