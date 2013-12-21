@@ -29,8 +29,6 @@ d88P     888  "Y8888P"  88888888  "Y88888P"         "Y8888P"   "Y88P"  888 888  
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 
-
-
 	navigator.sayswho= (function(){
 	    var ua= navigator.userAgent||navigator.vendor||window.opera, tem, 
 	    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*([\d\.]+)/i) || [];
@@ -53,6 +51,9 @@ d88P     888  "Y8888P"  88888888  "Y88888P"         "Y8888P"   "Y88P"  888 888  
 		MOBILE = true;
 		jQuery.browser.mobile = true;
 	} else if(navigator.sayswho[0] == "MS/IE" && parseInt(navigator.sayswho[navigator.sayswho.length-1]) < 9){
+		MOBILE = true;
+		jQuery.browser.mobile = true;
+	} else if( /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		MOBILE = true;
 		jQuery.browser.mobile = true;
 	}
