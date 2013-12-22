@@ -197,6 +197,7 @@ section{
 	/* WATCH BUTTON */
 	#you-tube-mobile{
 		text-align:center;
+		margin-top: 3em;
 		img{
 			width:100px;
 			height:auto;
@@ -231,6 +232,7 @@ section{
 	}
 	
 	#main-info{
+		padding-top: 4em;
 		text-align: center;
 		
 		a img{
@@ -240,8 +242,8 @@ section{
 	@include breakpoint(tablet) {
 		#index-1{
 			blockquote{
-				font-size: 2.8em;
-				width: 80%;
+				font-size: 2.5em;
+				width: 90%;
 				margin-bottom:0.5em;
 			}
 			h2{
@@ -289,7 +291,7 @@ section{
 	@include breakpoint(phone) {
 		#index-1{
 			height: 80%;
-			padding-bottom:3em;
+			padding-bottom:12em;
 			blockquote{
 				font-size:1.2em;
 				width: 95%;
@@ -492,7 +494,7 @@ section{
 		blockquote{
 			font-size:3em;
 			font-weight:800;
-			margin: 3em 0 4em 0;
+			margin: 3em 0 2em 0;
 			text-align:center;
 		}
 		small{
@@ -501,7 +503,7 @@ section{
 	}
 	#why-rainforest-35{
 		position: relative;
-		height:40em;
+		height:45em;
 		font-size:2em;
 		font-weight:800;
 		color:#fff;
@@ -598,7 +600,7 @@ section{
 			}
 		}
 		#why-rainforest-35{
-			height: 50em;
+			height: 40em;
 			margin-bottom: 4em;
 			background-color: $k-green-dark;
 			color:#fff;
@@ -782,6 +784,22 @@ section{
 			padding-left: 2em;
 			display: inline-block;
 			margin-bottom: -0.5em;
+		}
+	}
+}
+@include breakpoint(tabletport) {
+	#about-the-kayapo-2{
+		#left{
+			width:45%;
+			vertical-align:top;
+			.center-element {
+				margin:0 0 0 3em;
+			}
+			img{
+				height: 40%;
+				max-height: 300px;
+				max-width: 545px;
+			}
 		}
 	}
 }
@@ -1261,7 +1279,11 @@ section{
 		}
 	}
 	#contact-1{
-		height: 100%;
+		height:100%;
+		h2{
+			font-size:1em;
+		}
+		padding-bottom:12em;
 	}
 }
 
@@ -1320,6 +1342,7 @@ section{
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	padding-top:10em;
 	//opacity: 0.6;
 }
 @include breakpoint(phone) {
@@ -1898,7 +1921,7 @@ section{
 
 /* Media Queries */
 .nav-animate{
-	@include vendorize(transition, all 0.5s);
+	//@include vendorize(transition, all 0.5s);
 }
 
 
