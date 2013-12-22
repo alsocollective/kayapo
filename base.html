@@ -7,16 +7,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0,user-scalable=no">
 
-	<!-- make specific to this Header stuff -->
-	<!-- <meta name="msvalidate.01" content="CF43E0E693FD6DE4A4C4E9BCC83E0CA9" /> -->
-	<!-- <meta name="google-site-verification" content="6lPQp8df9K1P7sGX4CyX3EkohLT2ibuXC7BCb9MtZBY" /> -->
+	<!-- Bing Validation -->
+	<meta name="msvalidate.01" content="CF43E0E693FD6DE4A4C4E9BCC83E0CA9" />
+	<!-- Google Webtools Validation -->
+	<meta name="google-site-verification" content="9TuQEKpWFrGTOvqlbTX-Jm-PFMZlf2CmIJS8TKFrc1Q" />
 
-	<!-- <meta name="description" content="DESCRIPTION"> -->
+	<meta name="description" content="Where indian lands begin is where deforestation ends. The Kayapo are the Answer.">
 
-	<!-- <meta name="keywords" content="KEYWORD-1, KEYWORD-2"> -->
+	<meta name="keywords" content="kayapo, sainforest, icfc, illegal logging, save the rainforest, brazil">
 
-	<link rel="icon" type="image/png" href="/assets/favicon.png">
-	
+	<link rel="icon" type="image/png" href="http://also-static.com/kayapo/assets/icons/favicon.png">
+	<link rel="icon" type="image/ico" href="http://also-static.com/kayapo/assets/icons/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/717268/671322/css/fonts.css" />
 
 <!-- web type stuff -->
@@ -24,18 +25,15 @@
 <!-- unique Header stuff -->
 	<script type="text/javascript" src="/js/lib/modernizr.js"></script>
 	<script type="text/javascript" src="/js/lib/jquery.js"></script>
-	<!--
-	<script type="text/javascript" src="http://alsocollective.github.io/also-cdn/js/j-tube/j-tube.js"></script>
-	-->
 	<script type="text/javascript" src="/js/lib/j-tube.js"></script>
 <!-- Style Yo -->
 	<script type="text/javascript" src="/js/main.js"></script>
 
 <!-- Style Yo -->
 	<link href="/css/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-	<link href="/css/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-	<link href="/css/stylesheets/animate.min.css" media="print" rel="stylesheet" type="text/css" >
-	
+
+	<!--<link href="/css/stylesheets/animate.min.css" media="print" rel="stylesheet" type="text/css" >-->
+
 </head>
 <body>
 
@@ -51,26 +49,94 @@
 	</ul>
 </nav>
 <div id="content">
-	<section id="index-1" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page.jpg)">
+	<section id="index-1" class="full-backgroundimage home-class" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page.jpg)">
+	</section>
+
+
+	<section id="why-rainforest-1">
+		<div id="cropping-youtube">
+			<div id="youtube-container">
+				<div id="youtube-why-kayapo">
+				</div>
+			</div>
+		</div>
+		<div class="full-backgroundimage" id="stick-in-back" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page3.jpg)">
+				<blockquote>&#8220;Where indian lands begin is where deforestation ends&#8221;</blockquote>
+				<small>&#8212;Steve Schwartzman, Environmental Defense Fund</small>
+				<a href="" id="play-button"><img height="200px" src="http://also-static.com/kayapo/assets/icons/bt_play-y.png" width="200px"/></a>
+				<small>watch</small>
+		</div>
+		<script type="text/javascript">
+			var myPlayer2 = null;
+			var tryToPlay = null;
+
+			function onYouTubeIframeAPIReady() {
+				if(myPlayer2){
+					myPlayer2.setupPlayer();
+					tryToPlay =  setInterval(function(){
+						if(myPlayer2.settings().player.playVideo){
+							myPlayer2.settings().player.playVideo();
+							$("#ajax-loading-screen").fadeOut('1000');
+							clearInterval(tryToPlay);
+						}
+					},100);
+				}
+			}
+			$("#why-rainforest-1 #play-button").click(function(event) {
+				if($("html.touch")[0]){
+					window.open("http://www.youtube.com/watch?v=TEBW6LU8fp0");
+				} else {
+					if(jQuery().Jtube && !myPlayer2){
+							$("#ajax-loading-screen").fadeIn('1000');
+							myPlayer2 = $("#youtube-why-kayapo").Jtube({
+							videoId:"TEBW6LU8fp0",
+							skipvid:false,
+							skipWhash:false,
+							timeLeft:false,
+							loop:0,
+							autoplay:0,
+							applyToContainer:true,
+							vidHeight:"100%",
+							vidWidth:"100%",
+							volume:100,
+							fallbackImage:"http://also-static.com/kayapo/assets/photos/bg_why1.jpg",
+							onStart:function(settings){
+								$(settings.player.a).css({"display":"inline-block"})
+								$("#why-rainforest-1 #stick-in-back").fadeOut('1000');
+								return null;
+							},
+							onPause:function(settings){
+								$("#why-rainforest-1 #stick-in-back").fadeIn('1000');
+								return null;
+							},
+							onDone:function(settings){
+								return false;
+							}
+						});
+					} else {
+						myPlayer2.settings().player.playVideo();
+					}
+					event.preventDefault();
+					return false;
+				}
+			});
+		</script>
 	</section>
 	<!--
-	<section id="index-2" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page1.jpg);">
+	<section id="index-2" class="full-backgroundimage home-class" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page1.jpg);">
 	</section>
 
-	<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(assets/photos/bg_page2.jpg);">
+	<section id="index-3" class="full-backgroundimage home-class" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page2.jpg);">
 	</section>-->
 
-	<section id="why-rainforest-1" class="full-backgroundimage" style="background-image: url(assets/photos/bg_page3.jpg);">
-		<blockquote>&#8220;Where indian lands begin is where deforestation ends&#8221;</blockquote>
-		<small>&#8212;Stephan Schwartzman Environmental Defense Fund</small>
-	</section>
-	<section id="why-rainforest-2" class="full-backgroundimage" style="background-image: url(assets/photos/bg_page4.jpg);">
+
+	<section id="why-rainforest-2" class="full-backgroundimage" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page4.jpg);">
 	</section>
 	<section id="why-rainforest-3" class="full-backgroundimage">
 	</section>
 	<section id="why-rainforest-35" class="full-backgroundimage">
 	</section>
-	<section id="about-the-kayapo-1" class="full-backgroundimage" style="background-image: url(assets/photos/bg_page7.jpg);">
+	<section id="about-the-kayapo-1" class="full-backgroundimage" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page7.jpg);">
 	</section>
 
 	<section id="about-the-kayapo-2">
@@ -83,13 +149,13 @@
 
 	<section id="about-the-kayapo-5">
 	</section>
-	<section id="about-the-kayapo-6" >
+	<section id="about-the-kayapo-6" class="full-backgroundimage" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page16.jpg)">
 	</section>
 
-	<section id="the-threat-1" class="full-backgroundimage" style="background-image: url(assets/map/mapload.jpg);">
+	<section id="the-threat-1" class="full-backgroundimage" style="background-image: url(http://also-static.com/kayapo/assets/map/mapload.jpg);">
 	</section>
 
-	<section id="the-threat-2" class="full-backgroundimage" style="background-image: url(assets/photos/bg_page17.jpg);">
+	<section id="the-threat-2" class="full-backgroundimage" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page17.jpg);">
 	</section>
 
 	<section id="the-threat-3">
@@ -99,7 +165,7 @@
 	<section id="the-threat-4">
 	</section>
 
-	<section id="kayapo-proj-1"  class="full-backgroundimage" style="background-image: url(assets/photos/bg_page18.jpg);">
+	<section id="kayapo-proj-1"  class="full-backgroundimage" style="background-image: url(http://also-static.com/kayapo/assets/photos/bg_page18.jpg);">
 	</section>
 	<section id="kayapo-proj-2">
 	</section>
@@ -116,10 +182,15 @@
 <div id="constant-background-image">
 </div>
 <div id="loading-screen">
-	<h2>LOADING</h2>
+	<div>
+		<h2>LOADING</h2>
+		<img width="114px" height="85px" src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png">
+	</div>
 </div>
 <div id="ajax-loading-screen">
-	<div id="modal-img">loading<!-- <img src="assets/icons/ic_modalclear.png"> --></div>
+	<div>
+		<img width="114px" height="85px" src="http://also-static.com/kayapo/assets/icons/ic_modalclear.png">
+	</div>
 </div>
 </body>
 </html>

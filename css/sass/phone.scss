@@ -10,6 +10,11 @@
 @include all-threat-icons-sprites;
 
 /* Variables */
+$sk_red: #ea636e;
+$sk_red_fade: #ff838e;
+$hover_button: #ca444e;
+$text_color_grey: #111;
+$normalBackground: #fff;
 
 //$k-yellow: #fedf00;
 $k-yellow: #fae132;
@@ -42,15 +47,16 @@ body,html{
 	//overflow: hidden;
 	font-family: $verlag;
 	-webkit-font-smoothing: antialiased;
-	//color: $text_color_grey;
+	color: $text_color_grey;
 }
 
 body{
-	overflow: hidden;
+	//overflow: hidden;
+	background-color:$k-blue-dark;
 }
 
 @include breakpoint(phone) {
-	.phone body{
+	body{
 		overflow: auto;
 	}
 }
@@ -67,13 +73,13 @@ body{
 }
 
 section{
-	height: calc( 100% - 2.25em);
-	height: -webkit-calc( 100% - 2.25em);
+	//height: calc( 100% - 2.25em);
+	//height: -webkit-calc( 100% - 2.25em);
 	width: 100%;
 	overflow: hidden;
 }
 @include breakpoint(phone) {
-	.phone section{
+	section{
 		height: auto;
 		width: 100%;
 		//overflow: hidden;
@@ -158,31 +164,6 @@ section{
 			a{
 				margin-top: 0.7em;
 				font-size: 0.95em;
-			}
-		}
-	}
-	@include breakpoint(tabletport) {
-		nav, #nav{
-			li{
-				padding: 0 0.6% 0 0.6%;
-				letter-spacing: -0.03em;
-			}
-			a{
-				margin-top: 0.9em;
-				font-size: 0.8em;
-			}
-		}
-	}
-
-	@include breakpoint(lapxs) {
-		nav, #nav{
-			li{
-				padding: 0 0.6% 0 0.6%;
-				letter-spacing: -0.03em;
-			}
-			a{
-				margin-top: 0.9em;
-				font-size: 0.8em;
 			}
 		}
 	}
@@ -285,11 +266,11 @@ section{
 		}
 	}
 	@include breakpoint(phone) {
-		.phone #index-1{
-			height: 80%;;
-			padding-bottom:12em;
+		#index-1{
+			height: 80%;
+			padding-bottom:3em;
 			blockquote{
-				font-size: 1.2em;
+				font-size:1.2em;
 				width: 95%;
 				margin-bottom:0.5em;
 			}
@@ -298,22 +279,6 @@ section{
 				padding: 3em 0 0 0;
 			}
 		}		
-	}
-	@include breakpoint(tabletport) {
-		#index-1{
-			blockquote{
-				width: 95%;
-			}
-		}	
-	}
-	//}
-	@include breakpoint(lapxs) {
-		#index-1{
-			blockquote{
-				width: 95%;
-				font-size:1.5em;
-			}
-		}
 	}
 
 /* INDEX 1 SECTION END */
@@ -414,7 +379,7 @@ section{
 			
 		}
 		@include breakpoint(phone) {
-			.phone #index-2{
+			#index-2{
 				height: 80%;;
 				padding-bottom:3em;
 				blockquote{
@@ -440,51 +405,32 @@ section{
 	font-weight:800;
 }
 	
-#why-rainforest-1{
-	position: relative;
-	color: #fff;
-	text-align: center;
 
-	blockquote{
-		font-weight: 800;
-		font-size:5.5em;
-		width: 80%;
-		margin: 0 auto 2% auto;
-		padding-top: 3%;
-	}
+/* WHY RAINFOREST */
 
-	small{
-		font-weight: 800;
-		font-size: 1.5em;
-	}
-	a{
-		padding-top: 2em;
-		display: block;
+	#why-rainforest-1{
+
+		color: #fff;
 		text-align: center;
-	}
-	img{
-		height: 75px;
-		width: auto;
-		text-align: center;
-	}
-	#stick-in-back{
-		@extend .full-backgroundimage;
-		position: relative;
-		width: 100%;
-		height: 100%;
-	}
+		
 
-	p{
-		font-family: $verlag;
-		font-weight: 800;
-		font-size: 3em;
+		blockquote{
+			font-weight: 800;
+			font-size:6em;
+			width: 80%;
+			margin: 0 auto 2% auto;
+			padding-top: 8%;
+		}
+
+		small{
+			font-weight: 800;
+			font-size: 1.5em;
+		}
 	}
-}
 
 	#why-rainforest-2{
 		color: #000;
 		position: relative;
-		background-position:left;
 		
 		#section-content{
 			width: 60%;
@@ -504,14 +450,13 @@ section{
 			font-size: 1.2em;
 		}
 		.donation{
-			margin-top:2em;
-			width:80%;
+			margin-top:15%;
 		}
 	}
 
 	#why-rainforest-3{
-		color: #fff;
-		position: relative;
+		color:#fff;
+		position:relative;
 		.full-page{
 			@extend .full-page;
 			position: relative;
@@ -522,6 +467,15 @@ section{
 			font-style: italic;
 			font-size: 4em;
 			text-align: center;
+		}
+		blockquote{
+			font-size:3em;
+			font-weight:800;
+			margin: 3em 0 4em 0;
+			text-align:center;
+		}
+		small{
+			font-size:0.6em;
 		}
 	}
 	#why-rainforest-35{
@@ -578,26 +532,7 @@ section{
 
 		}
 	}
-	@include breakpoint(tabletx) {
-		#why-rainforest-1{
-			blockquote{
-				font-size: 3.5em;
-			}
-		}
-		#why-rainforest-2{
-			#section-content{
-				padding: 2% 0 0 0;
-			}
-			blockquote {
-				font-size: 3em;
-			}
-		}
-		#why-rainforest-3{
-			.center-element{
-				height: 87%
-			}
-		}
-	}
+	
 	@include breakpoint(lapsm) {
 		#why-rainforest-3{
 			h2{
@@ -607,6 +542,7 @@ section{
 	}
 	@include breakpoint(phone) {
 		#why-rainforest-3{
+			
 			padding-top:2em;
 			h2{
 				font-size: 2.5em;
@@ -620,6 +556,7 @@ section{
 				width: 90%;
 				text-align:center;
 				margin:0 auto 0 auto;
+				
 			}
 			small{
 				width:70% !important;
@@ -638,46 +575,15 @@ section{
 			margin-bottom: 25em;
 			background-color: $k-green-dark;
 			color:#fff;
-			padding-bottom:8em;
 			li{
 				margin: 1em 0 1em 0;
 			}
 			blockquote{
 				width:90%;
-				margin:0 auto 0 auto;
-				font-size: 1.2em;
 			}
 		}
 	}
-	@include breakpoint(lapxs) {
-		#why-rainforest-1{
-			blockquote{
-				width:95%;
-				font-size:3em;
-			}
-		}
-		#why-rainforest-2{
-			#section-content{
-				width:70%;
-			}
-			blockquote{
-				font-size:2em;
-			}
-		}
-	}
-	@include breakpoint(lapxs) {
-		#why-rainforest-3 {
-			h2{
-				font-size:4em;
-			}	
-		}
-		#why-rainforest-35 {
-			blockquote{
-				font-size:2em !important;
-			}
-		}
-	}
-	
+
 .index{
 	background-color: $k-green-bright;
 	color: #000;
@@ -847,33 +753,7 @@ section{
 		}
 	}
 }
-@include breakpoint(tabletport) {
-	#about-the-kayapo-2{
-		#left{
-			position: relative;
-			height:auto;
-			width:100%;
-			img{
-				height: 40%;
-				max-height: 320px;
-				position: static;
-			}
-			.center-element{
-				margin:2em auto 0 auto;
-			}
-		}
-		#right{
-			width: 100%;
-			text-align:center;
-			img{
-				padding-left: 1em;
-				display: inline-block;
-				margin-bottom: -0.5em;
-				width:200px;
-			}
-		}
-	}
-}
+
 @include breakpoint(phone) {
 	#about-the-kayapo-2{
 		text-align:center;
@@ -954,21 +834,6 @@ section{
 		}
 	}
 }
-@include breakpoint(lapxs) {
-	#about-the-kayapo-2{
-		p{
-			font-size:1.8em;
-		}
-		h2{
-			font-size:1.5em;
-		}
-		#right{
-			img{
-				width:50%;
-			}
-		}
-	}
-}
 @include breakpoint(lapsm) {
 	#about-the-kayapo-4{
 		h2{
@@ -981,20 +846,8 @@ section{
 		}
 	}
 }
-@include breakpoint(lapxs) {
-	#about-the-kayapo-1{
-		#section-content{
-			width:50%;	
-		}
-		p{
-			font-size:1.5em;
-		}
-	}
-}
 @include breakpoint(phone) {
 	#about-the-kayapo-4{
-		padding-bottom: 2em;
-		
 		h2{
 			font-size:2em !important;
 		}
@@ -1004,6 +857,7 @@ section{
 		}
 	}
 }
+
 
 #about-the-kayapo-3{
 	background-color: $k-blue-dark;
@@ -1058,43 +912,6 @@ section{
 	}
 }
 
-@include breakpoint(tabletx) {
-	#about-the-kayapo-1 #section-content{
-		padding: 3% 0 0 0;
-		font-size: 0.8em;
-	}
-	#about-the-kayapo-2 h2{
-		font-size: 2.5em;
-		padding: 0.5em 0 0.2em 0;
-	}
-	#about-the-kayapo-3 #text-top-left{
-		top: 3%;
-	}
-	#about-the-kayapo-4 img {
-		width: 21% !important;
-	}
-}
-@include breakpoint(lapxs) {
-	#about-the-kayapo-3{
-		h2{
-			font-size:1.5em;
-		}
-		p{
-			font-size:0.8em
-		}
-	}
-}
-@include breakpoint(lapxs) {
-	#about-the-kayapo-4 {
-		img{
-			width:30% !important;
-		}
-		h2{
-			font-size:1.2em !important;
-		}
-	}
-}
-
 #about-the-kayapo-5{
 	position: relative;
 	color: #fff;
@@ -1112,30 +929,33 @@ section{
 	}
 }
 @include breakpoint(phone) {
-	.phone #about-the-kayapo-5{
+	#about-the-kayapo-5{
 		h2{
 			font-size:4em;
 		}
 	}	
 }
-@include breakpoint(lapxs) {
-	#about-the-kayapo-5 {
-		h2{
-			font-size:5em !important;
-		}
-	}
-}
-@include breakpoint(lapxs) {
-	#the-threat-1 {
-		h2{
-			font-size:3em !important;
-		}
-		p{
-			font-size:1.2em;
-		}
-	}
-}
 
+#about-the-kayapo-6{
+	position: relative;
+	color: #fff;
+	text-align: center;
+
+
+	#stick-in-back{
+		@extend .full-backgroundimage;
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	p{
+		font-family: $verlag;
+		font-weight: 800;
+		font-size: 3em;
+	}
+
+}
 
 
 /* kayapo-proj */
@@ -1201,12 +1021,11 @@ section{
 		background-position: top center;
 		//background-size: 100%;
 		padding: 1em 0 0 0;
-		width: 100%;
-		max-width: 800px;
-		margin: 1em auto 0 auto;
+		width: 80%;
+		margin: 3em auto 0 auto;
 
 		a{
-			width: 160px;
+			width: 20%;
 			display: inline-block;
 			vertical-align: top;
 			font-weight: 800;
@@ -1215,8 +1034,8 @@ section{
 			margin: 0 5% 0 5%;
 		}
 		.icon{
-			width: 160px;
-			height: 165px;
+			width: 190px;
+			height: 188px;
 			display: inline-block;
 			background-size: 100%;
 			background-repeat: no-repeat;
@@ -1253,37 +1072,7 @@ section{
 	height: 140px;
 	background-color: $k-green-dark;
 }
-@include breakpoint(tabletport) {
-	#kayapo-proj-modal-territory,#kayapo-proj-modal-economy,#kayapo-proj-modal-institution{
-		position: absolute;
-		height: 400px;
-		background-color: $k-green-dark;
-	}
-}
 
-@include breakpoint(tabletx) {
-	#kayapo-proj-2 h2{
-		margin: 0.1em auto 0.2em auto;
-	}
-}
-
-#kayapo-proj-modal-territory{
-	#kayapo-proj-modal-subicons{
-		width: 50%;
-		position: absolute;
-		right: 0;
-		div{
-			width:30%;
-			display: inline-block;
-			padding: 0 0.2em 0 0.2em;
-		}
-	}
-	#description{
-		width:40%;
-		font-size: 1.2em;
-		text-align:left;
-	}
-}
 #kayapo-proj-modal-subicons{
 	width: 30%;
 	position: absolute;
@@ -1325,96 +1114,9 @@ section{
 		text-align:left;
 	}
 }
-@include breakpoint(tabletport) {
-	.kayapo-proj-modal{
-		bottom:0;
-		position: absolute;
-		padding-top: 1em;
-		background-color: $k-green-dark;
-	
-		h4{
-			color: #fff !important;
-			font-weight: 800;
-			text-align:center;
-		}
-		div{
-			display:block;
-			width:100%;
-			margin:0 auto 0 auto;
-		}
-		#proj-icon-1{
-			width:60px;
-		}
-		p{
-			font-size: 0.8em !important;
-			text-align:left !important;
-			margin:0.5em 0 0 0 !important;
-			width: 100% !important;
-		}
-		#description{
-			width:80%;
-			font-size: 1.2em;
-			text-align:left;
-		}
-	}
-}
-@include breakpoint(tabletport) {
-	#kayapo-proj-modal-subicons{
-		width: 80%;
-		position: static;
-		margin:0 auto 0 auto;
-		right: 0;
-		div{
-			width:100%;
-			display: block;
-			padding: 0 0.2em 0 0.2em;
-			text-align:center;
-		}
-	}
-}
-@include breakpoint(tabletport) {
-	#kayapo-proj-modal-territory{
-		#kayapo-proj-modal-subicons{
-			width: 80%;
-			position: static;
-			right: 0;
-			div{
-				width:100%;
-				display: block;
-				padding: 0 0.2em 0 0.2em;
-			}
-		}
-		#description{
-			width:80% !important;
-			font-size: 1.2em;
-			text-align:left;
-			margin: 0 auto 0 auto;
-		}
-	}
-}
 
-@include breakpoint(lapxs) {
-	#kayapo-proj-2{
-		h2{
-			font-size:2em;	
-		}
-		h4{
-			font-size:0.8em;
-		}
-		h3{
-			font-size:1em;
-		}
-		p{
-			font-size:1em;
-		}
-		#funds-divs{
-			.icon{
-				width:100px;
-				height:105px;
-			}
-		}
-	}
-}
+
+
 
 /* kayapo-proj */
 
@@ -1444,13 +1146,12 @@ section{
 	p{
 		font-size: 0.9em;
 		padding: 0 0.5em 0 0.5em;
-		text-align:left;
 	}
 	div{
 		width:15%;
 		display: inline-block;
 		vertical-align: top;
-		text-align: center;
+		text-align: left;
 	}
 	img{
 		width: auto;
@@ -1459,17 +1160,15 @@ section{
 }
 
 @include breakpoint(phone) {
-	.phone #donate-1 div{
+	#donate-1 div{
 		width:95%;
 		display:inline;
 		text-align:center;
 		margin: 4em 0 0 0;
 		p{
 			width:80%;
-			margin:0 auto 3em auto;
+			margin:0 auto 0 auto;
 			padding:0;
-			text-align:center;
-			font-size:1.2em;
 		}
 		h2{
 			margin: 0.2em 0 0.2em 0;
@@ -1479,44 +1178,12 @@ section{
 	}
 }
 
-@include breakpoint(tabletport) {
-	#donate-1 div{
-		img {
-			height: 70px;
-		}
-		h2{
-			font-size:1.5em;
-		}
-	}
-}
-
-@include breakpoint(tabletx) {
-	#donate-1 p{
-		display: none;
-	}
-}
-@include breakpoint(lapxs) {
-	#donate-1{
-		blockquote{
-			font-size:1.5em;
-		}
-		h2{
-			font-size:1em;
-		}
-		img{
-			width: auto;
-			height: 80px;
-		}
-		p{
-			font-size:0.8em;
-		}
-	}
-}
-
 #contact-1{
 	text-align: center;
 	background-color: $k-yellow;
 	position: relative;
+	height: 100%;
+	padding-top: 4em;
 
 	h2{
 		font-family: $acropolis;
@@ -1556,27 +1223,16 @@ section{
 }
 
 @include breakpoint(phone) {
-	.phone #sponsors-1,#sponsors-2, #sponsors-3{
-		img{
-			width:80px;
-		}
-	}
-	.phone #contact-1{
-		height: 100%;
-		padding-bottom: 6em;
-		h2{
-			font-size:2em !important;
-		}
-	}
-}
-
-@include breakpoint(lapxs) {
 	#sponsors-1,#sponsors-2, #sponsors-3{
 		img{
 			width:80px;
 		}
 	}
+	#contact-1{
+		height: 100%;
+	}
 }
+
 
 #contact-footer{
 	background-color: $k-green-dull;
@@ -1588,13 +1244,6 @@ section{
 	a {
 		color: #fff;
 		font-weight: 800;
-	}
-}
-@include breakpoint(lapxs) {
-	#contact-footer{
-		h2{
-			font-size:2em !important;
-		}
 	}
 }
 
@@ -1626,7 +1275,7 @@ section{
 }
 
 #one-time{
-	width: 50%;
+	width: 100%;
 	height: 100%;
 	display: inline-block;
 	text-align: center;
@@ -1635,7 +1284,7 @@ section{
 	//opacity: 0.6;
 }
 @include breakpoint(phone) {
-	.phone #one-time{
+	#one-time{
 		width:100%;
 	}
 }
@@ -1679,7 +1328,7 @@ section{
 	}
 	h2{
 		font-family: $acropolis;
-		font-size: 8em;
+		font-size: 4em;
 		font-style: italic;
 	}
 	span,a{
@@ -1687,9 +1336,6 @@ section{
 		font-weight: 600;
 		padding: 0 0.5em 0 0.5em;
 		display: inline-block;
-	}
-	p{
-		font-size: 1.5em;
 	}
 
 	#button-container{
@@ -1779,33 +1425,21 @@ section{
 	position: relative;
 	blockquote{
 		z-index: 2;
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin: 0 auto 0 auto;
-		bottom: 25%;
-		height: 60%;
+		position: relative;
+
 		font-weight: 800;
+		margin: 0 auto 0 auto;
 		width: 50%;
 		color: #fff;
-
-		padding-top: 10%;
-
-
-		// z-index: 2;
-		// position: relative;
-
-		// font-weight: 800;
-		// margin: 0 auto 0 auto;
-		// width: 50%;
-		// color: #fff;
-		// padding-top: 20%;
+		padding-top: 5em;
+		padding-bottom:4em;
 	}
+	background-color:$k-red;
 }
 @include breakpoint(tablet) {
 	#the-threat-35,#the-threat-3{
 		blockquote{
-			// padding-top:7%;
+			padding-top:7%;
 			width:70%;
 		}
 	}
@@ -1813,25 +1447,18 @@ section{
 @include breakpoint(lapsm) {
 	#the-threat-35,#the-threat-3{
 		blockquote{
-			// padding-top:10%;
+			padding-top:10%;
 			width:70%;
 		}
 	}
 }
 @include breakpoint(phone) {
-	.phone #the-threat-35,#the-threat-3{
-		// background-color: $k-red;
-		// padding-bottom: 5em;
+	#the-threat-35,#the-threat-3{
+		background-color: $k-red;
+		padding-bottom: 5em;
 		blockquote{
 			width:90% !important;
-			font-size:1.8em;
-		}
-	}
-}
-@include breakpoint(lapxs) {
-	#the-threat-35{
-		blockquote{
-			font-size:4em;
+			font-size:1.8em;	
 		}
 	}
 }
@@ -2101,7 +1728,7 @@ section{
 		}
 	}
 	@include breakpoint(phone) {
-		.phone .donation{
+		.donation{
 			width: 60%;
 			padding:4px;
 			a{
@@ -2252,17 +1879,12 @@ section{
 	font-weight: 800;
 	display: table;
 	
-	div{
+	h2{
 		position: absolute;
-		bottom: 35%;
+		bottom: 50%;
 		width: 100%;
 		text-align: center;
-
-		img{
-			padding: 1em;
-		}
 	}
-
 }
 
 #ajax-loading-screen{
@@ -2273,61 +1895,21 @@ section{
 	height: 100%;
 	z-index: 50;
 	background-color: rgba(0,0,0,0.5);
-	text-align: center;
-
+	
 	div{
-		position: absolute;
-		bottom: 50%;
+		position: relative;
 		width: 100%;
 		text-align: center;
+		height: 100%;
 	}
-}
-
-#loading-screen img, #ajax-loading-screen img{
-	-webkit-animation-name:             fullRotate;
-	-webkit-animation-duration:         3s;
-	-webkit-animation-iteration-count:  infinite;
-	-webkit-animation-timing-function: linear;
-
-	-ms-animation-name:             fullRotate;
-	-ms-animation-duration:         3s;
-	-ms-animation-iteration-count:  infinite;
-	-ms-animation-timing-function: linear;
-
-	-moz-animation-name:             fullRotate;
-	-moz-animation-duration:         3s;
-	-moz-animation-iteration-count:  infinite;
-	-moz-animation-timing-function: linear;
-
-	animation-name:             fullRotate;
-	animation-duration:         3s;
-	animation-iteration-count:  infinite;
-	animation-timing-function: linear;
-}
-
-@-webkit-keyframes fullRotate {
-	from {
-		-ms-transform:rotate(0deg);
-		-webkit-transform:rotate(0deg);
-		-moz-transform:rotate(0deg);
-		transform:rotate(0deg);
-	}
-	to {
-		-ms-transform:rotate(360deg);
-		-webkit-transform:rotate(360deg);
-		-moz-transform:rotate(360deg);
-		transform:rotate(360deg)
+	
+	img{
+		position:absolute;
+		bottom:50%;
 	}
 }
 
 
-// img.star
-// {
-//     -webkit-animation-name:             rotate; 
-//     -webkit-animation-duration:         0.5s; 
-//     -webkit-animation-iteration-count:  infinite;
-//     -webkit-animation-timing-function: linear;
-// }
 
 /* LOADING MODALS */
 
@@ -2378,7 +1960,7 @@ section{
 	// background-size:100%;
 }
 @include breakpoint(phone) {
-	.phone .full-backgroundimage{
+	.full-backgroundimage{
 		background-position: left;
 	}
 }
@@ -2388,7 +1970,7 @@ section{
 }
 //font
 .text-shadow{
-	text-shadow:1px 1px 10px #333;
+	text-shadow:1px 1px 10px #000;
 }
 .underlined{
 	border-bottom: 6px solid #fff;
