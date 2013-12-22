@@ -326,6 +326,7 @@ section{
 		}
 	}
 	#index-2{
+		background-position:left;
 		#main-info{
 			width:60%;
 			position:absolute;
@@ -825,6 +826,7 @@ section{
 }
 
 #index-3{
+	background-position:left;
 	blockquote{
 		font-size: 4em;
 		text-align: right;
@@ -951,7 +953,7 @@ section{
 				padding-left: 1em;
 				display: inline-block;
 				margin-bottom: -0.5em;
-				width:200px;
+				width:200px !important;
 			}
 		}
 	}
