@@ -100,6 +100,7 @@ section{
 		//height: 2.5em;
 		font-family: $verlag;
 		height: 2.25em;
+		background-color:#000;
 
 		a{
 			color: inherit;
@@ -167,6 +168,12 @@ section{
 			}
 		}
 	}
+	
+	@include breakpoint(phone) {
+		#index-nav,#why-rainforest-nav,#about-the-kayapo-nav,#the-threat-nav,#kayapo-proj-nav,#contact-nav{
+			display:none !important;
+		}
+	}
 
 	.phone #nav,{
 		a{
@@ -187,6 +194,19 @@ section{
 
 /* NAV END */
 	
+	/* WATCH BUTTON */
+	#you-tube-mobile{
+		text-align:center;
+		img{
+			width:100px;
+			height:auto;
+		}
+		small{
+			font-size:3em !important;
+			display:block;
+			font-weight:800;
+		}
+	}
 	 
 /* INDEX 1 SECTION */
 	
@@ -207,6 +227,7 @@ section{
 			padding: 8% 0 0 0;
 			color:#fff;
 		}
+		height:inherit;
 	}
 	
 	#main-info{
@@ -480,6 +501,10 @@ section{
 	}
 	#why-rainforest-35{
 		position: relative;
+		height:40em;
+		font-size:2em;
+		font-weight:800;
+		color:#fff;
 		ul{
 			position: absolute;
 			width: 100%;
@@ -489,7 +514,11 @@ section{
 		li{
 			display: inline-block;
 			text-align: center;
-			margin:0 0.5em 0 0.5em;
+			margin:0 0.5em 2em 0.5em;
+			width: 80%;
+			img{
+				width:100px;
+			}
 			a{
 				display: inline-block;
 				width: 70px;
@@ -528,8 +557,6 @@ section{
 			#culture-nav:hover, #culture-nav.selected-why-nav{
 				background-image: url("/assets/icons/ic_why_05ho.png");
 			}
-
-
 		}
 	}
 	
@@ -572,14 +599,19 @@ section{
 		}
 		#why-rainforest-35{
 			height: 50em;
-			margin-bottom: 25em;
+			margin-bottom: 4em;
 			background-color: $k-green-dark;
 			color:#fff;
 			li{
 				margin: 1em 0 1em 0;
+				width:90%;
 			}
 			blockquote{
-				width:90%;
+				width:100%;
+				font-size:0.6em !important;
+			}
+			img{
+				width:100px;
 			}
 		}
 	}
@@ -1264,14 +1296,21 @@ section{
 	}
 	.donation{
 		width:60%;
-		margin-bottom:1em;
+		margin-bottom:3em;
 	}
 }
 
 #donate-contain {
 	height: 100%;
 	position: relative;
-	opacity: 0.5;
+	//opacity: 0.5;
+	.donation:hover{
+		background-color:#000;
+		a{
+			color:$k-yellow;
+			border-color:$k-yellow;
+		}
+	}
 }
 
 #one-time{
@@ -1303,9 +1342,9 @@ section{
 	cursor:pointer
 }
 
-#donate-contain:hover{
+/*#donate-contain:hover{
 	opacity: 1;
-}
+}*/
 
 
 /* DONATE SECTION END */
