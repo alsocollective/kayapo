@@ -66,6 +66,10 @@ d88P     888  "Y8888P"  88888888  "Y88888P"         "Y8888P"   "Y88P"  888 888  
 			MOBILE = true;
 		}
 	}
+	
+	if(window.location.pathname == "/"){
+		window.location.replace("index-1.html");
+	}
 
 /*
  .d8888b.  888       .d88888b.  888888b.          d8888 888
@@ -83,6 +87,7 @@ var GLOBAL = {
 	getAddress:function(){
 		var temp = window.location.href.toString().split(window.location.host)[1].split(".")[0].split("/")[1];
 		if(!temp) temp = "index-"+GLOBAL.indexNumber;
+		console.log(GLOBAL.indexNumber);
 		GLOBAL.address = temp;
 		GLOBAL.caseFunctionLoads(GLOBAL.address);
 	},
